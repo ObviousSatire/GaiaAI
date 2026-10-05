@@ -196,48 +196,57 @@ layout: null
                 <div class="learn-visual">
                     <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
                         <defs>
-                            <linearGradient id="strandA" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#4ade80"/>
-                                <stop offset="50%" stop-color="#a7f3d0"/>
-                                <stop offset="100%" stop-color="#34d399"/>
+                            <linearGradient id="strandA" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.9"/>
+                                <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.9"/>
                             </linearGradient>
-                            <linearGradient id="strandB" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#60a5fa"/>
-                                <stop offset="50%" stop-color="#a7f3d0"/>
-                                <stop offset="100%" stop-color="#60a5fa"/>
+                            <linearGradient id="strandB" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.9"/>
+                                <stop offset="100%" stop-color="#34d399" stop-opacity="0.9"/>
                             </linearGradient>
                             <radialGradient id="dnaGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.2"/>
+                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.15"/>
                                 <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                             </radialGradient>
+                            <filter id="softGlow">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feMerge>
+                                    <feMergeNode in="blur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
                         </defs>
 
-                        <circle cx="200" cy="200" r="160" fill="url(#dnaGlow)"/>
+                        <circle cx="200" cy="200" r="170" fill="url(#dnaGlow)"/>
 
-                        <!-- Double helix -->
-                        <path class="dna-strand" d="M80,60 Q160,140 240,200 T400,340" stroke="url(#strandA)" stroke-width="3" fill="none"/>
-                        <path class="dna-strand" d="M80,340 Q160,260 240,200 T400,60" stroke="url(#strandB)" stroke-width="3" fill="none"/>
+                        <!-- Two intertwining strands (helix) -->
+                        <path class="dna-strand" d="M100,30 C180,80 220,120 220,160 C220,200 180,240 100,290 C60,315 40,340 40,370" 
+                              stroke="url(#strandA)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#softGlow)"/>
+                        <path class="dna-strand second" d="M300,30 C220,80 180,120 180,160 C180,200 220,240 300,290 C340,315 360,340 360,370"
+                              stroke="url(#strandB)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#softGlow)"/>
 
-                        <!-- Rungs connecting the strands -->
-                        <line class="dna-rung" x1="98" y1="80" x2="122" y2="90" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="120" y1="120" x2="150" y2="130" stroke="#4ade80" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="150" y1="160" x2="180" y2="170" stroke="#60a5fa" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="180" y1="200" x2="215" y2="200" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="215" y1="200" x2="250" y2="230" stroke="#4ade80" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="250" y1="240" x2="280" y2="260" stroke="#60a5fa" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="280" y1="270" x2="310" y2="290" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <line class="dna-rung" x1="310" y1="300" x2="340" y2="320" stroke="#4ade80" stroke-width="1.5"/>
+                        <!-- Base pairs connecting the strands -->
+                        <line class="base-pair" x1="120" y1="55" x2="280" y2="55" stroke="#a7f3d0" stroke-width="2"/>
+                        <line class="base-pair" x1="150" y1="85" x2="250" y2="85" stroke="#60a5fa" stroke-width="2"/>
+                        <line class="base-pair" x1="180" y1="115" x2="220" y2="115" stroke="#4ade80" stroke-width="2"/>
+                        <line class="base-pair" x1="200" y1="145" x2="200" y2="145" stroke="#a7f3d0" stroke-width="2"/>
+                        <line class="base-pair" x1="180" y1="175" x2="220" y2="175" stroke="#60a5fa" stroke-width="2"/>
+                        <line class="base-pair" x1="150" y1="205" x2="250" y2="205" stroke="#4ade80" stroke-width="2"/>
+                        <line class="base-pair" x1="120" y1="235" x2="280" y2="235" stroke="#a7f3d0" stroke-width="2"/>
+                        <line class="base-pair" x1="100" y1="265" x2="300" y2="265" stroke="#60a5fa" stroke-width="2"/>
 
-                        <!-- Sliding scan bar -->
-                        <rect x="0" y="180" width="400" height="40" fill="url(#dnaGlow)" opacity="0.4">
-                            <animate attributeName="y" values="50;330;50" dur="8s" repeatCount="indefinite"/>
-                        </rect>
+                        <!-- Base pair letters -->
+                        <text class="base-letter" x="135" y="52" font-family="monospace" font-size="11" fill="#a7f3d0">A</text>
+                        <text class="base-letter" x="255" y="52" font-family="monospace" font-size="11" fill="#a7f3d0">T</text>
+                        <text class="base-letter" x="165" y="82" font-family="monospace" font-size="11" fill="#60a5fa">G</text>
+                        <text class="base-letter" x="225" y="82" font-family="monospace" font-size="11" fill="#60a5fa">C</text>
+                        <text class="base-letter" x="165" y="202" font-family="monospace" font-size="11" fill="#4ade80">T</text>
+                        <text class="base-letter" x="225" y="202" font-family="monospace" font-size="11" fill="#4ade80">A</text>
+                        <text class="base-letter" x="135" y="232" font-family="monospace" font-size="11" fill="#a7f3d0">C</text>
+                        <text class="base-letter" x="255" y="232" font-family="monospace" font-size="11" fill="#a7f3d0">G</text>
 
-                        <!-- Base pair labels floating -->
-                        <text x="300" y="140" font-family="monospace" font-size="11" fill="#a7f3d0" opacity="0.6">ATCG</text>
-                        <text x="80" y="240" font-family="monospace" font-size="11" fill="#60a5fa" opacity="0.6">GC 0.62</text>
-                        <text x="200" y="360" font-family="monospace" font-size="11" fill="#4ade80" opacity="0.6">exon</text>
-                        <text x="60" y="140" font-family="monospace" font-size="10" fill="#a7f3d0" opacity="0.5">intron</text>
+                        <!-- Scanning bar -->
+                        <rect class="scan-bar" x="40" y="0" width="320" height="8" fill="url(#dnaGlow)" opacity="0.6"/>
                     </svg>
                 </div>
                 <div class="learn-copy">
@@ -245,9 +254,10 @@ layout: null
                     <h3>Reading <span class="accent">raw sequence</span></h3>
                     <p>
                         Whole chromosomes go in. The system extracts structural
-                        signatures — entropy, GC content, motif patterns,
-                        conservation — and lets a classifier discover which
-                        combinations predict coding, conserved, or silent regions.
+                        signatures — entropy, GC content, splice sites, CpG
+                        density, conservation — and lets a classifier discover
+                        which combinations predict coding, conserved, or silent
+                        regions.
                     </p>
                     <ul>
                         <li><strong>Ingest</strong> full chromosomes with curated labels</li>
@@ -375,6 +385,153 @@ layout: null
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<section id="math">
+    <div class="container">
+        <h2>The math <span class="accent">underneath</span></h2>
+        <p class="lead">
+            Every position in the genome gets a structural signature. Segment
+            boundaries are discovered at three scales. Fifty-six features
+            describe each segment. A classifier learns what they mean.
+        </p>
+
+        <div class="math-hero">
+            <div class="math-header">
+                <h3>Boundary detection at <span class="accent">three scales</span></h3>
+                <p>Windows slide across the genome. Where GC or entropy shifts sharply, a boundary is placed. Three scales run in parallel, then merge.</p>
+            </div>
+
+            <div class="scale-stack">
+                <div class="scale-row">
+                    <div class="scale-label">SCALE 1 · W=200</div>
+                    <div class="scale-track">
+                        <div class="scale-marker" style="left: 12%"></div>
+                        <div class="scale-marker" style="left: 28%"></div>
+                        <div class="scale-marker" style="left: 41%"></div>
+                        <div class="scale-marker" style="left: 57%"></div>
+                        <div class="scale-marker" style="left: 68%"></div>
+                        <div class="scale-marker" style="left: 79%"></div>
+                        <div class="scale-marker" style="left: 88%"></div>
+                        <div class="scale-marker" style="left: 94%"></div>
+                    </div>
+                </div>
+                <div class="scale-row">
+                    <div class="scale-label">SCALE 2 · W=2000</div>
+                    <div class="scale-track">
+                        <div class="scale-marker" style="left: 18%"></div>
+                        <div class="scale-marker" style="left: 44%"></div>
+                        <div class="scale-marker" style="left: 72%"></div>
+                    </div>
+                </div>
+                <div class="scale-row">
+                    <div class="scale-label">SCALE 3 · W=20000</div>
+                    <div class="scale-track">
+                        <div class="scale-marker" style="left: 25%"></div>
+                        <div class="scale-marker" style="left: 65%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boundary-visual">
+                <span class="line"><span class="comment">// For each position i, at each scale:</span></span>
+                <span class="line"><span class="kw">gc</span>(i)  <span class="op">=</span> (G <span class="op">+</span> C) <span class="op">/</span> W</span>
+                <span class="line"><span class="kw">H4</span>(i)  <span class="op">=</span> <span class="op">−</span> Σ p<sub>k</sub> · log<sub><span class="num">2</span></sub>(p<sub>k</sub>)     <span class="comment">// 4-mer entropy</span></span>
+                <span class="line"><span class="kw">Δgc</span>  <span class="op">=</span> |gc(i) <span class="op">−</span> gc(i <span class="op">−</span> stride)|</span>
+                <span class="line"><span class="kw">ΔH4</span>  <span class="op">=</span> |H4(i) <span class="op">−</span> H4(i <span class="op">−</span> stride)|</span>
+                <span class="line"></span>
+                <span class="line"><span class="kw">if</span> Δgc <span class="op">&gt;</span> <span class="num">0.08</span> <span class="kw">or</span> ΔH4 <span class="op">&gt;</span> <span class="num">0.30</span>:  place boundary</span>
+            </div>
+
+            <div class="math-header">
+                <h3>Fifty-six features per <span class="accent">segment</span></h3>
+                <p>Each segment between boundaries gets a feature vector. Composition, structure, frame, skew, conservation, and metadata — all extracted from raw sequence.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <span class="num-badge">f0-f17</span>
+                    <div class="name">Composition</div>
+                    <div class="desc">4-mer entropy, 2-mer entropy, GC content, repeat fraction, G-quadruplex proxy, homopolymer length</div>
+                </div>
+                <div class="feature-box">
+                    <span class="num-badge">f18-f23</span>
+                    <div class="name">Structural</div>
+                    <div class="desc">Donor splice score, acceptor splice score, period-3 FFT power, reading frame entropy, GC3, CpG O/E ratio</div>
+                </div>
+                <div class="feature-box">
+                    <span class="num-badge">f24-f29</span>
+                    <div class="name">Frame</div>
+                    <div class="desc">Per-frame GC content and nucleotide entropy across the three reading frames</div>
+                </div>
+                <div class="feature-box">
+                    <span class="num-badge">f30-f31</span>
+                    <div class="name">Skew</div>
+                    <div class="desc">GC-skew and TA-skew — detects replication strand asymmetry</div>
+                </div>
+                <div class="feature-box">
+                    <span class="num-badge">f32-f35</span>
+                    <div class="name">Conservation</div>
+                    <div class="desc">Mean phyloP, max phyloP, coverage fraction, fraction above 95th percentile</div>
+                </div>
+                <div class="feature-box">
+                    <span class="num-badge">f36-f55</span>
+                    <div class="name">Metadata + k-mers</div>
+                    <div class="desc">Length, repeat class, GC class, top-10 5-mer frequencies, conservation class, CpG fraction, purine fraction</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unique-grid" style="margin-top: 56px;">
+            <div class="unique-card">
+                <div class="num">01</div>
+                <h3>The <span class="accent">pattern</span> is discovered</h3>
+                <p>
+                    The classifier discovers which of the 56 features predict
+                    coding, conserved, regulatory, repeat, or intergenic
+                    regions. No hand-coded rules — thresholds emerge from
+                    labeled sequence.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> fixed rules and manual
+                    annotations for every genome. Our thresholds adapt to
+                    whatever species we feed in.
+                </div>
+            </div>
+
+            <div class="unique-card">
+                <div class="num">02</div>
+                <h3>The <span class="accent">context</span> is biological</h3>
+                <p>
+                    Segment boundaries come from multi-scale change detection,
+                    not fixed windows. Where the genome transitions from
+                    GC-rich to GC-poor, the boundary lands there — because
+                    that's where biology changes.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> every analysis window is
+                    the same size. Real biology doesn't respect your slide
+                    window.
+                </div>
+            </div>
+
+            <div class="unique-card">
+                <div class="num">03</div>
+                <h3>Every <span class="accent">variant</span> gets context</h3>
+                <p>
+                    For every variant, we append 58 features to GAIA's
+                    classifier: the segment class, the boundary score, and all
+                    56 raw features. The classifier retrains with this
+                    structural evidence included.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> a variant is just a
+                    position. GAIA sees the same variant, plus the 56-dimensional
+                    fingerprint of the region it sits in.
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -567,6 +724,22 @@ layout: null
 
             <div class="unique-card">
                 <div class="num">03</div>
+                <h3>The <span class="accent">math is ours</span></h3>
+                <p>
+                    Boundary detection at three scales. Fifty-six features per
+                    segment. A classifier that discovers its own thresholds.
+                    None of this is a wrapper around someone else's tool —
+                    every equation is written from scratch.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> most platforms chain
+                    other people's tools together. The math here is derived,
+                    not imported.
+                </div>
+            </div>
+
+            <div class="unique-card">
+                <div class="num">04</div>
                 <h3>Checks itself <span class="accent">across evidence</span></h3>
                 <p>
                     Every prediction is verified against three independent

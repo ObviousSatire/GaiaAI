@@ -3547,3 +3547,230 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     0%, 100% { opacity: 0.5; transform: scale(1); }
     50%      { opacity: 1; transform: scale(1.15); }
 }
+
+/* ============================================================
+   MATH SECTION — the boundary + feature math
+   ============================================================ */
+.math-hero {
+    margin-top: 56px;
+    padding: 60px 44px;
+    background: linear-gradient(160deg, rgba(4, 10, 7, 0.9), rgba(8, 18, 14, 0.7));
+    border: 1px solid rgba(74, 222, 128, 0.22);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.math-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(74, 222, 128, 0.06), transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.05), transparent 60%);
+    animation: mathPulse 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+@keyframes mathPulse {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.25); }
+}
+.math-hero > * { position: relative; z-index: 1; }
+
+.math-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.math-header h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.math-header h3 .accent {
+    background: linear-gradient(135deg, var(--accent4), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.math-header p {
+    color: var(--fg-dim);
+    font-size: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Boundary detection visual */
+.boundary-visual {
+    margin: 0 auto 48px;
+    max-width: 900px;
+    padding: 28px 32px;
+    background: rgba(2, 5, 3, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.9;
+}
+.boundary-visual .line {
+    display: block;
+    color: var(--fg-dim);
+    animation: lineIn 0.6s ease-out both;
+}
+.boundary-visual .line:nth-child(1) { animation-delay: 0.0s; }
+.boundary-visual .line:nth-child(2) { animation-delay: 0.15s; }
+.boundary-visual .line:nth-child(3) { animation-delay: 0.30s; }
+.boundary-visual .line:nth-child(4) { animation-delay: 0.45s; }
+.boundary-visual .line:nth-child(5) { animation-delay: 0.60s; }
+.boundary-visual .line:nth-child(6) { animation-delay: 0.75s; }
+.boundary-visual .line:nth-child(7) { animation-delay: 0.90s; }
+@keyframes lineIn {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+.boundary-visual .kw { color: var(--accent); }
+.boundary-visual .num { color: var(--accent3); }
+.boundary-visual .op { color: var(--fg-dimmer); }
+.boundary-visual .comment { color: var(--fg-dimmer); font-style: italic; }
+
+/* Feature grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 40px;
+}
+.feature-box {
+    padding: 18px 20px;
+    background: rgba(6, 12, 9, 0.7);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.35s;
+}
+.feature-box:hover {
+    border-color: var(--accent);
+    background: rgba(11, 22, 16, 0.9);
+    transform: translateY(-3px);
+}
+.feature-box .num-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 999px;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+.feature-box .name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--fg);
+    margin-bottom: 4px;
+}
+.feature-box .desc {
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   DNA HELIX — full rebuild
+   ============================================================ */
+.dna-strand {
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: strandDraw 6s ease-in-out infinite alternate;
+}
+.dna-strand.second {
+    animation-delay: -3s;
+}
+@keyframes strandDraw {
+    to { stroke-dashoffset: 0; }
+}
+
+.base-pair {
+    animation: basePairPulse 2.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+.base-pair:nth-child(2n) { animation-delay: -0.4s; }
+.base-pair:nth-child(3n) { animation-delay: -0.8s; }
+.base-pair:nth-child(4n) { animation-delay: -1.2s; }
+.base-pair:nth-child(5n) { animation-delay: -1.6s; }
+@keyframes basePairPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(0.85); }
+    50%      { opacity: 1;   transform: scaleY(1.15); }
+}
+
+.scan-bar {
+    animation: scanMove 6s ease-in-out infinite;
+}
+@keyframes scanMove {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(280px); }
+    100% { transform: translateY(0); }
+}
+
+.base-letter {
+    animation: letterBlink 3s ease-in-out infinite;
+}
+.base-letter:nth-child(2n) { animation-delay: -0.5s; }
+.base-letter:nth-child(3n) { animation-delay: -1.0s; }
+.base-letter:nth-child(5n) { animation-delay: -1.5s; }
+@keyframes letterBlink {
+    0%, 100% { opacity: 0.5; }
+    50%      { opacity: 1; }
+}
+
+/* ============================================================
+   BOUNDARY SCALE VIZ
+   ============================================================ */
+.scale-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 48px 0;
+}
+.scale-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: center;
+}
+.scale-label {
+    font-family: 'SF Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent4);
+    letter-spacing: 0.08em;
+}
+.scale-track {
+    position: relative;
+    height: 32px;
+    background: rgba(6, 12, 9, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.scale-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    animation: markerSlide 4s ease-in-out infinite;
+}
+.scale-marker:nth-child(2) { animation-delay: -0.5s; }
+.scale-marker:nth-child(3) { animation-delay: -1.0s; }
+.scale-marker:nth-child(4) { animation-delay: -1.5s; }
+.scale-marker:nth-child(5) { animation-delay: -2.0s; }
+.scale-marker:nth-child(6) { animation-delay: -2.5s; }
+.scale-marker:nth-child(7) { animation-delay: -3.0s; }
+.scale-marker:nth-child(8) { animation-delay: -3.5s; }
+@keyframes markerSlide {
+    0%   { opacity: 0.3; transform: scaleY(0.5); }
+    50%  { opacity: 1; transform: scaleY(1); }
+    100% { opacity: 0.3; transform: scaleY(0.5); }
+}
+
