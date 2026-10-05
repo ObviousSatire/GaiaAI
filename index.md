@@ -49,7 +49,16 @@ layout: null
             <circle class="particle" cx="1500" cy="420" r="3" fill="#4ade80"/>
             <circle class="particle" cx="700" cy="780" r="2.5" fill="#60a5fa"/>
         </g>
-    </svg>
+            <text class="float-label" x="150" y="120" style="font-family: monospace; font-size: 11px; fill: #4ade80; opacity: 0.25;">ATCG</text>
+        <text class="float-label" x="1450" y="180" style="font-family: monospace; font-size: 10px; fill: #60a5fa; opacity: 0.2;">exon</text>
+        <text class="float-label" x="350" y="620" style="font-family: monospace; font-size: 10px; fill: #a7f3d0; opacity: 0.2;">intron</text>
+        <text class="float-label" x="1250" y="720" style="font-family: monospace; font-size: 11px; fill: #34d399; opacity: 0.25;">GC 0.62</text>
+        <text class="float-label" x="750" y="780" style="font-family: monospace; font-size: 10px; fill: #4ade80; opacity: 0.2;">D = 1.16</text>
+        <text class="float-label" x="1050" y="140" style="font-family: monospace; font-size: 10px; fill: #60a5fa; opacity: 0.2;">chr6</text>
+        <text class="float-label" x="550" y="200" style="font-family: monospace; font-size: 9px; fill: #a7f3d0; opacity: 0.2;">HLA-B</text>
+        <text class="float-label" x="1600" y="500" style="font-family: monospace; font-size: 10px; fill: #34d399; opacity: 0.2;">variant</text>
+        <text class="float-label" x="250" y="400" style="font-family: monospace; font-size: 9px; fill: #4ade80; opacity: 0.2;">fractal</text>
+</svg>
 
     <div class="container hero-content">
         <svg class="hero-logo" width="90" height="90" viewBox="0 0 80 80">
@@ -140,6 +149,16 @@ layout: null
                         <circle cx="20" cy="20" r="2.5" fill="#a7f3d0"/>
                     </svg>
                 </div>
+                <svg class="inner-anim" viewBox="0 0 300 90" preserveAspectRatio="none">
+                    <line x1="0" y1="45" x2="300" y2="45" stroke="#1c3628" stroke-width="0.5"/>
+                    <path class="scan-wave" d="M0,45 Q15,15 30,45 T60,45 T90,45 T120,45 T150,45 T180,45 T210,45 T240,45 T270,45 T300,45" stroke="#4ade80" stroke-width="1.8" fill="none"/>
+                    <path class="scan-wave" d="M0,45 Q15,75 30,45 T60,45 T90,45 T120,45 T150,45 T180,45 T210,45 T240,45 T270,45 T300,45" stroke="#a7f3d0" stroke-width="1" fill="none" opacity="0.5" style="animation-delay: -2.5s"/>
+                    <circle cx="40" cy="45" r="2" fill="#4ade80"/>
+                    <circle cx="120" cy="45" r="2" fill="#60a5fa"/>
+                    <circle cx="200" cy="45" r="2" fill="#34d399"/>
+                    <circle cx="260" cy="45" r="2" fill="#a7f3d0"/>
+                </svg>
+
                 <h3>Discovering patterns</h3>
                 <p>Raw sequence in. The system finds its own structure — coding regions, conserved blocks, regulatory signals — without being told what to look for.</p>
                 <ul class="step-list">
@@ -164,6 +183,19 @@ layout: null
                         <line x1="20" y1="31" x2="9" y2="20" stroke="#60a5fa" stroke-width="1"/>
                     </svg>
                 </div>
+                <svg class="inner-anim" viewBox="0 0 300 90" preserveAspectRatio="none">
+                    <line class="grow-edge" x1="60" y1="45" x2="120" y2="20" stroke="#60a5fa" stroke-width="1.2"/>
+                    <line class="grow-edge e2" x1="60" y1="45" x2="120" y2="70" stroke="#60a5fa" stroke-width="1.2"/>
+                    <line class="grow-edge e3" x1="120" y1="20" x2="180" y2="45" stroke="#a7f3d0" stroke-width="1.2"/>
+                    <line class="grow-edge e4" x1="120" y1="70" x2="180" y2="45" stroke="#a7f3d0" stroke-width="1.2"/>
+                    <line class="grow-edge e5" x1="180" y1="45" x2="240" y2="45" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle class="grow-node" cx="60" cy="45" r="6" fill="#4ade80"/>
+                    <circle class="grow-node g2" cx="120" cy="20" r="5" fill="#60a5fa"/>
+                    <circle class="grow-node g3" cx="120" cy="70" r="5" fill="#34d399"/>
+                    <circle class="grow-node g4" cx="180" cy="45" r="6" fill="#a7f3d0"/>
+                    <circle class="grow-node g5" cx="240" cy="45" r="7" fill="#4ade80"/>
+                </svg>
+
                 <h3>Growing the graph</h3>
                 <p>Every new finding connects. Variants, genes, pathways, diseases, compounds — each relation adds to a network that grows with the field.</p>
                 <ul class="step-list">
@@ -184,6 +216,30 @@ layout: null
                         <polygon points="10,26 8,20 14,20" fill="#a7f3d0"/>
                     </svg>
                 </div>
+                <svg class="inner-anim" viewBox="0 0 300 90" preserveAspectRatio="none">
+                    <circle cx="60" cy="45" r="28" fill="none" stroke="#1c3628" stroke-width="1.5"/>
+                    <circle cx="60" cy="45" r="28" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="44 176" stroke-linecap="round">
+                        <animateTransform attributeName="transform" type="rotate" from="0 60 45" to="360 60 45" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="60" y="49" text-anchor="middle" font-size="9" fill="#a7f3d0" font-family="monospace">loop</text>
+
+                    <line x1="100" y1="45" x2="140" y2="45" stroke="#34d399" stroke-width="1" stroke-dasharray="4 4"/>
+                    <polygon points="140,42 148,45 140,48" fill="#34d399"/>
+
+                    <circle cx="180" cy="45" r="18" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="30 84" stroke-linecap="round">
+                        <animateTransform attributeName="transform" type="rotate" from="360 180 45" to="0 180 45" dur="2.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="180" y="49" text-anchor="middle" font-size="9" fill="#a7f3d0" font-family="monospace">refit</text>
+
+                    <line x1="210" y1="45" x2="240" y2="45" stroke="#34d399" stroke-width="1" stroke-dasharray="4 4"/>
+                    <polygon points="240,42 248,45 240,48" fill="#34d399"/>
+
+                    <circle cx="265" cy="45" r="14" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="22 66" stroke-linecap="round">
+                        <animateTransform attributeName="transform" type="rotate" from="0 265 45" to="360 265 45" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="265" y="49" text-anchor="middle" font-size="9" fill="#a7f3d0" font-family="monospace">+ev</text>
+                </svg>
+
                 <h3>Continuous loop</h3>
                 <p>The system improves on its own. New data arrives, models retrain, and if it helps — prediction improves. If not, it fades.</p>
                 <ul class="step-list">
