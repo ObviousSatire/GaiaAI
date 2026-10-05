@@ -80,8 +80,8 @@ layout: null
 
         <div class="stats">
             <div class="stat">
-                <div class="num" data-count="1" data-format="b">0</div>
-                <div class="label">Variants in graph</div>
+                <div class="num static">1.08B</div>
+                <div class="label">Variants mapped</div>
             </div>
             <div class="stat">
                 <div class="num" data-count="25000000" data-format="m">0</div>
@@ -244,6 +244,65 @@ layout: null
             </div>
         </div>
 
+        <div class="evidence-cross">
+            <h3>Cross-cutting validation</h3>
+            <div class="cross-grid">
+                <div class="cross-item">
+                    <div class="cross-icon">
+                        <svg width="28" height="28" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                            <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                            <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="cross-title">Cross-species</div>
+                        <div class="cross-desc">Patterns that hold across evolutionary distance are more likely to reflect real biology.</div>
+                    </div>
+                </div>
+
+                <div class="cross-item">
+                    <div class="cross-icon">
+                        <svg width="28" height="28" viewBox="0 0 40 40">
+                            <circle cx="14" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                            <circle cx="26" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                            <circle cx="20" cy="30" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="cross-title">Animal models</div>
+                        <div class="cross-desc">Predictions checked against real physiological responses in established model systems.</div>
+                    </div>
+                </div>
+
+                <div class="cross-item">
+                    <div class="cross-icon">
+                        <svg width="28" height="28" viewBox="0 0 40 40">
+                            <rect x="8" y="10" width="24" height="20" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                            <line x1="16" y1="20" x2="24" y2="20" stroke="#a7f3d0" stroke-width="1.5"/>
+                            <line x1="20" y1="16" x2="20" y2="24" stroke="#a7f3d0" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="cross-title">Human trial models</div>
+                        <div class="cross-desc">Protocols evaluated against clinical data — dosing, outcomes, adverse events, timing.</div>
+                    </div>
+                </div>
+
+                <div class="cross-item">
+                    <div class="cross-icon">
+                        <svg width="28" height="28" viewBox="0 0 40 40">
+                            <path d="M6,32 L6,24 L12,24 L12,18 L18,18 L18,26 L24,26 L24,14 L30,14 L30,10 L34,10" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="cross-title">Held-out evaluation</div>
+                        <div class="cross-desc">Tested on chromosomes, diseases, and compounds never seen during training.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="outputs-strip">
             <div class="output-item">
                 <svg width="32" height="32" viewBox="0 0 32 32">
@@ -394,6 +453,32 @@ layout: null
             </div>
         </div>
 
+        <div class="reading-ticker">
+            <div class="ticker-track">
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Peer-reviewed literature</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Reference genomes</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Protein structure archives</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Population variant databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Clinical trial registries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Bioactivity datasets</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Pathway databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Disease association catalogs</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Compound libraries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Structural archives</span>
+                <!-- duplicate for seamless loop -->
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Peer-reviewed literature</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Reference genomes</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Protein structure archives</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Population variant databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Clinical trial registries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Bioactivity datasets</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Pathway databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Disease association catalogs</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Compound libraries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Structural archives</span>
+            </div>
+        </div>
+
         <div class="scan-flow-wrap">
             <h3>The continuous loop</h3>
             <div class="scan-row">
@@ -422,75 +507,6 @@ layout: null
                     <div class="label">Retrain</div>
                     <div class="sub">Learn from new data</div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="validation">
-    <div class="container">
-        <h2>Validated <span class="accent">end to end</span></h2>
-        <p class="lead">
-            Patterns aren't just learned — they're stress-tested. Every model
-            is verified across independent axes before it earns a place in
-            the pipeline.
-        </p>
-
-        <div class="validation-grid">
-            <div class="validation-card">
-                <div class="icon-wrap">
-                    <svg width="36" height="36" viewBox="0 0 40 40">
-                        <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
-                    </svg>
-                </div>
-                <h3>Cross-species</h3>
-                <p>Models are validated against genomic structure from multiple species. A pattern that holds across evolutionary distance is more likely to reflect real biology.</p>
-                <span class="meta">Cross-species</span>
-            </div>
-
-            <div class="validation-card">
-                <div class="icon-wrap">
-                    <svg width="36" height="36" viewBox="0 0 40 40">
-                        <circle cx="14" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-                        <circle cx="26" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-                        <circle cx="20" cy="30" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-                        <line x1="17" y1="22" x2="20" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
-                        <line x1="23" y1="22" x2="20" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
-                    </svg>
-                </div>
-                <h3>Animal models</h3>
-                <p>Predictions are run against established animal disease models. Simulated outcomes are compared to real physiological responses from published studies.</p>
-                <span class="meta">In vivo</span>
-            </div>
-
-            <div class="validation-card">
-                <div class="icon-wrap">
-                    <svg width="36" height="36" viewBox="0 0 40 40">
-                        <rect x="8" y="10" width="24" height="20" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <line x1="20" y1="10" x2="20" y2="14" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <line x1="20" y1="26" x2="20" y2="30" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <line x1="16" y1="20" x2="24" y2="20" stroke="#a7f3d0" stroke-width="1.5"/>
-                    </svg>
-                </div>
-                <h3>Human trial models</h3>
-                <p>Protocols are evaluated against human clinical trial data — dosing, outcomes, adverse events, and time-to-response across published cohorts.</p>
-                <span class="meta">Clinical</span>
-            </div>
-
-            <div class="validation-card">
-                <div class="icon-wrap">
-                    <svg width="36" height="36" viewBox="0 0 40 40">
-                        <path d="M6,32 L6,24 L12,24 L12,18 L18,18 L18,26 L24,26 L24,14 L30,14 L30,10 L34,10" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/>
-                        <circle cx="6" cy="32" r="2" fill="#34d399"/>
-                        <circle cx="34" cy="10" r="2" fill="#34d399"/>
-                    </svg>
-                </div>
-                <h3>Holdout evaluation</h3>
-                <p>Models are tested on chromosomes, diseases, and compounds never seen during training. If performance holds, the pattern generalizes.</p>
-                <span class="meta">Held-out</span>
             </div>
         </div>
     </div>
@@ -663,6 +679,45 @@ layout: null
             <tr><td>Compound library V</td><td>128.7 GB</td><td>Compound set</td><td><a href="https://doi.org/10.5281/zenodo.23139933">23139933</a></td></tr>
             <tr><td>Benchmarks</td><td>20 GB</td><td>Reference data</td><td><a href="https://doi.org/10.5281/zenodo.22946723">22946723</a></td></tr>
         </table>
+    </div>
+</section>
+
+<section class="use-it">
+    <div class="container">
+        <h2>Use it</h2>
+        <p class="lead">Three ways to start — depending on what you want to build on.</p>
+
+        <div class="use-grid">
+            <a class="use-card" href="https://doi.org/10.5281/zenodo.22949286" target="_blank" rel="noopener">
+                <svg width="32" height="32" viewBox="0 0 40 40">
+                    <ellipse cx="20" cy="12" rx="12" ry="4" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,12 L8,28 Q8,32 20,32 Q32,32 32,28 L32,12" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                </svg>
+                <div class="title">Explore the datasets</div>
+                <div class="desc">Every stage of the pipeline, archived with permanent identifiers. Downloads, sizes, and contents for each dataset.</div>
+                <div class="arrow">Open datasets →</div>
+            </a>
+
+            <a class="use-card" href="https://github.com/ObviousSatire/GaiaAI" target="_blank" rel="noopener">
+                <svg width="32" height="32" viewBox="0 0 40 40">
+                    <path d="M14,6 L6,20 L14,34" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M26,6 L34,20 L26,34" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="22" y1="10" x2="18" y2="30" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div class="title">Read the source</div>
+                <div class="desc">C++17 and Python stdlib only. No external dependencies. The physics engine, the learning pipeline, and the scanning loop.</div>
+                <div class="arrow">Open source →</div>
+            </a>
+
+            <a class="use-card" href="#pipeline" target="_self">
+                <svg width="32" height="32" viewBox="0 0 40 40">
+                    <path d="M6,32 L6,24 L14,24 L14,16 L22,16 L22,26 L30,26 L30,12 L34,12" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                <div class="title">Follow the pipeline</div>
+                <div class="desc">See how raw genome input becomes a treatment protocol — the five stages, the three evidence layers, and the outputs.</div>
+                <div class="arrow">Jump to pipeline →</div>
+            </a>
+        </div>
     </div>
 </section>
 
