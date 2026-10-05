@@ -80,8 +80,8 @@ layout: null
 
         <div class="stats">
             <div class="stat">
-                <div class="num" data-count="1081166" data-format="k">0</div>
-                <div class="label">Variants mapped</div>
+                <div class="num" data-count="1" data-format="b">0</div>
+                <div class="label">Variants in graph</div>
             </div>
             <div class="stat">
                 <div class="num" data-count="25000000" data-format="m">0</div>
@@ -192,6 +192,92 @@ layout: null
                     <li><span class="bullet"></span><div><strong>Model retrains</strong> <span>— weights adjust on new inputs</span></div></li>
                     <li><span class="bullet"></span><div><strong>Impact measured</strong> <span>— help stays, noise fades</span></div></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="evidence">
+    <div class="container">
+        <h2>Evidence across <span class="accent">every layer</span></h2>
+        <p class="lead">
+            Predictions are checked against three independent kinds of
+            evidence — computational, cellular, and physiological. A claim
+            that survives all three is worth acting on.
+        </p>
+
+        <div class="evidence-grid">
+            <div class="evidence-card">
+                <span class="tag">In silico</span>
+                <h3>Computational</h3>
+                <p>Before anything touches a cell, every prediction is stress-tested in pure computation. Models run, scores are produced, and confidence is estimated from the spread of agreement across independent methods.</p>
+                <ul>
+                    <li><strong>Structure prediction</strong> — check every candidate against modeled protein geometry</li>
+                    <li><strong>Binding simulation</strong> — estimate interaction strength across methods</li>
+                    <li><strong>Cross-validation</strong> — hold out data the model never saw</li>
+                    <li><strong>Confidence intervals</strong> — measure agreement across independent approaches</li>
+                </ul>
+            </div>
+
+            <div class="evidence-card">
+                <span class="tag">In vitro</span>
+                <h3>Cellular</h3>
+                <p>Predictions are compared against real cell-based assays from public literature. Pathway activity, gene expression, and compound cytotoxicity all feed back into the model.</p>
+                <ul>
+                    <li><strong>Cell-line assays</strong> — activity against published screens</li>
+                    <li><strong>Pathway response</strong> — how signaling shifts under treatment</li>
+                    <li><strong>Gene expression</strong> — transcript-level confirmation of predicted effects</li>
+                    <li><strong>Cytotoxicity profiles</strong> — safe dose ranges from established tests</li>
+                </ul>
+            </div>
+
+            <div class="evidence-card">
+                <span class="tag">In vivo</span>
+                <h3>Physiological</h3>
+                <p>Protocols are evaluated against animal model studies and human trial data. Where the model predicts a specific outcome, that outcome is checked against real physiological responses in published cohorts.</p>
+                <ul>
+                    <li><strong>Animal disease models</strong> — response in established model systems</li>
+                    <li><strong>Clinical trial data</strong> — dosing, outcomes, adverse events</li>
+                    <li><strong>Human cohorts</strong> — time-to-response across published studies</li>
+                    <li><strong>Longitudinal outcomes</strong> — durability of effect at follow-up</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="outputs-strip">
+            <div class="output-item">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <circle cx="16" cy="16" r="12" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="6" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="2.5" fill="#a7f3d0"/>
+                </svg>
+                <div class="name">Ranked candidates</div>
+                <div class="sub">Compounds ordered by evidence</div>
+            </div>
+            <div class="output-item">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <path d="M4,24 L4,16 L10,16 L10,10 L16,10 L16,18 L22,18 L22,6 L28,6" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                <div class="name">Protocol timeline</div>
+                <div class="sub">Outcomes across time</div>
+            </div>
+            <div class="output-item">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <rect x="6" y="6" width="20" height="20" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                    <line x1="11" y1="12" x2="21" y2="12" stroke="#a7f3d0" stroke-width="1.5"/>
+                    <line x1="11" y1="16" x2="21" y2="16" stroke="#a7f3d0" stroke-width="1.5"/>
+                    <line x1="11" y1="20" x2="17" y2="20" stroke="#a7f3d0" stroke-width="1.5"/>
+                </svg>
+                <div class="name">Evidence report</div>
+                <div class="sub">Full trace from signal to plan</div>
+            </div>
+            <div class="output-item">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <path d="M16,4 L28,10 L28,22 L16,28 L4,22 L4,10 Z" fill="none" stroke="#34d399" stroke-width="1.5"/>
+                    <circle cx="16" cy="16" r="3" fill="#34d399"/>
+                </svg>
+                <div class="name">Confidence score</div>
+                <div class="sub">How much evidence supports it</div>
             </div>
         </div>
     </div>
@@ -611,6 +697,8 @@ const observer = new IntersectionObserver((entries) => {
             const val = Math.floor(target * ease);
             if (fmt === 'k' && val >= 1000) {
                 el.textContent = (val / 1000).toFixed(2).replace(/\.00$/, '') + 'M';
+            } else if (fmt === 'b') {
+                el.textContent = val + 'B+';
             } else if (fmt === 'm' && val >= 1000000) {
                 el.textContent = (val / 1000000).toFixed(0) + 'M+';
             } else if (fmt === 'plus') {
