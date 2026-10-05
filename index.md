@@ -147,12 +147,13 @@ layout: null
     <div class="container">
         <h2>How it <span class="accent">learns</span></h2>
         <p class="lead">
-            Nothing is hand-coded. The system discovers its own patterns from
-            data, then continues to learn as more arrives.
+            The system discovers its own patterns. Nothing is hand-coded.
+            It reads raw sequence, extracts its own features, and updates
+            as new evidence arrives.
         </p>
 
         <div class="learning-loop">
-            <h3>Reading the genome</h3>
+            <h3>Discovering patterns</h3>
             <div class="loop-steps">
                 <div class="loop-step">
                     <strong>Ingest raw sequence</strong>
@@ -174,7 +175,7 @@ layout: null
         </div>
 
         <div class="learning-loop">
-            <h3>Reading the world</h3>
+            <h3>Growing the graph</h3>
             <div class="loop-steps">
                 <div class="loop-step">
                     <strong>Ingest mappings</strong>
@@ -190,29 +191,29 @@ layout: null
                 </div>
                 <div class="loop-step">
                     <strong>Retrain</strong>
-                    As more pairs are labeled, the classifier updates. Predictions improve.
+                    As more pairs are labeled, the classifier updates.
                 </div>
             </div>
         </div>
 
         <div class="learning-loop">
-            <h3>The loop</h3>
+            <h3>Continuous improvement</h3>
             <div class="loop-steps">
                 <div class="loop-step">
-                    <strong>New variant arrives</strong>
-                    The system queries its genome model.
+                    <strong>New evidence arrives</strong>
+                    Fresh variant, new paper, updated structure.
                 </div>
                 <div class="loop-step">
-                    <strong>Structural features returned</strong>
+                    <strong>Context is retrieved</strong>
                     Segment class, conservation, GC content, motif context.
                 </div>
                 <div class="loop-step">
-                    <strong>Features join training data</strong>
-                    The classifier retrains with the new inputs.
+                    <strong>Model retrains</strong>
+                    Weights adjust on the new inputs.
                 </div>
                 <div class="loop-step">
-                    <strong>Performance measured</strong>
-                    If features help, prediction improves. If not, they fade.
+                    <strong>Improvement measured</strong>
+                    If it helps, prediction improves. If not, it fades.
                 </div>
             </div>
         </div>
