@@ -60,6 +60,57 @@ layout: null
         <text class="float-label" x="250" y="400" style="font-family: monospace; font-size: 9px; fill: #4ade80; opacity: 0.2;">fractal</text>
 </svg>
 
+    <div class="eq-layer" aria-hidden="true">
+        <span class="eq small"  style="top: 8%;  left: 5%;">
+            H <span class="op">=</span> <span class="op">−</span> Σ <span class="v">p</span><sub>i</sub> <span class="f">log</span><sub>2</sub> <span class="v">p</span><sub>i</sub>
+        </span>
+        <span class="eq med"    style="top: 15%; left: 72%;">
+            D <span class="op">=</span> <span class="f">lim</span><sub>ε→0</sub> <span class="f">log</span> N(ε) <span class="op">/</span> <span class="f">log</span>(1/ε)
+        </span>
+        <span class="eq small"  style="top: 22%; left: 30%;">
+            E <span class="op">~</span> c · n<sup><span class="v">H</span></sup>
+        </span>
+        <span class="eq"        style="top: 30%; left: 82%;">
+            <span class="v">P</span>(c | x)
+        </span>
+        <span class="eq med"    style="top: 38%; left: 8%;">
+            E <span class="op">=</span> 4ε[ (σ/r)<sup><span class="n">12</span></sup> <span class="op">−</span> (σ/r)<sup><span class="n">6</span></sup> ]
+        </span>
+        <span class="eq small"  style="top: 44%; left: 60%;">
+            w<sub>t+1</sub> <span class="op">=</span> w<sub>t</sub> <span class="op">−</span> η ∇L(w<sub>t</sub>)
+        </span>
+        <span class="eq large"  style="top: 52%; left: 20%;">
+            <span class="v">F</span><sub>1</sub> <span class="op">=</span> <span class="n">2</span> · P · R <span class="op">/</span> (P + R)
+        </span>
+        <span class="eq med"    style="top: 60%; left: 78%;">
+            E <span class="op">=</span> <span class="n">332</span> · q<sub>i</sub> q<sub>j</sub> · e<sup>−κr</sup> <span class="op">/</span> r
+        </span>
+        <span class="eq small"  style="top: 68%; left: 4%;">
+            χ<sub>i</sub> <span class="op">←</span> χ<sub>i</sub> <span class="op">+</span> η q<sub>i</sub> <span class="op">+</span> Σ γ<sub>ij</sub> q<sub>j</sub>
+        </span>
+        <span class="eq"        style="top: 76%; left: 55%;">
+            ΔG <span class="op">=</span> ⟨G⟩<sub>bound</sub> <span class="op">−</span> ⟨G⟩<sub>free</sub>
+        </span>
+        <span class="eq small"  style="top: 84%; left: 28%;">
+            λ ∈ [<span class="n">0</span>, <span class="n">1</span>]
+        </span>
+        <span class="eq med"    style="top: 90%; left: 74%;">
+            ∂E/∂t <span class="op">→</span> <span class="n">0</span>
+        </span>
+        <span class="eq small"  style="top: 12%; left: 45%;">
+            ∫ p(x) dx <span class="op">=</span> <span class="n">1</span>
+        </span>
+        <span class="eq"        style="top: 65%; left: 40%;">
+            <span class="op">∇</span>·F <span class="op">=</span> <span class="n">0</span>
+        </span>
+        <span class="eq small"  style="top: 48%; left: 88%;">
+            Σ<sub>i</sub> q<sub>i</sub> <span class="op">=</span> <span class="n">0</span>
+        </span>
+        <span class="eq med"    style="top: 3%; left: 55%;">
+            ⟨S⟩ <span class="op">=</span> <span class="op">−</span>k<sub>B</sub> Σ p<sub>i</sub> ln p<sub>i</sub>
+        </span>
+    </div>
+
     <div class="container hero-content">
         <svg class="hero-logo" width="90" height="90" viewBox="0 0 80 80">
             <defs>
