@@ -6,38 +6,37 @@ layout: null
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAIA — DNA-to-Cure Platform for Ankylosing Spondylitis</title>
-<meta name="description" content="A computational platform for Ankylosing Spondylitis drug discovery. Genome scanning, compound screening, reversal protocol design.">
+<title>GAIA — DNA-to-Cure Platform</title>
+<meta name="description" content="A computational platform for disease research. Genome scanning, compound screening, reversal protocol design.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <div class="hero">
-    <svg class="hero-bg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+    <svg class="hero-bg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
         <defs>
             <linearGradient id="helixGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.6"/>
-                <stop offset="50%" stop-color="#60a5fa" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.6"/>
+                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.7"/>
+                <stop offset="50%" stop-color="#60a5fa" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.7"/>
             </linearGradient>
         </defs>
-        <g transform="translate(600, 300)" opacity="0.4">
-            <path d="M-500,0 Q-250,-150 0,0 T500,0" stroke="url(#helixGrad)" stroke-width="1.5" fill="none"/>
-            <path d="M-500,0 Q-250,150 0,0 T500,0" stroke="url(#helixGrad)" stroke-width="1.5" fill="none"/>
-            <path d="M-450,20 Q-250,-130 0,20 T450,20" stroke="url(#helixGrad)" stroke-width="1" fill="none" opacity="0.6"/>
-            <path d="M-450,-20 Q-250,130 0,-20 T450,-20" stroke="url(#helixGrad)" stroke-width="1" fill="none" opacity="0.6"/>
-            <path d="M-400,40 Q-250,-110 0,40 T400,40" stroke="url(#helixGrad)" stroke-width="0.8" fill="none" opacity="0.4"/>
-            <path d="M-400,-40 Q-250,110 0,-40 T400,-40" stroke="url(#helixGrad)" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <g class="helix-path" transform="translate(800, 350)">
+            <path d="M-800,0 Q-400,-180 0,0 T800,0" stroke="url(#helixGrad)" stroke-width="1.8" fill="none"/>
+            <path d="M-800,0 Q-400,180 0,0 T800,0" stroke="url(#helixGrad)" stroke-width="1.8" fill="none"/>
+            <path d="M-700,30 Q-400,-150 0,30 T700,30" stroke="url(#helixGrad)" stroke-width="1" fill="none" opacity="0.6"/>
+            <path d="M-700,-30 Q-400,150 0,-30 T700,-30" stroke="url(#helixGrad)" stroke-width="1" fill="none" opacity="0.6"/>
         </g>
-        <g opacity="0.3">
-            <line x1="200" y1="290" x2="200" y2="310" stroke="#60a5fa" stroke-width="1"/>
-            <line x1="300" y1="270" x2="300" y2="330" stroke="#a78bfa" stroke-width="1"/>
-            <line x1="400" y1="250" x2="400" y2="350" stroke="#4ade80" stroke-width="1"/>
-            <line x1="500" y1="240" x2="500" y2="360" stroke="#60a5fa" stroke-width="1"/>
-            <line x1="700" y1="240" x2="700" y2="360" stroke="#60a5fa" stroke-width="1"/>
-            <line x1="800" y1="250" x2="800" y2="350" stroke="#4ade80" stroke-width="1"/>
-            <line x1="900" y1="270" x2="900" y2="330" stroke="#a78bfa" stroke-width="1"/>
-            <line x1="1000" y1="290" x2="1000" y2="310" stroke="#60a5fa" stroke-width="1"/>
+        <g class="float-dot" opacity="0.6">
+            <circle cx="200" cy="150" r="2" fill="#4ade80"/>
+            <circle cx="400" cy="550" r="2" fill="#60a5fa"/>
+            <circle cx="1200" cy="200" r="2" fill="#a78bfa"/>
+            <circle cx="1400" cy="500" r="2" fill="#4ade80"/>
+            <circle cx="800" cy="120" r="2" fill="#60a5fa"/>
+            <circle cx="300" cy="400" r="2" fill="#a78bfa"/>
+            <circle cx="1300" cy="380" r="2" fill="#4ade80"/>
+            <circle cx="600" cy="600" r="2" fill="#60a5fa"/>
+            <circle cx="1000" cy="580" r="2" fill="#a78bfa"/>
         </g>
     </svg>
 
@@ -57,32 +56,32 @@ layout: null
 
         <h1>GAIA</h1>
         <p class="tagline">
-            A DNA-to-cure platform for <strong>Ankylosing Spondylitis</strong>.
-            Scan a genome, find disease-associated genes, screen compounds against
-            those targets, and design a treatment protocol — end to end.
+            A DNA-to-cure platform. Scan a genome, find disease-associated
+            genes, screen compounds against those targets, and design a
+            treatment protocol — <strong>end to end</strong>.
         </p>
 
         <div class="hero-cta">
-            <a href="#pipeline" class="btn btn-primary">See the pipeline →</a>
+            <a href="#pipeline" class="btn btn-primary">Explore the pipeline →</a>
             <a href="https://github.com/ObviousSatire/GaiaAI" class="btn">View source</a>
         </div>
 
         <div class="stats">
             <div class="stat">
-                <div class="num" data-count="85402">0</div>
-                <div class="label">Chr6 windows</div>
-            </div>
-            <div class="stat">
                 <div class="num" data-count="1081166" data-format="k">0</div>
                 <div class="label">Variant mappings</div>
             </div>
             <div class="stat">
-                <div class="num" data-count="444398">0</div>
-                <div class="label">ZINC compounds</div>
+                <div class="num" data-count="7" data-format="plus">0</div>
+                <div class="label">Compound libraries</div>
             </div>
             <div class="stat">
-                <div class="num" data-count="18916">0</div>
-                <div class="label">PDBbind complexes</div>
+                <div class="num" data-count="9" data-format="plus">0</div>
+                <div class="label">Physics methods</div>
+            </div>
+            <div class="stat">
+                <div class="num" data-count="380" data-format="gb">0</div>
+                <div class="label">Data published</div>
             </div>
         </div>
     </div>
@@ -90,21 +89,20 @@ layout: null
 
 <section>
     <div class="container-narrow">
-        <h2>Why <span class="accent">Ankylosing Spondylitis</span></h2>
+        <h2>A platform for <span class="accent">complex disease</span></h2>
         <p class="lead">
-            AS is an autoimmune disease where the immune system attacks the
-            spine and joints, eventually fusing vertebrae. Current drugs reduce
-            symptoms but don't reverse damage. GAIA starts with the whole genome
-            instead of a hypothesis.
+            Most drug discovery starts with a hypothesis and tests it. GAIA
+            starts with the full genome — every variant, every gene, every
+            pathway — and works backward to find what could help.
         </p>
         <div class="context-box">
-            <h3>Disease burden</h3>
+            <h3>Designed to generalize</h3>
             <p>
-                AS affects roughly 0.5% of the population, with strong HLA-B27
-                association. Diagnosis typically happens years after symptom
-                onset. Once vertebrae fuse (ankylosis), damage is permanent.
-                The goal isn't just remission — it's stopping damage before it
-                happens.
+                The pipeline isn't tied to one disease. Genome scanning,
+                variant mapping, compound screening, and protocol simulation
+                are all disease-agnostic. The first deployment is for an
+                autoimmune condition, but the same architecture applies to
+                inflammatory, neurodegenerative, and metabolic diseases.
             </p>
         </div>
     </div>
@@ -124,7 +122,7 @@ layout: null
                     <path d="M8,20 Q20,30 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
                 </svg>
                 <h3>Scan genome</h3>
-                <p>Chaos-fractal analysis classifies every window by fractal dimension and GC content.</p>
+                <p>Chaos-fractal analysis classifies every window by fractal dimension, Hurst exponent, and GC content — genome-wide.</p>
             </div>
             <div class="stage">
                 <div class="stage-num">STAGE 02</div>
@@ -136,7 +134,7 @@ layout: null
                     <line x1="30" y1="24" x2="30" y2="30" stroke="#60a5fa" stroke-width="1.5"/>
                 </svg>
                 <h3>Map variants</h3>
-                <p>1000 Genomes European variants mapped to Ensembl gene coordinates.</p>
+                <p>Over 1 million population variants mapped to gene coordinates, with allele frequencies and functional annotation.</p>
             </div>
             <div class="stage">
                 <div class="stage-num">STAGE 03</div>
@@ -147,7 +145,7 @@ layout: null
                     <circle cx="20" cy="20" r="3" fill="#a78bfa"/>
                 </svg>
                 <h3>Screen compounds</h3>
-                <p>444,398 ZINC compounds and 4.15 GB of COCONUT natural products.</p>
+                <p>Seven compound libraries — including hundreds of thousands of purchasable molecules and natural products.</p>
             </div>
             <div class="stage">
                 <div class="stage-num">STAGE 04</div>
@@ -156,7 +154,7 @@ layout: null
                     <circle cx="20" cy="20" r="4" fill="#4ade80"/>
                 </svg>
                 <h3>Score binding</h3>
-                <p>Molecular physics: Lennard-Jones, Coulomb, GB solvation, FEP, entropy, QM.</p>
+                <p>Nine molecular physics methods, from Lennard-Jones to quantum corrections — a self-contained C++17 engine.</p>
             </div>
             <div class="stage">
                 <div class="stage-num">STAGE 05</div>
@@ -164,7 +162,7 @@ layout: null
                     <path d="M8,20 L16,28 L32,12" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
                 </svg>
                 <h3>Design protocol</h3>
-                <p>Ranked multi-compound reversal with damage prediction and safety profile.</p>
+                <p>Ranked multi-compound protocol with predicted outcomes at 30, 90, 180, and 365 days.</p>
             </div>
         </div>
     </div>
@@ -183,7 +181,7 @@ layout: null
                     <line x1="18" y1="24" x2="18" y2="32" stroke="#4ade80" stroke-width="1.5"/>
                 </svg>
                 <h3>Chaos-fractal scanner</h3>
-                <p>Classifies chromosome windows by fractal dimension, Hurst exponent, and GC content. Identifies coding regions and conserved patterns across 170M bp in about 10 minutes.</p>
+                <p>Classifies chromosome windows by fractal dimension and Hurst exponent. Identifies coding regions, conserved patterns, and structural signals across whole genomes.</p>
             </div>
             <div class="feature">
                 <svg width="36" height="36" viewBox="0 0 36 36">
@@ -197,7 +195,7 @@ layout: null
                     <line x1="18" y1="27" x2="9" y2="18" stroke="#60a5fa" stroke-width="1"/>
                 </svg>
                 <h3>Variant-to-gene mapping</h3>
-                <p>Over one million European variants mapped to gene coordinates. AS-relevant genes identified with allele frequencies: HLA-B, HLA-DRB1, IL23R, JAK1, and more.</p>
+                <p>Over 1 million population variants mapped to gene coordinates. Allele frequencies, functional context, and gene-level aggregation at scale.</p>
             </div>
             <div class="feature">
                 <svg width="36" height="36" viewBox="0 0 36 36">
@@ -208,7 +206,7 @@ layout: null
                     <line x1="22" y1="18" x2="24" y2="18" stroke="#a78bfa" stroke-width="1"/>
                 </svg>
                 <h3>Compound screening</h3>
-                <p>ZINC 3D compound library plus COCONUT natural products, screened against AS targets. Real docking parameters, real scores, real rankings.</p>
+                <p>Seven compound libraries covering purchasable small molecules, natural products, and known drugs. Real docking parameters, real scores, real rankings.</p>
             </div>
             <div class="feature">
                 <svg width="36" height="36" viewBox="0 0 36 36">
@@ -219,7 +217,7 @@ layout: null
                     <line x1="30" y1="18" x2="36" y2="18" stroke="#4ade80" stroke-width="1.5"/>
                 </svg>
                 <h3>Molecular physics</h3>
-                <p>Self-contained C++17 engine. Lennard-Jones, Coulomb, Generalized Born, FEP, entropy, QM. No external dependencies.</p>
+                <p>A self-contained C++17 engine — nine physics methods, no external dependencies, no toolkits. Everything from Lennard-Jones to quantum corrections in one header.</p>
             </div>
             <div class="feature">
                 <svg width="36" height="36" viewBox="0 0 36 36">
@@ -228,7 +226,7 @@ layout: null
                     <circle cx="30" cy="10" r="2" fill="#60a5fa"/>
                 </svg>
                 <h3>Protocol simulator</h3>
-                <p>Multi-compound reversal protocols with predicted damage reversal, joint function restoration, disease risk, and safety profiles at 30, 90, 180, and 365 days.</p>
+                <p>Multi-compound protocol simulation with predicted outcomes across time — damage reversal, function restoration, risk profiles, and safety margins.</p>
             </div>
             <div class="feature">
                 <svg width="36" height="36" viewBox="0 0 36 36">
@@ -237,7 +235,7 @@ layout: null
                     <path d="M6,18 Q6,22 18,22 Q30,22 30,18" fill="none" stroke="#a78bfa" stroke-width="1.5"/>
                 </svg>
                 <h3>Reproducible datasets</h3>
-                <p>Every dataset published on Zenodo with permanent DOIs. Over 380 GB of raw inputs, intermediate results, and benchmarks — fully reproducible.</p>
+                <p>Every dataset archived on Zenodo with permanent DOIs. Over 380 GB of raw inputs, intermediate results, and benchmarks — reproducible from public sources.</p>
             </div>
         </div>
     </div>
@@ -247,9 +245,8 @@ layout: null
     <div class="container">
         <h2>Physics <span class="accent">engine</span></h2>
         <p class="lead">
-            A self-contained molecular physics engine, written from scratch in
-            C++17. Nine methods in one canonical header — no external libraries,
-            no toolkits, no dependencies.
+            Nine molecular physics methods, written from scratch in C++17.
+            One canonical header. Zero external dependencies.
         </p>
 
         <div class="physics-grid">
@@ -292,7 +289,7 @@ layout: null
         </div>
 
         <div class="code-block">
-<span class="comment">// gaia_physics.hpp — 492 lines, zero dependencies</span>
+<span class="comment">// gaia_physics.hpp — one header, zero dependencies</span>
 <span class="key">namespace</span> gaia {
     <span class="comment">// Element data, bond detection, H placement, Gasteiger charges</span>
     <span class="comment">// LJ + Coulomb + Debye-Hückel, GB solvation, SASA</span>
@@ -308,51 +305,51 @@ layout: null
     <div class="container">
         <h2>Published <span class="accent">datasets</span></h2>
         <p class="lead">
-            All raw data archived on Zenodo with permanent DOIs. Fully
-            reproducible from public sources.
+            Every stage archived on Zenodo with permanent DOIs. Reproducible
+            from public sources.
         </p>
 
         <table class="data-table">
             <tr>
                 <th>Dataset</th>
                 <th>Size</th>
-                <th>Files</th>
+                <th>Contents</th>
                 <th>DOI</th>
             </tr>
             <tr>
-                <td>H18 — ZINC shards</td>
+                <td>Compound library I</td>
                 <td>25.7 GB</td>
-                <td>53</td>
+                <td>ZINC shards</td>
                 <td><a href="https://doi.org/10.5281/zenodo.22949286">22949286</a></td>
             </tr>
             <tr>
-                <td>H19 — compound library</td>
+                <td>Compound library II</td>
                 <td>44.3 GB</td>
-                <td>264,123</td>
+                <td>ZINC compound set</td>
                 <td><a href="https://doi.org/10.5281/zenodo.23110910">23110910</a></td>
             </tr>
             <tr>
-                <td>H20 — compound library</td>
+                <td>Compound library III</td>
                 <td>45.1 GB</td>
-                <td>321,494</td>
+                <td>ZINC compound set</td>
                 <td><a href="https://doi.org/10.5281/zenodo.23124533">23124533</a></td>
             </tr>
             <tr>
-                <td>H21 — compound library</td>
+                <td>Compound library IV</td>
                 <td>93.7 GB</td>
-                <td>374,993</td>
+                <td>ZINC compound set</td>
                 <td><a href="https://doi.org/10.5281/zenodo.23127161">23127161</a></td>
             </tr>
             <tr>
-                <td>H22 — compound library</td>
+                <td>Compound library V</td>
                 <td>128.7 GB</td>
-                <td>428,028</td>
+                <td>ZINC compound set</td>
                 <td><a href="https://doi.org/10.5281/zenodo.23139933">23139933</a></td>
             </tr>
             <tr>
-                <td>Benchmarks — PDBbind, DUD-E, FEP+</td>
+                <td>Benchmarks</td>
                 <td>20 GB</td>
-                <td>77,776</td>
+                <td>PDBbind, DUD-E, FEP+</td>
                 <td><a href="https://doi.org/10.5281/zenodo.22946723">22946723</a></td>
             </tr>
         </table>
@@ -363,33 +360,34 @@ layout: null
     <div class="container">
         <h2>Built on <span class="accent">public data</span></h2>
         <p class="lead">
-            Every stage of GAIA runs on publicly available biological data.
+            Every stage of GAIA runs on publicly available biological data —
+            no proprietary datasets, no hidden inputs.
         </p>
 
         <div class="features">
             <div class="feature">
-                <h3>hg38 reference genome</h3>
-                <p>3.1 GB human reference. Chaos-fractal analysis of chromosome 6 identifies HLA-B region structure.</p>
+                <h3>Reference genomes</h3>
+                <p>Human reference assemblies, gene annotations, and population cohorts. The chaos-fractal scanner and variant mapper both work on standard formats.</p>
             </div>
             <div class="feature">
-                <h3>1000 Genomes EUR</h3>
-                <p>946,650 variants from European populations. Allele frequencies mapped to gene coordinates.</p>
+                <h3>Population genetics</h3>
+                <p>Over a million variants from public population studies. Allele frequencies mapped to gene coordinates with functional context.</p>
             </div>
             <div class="feature">
-                <h3>Ensembl 110</h3>
-                <p>62,754 gene annotations with GRCh38 coordinates. Authoritative gene models.</p>
+                <h3>Gene annotations</h3>
+                <p>Tens of thousands of curated gene models with GRCh38 coordinates. Authoritative sources for gene boundaries and transcripts.</p>
             </div>
             <div class="feature">
-                <h3>gnomAD v4.0</h3>
-                <p>66 GB population variant frequencies. Real human genetic diversity at scale.</p>
+                <h3>Population frequencies</h3>
+                <p>Dozens of gigabytes of population-scale variant frequencies. Real human genetic diversity used as the base layer.</p>
             </div>
             <div class="feature">
-                <h3>PDBbind 2020R1</h3>
-                <p>18,916 protein-ligand complexes with experimental binding data. Standard benchmark for physics validation.</p>
+                <h3>Binding benchmarks</h3>
+                <p>Tens of thousands of protein-ligand complexes with experimental binding data. The standard benchmark for scoring function validation.</p>
             </div>
             <div class="feature">
-                <h3>ZINC + COCONUT</h3>
-                <p>444,398 purchasable compounds plus 4.15 GB of natural products. The full screening universe.</p>
+                <h3>Compound libraries</h3>
+                <p>Hundreds of thousands of purchasable compounds plus gigabytes of natural products. The full screening universe in standard formats.</p>
             </div>
         </div>
     </div>
@@ -407,6 +405,7 @@ layout: null
 </footer>
 
 <script>
+// Animated counters
 const counters = document.querySelectorAll('.num[data-count]');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -414,7 +413,7 @@ const observer = new IntersectionObserver((entries) => {
         const el = entry.target;
         const target = parseInt(el.dataset.count);
         const fmt = el.dataset.format;
-        const duration = 1500;
+        const duration = 1800;
         const start = performance.now();
         function update(now) {
             const t = Math.min(1, (now - start) / duration);
@@ -422,6 +421,10 @@ const observer = new IntersectionObserver((entries) => {
             const val = Math.floor(target * ease);
             if (fmt === 'k' && val >= 1000) {
                 el.textContent = (val / 1000).toFixed(2).replace(/\.00$/, '') + 'M';
+            } else if (fmt === 'plus') {
+                el.textContent = val + '+';
+            } else if (fmt === 'gb') {
+                el.textContent = val + ' GB';
             } else {
                 el.textContent = val.toLocaleString();
             }
@@ -432,6 +435,29 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.3 });
 counters.forEach(c => observer.observe(c));
+
+// Section fade-in on scroll
+const sections = document.querySelectorAll('section');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+sections.forEach(s => sectionObserver.observe(s));
+
+// Parallax on hero background
+const heroBg = document.querySelector('.hero-bg');
+if (heroBg) {
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (y < window.innerHeight) {
+            heroBg.style.transform = `translateY(${y * 0.3}px)`;
+        }
+    });
+}
 </script>
 
 </body>
