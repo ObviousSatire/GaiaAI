@@ -110,8 +110,8 @@ layout: null
                 <div class="label">Genome features</div>
             </div>
             <div class="stat">
-                <div class="num" data-count="5" data-format="plus">0</div>
-                <div class="label">Scoring families</div>
+                <div class="num" data-count="500" data-format="plus">0</div>
+                <div class="label">Curated sources</div>
             </div>
             <div class="stat">
                 <div class="num" data-count="380" data-format="gb">0</div>
@@ -169,7 +169,7 @@ layout: null
                 </div>
                 <div class="loop-step">
                     <strong>Cross-validate</strong>
-                    Train on one chromosome, test on another. If it holds, the pattern is universal.
+                    Train on one chromosome, test on another — and across species. If it holds, the pattern is real.
                 </div>
             </div>
         </div>
@@ -448,6 +448,75 @@ layout: null
                 </svg>
                 <h3>Design the protocol</h3>
                 <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="validation">
+    <div class="container">
+        <h2>Validated <span class="accent">end to end</span></h2>
+        <p class="lead">
+            Patterns aren't just learned — they're stress-tested. Every
+            model is verified across independent axes before it earns a
+            place in the pipeline.
+        </p>
+
+        <div class="validation-grid">
+            <div class="validation-card">
+                <div class="icon-wrap">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
+                    </svg>
+                </div>
+                <h3>Cross-species</h3>
+                <p>Models are validated against genomic structure from multiple species. A pattern that holds across evolutionary distance is more likely to reflect real biology.</p>
+                <span class="meta">Cross-species</span>
+            </div>
+
+            <div class="validation-card">
+                <div class="icon-wrap">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <circle cx="14" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                        <circle cx="26" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                        <circle cx="20" cy="30" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                        <line x1="17" y1="22" x2="20" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
+                        <line x1="23" y1="22" x2="20" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3>Animal models</h3>
+                <p>Predictions are run against established animal disease models. Simulated outcomes are compared to real physiological responses from published studies.</p>
+                <span class="meta">In vivo</span>
+            </div>
+
+            <div class="validation-card">
+                <div class="icon-wrap">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <rect x="8" y="10" width="24" height="20" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line x1="20" y1="10" x2="20" y2="14" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line x1="20" y1="26" x2="20" y2="30" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line x1="16" y1="20" x2="24" y2="20" stroke="#a7f3d0" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3>Human trial models</h3>
+                <p>Protocols are evaluated against human clinical trial data — dosing, outcomes, adverse events, and time-to-response across published cohorts.</p>
+                <span class="meta">Clinical</span>
+            </div>
+
+            <div class="validation-card">
+                <div class="icon-wrap">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <path d="M6,32 L6,24 L12,24 L12,18 L18,18 L18,26 L24,26 L24,14 L30,14 L30,10 L34,10" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="6" cy="32" r="2" fill="#34d399"/>
+                        <circle cx="34" cy="10" r="2" fill="#34d399"/>
+                    </svg>
+                </div>
+                <h3>Holdout evaluation</h3>
+                <p>Models are tested on chromosomes, diseases, and compounds never seen during training. If performance holds, the pattern generalizes.</p>
+                <span class="meta">Held-out</span>
             </div>
         </div>
     </div>
