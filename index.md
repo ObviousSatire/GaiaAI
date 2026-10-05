@@ -189,117 +189,192 @@ layout: null
             without anyone telling it what to look for.
         </p>
 
-        <div class="learn-grid">
-            <div class="learn-card">
-                <div class="badge">01</div>
-                <div class="icon-box">
-                    <svg width="30" height="30" viewBox="0 0 40 40">
-                        <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        <circle cx="20" cy="20" r="2.5" fill="#a7f3d0"/>
+        <div class="learn-flow">
+
+            <!-- Stage 1: DNA scanning -->
+            <div class="learn-stage">
+                <div class="learn-visual">
+                    <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="strandA" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#4ade80"/>
+                                <stop offset="50%" stop-color="#a7f3d0"/>
+                                <stop offset="100%" stop-color="#34d399"/>
+                            </linearGradient>
+                            <linearGradient id="strandB" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#60a5fa"/>
+                                <stop offset="50%" stop-color="#a7f3d0"/>
+                                <stop offset="100%" stop-color="#60a5fa"/>
+                            </linearGradient>
+                            <radialGradient id="dnaGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.2"/>
+                                <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+
+                        <circle cx="200" cy="200" r="160" fill="url(#dnaGlow)"/>
+
+                        <!-- Double helix -->
+                        <path class="dna-strand" d="M80,60 Q160,140 240,200 T400,340" stroke="url(#strandA)" stroke-width="3" fill="none"/>
+                        <path class="dna-strand" d="M80,340 Q160,260 240,200 T400,60" stroke="url(#strandB)" stroke-width="3" fill="none"/>
+
+                        <!-- Rungs connecting the strands -->
+                        <line class="dna-rung" x1="98" y1="80" x2="122" y2="90" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="120" y1="120" x2="150" y2="130" stroke="#4ade80" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="150" y1="160" x2="180" y2="170" stroke="#60a5fa" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="180" y1="200" x2="215" y2="200" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="215" y1="200" x2="250" y2="230" stroke="#4ade80" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="250" y1="240" x2="280" y2="260" stroke="#60a5fa" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="280" y1="270" x2="310" y2="290" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line class="dna-rung" x1="310" y1="300" x2="340" y2="320" stroke="#4ade80" stroke-width="1.5"/>
+
+                        <!-- Sliding scan bar -->
+                        <rect x="0" y="180" width="400" height="40" fill="url(#dnaGlow)" opacity="0.4">
+                            <animate attributeName="y" values="50;330;50" dur="8s" repeatCount="indefinite"/>
+                        </rect>
+
+                        <!-- Base pair labels floating -->
+                        <text x="300" y="140" font-family="monospace" font-size="11" fill="#a7f3d0" opacity="0.6">ATCG</text>
+                        <text x="80" y="240" font-family="monospace" font-size="11" fill="#60a5fa" opacity="0.6">GC 0.62</text>
+                        <text x="200" y="360" font-family="monospace" font-size="11" fill="#4ade80" opacity="0.6">exon</text>
+                        <text x="60" y="140" font-family="monospace" font-size="10" fill="#a7f3d0" opacity="0.5">intron</text>
                     </svg>
                 </div>
-                <svg class="inner-anim" viewBox="0 0 300 90" preserveAspectRatio="none">
-                    <line x1="0" y1="45" x2="300" y2="45" stroke="#1c3628" stroke-width="0.5"/>
-                    <path class="scan-wave" d="M0,45 Q15,15 30,45 T60,45 T90,45 T120,45 T150,45 T180,45 T210,45 T240,45 T270,45 T300,45" stroke="#4ade80" stroke-width="1.8" fill="none"/>
-                    <path class="scan-wave" d="M0,45 Q15,75 30,45 T60,45 T90,45 T120,45 T150,45 T180,45 T210,45 T240,45 T270,45 T300,45" stroke="#a7f3d0" stroke-width="1" fill="none" opacity="0.5" style="animation-delay: -2.5s"/>
-                    <circle cx="40" cy="45" r="2" fill="#4ade80"/>
-                    <circle cx="120" cy="45" r="2" fill="#60a5fa"/>
-                    <circle cx="200" cy="45" r="2" fill="#34d399"/>
-                    <circle cx="260" cy="45" r="2" fill="#a7f3d0"/>
-                </svg>
-
-                <h3>Discovering patterns</h3>
-                <p>Raw sequence in. The system finds its own structure — coding regions, conserved blocks, regulatory signals — without being told what to look for.</p>
-                <ul class="step-list">
-                    <li><span class="bullet"></span><div><strong>Ingest</strong> <span>— full chromosomes with curated labels</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Extract</strong> <span>— entropy, GC, motif, conservation</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Train</strong> <span>— classifier updates by gradient descent</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Validate</strong> <span>— cross-chromosome and cross-species</span></div></li>
-                </ul>
+                <div class="learn-copy">
+                    <span class="stage-badge">Loop 01</span>
+                    <h3>Reading <span class="accent">raw sequence</span></h3>
+                    <p>
+                        Whole chromosomes go in. The system extracts structural
+                        signatures — entropy, GC content, motif patterns,
+                        conservation — and lets a classifier discover which
+                        combinations predict coding, conserved, or silent regions.
+                    </p>
+                    <ul>
+                        <li><strong>Ingest</strong> full chromosomes with curated labels</li>
+                        <li><strong>Extract</strong> entropy, GC, motif, conservation</li>
+                        <li><strong>Train</strong> classifier updates by gradient descent</li>
+                        <li><strong>Validate</strong> cross-chromosome and cross-species</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="learn-card">
-                <div class="badge">02</div>
-                <div class="icon-box">
-                    <svg width="30" height="30" viewBox="0 0 40 40">
-                        <circle cx="9" cy="20" r="3" fill="#60a5fa"/>
-                        <circle cx="20" cy="9" r="3" fill="#60a5fa"/>
-                        <circle cx="31" cy="20" r="3" fill="#60a5fa"/>
-                        <circle cx="20" cy="31" r="3" fill="#60a5fa"/>
-                        <line x1="9" y1="20" x2="20" y2="9" stroke="#60a5fa" stroke-width="1"/>
-                        <line x1="20" y1="9" x2="31" y2="20" stroke="#60a5fa" stroke-width="1"/>
-                        <line x1="31" y1="20" x2="20" y2="31" stroke="#60a5fa" stroke-width="1"/>
-                        <line x1="20" y1="31" x2="9" y2="20" stroke="#60a5fa" stroke-width="1"/>
+            <!-- Stage 2: Growing the graph -->
+            <div class="learn-stage reverse">
+                <div class="learn-visual">
+                    <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <radialGradient id="graphGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+
+                        <circle cx="200" cy="200" r="150" fill="url(#graphGlow)"/>
+
+                        <!-- Edges -->
+                        <line class="graph-edge" x1="200" y1="200" x2="90" y2="90" stroke="#60a5fa" stroke-width="1.5"/>
+                        <line class="graph-edge e2" x1="200" y1="200" x2="310" y2="90" stroke="#4ade80" stroke-width="1.5"/>
+                        <line class="graph-edge e3" x1="200" y1="200" x2="90" y2="310" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <line class="graph-edge e4" x1="200" y1="200" x2="310" y2="310" stroke="#34d399" stroke-width="1.5"/>
+                        <line class="graph-edge e5" x1="90" y1="90" x2="310" y2="90" stroke="#60a5fa" stroke-width="1"/>
+                        <line class="graph-edge e6" x1="90" y1="310" x2="310" y2="310" stroke="#4ade80" stroke-width="1"/>
+
+                        <!-- Nodes -->
+                        <circle class="graph-node" cx="200" cy="200" r="22" fill="#0e1a14" stroke="#a7f3d0" stroke-width="2"/>
+                        <text x="200" y="205" text-anchor="middle" font-family="monospace" font-size="11" fill="#a7f3d0" font-weight="bold">core</text>
+
+                        <circle class="graph-node n2" cx="90" cy="90" r="14" fill="#0e1a14" stroke="#60a5fa" stroke-width="1.5"/>
+                        <text x="90" y="94" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">gene</text>
+
+                        <circle class="graph-node n3" cx="310" cy="90" r="14" fill="#0e1a14" stroke="#4ade80" stroke-width="1.5"/>
+                        <text x="310" y="94" text-anchor="middle" font-family="monospace" font-size="9" fill="#4ade80">var</text>
+
+                        <circle class="graph-node n4" cx="90" cy="310" r="14" fill="#0e1a14" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <text x="90" y="314" text-anchor="middle" font-family="monospace" font-size="9" fill="#a7f3d0">dis</text>
+
+                        <circle class="graph-node n5" cx="310" cy="310" r="14" fill="#0e1a14" stroke="#34d399" stroke-width="1.5"/>
+                        <text x="310" y="314" text-anchor="middle" font-family="monospace" font-size="9" fill="#34d399">cpd</text>
+
+                        <circle class="graph-node n6" cx="200" cy="60" r="11" fill="#0e1a14" stroke="#4ade80" stroke-width="1.5"/>
+                        <text x="200" y="64" text-anchor="middle" font-family="monospace" font-size="8" fill="#4ade80">path</text>
                     </svg>
                 </div>
-                <svg class="inner-anim" viewBox="0 0 300 90" preserveAspectRatio="none">
-                    <line class="grow-edge" x1="60" y1="45" x2="120" y2="20" stroke="#60a5fa" stroke-width="1.2"/>
-                    <line class="grow-edge e2" x1="60" y1="45" x2="120" y2="70" stroke="#60a5fa" stroke-width="1.2"/>
-                    <line class="grow-edge e3" x1="120" y1="20" x2="180" y2="45" stroke="#a7f3d0" stroke-width="1.2"/>
-                    <line class="grow-edge e4" x1="120" y1="70" x2="180" y2="45" stroke="#a7f3d0" stroke-width="1.2"/>
-                    <line class="grow-edge e5" x1="180" y1="45" x2="240" y2="45" stroke="#4ade80" stroke-width="1.5"/>
-                    <circle class="grow-node" cx="60" cy="45" r="6" fill="#4ade80"/>
-                    <circle class="grow-node g2" cx="120" cy="20" r="5" fill="#60a5fa"/>
-                    <circle class="grow-node g3" cx="120" cy="70" r="5" fill="#34d399"/>
-                    <circle class="grow-node g4" cx="180" cy="45" r="6" fill="#a7f3d0"/>
-                    <circle class="grow-node g5" cx="240" cy="45" r="7" fill="#4ade80"/>
-                </svg>
-
-                <h3>Growing the graph</h3>
-                <p>Every new finding connects. Variants, genes, pathways, diseases, compounds — each relation adds to a network that grows with the field.</p>
-                <ul class="step-list">
-                    <li><span class="bullet"></span><div><strong>Ingest</strong> <span>— mappings, bindings, structures</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Connect</strong> <span>— variant → gene → disease → compound</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Query</strong> <span>— score candidates, rank outcomes</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Retrain</strong> <span>— new pairs improve predictions</span></div></li>
-                </ul>
+                <div class="learn-copy">
+                    <span class="stage-badge">Loop 02</span>
+                    <h3>Growing the <span class="accent">knowledge graph</span></h3>
+                    <p>
+                        Every new finding becomes a new edge. Variants link to
+                        genes. Genes link to pathways. Pathways link to
+                        diseases. Diseases link to compounds. The graph grows
+                        with every paper published.
+                    </p>
+                    <ul>
+                        <li><strong>Ingest</strong> mappings, bindings, structures</li>
+                        <li><strong>Connect</strong> variant → gene → disease → compound</li>
+                        <li><strong>Query</strong> score candidates, rank outcomes</li>
+                        <li><strong>Retrain</strong> new pairs improve predictions</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="learn-card">
-                <div class="badge">03</div>
-                <div class="icon-box">
-                    <svg width="30" height="30" viewBox="0 0 40 40">
-                        <path d="M8,20 A12,12 0 0,1 32,20" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <path d="M32,20 A12,12 0 0,1 8,20" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                        <polygon points="30,14 32,20 26,20" fill="#a7f3d0"/>
-                        <polygon points="10,26 8,20 14,20" fill="#a7f3d0"/>
+            <!-- Stage 3: Continuous loop -->
+            <div class="learn-stage">
+                <div class="learn-visual">
+                    <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <radialGradient id="cycleGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="#a7f3d0" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+
+                        <circle cx="200" cy="200" r="150" fill="url(#cycleGlow)"/>
+
+                        <!-- Outer rotating arc -->
+                        <g class="cycle-ring r1">
+                            <circle cx="200" cy="200" r="140" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="60 340" stroke-linecap="round" opacity="0.5"/>
+                        </g>
+
+                        <!-- Middle rotating arc -->
+                        <g class="cycle-ring r2">
+                            <circle cx="200" cy="200" r="110" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="50 260" stroke-linecap="round" opacity="0.6"/>
+                        </g>
+
+                        <!-- Inner rotating arc -->
+                        <g class="cycle-ring r3">
+                            <circle cx="200" cy="200" r="80" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="40 160" stroke-linecap="round" opacity="0.7"/>
+                        </g>
+
+                        <!-- Central pulse -->
+                        <circle class="pulse-center" cx="200" cy="200" r="45" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.6"/>
+                        <circle cx="200" cy="200" r="28" fill="#040a07" stroke="#a7f3d0" stroke-width="2"/>
+                        <text x="200" y="206" text-anchor="middle" font-family="monospace" font-size="11" fill="#a7f3d0" font-weight="bold">loop</text>
+
+                        <!-- Rotating outer labels -->
+                        <text x="200" y="45" text-anchor="middle" font-family="monospace" font-size="10" fill="#4ade80" opacity="0.7">new evidence</text>
+                        <text x="370" y="205" text-anchor="middle" font-family="monospace" font-size="10" fill="#60a5fa" opacity="0.7">fetch</text>
+                        <text x="200" y="370" text-anchor="middle" font-family="monospace" font-size="10" fill="#a7f3d0" opacity="0.7">retrain</text>
+                        <text x="30" y="205" text-anchor="middle" font-family="monospace" font-size="10" fill="#34d399" opacity="0.7">measure</text>
                     </svg>
                 </div>
-                <svg class="inner-anim" viewBox="0 0 300 90" preserveAspectRatio="none">
-                    <circle cx="60" cy="45" r="28" fill="none" stroke="#1c3628" stroke-width="1.5"/>
-                    <circle cx="60" cy="45" r="28" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="44 176" stroke-linecap="round">
-                        <animateTransform attributeName="transform" type="rotate" from="0 60 45" to="360 60 45" dur="3s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="60" y="49" text-anchor="middle" font-size="9" fill="#a7f3d0" font-family="monospace">loop</text>
-
-                    <line x1="100" y1="45" x2="140" y2="45" stroke="#34d399" stroke-width="1" stroke-dasharray="4 4"/>
-                    <polygon points="140,42 148,45 140,48" fill="#34d399"/>
-
-                    <circle cx="180" cy="45" r="18" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="30 84" stroke-linecap="round">
-                        <animateTransform attributeName="transform" type="rotate" from="360 180 45" to="0 180 45" dur="2.5s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="180" y="49" text-anchor="middle" font-size="9" fill="#a7f3d0" font-family="monospace">refit</text>
-
-                    <line x1="210" y1="45" x2="240" y2="45" stroke="#34d399" stroke-width="1" stroke-dasharray="4 4"/>
-                    <polygon points="240,42 248,45 240,48" fill="#34d399"/>
-
-                    <circle cx="265" cy="45" r="14" fill="none" stroke="#a7f3d0" stroke-width="1.5" stroke-dasharray="22 66" stroke-linecap="round">
-                        <animateTransform attributeName="transform" type="rotate" from="0 265 45" to="360 265 45" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="265" y="49" text-anchor="middle" font-size="9" fill="#a7f3d0" font-family="monospace">+ev</text>
-                </svg>
-
-                <h3>Continuous loop</h3>
-                <p>The system improves on its own. New data arrives, models retrain, and if it helps — prediction improves. If not, it fades.</p>
-                <ul class="step-list">
-                    <li><span class="bullet"></span><div><strong>New evidence</strong> <span>— variant, paper, structure</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Context fetched</strong> <span>— class, conservation, motif</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Model retrains</strong> <span>— weights adjust on new inputs</span></div></li>
-                    <li><span class="bullet"></span><div><strong>Impact measured</strong> <span>— help stays, noise fades</span></div></li>
-                </ul>
+                <div class="learn-copy">
+                    <span class="stage-badge">Loop 03</span>
+                    <h3>The <span class="accent">continuous cycle</span></h3>
+                    <p>
+                        Every prediction produces new data, and new data updates
+                        the model. If a new feature helps, the classifier keeps
+                        it. If it doesn't, the weight fades. Nothing is set in
+                        stone.
+                    </p>
+                    <ul>
+                        <li><strong>New evidence</strong> variant, paper, structure</li>
+                        <li><strong>Context fetched</strong> class, conservation, motif</li>
+                        <li><strong>Model retrains</strong> weights adjust on new inputs</li>
+                        <li><strong>Impact measured</strong> help stays, noise fades</li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -449,6 +524,66 @@ layout: null
     </div>
 </section>
 
+<section id="unique">
+    <div class="container">
+        <h2>What makes <span class="accent">GAIA</span> different</h2>
+        <p class="lead">
+            Most tools solve one piece. GAIA connects the whole chain — from
+            raw sequence to treatment protocol — in a single self-learning
+            system.
+        </p>
+
+        <div class="unique-grid">
+            <div class="unique-card">
+                <div class="num">01</div>
+                <h3>End-to-end, <span class="accent">not piecemeal</span></h3>
+                <p>
+                    Genome scanning, variant mapping, compound screening, and
+                    protocol design usually live in separate tools. GAIA runs
+                    the whole chain in one pipeline, so evidence flows without
+                    translation between systems.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> dockers dock, annotators
+                    annotate, simulators simulate. Each feeds a human who
+                    stitches them together.
+                </div>
+            </div>
+
+            <div class="unique-card">
+                <div class="num">02</div>
+                <h3>Learns from <span class="accent">its own data</span></h3>
+                <p>
+                    Weights are discovered from labeled sequence, not set by
+                    hand. Features are extracted, tested, and kept only if
+                    they help. As the knowledge graph grows, predictions
+                    improve without retraining from scratch.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> fixed scoring functions,
+                    fixed rules, manual tuning per target.
+                </div>
+            </div>
+
+            <div class="unique-card">
+                <div class="num">03</div>
+                <h3>Checks itself <span class="accent">across evidence</span></h3>
+                <p>
+                    Every prediction is verified against three independent
+                    layers — computational, cellular, physiological. A result
+                    that survives all three carries weight. One that only
+                    survives computation doesn't get a protocol.
+                </p>
+                <div class="contrast">
+                    <strong>vs. traditional:</strong> a prediction is a
+                    prediction. Validation happens in a separate pipeline,
+                    often by different teams.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="sources">
     <div class="container">
         <h2>It reads the <span class="accent">open web</span></h2>
@@ -586,6 +721,24 @@ layout: null
             </div>
         </div>
 
+        <div class="sources-inline">
+            <span class="label">Named sources read continuously</span>
+            <span class="name">NCBI</span><span class="sep">·</span>
+            <span class="name">Ensembl</span><span class="sep">·</span>
+            <span class="name">UniProt</span><span class="sep">·</span>
+            <span class="name">PDB</span><span class="sep">·</span>
+            <span class="name">ChEMBL</span><span class="sep">·</span>
+            <span class="name">ClinicalTrials.gov</span><span class="sep">·</span>
+            <span class="name">gnomAD</span><span class="sep">·</span>
+            <span class="name">GWAS Catalog</span><span class="sep">·</span>
+            <span class="name">ClinVar</span><span class="sep">·</span>
+            <span class="name">KEGG</span><span class="sep">·</span>
+            <span class="name">Reactome</span><span class="sep">·</span>
+            <span class="name">ZINC</span><span class="sep">·</span>
+            <span class="name">COCONUT</span><span class="sep">·</span>
+            <span class="name">BindingDB</span>
+        </div>
+
         <div class="scan-flow-wrap">
             <h3>The continuous loop</h3>
             <div class="scan-row">
@@ -673,6 +826,60 @@ layout: null
             </div>
         </div>
     </div>
+        <div class="sample-output">
+            <div class="sample-output-header">
+                <div class="dot-row"><span></span><span></span><span></span></div>
+                <div class="title">sample output — ranked protocol</div>
+            </div>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Compound</th>
+                    <th>Binding</th>
+                    <th>Evidence</th>
+                    <th>Confidence</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>resveratrol</td>
+                    <td class="score">−8.72</td>
+                    <td class="evidence">in silico · in vitro · in vivo</td>
+                    <td class="high">high</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>curcumin</td>
+                    <td class="score">−7.91</td>
+                    <td class="evidence">in silico · in vitro</td>
+                    <td class="high">high</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>fisetin</td>
+                    <td class="score">−7.45</td>
+                    <td class="evidence">in silico · in vitro · in vivo</td>
+                    <td class="high">high</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>berberine</td>
+                    <td class="score">−6.83</td>
+                    <td class="evidence">in silico · in vitro</td>
+                    <td class="med">medium</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>quercetin</td>
+                    <td class="score">−6.52</td>
+                    <td class="evidence">in silico only</td>
+                    <td class="med">medium</td>
+                </tr>
+            </table>
+            <div class="note">
+                → next: combine top 3 into a protocol, simulate outcomes at                30 / 90 / 180 / 365 days, generate full evidence report.
+            </div>
+        </div>
+
 </section>
 
 <section id="capabilities">
@@ -787,6 +994,20 @@ layout: null
             <tr><td>Compound library V</td><td>128.7 GB</td><td>Compound set</td><td><a href="https://doi.org/10.5281/zenodo.23139933">23139933</a></td></tr>
             <tr><td>Benchmarks</td><td>20 GB</td><td>Reference data</td><td><a href="https://doi.org/10.5281/zenodo.22946723">22946723</a></td></tr>
         </table>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="next-strip">
+            <span class="marker">What's next</span>
+            <div class="content">
+                <strong>Extended species coverage</strong> for the cross-species
+                validation layer. <strong>Longer clinical follow-up</strong> for
+                the physiological evidence layer. <strong>Continuous model
+                refinement</strong> as new datasets publish.
+            </div>
+        </div>
     </div>
 </section>
 
