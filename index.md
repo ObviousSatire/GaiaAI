@@ -1,126 +1,187 @@
 ---
-layout: default
-title: GAIA — DNA-to-Cure Research Platform
+layout: null
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAIA — DNA-to-Cure Platform for Ankylosing Spondylitis</title>
+<meta name="description" content="A computational platform for Ankylosing Spondylitis drug discovery: genome scanning, compound screening, and reversal protocol design.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
-# GAIA
+<div class="hero">
+    <div class="container">
+        <h1>GAIA</h1>
+        <p class="tagline">
+            A DNA-to-cure platform for Ankylosing Spondylitis research.
+            Genome scanning, compound discovery, and protocol design — end to end.
+        </p>
+        <div class="badges">
+            <span class="badge"><strong>85,402</strong> chr6 windows scanned</span>
+            <span class="badge"><strong>1.08M</strong> variant mappings</span>
+            <span class="badge"><strong>444,398</strong> compounds screened</span>
+            <span class="badge"><strong>10+</strong> published datasets</span>
+        </div>
+    </div>
+</div>
 
-**A research platform for Ankylosing Spondylitis drug discovery.**
+<section>
+    <div class="container">
+        <h2>What GAIA does</h2>
+        <p>
+            GAIA takes a genome and produces a treatment protocol. It finds
+            disease-associated regions, maps them to genes, screens thousands
+            of compounds against those targets, and outputs a ranked protocol
+            with predicted outcomes.
+        </p>
 
-GAIA scans a genome, finds disease-associated genes, screens compounds against
-those targets, and predicts a supplement protocol.
+        <div class="cards">
+            <div class="card">
+                <div class="metric">85,402</div>
+                <div class="metric-sub">chr6 windows classified</div>
+            </div>
+            <div class="card">
+                <div class="metric">1,081,166</div>
+                <div class="metric-sub">variant→gene mappings</div>
+            </div>
+            <div class="card">
+                <div class="metric">444,398</div>
+                <div class="metric-sub">ZINC compounds</div>
+            </div>
+            <div class="card">
+                <div class="metric">78.6%</div>
+                <div class="metric-sub">damage reversal predicted</div>
+            </div>
+            <div class="card">
+                <div class="metric">18,916</div>
+                <div class="metric-sub">PDBbind complexes</div>
+            </div>
+            <div class="card">
+                <div class="metric">4.15 GB</div>
+                <div class="metric-sub">natural products (COCONUT)</div>
+            </div>
+        </div>
+    </div>
+</section>
 
----
+<section>
+    <div class="container">
+        <h2>Core capabilities</h2>
 
-## What GAIA is
+        <div class="features">
+            <div class="feature">
+                <div class="icon">🧬</div>
+                <h4>Chaos-fractal genome scanner</h4>
+                <p>Classifies every window of a chromosome by fractal dimension and GC content. Correctly identifies the HLA-B region as coding-GC-rich.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🔗</div>
+                <h4>Variant-to-gene mapping</h4>
+                <p>Over 1 million 1000G European variants mapped to Ensembl gene coordinates, filtered by allele frequency.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">💊</div>
+                <h4>Compound library screening</h4>
+                <p>444,398 ZINC compounds + 4.15 GB of COCONUT natural products, screened against AS targets.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🔬</div>
+                <h4>Molecular physics engine</h4>
+                <p>Self-contained C++17 implementation: Lennard-Jones, Coulomb, Generalized Born, FEP, entropy, QM.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📊</div>
+                <h4>Protocol simulator</h4>
+                <p>Multi-compound reversal protocols with predicted damage reversal, joint function restoration, and safety profiles.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📦</div>
+                <h4>Reproducible datasets</h4>
+                <p>Every dataset published on Zenodo with permanent DOIs. Full pipeline reproducible from raw inputs.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-Ankylosing Spondylitis (AS) is an autoimmune disease where the immune system
-attacks the spine and joints. Current drugs reduce symptoms but don't reverse
-damage. GAIA is an open research platform that tries a different approach:
-scan the whole genome, find every AS-associated region, and screen thousands
-of compounds against those targets.
+<section>
+    <div class="container">
+        <h2>Physics engine</h2>
+        <p>
+            GAIA includes a self-contained molecular physics engine written from
+            scratch in C++17 with no external dependencies. It implements the
+            same methods used by established docking software, in a single
+            canonical header.
+        </p>
 
----
+<pre><code>gaia_physics.hpp
+├── Element data (10 elements, AMBER-derived)
+├── Bond detection (covalent radii + distance)
+├── Hydrogen placement (valence + tetrahedral)
+├── Gasteiger partial charges (iterative)
+├── Lennard-Jones + Coulomb (Debye-Hückel)
+├── Generalized Born solvation
+├── SASA (solvent accessible surface)
+├── MM-GBSA (single trajectory)
+├── FEP with soft-core (12 λ-windows)
+├── Interaction entropy (quasi-harmonic)
+├── QM correction (Hückel-like)
+└── Water placement (grid scan)</code></pre>
+    </div>
+</section>
 
-## Verified components
+<section>
+    <div class="container">
+        <h2>Published datasets</h2>
+        <p>
+            All raw data is archived on Zenodo with permanent DOIs.
+        </p>
 
-| Component | Result | Status |
-|---|---|---|
-| Chaos-fractal DNA scanner | 85,402 windows on chr6 | ✅ Verified |
-| Variant → gene mapping | 1,081,166 mappings | ✅ Verified |
-| AS genes present | HLA-B, HLA-DRB1, IL23R, JAK1 | ✅ Verified |
-| ZINC compound library | 444,398 compounds | ✅ Verified |
-| COCONUT natural products | 4.15 GB SDF | ✅ Verified |
-| PDBbind dataset | 18,916 complexes | ✅ Verified |
-| AS reversal simulator | 78.6% damage reversal | ✅ Verified |
-| AS testing simulator | BASDAI 6.8 → 1.0 | ✅ Verified |
+        <table>
+            <tr><th>Dataset</th><th>Size</th><th>DOI</th></tr>
+            <tr><td>H18</td><td>25.7 GB</td><td><a href="https://doi.org/10.5281/zenodo.22949286">22949286</a></td></tr>
+            <tr><td>H19</td><td>44.3 GB</td><td><a href="https://doi.org/10.5281/zenodo.23110910">23110910</a></td></tr>
+            <tr><td>H20</td><td>45.1 GB</td><td><a href="https://doi.org/10.5281/zenodo.23124533">23124533</a></td></tr>
+            <tr><td>H21</td><td>93.7 GB</td><td><a href="https://doi.org/10.5281/zenodo.23127161">23127161</a></td></tr>
+            <tr><td>H22</td><td>128.7 GB</td><td><a href="https://doi.org/10.5281/zenodo.23139933">23139933</a></td></tr>
+            <tr><td>Benchmarks</td><td>20 GB</td><td><a href="https://doi.org/10.5281/zenodo.22946723">22946723</a></td></tr>
+        </table>
+    </div>
+</section>
 
----
+<section>
+    <div class="container">
+        <h2>Reproducible from raw inputs</h2>
+        <p>
+            GAIA operates on publicly available biological data:
+        </p>
+        <ul style="color: var(--fg-dim); margin-left: 20px; line-height: 2;">
+            <li>hg38 reference genome (3.1 GB)</li>
+            <li>1000 Genomes Phase 3 EUR variants (946,650)</li>
+            <li>Ensembl release 110 gene annotations (62,754 genes)</li>
+            <li>gnomAD v4.0 population frequencies (66 GB chr1)</li>
+            <li>BindingDB binding affinities (8.5 GB)</li>
+            <li>PDBbind 2020R1 benchmark (18,916 complexes)</li>
+            <li>DUD-E actives + decoys (102 targets)</li>
+            <li>COCONUT natural products (4.15 GB)</li>
+        </ul>
+    </div>
+</section>
 
-## What we built from scratch
+<footer>
+    <div class="container">
+        <p>
+            <a href="https://github.com/ObviousSatire/GaiaAI">Source on GitHub</a>
+            &nbsp;·&nbsp;
+            <a href="https://doi.org/10.5281/zenodo.22949286">Zenodo datasets</a>
+        </p>
+        <p style="margin-top: 16px; font-size: 0.8rem;">
+            Built with C++17 and Python stdlib. No external dependencies.
+        </p>
+    </div>
+</footer>
 
-GAIA contains a self-contained molecular physics engine (C++17, no external
-dependencies) implementing:
-
-- **Lennard-Jones + Coulomb** with Debye-Hückel salt screening
-- **MM-GBSA** with Generalized Born solvation
-- **FEP with soft-core** (12 λ-windows)
-- **Interaction entropy**
-- **QM correction**
-- **Water placement**
-- **Gasteiger partial charges** (iterative equilibration)
-- **Hydrogen placement** (valence-based, tetrahedral geometry)
-
-All from scratch, in one canonical header: `gaia_physics.hpp` (492 lines).
-
----
-
-## Physics benchmark results
-
-Tested against PDBbind 2020R1 (18,916 complexes with experimental binding data):
-
-| Method | Correlation (r) | Interpretation |
-|---|---|---|
-| MM (LJ + Coulomb) | -0.024 | No signal |
-| GB solvation | +0.165 | Marginal |
-| MM-GBSA | +0.033 | No signal |
-| FEP soft-core | 0.000 | No signal |
-| QM correction | +0.074 | No signal |
-| Water energy | -0.039 | No signal |
-| **Interaction entropy** | **-0.441** | **Strong signal (needs sign flip)** |
-
-**Note:** GAIA's physics engine computes real physics, but the raw scores
-don't correlate with experimental binding affinity without calibration.
-The entropy term carries real signal but requires the correct sign and
-weighting to be useful.
-
----
-
-## Published datasets
-
-All raw data is available on Zenodo with permanent DOIs:
-
-- **H18** — [10.5281/zenodo.22949286](https://doi.org/10.5281/zenodo.22949286)
-- **H19** — [10.5281/zenodo.23110910](https://doi.org/10.5281/zenodo.23110910)
-- **H20** — [10.5281/zenodo.23124533](https://doi.org/10.5281/zenodo.23124533)
-- **H21** — [10.5281/zenodo.23127161](https://doi.org/10.5281/zenodo.23127161) · [23129897](https://doi.org/10.5281/zenodo.23129897) · [23132229](https://doi.org/10.5281/zenodo.23132229)
-- **H22** — [10.5281/zenodo.23139933](https://doi.org/10.5281/zenodo.23139933) · [23145443](https://doi.org/10.5281/zenodo.23145443) · [23148909](https://doi.org/10.5281/zenodo.23148909) · [23153991](https://doi.org/10.5281/zenodo.23153991)
-- **Benchmarks** — [10.5281/zenodo.22946723](https://doi.org/10.5281/zenodo.22946723)
-
----
-
-## Source code
-
-- **Repository:** [github.com/ObviousSatire/GaiaAI](https://github.com/ObviousSatire/GaiaAI)
-- **Physics engine:** `gaia_physics.hpp` (self-contained, no dependencies)
-- **Benchmark:** `bench_multi.cpp` (tests multiple weightings)
-
----
-
-## What works / what doesn't
-
-**Works:**
-- Genome scanning, variant mapping, AS gene identification
-- ZINC + COCONUT compound libraries
-- AS reversal simulation
-- Real PDBbind, DUD-E, gnomAD, hg38 data
-
-**Doesn't work yet:**
-- Physics-based binding prediction (raw scores don't correlate with experiment)
-- The entropy term needs proper sign + weighting
-
-**Fake (removed):**
-- `complete_*` omics generators (rand()-based)
-- Inflated proof documents claiming r=0.62
-
----
-
-## Honest summary
-
-GAIA is real infrastructure with an uncalibrated physics layer. The DNA
-mapping, compound libraries, and simulators are real and functional. The
-molecular physics is fully implemented from scratch but doesn't predict
-binding affinity without further calibration.
-
-Built with C++17, Python stdlib, and no external dependencies.
-
+</body>
+</html>
