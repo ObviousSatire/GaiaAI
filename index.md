@@ -775,6 +775,7 @@ layout: null
         <p class="lead">
             Every stage archived publicly with permanent identifiers.
             Reproducible from raw public sources.
+            <a href="https://zenodo.org/me/uploads" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent);">View the full collection on Zenodo →</a>
         </p>
 
         <table class="data-table">
@@ -795,13 +796,13 @@ layout: null
         <p class="lead">Three ways to start — depending on what you want to build on.</p>
 
         <div class="use-grid">
-            <a class="use-card" href="https://doi.org/10.5281/zenodo.22949286" target="_blank" rel="noopener">
+            <a class="use-card" href="https://zenodo.org/me/uploads" target="_blank" rel="noopener">
                 <svg width="32" height="32" viewBox="0 0 40 40">
                     <ellipse cx="20" cy="12" rx="12" ry="4" fill="none" stroke="#4ade80" stroke-width="1.5"/>
                     <path d="M8,12 L8,28 Q8,32 20,32 Q32,32 32,28 L32,12" fill="none" stroke="#4ade80" stroke-width="1.5"/>
                 </svg>
                 <div class="title">Explore the datasets</div>
-                <div class="desc">Every stage of the pipeline, archived with permanent identifiers. Downloads, sizes, and contents for each dataset.</div>
+                <div class="desc">All stages of the pipeline, archived with permanent identifiers. Browse the full collection — libraries, benchmarks, and intermediate results.</div>
                 <div class="arrow">Open datasets →</div>
             </a>
 
