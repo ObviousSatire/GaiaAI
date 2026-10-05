@@ -2,22 +2,20 @@
 
 **DNA-to-cure platform for Ankylosing Spondylitis research.**
 
-🌐 **Website:** [obvioussatire.github.io/GaiaAI](https://obvioussatire.github.io/GaiaAI)
+Website: [obvioussatire.github.io/GaiaAI](https://obvioussatire.github.io/GaiaAI)
+
+## The pipeline
+
+Genome → Scan → Map variants → Screen compounds → Score binding → Protocol
 
 ## Capabilities
 
-- **Chaos-fractal genome scanner** — classifies chromosome windows by fractal dimension
-- **Variant-to-gene mapping** — 1.08M mappings from 1000G EUR
-- **Compound screening** — 444,398 ZINC + 4.15 GB COCONUT
-- **Molecular physics engine** — self-contained C++17 (LJ, Coulomb, GB, FEP, entropy, QM)
-- **Protocol simulator** — multi-compound reversal with damage prediction
-- **Reproducible datasets** — all raw data on Zenodo with permanent DOIs
-
-## Quick links
-
-- [Project overview](https://obvioussatire.github.io/GaiaAI/)
-- [Zenodo datasets](https://doi.org/10.5281/zenodo.22949286)
-- [Physics engine](https://obvioussatire.github.io/GaiaAI/#physics-engine)
+- Chaos-fractal genome scanner — classifies chromosome windows by fractal dimension
+- Variant-to-gene mapping — 1.08M mappings from 1000 Genomes EUR
+- Compound screening — 444,398 ZINC + 4.15 GB COCONUT natural products
+- Molecular physics engine — self-contained C++17 (LJ, Coulomb, GB, FEP, entropy, QM)
+- Protocol simulator — multi-compound reversal with damage prediction
+- Reproducible datasets — 380+ GB on Zenodo with permanent DOIs
 
 ## Data sources
 
