@@ -103,19 +103,19 @@ layout: null
         <div class="stats">
             <div class="stat">
                 <div class="num" data-count="1081166" data-format="k">0</div>
-                <div class="label">Variant mappings</div>
+                <div class="label">Variants mapped</div>
             </div>
             <div class="stat">
-                <div class="num" data-count="56" data-format="plus">0</div>
-                <div class="label">Genome features</div>
+                <div class="num" data-count="25000000" data-format="m">0</div>
+                <div class="label">Compounds indexed</div>
             </div>
             <div class="stat">
                 <div class="num" data-count="500" data-format="plus">0</div>
                 <div class="label">Curated sources</div>
             </div>
             <div class="stat">
-                <div class="num" data-count="380" data-format="gb">0</div>
-                <div class="label">Data published</div>
+                <div class="num" data-count="1" data-format="tb">0</div>
+                <div class="label">Knowledge base</div>
             </div>
         </div>
     </div>
@@ -145,75 +145,76 @@ layout: null
 
 <section id="learning">
     <div class="container">
-        <h2>How it <span class="accent">learns</span></h2>
-        <p class="lead">
-            The system discovers its own patterns. Nothing is hand-coded.
-            It reads raw sequence, extracts its own features, and updates
-            as new evidence arrives.
-        </p>
-
-        <div class="learning-loop">
-            <h3>Discovering patterns</h3>
-            <div class="loop-steps">
-                <div class="loop-step">
-                    <strong>Ingest raw sequence</strong>
-                    Full chromosomes with labels from curated gene databases.
-                </div>
-                <div class="loop-step">
-                    <strong>Extract features</strong>
-                    Statistics per segment — entropy, GC content, motif scores, conservation.
-                </div>
-                <div class="loop-step">
-                    <strong>Train classifier</strong>
-                    Weights updated by gradient descent. Discovers which features predict which class.
-                </div>
-                <div class="loop-step">
-                    <strong>Cross-validate</strong>
-                    Train on one chromosome, test on another — and across species. If it holds, the pattern is real.
-                </div>
-            </div>
+        <div class="learn-center">
+            <h2>How it <span class="accent">learns</span></h2>
+            <p class="lead">
+                Nothing is hand-coded. The system reads raw signal, discovers
+                its own features, and updates as new evidence arrives.
+            </p>
         </div>
 
-        <div class="learning-loop">
-            <h3>Growing the graph</h3>
-            <div class="loop-steps">
-                <div class="loop-step">
-                    <strong>Ingest mappings</strong>
-                    Variant-to-disease pairs, compound-target bindings, protein structures.
+        <div class="learn-flow">
+            <div class="learn-block">
+                <div class="num-badge">01</div>
+                <div class="stage-icon">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                        <circle cx="20" cy="20" r="2.5" fill="#a7f3d0"/>
+                    </svg>
                 </div>
-                <div class="loop-step">
-                    <strong>Build graph</strong>
-                    Variant → gene → pathway → disease → compound. Every new source adds nodes and edges.
-                </div>
-                <div class="loop-step">
-                    <strong>Predict</strong>
-                    Query the graph, score candidates, rank outcomes.
-                </div>
-                <div class="loop-step">
-                    <strong>Retrain</strong>
-                    As more pairs are labeled, the classifier updates.
+                <h3>Discovering patterns</h3>
+                <p>Raw sequence in. The system finds its own structure — coding regions, conserved blocks, regulatory signals — without being told what to look for.</p>
+                <div class="steps">
+                    <div class="mini-step"><span class="dot"></span><div><strong>Ingest</strong> <span>— full chromosomes with curated labels</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Extract</strong> <span>— entropy, GC, motif, conservation</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Train</strong> <span>— classifier updates by gradient descent</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Validate</strong> <span>— cross-chromosome and cross-species</span></div></div>
                 </div>
             </div>
-        </div>
 
-        <div class="learning-loop">
-            <h3>Continuous improvement</h3>
-            <div class="loop-steps">
-                <div class="loop-step">
-                    <strong>New evidence arrives</strong>
-                    Fresh variant, new paper, updated structure.
+            <div class="learn-block">
+                <div class="num-badge">02</div>
+                <div class="stage-icon">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <circle cx="9" cy="20" r="3" fill="#60a5fa"/>
+                        <circle cx="20" cy="9" r="3" fill="#60a5fa"/>
+                        <circle cx="31" cy="20" r="3" fill="#60a5fa"/>
+                        <circle cx="20" cy="31" r="3" fill="#60a5fa"/>
+                        <line x1="9" y1="20" x2="20" y2="9" stroke="#60a5fa" stroke-width="1"/>
+                        <line x1="20" y1="9" x2="31" y2="20" stroke="#60a5fa" stroke-width="1"/>
+                        <line x1="31" y1="20" x2="20" y2="31" stroke="#60a5fa" stroke-width="1"/>
+                        <line x1="20" y1="31" x2="9" y2="20" stroke="#60a5fa" stroke-width="1"/>
+                    </svg>
                 </div>
-                <div class="loop-step">
-                    <strong>Context is retrieved</strong>
-                    Segment class, conservation, GC content, motif context.
+                <h3>Growing the graph</h3>
+                <p>Every new finding connects. Variants, genes, pathways, diseases, compounds — each relation adds to a network that grows with the field.</p>
+                <div class="steps">
+                    <div class="mini-step"><span class="dot"></span><div><strong>Ingest</strong> <span>— mappings, bindings, structures</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Connect</strong> <span>— variant → gene → disease → compound</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Query</strong> <span>— score candidates, rank outcomes</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Retrain</strong> <span>— new pairs improve predictions</span></div></div>
                 </div>
-                <div class="loop-step">
-                    <strong>Model retrains</strong>
-                    Weights adjust on the new inputs.
+            </div>
+
+            <div class="learn-block">
+                <div class="num-badge">03</div>
+                <div class="stage-icon">
+                    <svg width="36" height="36" viewBox="0 0 40 40">
+                        <path d="M8,20 A12,12 0 0,1 32,20" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <path d="M32,20 A12,12 0 0,1 8,20" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                        <polygon points="30,14 32,20 26,20" fill="#a7f3d0"/>
+                        <polygon points="10,26 8,20 14,20" fill="#a7f3d0"/>
+                    </svg>
                 </div>
-                <div class="loop-step">
-                    <strong>Improvement measured</strong>
-                    If it helps, prediction improves. If not, it fades.
+                <h3>Continuous loop</h3>
+                <p>The system improves on its own. New data arrives, models retrain, and if it helps — prediction improves. If not, it fades.</p>
+                <div class="steps">
+                    <div class="mini-step"><span class="dot"></span><div><strong>New evidence</strong> <span>— variant, paper, structure</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Context fetched</strong> <span>— class, conservation, motif</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Model retrains</strong> <span>— weights adjust on new inputs</span></div></div>
+                    <div class="mini-step"><span class="dot"></span><div><strong>Impact measured</strong> <span>— help stays, noise fades</span></div></div>
                 </div>
             </div>
         </div>
@@ -239,82 +240,76 @@ layout: null
                                 <stop offset="60%" stop-color="#4ade80" stop-opacity="0.6"/>
                                 <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                             </radialGradient>
-                            <radialGradient id="ripple" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.5"/>
-                                <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                            </radialGradient>
                         </defs>
 
                         <!-- Rotating orbital rings -->
-                        <g class="orbit-ring">
-                            <ellipse cx="200" cy="220" rx="140" ry="60" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.3" transform="rotate(20 200 220)"/>
-                        </g>
-                        <g class="orbit-ring">
-                            <ellipse cx="200" cy="220" rx="170" ry="70" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.25" transform="rotate(-30 200 220)"/>
-                        </g>
-                        <g class="orbit-ring">
-                            <ellipse cx="200" cy="220" rx="120" ry="50" fill="none" stroke="#a7f3d0" stroke-width="0.5" opacity="0.3" transform="rotate(60 200 220)"/>
-                        </g>
+                        <g class="rot-a"><ellipse cx="200" cy="220" rx="150" ry="65" fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.35" transform="rotate(20 200 220)"/></g>
+                        <g class="rot-b"><ellipse cx="200" cy="220" rx="175" ry="72" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.25" transform="rotate(-25 200 220)"/></g>
+                        <g class="rot-c"><ellipse cx="200" cy="220" rx="130" ry="55" fill="none" stroke="#a7f3d0" stroke-width="0.6" opacity="0.3" transform="rotate(55 200 220)"/></g>
 
-                        <!-- Ripples -->
-                        <circle class="hub-ripple" cx="200" cy="220" r="30" fill="none" stroke="#4ade80" stroke-width="1"/>
-                        <circle class="hub-ripple" cx="200" cy="220" r="30" fill="none" stroke="#4ade80" stroke-width="1"/>
-                        <circle class="hub-ripple" cx="200" cy="220" r="30" fill="none" stroke="#4ade80" stroke-width="1"/>
+                        <!-- Expanding pulse rings -->
+                        <circle class="pulse-ring" cx="200" cy="220" r="40" fill="none" stroke="#4ade80" stroke-width="1.2"/>
+                        <circle class="pulse-ring" cx="200" cy="220" r="40" fill="none" stroke="#4ade80" stroke-width="1.2"/>
+                        <circle class="pulse-ring" cx="200" cy="220" r="40" fill="none" stroke="#4ade80" stroke-width="1.2"/>
+
+                        <!-- Links with flowing dashes -->
+                        <line class="link d1" x1="200" y1="220" x2="70" y2="80" stroke="#60a5fa" stroke-width="1.6"/>
+                        <line class="link d2" x1="200" y1="220" x2="330" y2="80" stroke="#a7f3d0" stroke-width="1.6"/>
+                        <line class="link d3" x1="200" y1="220" x2="70" y2="360" stroke="#34d399" stroke-width="1.6"/>
+                        <line class="link d4" x1="200" y1="220" x2="330" y2="360" stroke="#4ade80" stroke-width="1.6"/>
+                        <line class="link d5" x1="200" y1="220" x2="200" y2="55" stroke="#60a5fa" stroke-width="1.2"/>
+                        <line class="link d6" x1="200" y1="220" x2="200" y2="395" stroke="#34d399" stroke-width="1.2"/>
+                        <line class="link d7" x1="200" y1="220" x2="55" y2="220" stroke="#a7f3d0" stroke-width="1.2"/>
+                        <line class="link d8" x1="200" y1="220" x2="345" y2="220" stroke="#4ade80" stroke-width="1.2"/>
 
                         <!-- Central hub -->
-                        <circle cx="200" cy="220" r="60" fill="url(#hubCore)" opacity="0.5"/>
-                        <circle cx="200" cy="220" r="38" fill="none" stroke="#a7f3d0" stroke-width="2"/>
-                        <circle cx="200" cy="220" r="46" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.5"/>
-                        <text x="200" y="226" text-anchor="middle" font-family="monospace" font-size="14" fill="#a7f3d0" font-weight="bold">GAIA</text>
-
-                        <!-- Links from hub to sources -->
-                        <line class="data-packet" x1="200" y1="220" x2="70" y2="80" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
-                        <line class="data-packet" x1="200" y1="220" x2="330" y2="80" stroke="#a7f3d0" stroke-width="1.5" opacity="0.5"/>
-                        <line class="data-packet" x1="200" y1="220" x2="70" y2="360" stroke="#34d399" stroke-width="1.5" opacity="0.5"/>
-                        <line class="data-packet" x1="200" y1="220" x2="330" y2="360" stroke="#4ade80" stroke-width="1.5" opacity="0.5"/>
-
-                        <!-- Source nodes with labels -->
-                        <g>
-                            <circle class="web-node" cx="70" cy="80" r="7" fill="#60a5fa"/>
-                            <circle cx="70" cy="80" r="12" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.5"/>
-                            <text class="web-label" x="70" y="56" text-anchor="middle" font-size="10" fill="#8fa89c">Literature</text>
-                        </g>
-                        <g>
-                            <circle class="web-node" cx="330" cy="80" r="7" fill="#a7f3d0"/>
-                            <circle cx="330" cy="80" r="12" fill="none" stroke="#a7f3d0" stroke-width="0.5" opacity="0.5"/>
-                            <text class="web-label" x="330" y="56" text-anchor="middle" font-size="10" fill="#8fa89c">Genomes</text>
-                        </g>
-                        <g>
-                            <circle class="web-node" cx="70" cy="360" r="7" fill="#34d399"/>
-                            <circle cx="70" cy="360" r="12" fill="none" stroke="#34d399" stroke-width="0.5" opacity="0.5"/>
-                            <text class="web-label" x="70" y="388" text-anchor="middle" font-size="10" fill="#8fa89c">Proteins</text>
-                        </g>
-                        <g>
-                            <circle class="web-node" cx="330" cy="360" r="7" fill="#4ade80"/>
-                            <circle cx="330" cy="360" r="12" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.5"/>
-                            <text class="web-label" x="330" y="388" text-anchor="middle" font-size="10" fill="#8fa89c">Variants</text>
+                        <g class="hub">
+                            <circle cx="200" cy="220" r="65" fill="url(#hubCore)" opacity="0.5"/>
+                            <circle cx="200" cy="220" r="40" fill="none" stroke="#a7f3d0" stroke-width="2.5"/>
+                            <circle cx="200" cy="220" r="48" fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.6"/>
+                            <text x="200" y="226" text-anchor="middle" font-family="monospace" font-size="15" fill="#a7f3d0" font-weight="bold">GAIA</text>
                         </g>
 
-                        <!-- Additional source nodes -->
+                        <!-- Source nodes -->
                         <g>
-                            <circle class="web-node" cx="200" cy="50" r="5" fill="#60a5fa"/>
-                            <text class="web-label" x="200" y="34" text-anchor="middle" font-size="9" fill="#8fa89c">Pathways</text>
-                            <line class="data-packet" x1="200" y1="50" x2="200" y2="182" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+                            <circle class="n-halo h1" cx="70" cy="80" r="14" fill="none" stroke="#60a5fa" stroke-width="0.8"/>
+                            <circle class="n n1" cx="70" cy="80" r="7" fill="#60a5fa"/>
+                            <text class="lbl l1" x="70" y="52" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Literature</text>
                         </g>
                         <g>
-                            <circle class="web-node" cx="200" cy="400" r="5" fill="#34d399"/>
-                            <text class="web-label" x="200" y="424" text-anchor="middle" font-size="9" fill="#8fa89c">Compounds</text>
-                            <line class="data-packet" x1="200" y1="400" x2="200" y2="258" stroke="#34d399" stroke-width="1" opacity="0.4"/>
+                            <circle class="n-halo h2" cx="330" cy="80" r="14" fill="none" stroke="#a7f3d0" stroke-width="0.8"/>
+                            <circle class="n n2" cx="330" cy="80" r="7" fill="#a7f3d0"/>
+                            <text class="lbl l2" x="330" y="52" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Genomes</text>
                         </g>
                         <g>
-                            <circle class="web-node" cx="50" cy="220" r="5" fill="#a7f3d0"/>
-                            <text class="web-label" x="50" y="246" text-anchor="middle" font-size="9" fill="#8fa89c">Trials</text>
-                            <line class="data-packet" x1="50" y1="220" x2="162" y2="220" stroke="#a7f3d0" stroke-width="1" opacity="0.4"/>
+                            <circle class="n-halo h3" cx="70" cy="360" r="14" fill="none" stroke="#34d399" stroke-width="0.8"/>
+                            <circle class="n n3" cx="70" cy="360" r="7" fill="#34d399"/>
+                            <text class="lbl l3" x="70" y="392" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Proteins</text>
                         </g>
                         <g>
-                            <circle class="web-node" cx="350" cy="220" r="5" fill="#4ade80"/>
-                            <text class="web-label" x="350" y="246" text-anchor="middle" font-size="9" fill="#8fa89c">Structures</text>
-                            <line class="data-packet" x1="350" y1="220" x2="238" y2="220" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+                            <circle class="n-halo h4" cx="330" cy="360" r="14" fill="none" stroke="#4ade80" stroke-width="0.8"/>
+                            <circle class="n n4" cx="330" cy="360" r="7" fill="#4ade80"/>
+                            <text class="lbl l4" x="330" y="392" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Variants</text>
+                        </g>
+                        <g>
+                            <circle class="n-halo h5" cx="200" cy="55" r="12" fill="none" stroke="#60a5fa" stroke-width="0.8"/>
+                            <circle class="n n5" cx="200" cy="55" r="6" fill="#60a5fa"/>
+                            <text class="lbl l5" x="200" y="34" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Pathways</text>
+                        </g>
+                        <g>
+                            <circle class="n-halo h6" cx="200" cy="395" r="12" fill="none" stroke="#34d399" stroke-width="0.8"/>
+                            <circle class="n n6" cx="200" cy="395" r="6" fill="#34d399"/>
+                            <text class="lbl l6" x="200" y="422" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Compounds</text>
+                        </g>
+                        <g>
+                            <circle class="n-halo h7" cx="55" cy="220" r="12" fill="none" stroke="#a7f3d0" stroke-width="0.8"/>
+                            <circle class="n n7" cx="55" cy="220" r="6" fill="#a7f3d0"/>
+                            <text class="lbl l7" x="40" y="200" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Trials</text>
+                        </g>
+                        <g>
+                            <circle class="n-halo h8" cx="345" cy="220" r="12" fill="none" stroke="#4ade80" stroke-width="0.8"/>
+                            <circle class="n n8" cx="345" cy="220" r="6" fill="#4ade80"/>
+                            <text class="lbl l8" x="360" y="200" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Structures</text>
                         </g>
                     </svg>
                 </div>
@@ -811,10 +806,12 @@ const observer = new IntersectionObserver((entries) => {
             const val = Math.floor(target * ease);
             if (fmt === 'k' && val >= 1000) {
                 el.textContent = (val / 1000).toFixed(2).replace(/\.00$/, '') + 'M';
+            } else if (fmt === 'm' && val >= 1000000) {
+                el.textContent = (val / 1000000).toFixed(0) + 'M+';
             } else if (fmt === 'plus') {
                 el.textContent = val + '+';
-            } else if (fmt === 'gb') {
-                el.textContent = val + ' GB';
+            } else if (fmt === 'tb') {
+                el.textContent = val + ' TB+';
             } else {
                 el.textContent = val.toLocaleString();
             }
