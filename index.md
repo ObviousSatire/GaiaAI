@@ -110,8 +110,8 @@ layout: null
                 <div class="label">Genome features</div>
             </div>
             <div class="stat">
-                <div class="num" data-count="9" data-format="plus">0</div>
-                <div class="label">Scoring methods</div>
+                <div class="num" data-count="5" data-format="plus">0</div>
+                <div class="label">Scoring families</div>
             </div>
             <div class="stat">
                 <div class="num" data-count="380" data-format="gb">0</div>
@@ -129,10 +129,10 @@ layout: null
         </svg>
         <h2>What <span class="accent">GAIA</span> is</h2>
         <p class="lead">
-            Two learning systems, connected. One reads the language of the
-            genome. The other reads the language of disease. Both improve
-            continuously as new data arrives — from files, from databases,
-            and from the open web.
+            A system that reads the genome and reads the web. It discovers
+            patterns, grows a knowledge graph, and improves continuously as
+            new data arrives — from files, from databases, and from hundreds
+            of curated reputable sources.
         </p>
         <p style="color: var(--fg-dim); font-size: 1.05rem; line-height: 1.8;">
             Most drug discovery starts with a hypothesis and tests it. GAIA
@@ -145,15 +145,14 @@ layout: null
 
 <section id="learning">
     <div class="container">
-        <h2>How GAIA <span class="accent">learns</span></h2>
+        <h2>How it <span class="accent">learns</span></h2>
         <p class="lead">
-            Two learning layers, connected by a shared interface. Each layer
-            discovers structure from data. Neither is programmed with the
-            answer.
+            Nothing is hand-coded. The system discovers its own patterns from
+            data, then continues to learn as more arrives.
         </p>
 
         <div class="learning-loop">
-            <h3>Layer 1 — Reading the genome</h3>
+            <h3>Reading the genome</h3>
             <div class="loop-steps">
                 <div class="loop-step">
                     <strong>Ingest raw sequence</strong>
@@ -169,13 +168,13 @@ layout: null
                 </div>
                 <div class="loop-step">
                     <strong>Cross-validate</strong>
-                    Train on one chromosome, test on another. If it holds, the grammar is universal.
+                    Train on one chromosome, test on another. If it holds, the pattern is universal.
                 </div>
             </div>
         </div>
 
         <div class="learning-loop">
-            <h3>Layer 2 — Reading the world</h3>
+            <h3>Reading the world</h3>
             <div class="loop-steps">
                 <div class="loop-step">
                     <strong>Ingest mappings</strong>
@@ -197,11 +196,11 @@ layout: null
         </div>
 
         <div class="learning-loop">
-            <h3>The loop between layers</h3>
+            <h3>The loop</h3>
             <div class="loop-steps">
                 <div class="loop-step">
                     <strong>New variant arrives</strong>
-                    GAIA queries the genome layer.
+                    The system queries its genome model.
                 </div>
                 <div class="loop-step">
                     <strong>Structural features returned</strong>
@@ -209,7 +208,7 @@ layout: null
                 </div>
                 <div class="loop-step">
                     <strong>Features join training data</strong>
-                    The disease classifier retrains with the new inputs.
+                    The classifier retrains with the new inputs.
                 </div>
                 <div class="loop-step">
                     <strong>Performance measured</strong>
@@ -219,101 +218,144 @@ layout: null
         </div>
     </div>
 </section>
-
 <section id="sources">
     <div class="container">
         <h2>It reads the <span class="accent">open web</span></h2>
         <p class="lead">
-            GAIA doesn't wait for someone to hand it data. It crawls hundreds
-            of curated sources — papers, repositories, databases, trial
-            registries — and grows its knowledge graph as new findings are
-            published.
+            The system doesn't wait for someone to hand it data. It crawls
+            hundreds of curated, reputable URLs — peer-reviewed literature,
+            reference genomes, protein structures, clinical registries — and
+            grows as new findings are published.
         </p>
 
-        <div class="sources-hero">
-            <div class="sources-visual">
-                <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid meet">
-                    <defs>
-                        <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#4ade80" stop-opacity="0.9"/>
-                            <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                        </radialGradient>
-                    </defs>
+        <div class="web-hero">
+            <div class="web-content">
+                <div class="web-graphic">
+                    <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <radialGradient id="hubCore" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#a7f3d0" stop-opacity="1"/>
+                                <stop offset="60%" stop-color="#4ade80" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                            </radialGradient>
+                            <radialGradient id="ripple" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.5"/>
+                                <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
 
-                    <!-- Central hub -->
-                    <circle cx="200" cy="210" r="70" fill="url(#hubGlow)" opacity="0.4"/>
-                    <circle cx="200" cy="210" r="45" fill="none" stroke="#4ade80" stroke-width="2"/>
-                    <circle cx="200" cy="210" r="55" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.5"/>
-                    <text x="200" y="216" text-anchor="middle" font-family="monospace" font-size="16" fill="#4ade80" font-weight="bold">GAIA</text>
+                        <!-- Rotating orbital rings -->
+                        <g class="orbit-ring">
+                            <ellipse cx="200" cy="220" rx="140" ry="60" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.3" transform="rotate(20 200 220)"/>
+                        </g>
+                        <g class="orbit-ring">
+                            <ellipse cx="200" cy="220" rx="170" ry="70" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.25" transform="rotate(-30 200 220)"/>
+                        </g>
+                        <g class="orbit-ring">
+                            <ellipse cx="200" cy="220" rx="120" ry="50" fill="none" stroke="#a7f3d0" stroke-width="0.5" opacity="0.3" transform="rotate(60 200 220)"/>
+                        </g>
 
-                    <!-- Source nodes -->
-                    <g>
-                        <circle class="node-pulse" cx="60" cy="60" r="6" fill="#60a5fa"/>
-                        <text x="60" y="42" text-anchor="middle" font-size="9" fill="#8fa89c">Publications</text>
-                        <line class="link-draw" x1="60" y1="60" x2="200" y2="210" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="340" cy="60" r="6" fill="#a7f3d0"/>
-                        <text x="340" y="42" text-anchor="middle" font-size="9" fill="#8fa89c">Genomes</text>
-                        <line class="link-draw" x1="340" y1="60" x2="200" y2="210" stroke="#a7f3d0" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="60" cy="210" r="6" fill="#34d399"/>
-                        <text x="60" y="192" text-anchor="middle" font-size="9" fill="#8fa89c">Proteins</text>
-                        <line class="link-draw" x1="60" y1="210" x2="200" y2="210" stroke="#34d399" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="340" cy="210" r="6" fill="#4ade80"/>
-                        <text x="340" y="192" text-anchor="middle" font-size="9" fill="#8fa89c">Variants</text>
-                        <line class="link-draw" x1="340" y1="210" x2="200" y2="210" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="60" cy="360" r="6" fill="#60a5fa"/>
-                        <text x="60" y="342" text-anchor="middle" font-size="9" fill="#8fa89c">Compounds</text>
-                        <line class="link-draw" x1="60" y1="360" x2="200" y2="210" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="340" cy="360" r="6" fill="#a7f3d0"/>
-                        <text x="340" y="342" text-anchor="middle" font-size="9" fill="#8fa89c">Trials</text>
-                        <line class="link-draw" x1="340" y1="360" x2="200" y2="210" stroke="#a7f3d0" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="200" cy="60" r="6" fill="#34d399"/>
-                        <text x="200" y="42" text-anchor="middle" font-size="9" fill="#8fa89c">Pathways</text>
-                        <line class="link-draw" x1="200" y1="60" x2="200" y2="210" stroke="#34d399" stroke-width="1" opacity="0.4"/>
-                    </g>
-                    <g>
-                        <circle class="node-pulse" cx="200" cy="360" r="6" fill="#4ade80"/>
-                        <text x="200" y="342" text-anchor="middle" font-size="9" fill="#8fa89c">Structures</text>
-                        <line class="link-draw" x1="200" y1="360" x2="200" y2="210" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
-                    </g>
-                </svg>
-            </div>
+                        <!-- Ripples -->
+                        <circle class="hub-ripple" cx="200" cy="220" r="30" fill="none" stroke="#4ade80" stroke-width="1"/>
+                        <circle class="hub-ripple" cx="200" cy="220" r="30" fill="none" stroke="#4ade80" stroke-width="1"/>
+                        <circle class="hub-ripple" cx="200" cy="220" r="30" fill="none" stroke="#4ade80" stroke-width="1"/>
 
-            <div class="sources-list">
-                <div class="source-category">
-                    <div class="label">Scientific literature</div>
-                    <div class="desc">Curated feed of papers on variants, disease associations, and compound activity.</div>
+                        <!-- Central hub -->
+                        <circle cx="200" cy="220" r="60" fill="url(#hubCore)" opacity="0.5"/>
+                        <circle cx="200" cy="220" r="38" fill="none" stroke="#a7f3d0" stroke-width="2"/>
+                        <circle cx="200" cy="220" r="46" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.5"/>
+                        <text x="200" y="226" text-anchor="middle" font-family="monospace" font-size="14" fill="#a7f3d0" font-weight="bold">GAIA</text>
+
+                        <!-- Links from hub to sources -->
+                        <line class="data-packet" x1="200" y1="220" x2="70" y2="80" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+                        <line class="data-packet" x1="200" y1="220" x2="330" y2="80" stroke="#a7f3d0" stroke-width="1.5" opacity="0.5"/>
+                        <line class="data-packet" x1="200" y1="220" x2="70" y2="360" stroke="#34d399" stroke-width="1.5" opacity="0.5"/>
+                        <line class="data-packet" x1="200" y1="220" x2="330" y2="360" stroke="#4ade80" stroke-width="1.5" opacity="0.5"/>
+
+                        <!-- Source nodes with labels -->
+                        <g>
+                            <circle class="web-node" cx="70" cy="80" r="7" fill="#60a5fa"/>
+                            <circle cx="70" cy="80" r="12" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.5"/>
+                            <text class="web-label" x="70" y="56" text-anchor="middle" font-size="10" fill="#8fa89c">Literature</text>
+                        </g>
+                        <g>
+                            <circle class="web-node" cx="330" cy="80" r="7" fill="#a7f3d0"/>
+                            <circle cx="330" cy="80" r="12" fill="none" stroke="#a7f3d0" stroke-width="0.5" opacity="0.5"/>
+                            <text class="web-label" x="330" y="56" text-anchor="middle" font-size="10" fill="#8fa89c">Genomes</text>
+                        </g>
+                        <g>
+                            <circle class="web-node" cx="70" cy="360" r="7" fill="#34d399"/>
+                            <circle cx="70" cy="360" r="12" fill="none" stroke="#34d399" stroke-width="0.5" opacity="0.5"/>
+                            <text class="web-label" x="70" y="388" text-anchor="middle" font-size="10" fill="#8fa89c">Proteins</text>
+                        </g>
+                        <g>
+                            <circle class="web-node" cx="330" cy="360" r="7" fill="#4ade80"/>
+                            <circle cx="330" cy="360" r="12" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.5"/>
+                            <text class="web-label" x="330" y="388" text-anchor="middle" font-size="10" fill="#8fa89c">Variants</text>
+                        </g>
+
+                        <!-- Additional source nodes -->
+                        <g>
+                            <circle class="web-node" cx="200" cy="50" r="5" fill="#60a5fa"/>
+                            <text class="web-label" x="200" y="34" text-anchor="middle" font-size="9" fill="#8fa89c">Pathways</text>
+                            <line class="data-packet" x1="200" y1="50" x2="200" y2="182" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+                        </g>
+                        <g>
+                            <circle class="web-node" cx="200" cy="400" r="5" fill="#34d399"/>
+                            <text class="web-label" x="200" y="424" text-anchor="middle" font-size="9" fill="#8fa89c">Compounds</text>
+                            <line class="data-packet" x1="200" y1="400" x2="200" y2="258" stroke="#34d399" stroke-width="1" opacity="0.4"/>
+                        </g>
+                        <g>
+                            <circle class="web-node" cx="50" cy="220" r="5" fill="#a7f3d0"/>
+                            <text class="web-label" x="50" y="246" text-anchor="middle" font-size="9" fill="#8fa89c">Trials</text>
+                            <line class="data-packet" x1="50" y1="220" x2="162" y2="220" stroke="#a7f3d0" stroke-width="1" opacity="0.4"/>
+                        </g>
+                        <g>
+                            <circle class="web-node" cx="350" cy="220" r="5" fill="#4ade80"/>
+                            <text class="web-label" x="350" y="246" text-anchor="middle" font-size="9" fill="#8fa89c">Structures</text>
+                            <line class="data-packet" x1="350" y1="220" x2="238" y2="220" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+                        </g>
+                    </svg>
                 </div>
-                <div class="source-category">
-                    <div class="label">Reference genomes</div>
-                    <div class="desc">Human assemblies, gene annotations, and regulatory maps. The base layer for genome scanning.</div>
-                </div>
-                <div class="source-category">
-                    <div class="label">Population variants</div>
-                    <div class="desc">Clinical significance and population frequencies. Every new variant adds evidence.</div>
-                </div>
-                <div class="source-category">
-                    <div class="label">Protein structures</div>
-                    <div class="desc">Structures, sequences, functions. The docking targets and their interaction partners.</div>
-                </div>
-                <div class="source-category">
-                    <div class="label">Compound libraries</div>
-                    <div class="desc">Bioactivity data, purchasable molecules, natural products. The screening universe.</div>
-                </div>
-                <div class="source-category">
-                    <div class="label">Clinical registries</div>
-                    <div class="desc">Trial registries, outcomes, adverse events. Evidence that informs protocol design.</div>
+
+                <div class="web-side">
+                    <div class="web-badge">
+                        <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="none" stroke="#4ade80" stroke-width="1.5"/><circle cx="7" cy="7" r="2" fill="#4ade80"/></svg>
+                        Hundreds of curated sources
+                    </div>
+                    <h3>Reputable <span class="accent">URLs</span>, continuously read</h3>
+                    <p>
+                        Peer-reviewed publications, national reference databases,
+                        protein structure archives, clinical trial registries.
+                        Each source is vetted. Each new finding updates the graph.
+                    </p>
+
+                    <div class="web-categories">
+                        <div class="web-cat">
+                            <div class="label">Publications</div>
+                            <div class="desc">Peer-reviewed findings</div>
+                        </div>
+                        <div class="web-cat">
+                            <div class="label">Genomes</div>
+                            <div class="desc">Reference assemblies</div>
+                        </div>
+                        <div class="web-cat">
+                            <div class="label">Proteins</div>
+                            <div class="desc">Structures and functions</div>
+                        </div>
+                        <div class="web-cat">
+                            <div class="label">Variants</div>
+                            <div class="desc">Population + clinical</div>
+                        </div>
+                        <div class="web-cat">
+                            <div class="label">Compounds</div>
+                            <div class="desc">Bioactivity + libraries</div>
+                        </div>
+                        <div class="web-cat">
+                            <div class="label">Trials</div>
+                            <div class="desc">Clinical registries</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -324,7 +366,7 @@ layout: null
                 <div class="scan-step">
                     <span class="icon">🌐</span>
                     <div class="label">Crawl</div>
-                    <div class="desc">Poll curated sources</div>
+                    <div class="desc">Hundreds of curated URLs</div>
                 </div>
                 <div class="scan-step">
                     <span class="icon">📖</span>
@@ -344,13 +386,12 @@ layout: null
                 <div class="scan-step">
                     <span class="icon">📈</span>
                     <div class="label">Retrain</div>
-                    <div class="desc">Learn from the new evidence</div>
+                    <div class="desc">Learn from new evidence</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 <section id="pipeline">
     <div class="container">
         <h2>The <span class="accent">pipeline</span></h2>
@@ -406,99 +447,6 @@ layout: null
                 </svg>
                 <h3>Design the protocol</h3>
                 <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="math">
-    <div class="container">
-        <h2>The <span class="accent">math</span> behind the learning</h2>
-        <p class="lead">
-            Both layers learn from data, not rules. These are the formulas
-            each layer uses to update itself.
-        </p>
-
-        <div class="math-grid">
-            <div class="math-card">
-                <h3>Shannon entropy</h3>
-                <div class="sub">Information density per window</div>
-                <div class="formula">
-                    <span class="var">H</span> <span class="op">=</span> <span class="op">−</span> <span class="fn">Σ</span> <span class="var">p</span><sub>i</sub> <span class="fn">log</span><sub>2</sub> <span class="var">p</span><sub>i</sub>
-                </div>
-                <p>Measures the information density of a DNA window. Low entropy = repeats. High entropy = information-rich regions.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Fractal dimension</h3>
-                <div class="sub">How structure fills space across scales</div>
-                <div class="formula">
-                    <span class="var">D</span> <span class="op">=</span> <span class="fn">lim</span><sub>ε→0</sub> <span class="fn">log</span> <span class="var">N</span>(<span class="var">ε</span>) <span class="op">/</span> <span class="fn">log</span>(1/<span class="var">ε</span>)
-                </div>
-                <p>How the sequence fills space across scales. Coding regions cluster around a distinctive signature.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Hurst exponent</h3>
-                <div class="sub">Long-range correlation signal</div>
-                <div class="formula">
-                    <span class="fn">E</span>[<span class="var">R</span>(<span class="var">n</span>)/<span class="var">S</span>(<span class="var">n</span>)] <span class="op">~</span> <span class="var">c</span> <span class="op">·</span> <span class="var">n</span><sup><span class="var">H</span></sup>
-                </div>
-                <p>Detects whether a window shows persistent or anti-persistent structure. Independent of GC content.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Class probability</h3>
-                <div class="sub">Which features predict which class</div>
-                <div class="formula">
-                    <span class="var">P</span>(<span class="var">c</span> | <span class="var">x</span>) <span class="op">=</span> <span class="var">P</span>(<span class="var">x</span> | <span class="var">c</span>) <span class="op">·</span> <span class="var">P</span>(<span class="var">c</span>) <span class="op">/</span> <span class="var">P</span>(<span class="var">x</span>)
-                </div>
-                <p>Given a segment's features, what's the probability it belongs to each class? Updates as new data arrives.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Gradient descent</h3>
-                <div class="sub">How weights change with each example</div>
-                <div class="formula">
-                    <span class="var">w</span><sub>t+1</sub> <span class="op">=</span> <span class="var">w</span><sub>t</sub> <span class="op">−</span> <span class="var">η</span> <span class="op">·</span> <span class="fn">∇</span><span class="var">L</span>(<span class="var">w</span><sub>t</sub>)
-                </div>
-                <p>Weights move downhill on the loss surface. The learning rate controls how fast.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Cross-validated F1</h3>
-                <div class="sub">Generalization, not memorization</div>
-                <div class="formula">
-                    <span class="var">F</span><sub>1</sub> <span class="op">=</span> 2 <span class="op">·</span> <span class="var">P</span> <span class="op">·</span> <span class="var">R</span> <span class="op">/</span> (<span class="var">P</span> <span class="op">+</span> <span class="var">R</span>)
-                </div>
-                <p>Precision × recall balance. Train on one chromosome, test on another. If F1 holds, the pattern is universal.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Pairwise interaction energy</h3>
-                <div class="sub">Attraction and repulsion between atoms</div>
-                <div class="formula">
-                    <span class="var">E</span> <span class="op">=</span> 4<span class="var">ε</span> [ (<span class="var">σ</span>/<span class="var">r</span>)<sup>12</sup> <span class="op">−</span> (<span class="var">σ</span>/<span class="var">r</span>)<sup>6</sup> ]
-                </div>
-                <p>One term for repulsion, one for attraction. Every docking score starts here.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Screened electrostatics</h3>
-                <div class="sub">Charges interacting at distance</div>
-                <div class="formula">
-                    <span class="var">E</span> <span class="op">=</span> 332 <span class="op">·</span> <span class="var">q</span><sub>i</sub> <span class="var">q</span><sub>j</sub> <span class="op">·</span> <span class="fn">e</span><sup>−<span class="var">κr</span></sup> <span class="op">/</span> <span class="var">r</span>
-                </div>
-                <p>Charges attract or repel. Salt in solution screens the interaction at distance.</p>
-            </div>
-
-            <div class="math-card">
-                <h3>Charge equilibration</h3>
-                <div class="sub">How electrons redistribute along bonds</div>
-                <div class="formula">
-                    <span class="var">χ</span><sub>i</sub> <span class="op">←</span> <span class="var">χ</span><sub>i</sub> <span class="op">+</span> <span class="var">η</span> <span class="op">·</span> <span class="var">q</span><sub>i</sub> <span class="op">+</span> <span class="op">Σ</span> <span class="var">γ</span><sub>ij</sub> <span class="var">q</span><sub>j</sub>
-                </div>
-                <p>Charge flows between bonded atoms until electronegativity equilibrates across the molecule.</p>
             </div>
         </div>
     </div>
@@ -616,11 +564,10 @@ layout: null
 
 <section id="scoring">
     <div class="container">
-        <h2>Nine <span class="accent">scoring approaches</span>, one answer</h2>
+        <h2>How compounds are <span class="accent">scored</span></h2>
         <p class="lead">
-            Every compound-target pair is evaluated by multiple independent
-            methods. Each contributes a piece. Together they produce one
-            ranking.
+            Every compound-target pair is evaluated from multiple angles.
+            Each contributes evidence. Together they produce one ranking.
         </p>
 
         <div class="scoring-grid">
