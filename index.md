@@ -775,7 +775,7 @@ layout: null
         <p class="lead">
             Every stage archived publicly with permanent identifiers.
             Reproducible from raw public sources.
-            <a href="https://zenodo.org/me/uploads" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent);">View the full collection on Zenodo →</a>
+            <a href="https://zenodo.org/communities/gaiaai" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent);">View the full collection on Zenodo →</a>
         </p>
 
         <table class="data-table">
@@ -796,7 +796,7 @@ layout: null
         <p class="lead">Three ways to start — depending on what you want to build on.</p>
 
         <div class="use-grid">
-            <a class="use-card" href="https://zenodo.org/me/uploads" target="_blank" rel="noopener">
+            <a class="use-card" href="https://zenodo.org/communities/gaiaai" target="_blank" rel="noopener">
                 <svg width="32" height="32" viewBox="0 0 40 40">
                     <ellipse cx="20" cy="12" rx="12" ry="4" fill="none" stroke="#4ade80" stroke-width="1.5"/>
                     <path d="M8,12 L8,28 Q8,32 20,32 Q32,32 32,28 L32,12" fill="none" stroke="#4ade80" stroke-width="1.5"/>
@@ -837,7 +837,7 @@ layout: null
         </svg>
         <div class="footer-links">
             <a href="https://github.com/ObviousSatire/GaiaAI">Source on GitHub</a>
-            <a href="https://doi.org/10.5281/zenodo.22949286">Open datasets</a>
+            <a href="https://zenodo.org/communities/gaiaai" target="_blank" rel="noopener">Open datasets</a>
             <a href="#learning">How it learns</a>
         </div>
         <p>Built with C++17 and Python stdlib. No external dependencies.</p>
