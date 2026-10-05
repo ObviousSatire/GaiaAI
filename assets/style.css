@@ -1746,3 +1746,264 @@ footer .footer-links {
     margin: 0 auto;
     max-width: 720px;
 }
+
+/* ============================================================
+   WEB GRAPH — fully animated
+   ============================================================ */
+.web-graphic svg .rot-a {
+    transform-origin: 200px 220px;
+    animation: rotCW 40s linear infinite;
+}
+.web-graphic svg .rot-b {
+    transform-origin: 200px 220px;
+    animation: rotCCW 55s linear infinite;
+}
+.web-graphic svg .rot-c {
+    transform-origin: 200px 220px;
+    animation: rotCW 70s linear infinite;
+}
+@keyframes rotCW  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rotCCW { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+.web-graphic svg .pulse-ring {
+    transform-origin: 200px 220px;
+    animation: ringExpand 5s ease-out infinite;
+}
+.web-graphic svg .pulse-ring:nth-of-type(2) { animation-delay: 1.7s; }
+.web-graphic svg .pulse-ring:nth-of-type(3) { animation-delay: 3.4s; }
+@keyframes ringExpand {
+    0%   { opacity: 0.9; transform: scale(0.4); }
+    100% { opacity: 0; transform: scale(2.2); }
+}
+
+.web-graphic svg .link {
+    stroke-dasharray: 6 260;
+    animation: linkFlow 3.5s linear infinite;
+}
+.web-graphic svg .link.d1 { animation-delay: 0s; }
+.web-graphic svg .link.d2 { animation-delay: -0.7s; }
+.web-graphic svg .link.d3 { animation-delay: -1.4s; }
+.web-graphic svg .link.d4 { animation-delay: -2.1s; }
+.web-graphic svg .link.d5 { animation-delay: -0.35s; }
+.web-graphic svg .link.d6 { animation-delay: -1.05s; }
+.web-graphic svg .link.d7 { animation-delay: -1.75s; }
+.web-graphic svg .link.d8 { animation-delay: -2.45s; }
+@keyframes linkFlow {
+    0%   { stroke-dashoffset: 266; }
+    100% { stroke-dashoffset: 0; }
+}
+
+.web-graphic svg .n {
+    transform-origin: center;
+    animation: nodeBreath 3s ease-in-out infinite;
+}
+.web-graphic svg .n.n2 { animation-delay: -0.4s; }
+.web-graphic svg .n.n3 { animation-delay: -0.8s; }
+.web-graphic svg .n.n4 { animation-delay: -1.2s; }
+.web-graphic svg .n.n5 { animation-delay: -1.6s; }
+.web-graphic svg .n.n6 { animation-delay: -2.0s; }
+.web-graphic svg .n.n7 { animation-delay: -2.4s; }
+.web-graphic svg .n.n8 { animation-delay: -2.8s; }
+@keyframes nodeBreath {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%      { opacity: 1; transform: scale(1.5); }
+}
+
+.web-graphic svg .n-halo {
+    animation: haloBreath 3s ease-in-out infinite;
+}
+.web-graphic svg .n-halo.h2 { animation-delay: -0.4s; }
+.web-graphic svg .n-halo.h3 { animation-delay: -0.8s; }
+.web-graphic svg .n-halo.h4 { animation-delay: -1.2s; }
+.web-graphic svg .n-halo.h5 { animation-delay: -1.6s; }
+.web-graphic svg .n-halo.h6 { animation-delay: -2.0s; }
+.web-graphic svg .n-halo.h7 { animation-delay: -2.4s; }
+.web-graphic svg .n-halo.h8 { animation-delay: -2.8s; }
+@keyframes haloBreath {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%      { opacity: 0.8; transform: scale(1.25); }
+}
+
+.web-graphic svg .lbl {
+    animation: lblFloat 5s ease-in-out infinite;
+}
+.web-graphic svg .lbl.l2 { animation-delay: -1s; }
+.web-graphic svg .lbl.l3 { animation-delay: -2s; }
+.web-graphic svg .lbl.l4 { animation-delay: -3s; }
+.web-graphic svg .lbl.l5 { animation-delay: -0.5s; }
+.web-graphic svg .lbl.l6 { animation-delay: -1.5s; }
+.web-graphic svg .lbl.l7 { animation-delay: -2.5s; }
+.web-graphic svg .lbl.l8 { animation-delay: -3.5s; }
+@keyframes lblFloat {
+    0%, 100% { opacity: 0.6; }
+    50%      { opacity: 1; }
+}
+
+.web-graphic svg .hub {
+    transform-origin: 200px 220px;
+    animation: hubPulse 4s ease-in-out infinite;
+}
+@keyframes hubPulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.06); }
+}
+
+/* ============================================================
+   HOW IT LEARNS — enhanced card design
+   ============================================================ */
+.learn-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.learn-section-header h2 {
+    margin-bottom: 16px;
+}
+.learn-section-header .lead {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 680px;
+}
+
+.learn-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
+    margin-top: 48px;
+    position: relative;
+}
+
+.learn-block {
+    background: linear-gradient(160deg, var(--bg-elev) 0%, var(--bg-elev2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px 32px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.learn-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent4), var(--accent), var(--accent2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+.learn-block:hover::before { transform: scaleX(1); }
+
+.learn-block:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(74, 222, 128, 0.12);
+}
+
+.learn-block .stage-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 18px;
+    margin-bottom: 24px;
+    transition: all 0.4s;
+    position: relative;
+}
+.learn-block:hover .stage-icon {
+    transform: scale(1.1) rotate(-8deg);
+    background: rgba(74, 222, 128, 0.15);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+}
+.learn-block .stage-icon svg { display: block; }
+
+.learn-block .num-badge {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.learn-block h3 {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--fg);
+}
+
+.learn-block > p {
+    font-size: 0.92rem;
+    color: var(--fg-dim);
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.learn-block .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+}
+
+.learn-block .mini-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.learn-block .mini-step .dot {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 7px;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+    position: relative;
+}
+.learn-block .mini-step .dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: dotRing 3s ease-out infinite;
+}
+@keyframes dotRing {
+    0%   { transform: scale(1); opacity: 0.4; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.learn-block .mini-step strong {
+    color: var(--fg);
+    font-weight: 500;
+}
+.learn-block .mini-step span {
+    color: var(--fg-dim);
+}
+
+/* Learning section — bigger spacing, centered header */
+.learn-center {
+    text-align: center;
+    margin-bottom: 64px;
+}
+.learn-center h2 {
+    margin-bottom: 20px;
+}
+.learn-center .lead {
+    margin: 0 auto;
+    max-width: 720px;
+}
