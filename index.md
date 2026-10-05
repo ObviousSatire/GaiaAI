@@ -65,8 +65,8 @@ layout: null
         <h1>GAIA</h1>
         <p class="tagline">
             A <strong>self-learning</strong> platform for disease research.
-            Scan a genome, discover its grammar, map variants, screen compounds,
-            and design a protocol — <strong>end to end</strong>.
+            Scans the genome, scans the web, discovers its own features,
+            and builds a knowledge graph that grows as science advances.
         </p>
 
         <div class="hero-cta">
@@ -200,6 +200,227 @@ layout: null
                 GAIA's function layer says "what does it mean for disease."
                 Both learn. Both improve.
             </p>
+        </div>
+    </div>
+</section>
+
+<section id="sources">
+    <div class="container">
+        <h2>Learning from the <span class="accent">open web</span></h2>
+        <p class="lead">
+            GAIA doesn't just process the data you give it. It scans the
+            internet continuously — papers, repos, databases, trials — and
+            grows its knowledge graph as new information is published.
+        </p>
+
+        <div class="sources-hero">
+            <div class="sources-visual">
+                <svg viewBox="0 0 400 380" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#4ade80" stop-opacity="0.9"/>
+                            <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <!-- Central GAIA hub -->
+                    <circle cx="200" cy="190" r="60" fill="url(#hubGlow)" opacity="0.4"/>
+                    <circle cx="200" cy="190" r="40" fill="none" stroke="#4ade80" stroke-width="2"/>
+                    <text x="200" y="196" text-anchor="middle" font-family="monospace" font-size="16" fill="#4ade80" font-weight="bold">GAIA</text>
+
+                    <!-- Source nodes -->
+                    <g>
+                        <circle class="node-pulse" cx="60" cy="60" r="6" fill="#60a5fa"/>
+                        <text x="60" y="42" text-anchor="middle" font-size="9" fill="#8892a0">PubMed</text>
+                        <line class="link-draw" x1="60" y1="60" x2="200" y2="190" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="340" cy="60" r="6" fill="#a78bfa"/>
+                        <text x="340" y="42" text-anchor="middle" font-size="9" fill="#8892a0">bioRxiv</text>
+                        <line class="link-draw" x1="340" y1="60" x2="200" y2="190" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="60" cy="190" r="6" fill="#f472b6"/>
+                        <text x="60" y="172" text-anchor="middle" font-size="9" fill="#8892a0">UniProt</text>
+                        <line class="link-draw" x1="60" y1="190" x2="200" y2="190" stroke="#f472b6" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="340" cy="190" r="6" fill="#4ade80"/>
+                        <text x="340" y="172" text-anchor="middle" font-size="9" fill="#8892a0">GWAS</text>
+                        <line class="link-draw" x1="340" y1="190" x2="200" y2="190" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="60" cy="320" r="6" fill="#60a5fa"/>
+                        <text x="60" y="302" text-anchor="middle" font-size="9" fill="#8892a0">PDB</text>
+                        <line class="link-draw" x1="60" y1="320" x2="200" y2="190" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="340" cy="320" r="6" fill="#a78bfa"/>
+                        <text x="340" y="302" text-anchor="middle" font-size="9" fill="#8892a0">ClinVar</text>
+                        <line class="link-draw" x1="340" y1="320" x2="200" y2="190" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="200" cy="60" r="6" fill="#f472b6"/>
+                        <text x="200" y="42" text-anchor="middle" font-size="9" fill="#8892a0">Ensembl</text>
+                        <line class="link-draw" x1="200" y1="60" x2="200" y2="190" stroke="#f472b6" stroke-width="1" opacity="0.4"/>
+                    </g>
+                    <g>
+                        <circle class="node-pulse" cx="200" cy="320" r="6" fill="#4ade80"/>
+                        <text x="200" y="302" text-anchor="middle" font-size="9" fill="#8892a0">CHEMBL</text>
+                        <line class="link-draw" x1="200" y1="320" x2="200" y2="190" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="sources-list">
+                <div class="source-category">
+                    <div class="label">Literature <span class="count">PubMed · bioRxiv · medRxiv</span></div>
+                    <div class="desc">New papers on variant-disease associations, compound activity, pathway discoveries. Every new finding updates the graph.</div>
+                </div>
+                <div class="source-category">
+                    <div class="label">Genomics <span class="count">Ensembl · UCSC · NCBI</span></div>
+                    <div class="desc">Reference genomes, gene annotations, regulatory elements. The base layer for genome scanning.</div>
+                </div>
+                <div class="source-category">
+                    <div class="label">Variants <span class="count">ClinVar · gnomAD · 1000G</span></div>
+                    <div class="desc">Population frequencies, clinical significance, functional impact. Every new variant adds evidence.</div>
+                </div>
+                <div class="source-category">
+                    <div class="label">Proteins <span class="count">PDB · UniProt · AlphaFold</span></div>
+                    <div class="desc">Structures, sequences, functions. The docking targets and their interaction partners.</div>
+                </div>
+                <div class="source-category">
+                    <div class="label">Compounds <span class="count">ChEMBL · ZINC · COCONUT</span></div>
+                    <div class="desc">Bioactivity data, purchasable molecules, natural products. The screening universe.</div>
+                </div>
+                <div class="source-category">
+                    <div class="label">Clinical <span class="count">ClinicalTrials.gov</span></div>
+                    <div class="desc">Trial registries, outcomes, adverse events. Real-world evidence that informs protocol design.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scan-visual">
+            <h3>Continuous scan pipeline</h3>
+            <div class="scan-flow">
+                <div class="scan-step">
+                    <span class="icon">🔍</span>
+                    <div class="label">Crawl</div>
+                    <div class="desc">Poll source APIs and RSS feeds</div>
+                </div>
+                <div class="scan-step">
+                    <span class="icon">📖</span>
+                    <div class="label">Parse</div>
+                    <div class="desc">Extract entities, relations, confidence</div>
+                </div>
+                <div class="scan-step">
+                    <span class="icon">✅</span>
+                    <div class="label">Validate</div>
+                    <div class="desc">Cross-check across sources</div>
+                </div>
+                <div class="scan-step">
+                    <span class="icon">🔗</span>
+                    <div class="label">Integrate</div>
+                    <div class="desc">Add nodes and edges to the graph</div>
+                </div>
+                <div class="scan-step">
+                    <span class="icon">📈</span>
+                    <div class="label">Retrain</div>
+                    <div class="desc">Update classifier on new evidence</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="math">
+    <div class="container">
+        <h2>The <span class="accent">math</span> behind the learning</h2>
+        <p class="lead">
+            Both layers learn from data, not rules. Here are the actual formulas
+            each layer uses to update itself.
+        </p>
+
+        <div class="math-grid">
+            <div class="math-card">
+                <h3>Shannon entropy</h3>
+                <div class="sub">Feature: sequence complexity per window</div>
+                <div class="formula">
+                    <span class="var">H</span> <span class="op">=</span> <span class="op">−</span> <span class="fn">Σ</span> <span class="var">p</span><sub>i</sub> <span class="fn">log</span><sub>2</sub> <span class="var">p</span><sub>i</sub>
+                </div>
+                <p>Measures the information density of a DNA window. Low entropy = repeats. High entropy = information-rich regions.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Fractal dimension (box-counting)</h3>
+                <div class="sub">Feature: structural self-similarity</div>
+                <div class="formula">
+                    <span class="var">D</span> <span class="op">=</span> <span class="fn">lim</span><sub>ε→0</sub> <span class="fn">log</span> <span class="var">N</span>(<span class="var">ε</span>) <span class="op">/</span> <span class="fn">log</span>(1/<span class="var">ε</span>)
+                </div>
+                <p>How the sequence fills space across scales. Coding regions cluster around D = 1.16 ± 0.08.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Hurst exponent</h3>
+                <div class="sub">Feature: long-range correlation</div>
+                <div class="formula">
+                    <span class="fn">E</span>[<span class="var">R</span>(<span class="var">n</span>)/<span class="var">S</span>(<span class="var">n</span>)] <span class="op">~</span> <span class="var">c</span> <span class="op">·</span> <span class="var">n</span><sup><span class="var">H</span></sup>
+                </div>
+                <p>Detects whether a window shows persistent or anti-persistent structure. Conservation signal independent of GC.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Class-conditional probability</h3>
+                <div class="sub">Classifier: which features predict which class</div>
+                <div class="formula">
+                    <span class="var">P</span>(<span class="var">c</span> | <span class="var">x</span>) <span class="op">=</span> <span class="var">P</span>(<span class="var">x</span> | <span class="var">c</span>) <span class="op">·</span> <span class="var">P</span>(<span class="var">c</span>) <span class="op">/</span> <span class="var">P</span>(<span class="var">x</span>)
+                </div>
+                <p>Given a segment's 56 features, what's the probability it's coding, intronic, or intergenic? Bayes' rule updates these as data arrives.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Gradient descent update</h3>
+                <div class="sub">How weights change with each new example</div>
+                <div class="formula">
+                    <span class="var">w</span><sub>t+1</sub> <span class="op">=</span> <span class="var">w</span><sub>t</sub> <span class="op">−</span> <span class="var">η</span> <span class="op">·</span> <span class="fn">∇</span><span class="var">L</span>(<span class="var">w</span><sub>t</sub>)
+                </div>
+                <p>Weights move downhill on the loss surface. η is the learning rate. L is the cross-entropy between prediction and label.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Cross-validated F1</h3>
+                <div class="sub">How we measure generalization, not memorization</div>
+                <div class="formula">
+                    <span class="var">F</span><sub>1</sub> <span class="op">=</span> 2 <span class="op">·</span> <span class="var">P</span> <span class="op">·</span> <span class="var">R</span> <span class="op">/</span> (<span class="var">P</span> <span class="op">+</span> <span class="var">R</span>)
+                </div>
+                <p>Precision × recall balance. Train on one chromosome, test on another. If F1 holds, the model learned something universal.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Interaction energy (Lennard-Jones)</h3>
+                <div class="sub">Physics: pairwise non-bonded energy</div>
+                <div class="formula">
+                    <span class="var">E</span> <span class="op">=</span> 4<span class="var">ε</span> [ (<span class="var">σ</span>/<span class="var">r</span>)<sup>12</sup> <span class="op">−</span> (<span class="var">σ</span>/<span class="var">r</span>)<sup>6</sup> ]
+                </div>
+                <p>The 12-term is Pauli repulsion. The 6-term is van der Waals attraction. Every docking score starts here.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Coulomb with Debye-Hückel</h3>
+                <div class="sub">Physics: screened electrostatics</div>
+                <div class="formula">
+                    <span class="var">E</span> <span class="op">=</span> 332 <span class="op">·</span> <span class="var">q</span><sub>i</sub> <span class="var">q</span><sub>j</sub> <span class="op">·</span> <span class="fn">e</span><sup>−<span class="var">κr</span></sup> <span class="op">/</span> <span class="var">r</span>
+                </div>
+                <p>Charges attract or repel. Salt in solution screens the interaction at distance κ. Essential for realistic binding.</p>
+            </div>
+
+            <div class="math-card">
+                <h3>Gasteiger charge equilibration</h3>
+                <div class="sub">Physics: iterative partial charges</div>
+                <div class="formula">
+                    <span class="var">χ</span><sub>i</sub> <span class="op">←</span> <span class="var">χ</span><sub>i</sub> <span class="op">+</span> <span class="var">η</span> <span class="op">·</span> <span class="var">q</span><sub>i</sub> <span class="op">+</span> <span class="op">Σ</span> <span class="var">γ</span><sub>ij</sub> <span class="var">q</span><sub>j</sub>
+                </div>
+                <p>Charge flows between bonded atoms until electronegativity equilibrates. Iterated 8 times per molecule.</p>
+            </div>
         </div>
     </div>
 </section>

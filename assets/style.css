@@ -658,3 +658,252 @@ footer .footer-links {
     .capability { padding: 32px 26px; }
     .learning-loop { padding: 32px 24px; }
 }
+
+/* ============================================================
+   MATH / FORMULA DISPLAY
+   ============================================================ */
+.math-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+}
+
+.math-card {
+    background: linear-gradient(135deg, var(--bg-elev) 0%, var(--bg-elev2) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+.math-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s;
+}
+.math-card:hover::after { transform: scaleY(1); }
+.math-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.math-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.math-card .sub {
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    margin-bottom: 20px;
+}
+
+.math-card .formula {
+    background: #020305;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    font-family: 'SF Mono', Consolas, Monaco, monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+    overflow-x: auto;
+    line-height: 1.8;
+}
+
+.math-card .formula .op { color: var(--fg-dim); }
+.math-card .formula .var { color: var(--fg); }
+.math-card .formula .fn { color: var(--accent2); }
+.math-card .formula .num { color: var(--accent3); }
+
+.math-card p {
+    font-size: 0.9rem;
+    color: var(--fg-dim);
+    line-height: 1.7;
+}
+
+/* ============================================================
+   SOURCES
+   ============================================================ */
+.sources-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 48px;
+    align-items: center;
+}
+@media (max-width: 800px) {
+    .sources-hero { grid-template-columns: 1fr; }
+}
+
+.sources-visual {
+    position: relative;
+    height: 380px;
+    border-radius: 20px;
+    background: radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.08), transparent 70%),
+                var(--bg-elev);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sources-visual svg {
+    width: 100%;
+    height: 100%;
+}
+
+.node-pulse {
+    animation: nodePulse 3s ease-in-out infinite;
+    transform-origin: center;
+}
+@keyframes nodePulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50%      { opacity: 1; transform: scale(1.4); }
+}
+
+.link-draw {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: drawLink 3s ease-out infinite alternate;
+}
+@keyframes drawLink {
+    to { stroke-dashoffset: 0; }
+}
+
+.sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.source-category {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: all 0.3s;
+}
+
+.source-category:hover {
+    border-color: var(--accent);
+    transform: translateX(6px);
+}
+
+.source-category .label {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.source-category .desc {
+    font-size: 0.92rem;
+    color: var(--fg-dim);
+    line-height: 1.6;
+}
+
+.source-category .count {
+    display: inline-block;
+    padding: 2px 10px;
+    background: rgba(74, 222, 128, 0.1);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-left: 8px;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+/* ============================================================
+   LEARNING LOOP ANIMATED SCAN
+   ============================================================ */
+.scan-visual {
+    margin: 56px 0;
+    padding: 48px 40px;
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.04), rgba(96, 165, 250, 0.04));
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-visual h3 {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+}
+
+.scan-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.scan-step {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-step::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.15), transparent);
+    transform: translateX(-100%);
+    animation: scanSweep 3s ease-in-out infinite;
+}
+.scan-step:nth-child(2)::before { animation-delay: 0.4s; }
+.scan-step:nth-child(3)::before { animation-delay: 0.8s; }
+.scan-step:nth-child(4)::before { animation-delay: 1.2s; }
+.scan-step:nth-child(5)::before { animation-delay: 1.6s; }
+
+@keyframes scanSweep {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+
+.scan-step:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.scan-step .icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.scan-step .label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.scan-step .desc {
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+    line-height: 1.5;
+}
