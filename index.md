@@ -215,8 +215,8 @@ layout: null
       as it unfolds along the genome.
     </p>
     <ul>
-      <li><strong>Ingest</strong> full chromosomes</li>
-      <li><strong>Read</strong> shape, rhythm, and context</li>
+      <li><strong>Ingest</strong> whole chromosomes, unedited</li>
+      <li><strong>Read</strong> shape, rhythm, and context along the strand</li>
       <li><strong>Discover</strong> the signatures that separate coding from conserved from regulatory from silent</li>
       <li><strong>Validate</strong> across chromosomes and species</li>
     </ul>
@@ -1159,43 +1159,122 @@ layout: null
     </div>
 </section>
 
-<section class="use-it">
-    <div class="container">
-        <h2>Use it</h2>
-        <p class="lead">Three ways to start — depending on what you want to build on.</p>
+<section id="different">
+<div class="container">
 
-        <div class="use-grid">
-            <a class="use-card" href="https://zenodo.org/communities/gaiaai" target="_blank" rel="noopener">
-                <svg width="32" height="32" viewBox="0 0 40 40">
-                    <ellipse cx="20" cy="12" rx="12" ry="4" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,12 L8,28 Q8,32 20,32 Q32,32 32,28 L32,12" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                </svg>
-                <div class="title">Explore the datasets</div>
-                <div class="desc">All stages of the pipeline, archived with permanent identifiers. Browse the full collection — libraries, benchmarks, and intermediate results.</div>
-                <div class="arrow">Open datasets →</div>
-            </a>
-
-            <a class="use-card" href="https://github.com/ObviousSatire/GaiaAI" target="_blank" rel="noopener">
-                <svg width="32" height="32" viewBox="0 0 40 40">
-                    <path d="M14,6 L6,20 L14,34" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M26,6 L34,20 L26,34" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="22" y1="10" x2="18" y2="30" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <div class="title">Read the source</div>
-                <div class="desc">C++17 and Python stdlib only. No external dependencies. The physics engine, the learning pipeline, and the scanning loop.</div>
-                <div class="arrow">Open source →</div>
-            </a>
-
-            <a class="use-card" href="#pipeline" target="_self">
-                <svg width="32" height="32" viewBox="0 0 40 40">
-                    <path d="M6,32 L6,24 L14,24 L14,16 L22,16 L22,26 L30,26 L30,12 L34,12" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-linejoin="round"/>
-                </svg>
-                <div class="title">Follow the pipeline</div>
-                <div class="desc">See how raw genome input becomes a treatment protocol — the five stages, the three evidence layers, and the outputs.</div>
-                <div class="arrow">Jump to pipeline →</div>
-            </a>
-        </div>
+  <div class="different-split">
+    <div class="different-claim">
+      <h2>Most tools solve <span class="accent">one piece</span>.</h2>
+      <p class="claim-sub">
+        GAIA runs the whole chain — from raw sequence to treatment
+        protocol — inside a single self-learning system. Evidence
+        never has to cross a boundary between tools, because
+        there are no boundaries to cross.
+      </p>
     </div>
+
+    <div class="different-pillars">
+
+      <div class="pillar">
+        <h3>One pipeline, not five</h3>
+        <p>
+          Genome scanning, variant mapping, compound screening, and
+          protocol design normally live in separate systems, stitched
+          together by hand. Here, they are the same system. A signal
+          found at one end is already legible at the other.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Learned, not configured</h3>
+        <p>
+          Weights are discovered from labeled sequence. Features are
+          extracted, tested, and kept only if they carry signal. As
+          the knowledge graph grows, the model sharpens without being
+          rebuilt from scratch for every new target.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Derived, not assembled</h3>
+        <p>
+          Boundary detection across three scales. A feature space
+          built from first principles. A classifier that discovers
+          its own thresholds from labeled sequence. Nothing here is
+          a wrapper around someone else's tool — every equation is
+          written from scratch.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Checked before it speaks</h3>
+        <p>
+          Every prediction is verified against three independent
+          layers — computational, cellular, physiological. A claim
+          that survives all three is worth acting on. A claim that
+          survives only computation is not a claim. It is a guess.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+.different-split {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.4fr);
+  gap: 72px;
+  align-items: start;
+}
+.different-claim {
+  position: sticky;
+  top: 96px;
+}
+.different-claim h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.claim-sub {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+.different-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pillar {
+  padding: 32px 0;
+  border-top: 1px solid rgba(148,163,184,0.14);
+}
+.pillar:last-child {
+  border-bottom: 1px solid rgba(148,163,184,0.14);
+}
+.pillar h3 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  color: #e2e8f0;
+}
+.pillar p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #94a3b8;
+  margin: 0;
+}
+@media (max-width: 820px) {
+  .different-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .different-claim {
+    position: static;
+  }
+}
+</style>
 </section>
 
 <footer>
