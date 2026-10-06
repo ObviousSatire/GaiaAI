@@ -827,133 +827,151 @@ layout: null
 </section>
 
 <section id="sources">
-<style>
-#sources .src-wrap { max-width: 1100px; margin: 0 auto; }
-#sources .src-kicker {
-    font-family: monospace; font-size: 0.7rem; letter-spacing: 0.22em;
-    text-transform: uppercase; color: #4ade80; margin-bottom: 14px;
-}
-#sources .src-hero h3 {
-    font-size: 1.35rem; color: #e2e8f0; margin: 0 0 14px; font-weight: 600;
-}
-#sources .src-hero p {
-    font-size: 0.98rem; line-height: 1.75; color: #94a3b8;
-    max-width: 720px; margin-bottom: 28px;
-}
-#sources .src-types {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 22px 32px;
-}
-#sources .src-types div { display: flex; flex-direction: column; gap: 4px; }
-#sources .src-types strong { color: #a7f3d0; font-size: 0.95rem; font-weight: 600; }
-#sources .src-types span { color: #64748b; font-size: 0.82rem; }
-
-#sources .strip-outer {
-    margin-top: 44px;
-    position: relative;
-    border-top: 1px solid rgba(148,163,184,0.12);
-    border-bottom: 1px solid rgba(148,163,184,0.12);
-    padding: 18px 0;
-    overflow: hidden;
-}
-#sources .strip-inner {
-    display: inline-flex;
-    gap: 44px;
-    white-space: nowrap;
-    animation: srcScroll 55s linear infinite !important;
-    will-change: transform;
-}
-#sources .strip-item {
-    font-family: monospace; font-size: 0.78rem;
-    letter-spacing: 0.05em; color: #64748b;
-    display: inline-flex; align-items: center;
-    flex-shrink: 0;
-}
-#sources .strip-dot {
-    display: inline-block; width: 6px; height: 6px;
-    margin: 0 10px; border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 10px rgba(74,222,128,0.9);
-    animation: srcPulse 2s ease-in-out infinite !important;
-}
-@keyframes srcPulse {
-    0%,100% { opacity: 0.35; transform: scale(0.85); }
-    50%     { opacity: 1;    transform: scale(1.15); }
-}
-@keyframes srcScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
-}
-#sources .src-named {
-    margin-top: 32px; font-size: 0.82rem;
-    line-height: 1.8; color: #64748b;
-}
-@media (prefers-reduced-motion: reduce) {
-    #sources .strip-inner { animation: none !important; }
-    #sources .strip-dot   { animation: none !important; }
-}
-</style>
-
-<div class="container">
-<div class="src-wrap">
-    <h2>It reads the <span class="accent">open web</span></h2>
-    <p class="lead">
-        The system doesn't wait for someone to hand it data. It reads
-        hundreds of curated, reputable URLs — peer-reviewed literature,
-        reference genomes, protein structures, clinical registries —
-        and grows as new findings are published.
-    </p>
-
-    <div class="src-hero">
-        <div class="src-kicker">Hundreds of curated sources</div>
-        <h3>Reputable <span class="accent">URLs</span>, continuously read</h3>
-        <p>
-            Peer-reviewed publications, national reference databases,
-            protein structure archives, clinical trial registries. Each
-            source is vetted. Each new finding updates the graph.
+    <div class="container">
+        <h2>It reads the <span class="accent">open web</span></h2>
+        <p class="lead">
+            The system doesn't wait for someone to hand it data. It reads
+            hundreds of curated, reputable URLs — peer-reviewed literature,
+            reference genomes, protein structures, clinical registries —
+            and grows as new findings are published.
         </p>
-        <div class="src-types">
-            <div><strong>Publications</strong><span>Peer-reviewed findings</span></div>
-            <div><strong>Genomes</strong><span>Reference assemblies</span></div>
-            <div><strong>Proteins</strong><span>Structures and functions</span></div>
-            <div><strong>Variants</strong><span>Population and clinical</span></div>
-            <div><strong>Compounds</strong><span>Bioactivity and libraries</span></div>
-            <div><strong>Trials</strong><span>Clinical registries</span></div>
+
+        <div class="source-hero">
+            <div class="source-hero-label">Hundreds of curated sources</div>
+            <h3>Reputable <span class="accent">URLs</span>, continuously read</h3>
+            <p>
+                Peer-reviewed publications, national reference databases,
+                protein structure archives, clinical trial registries. Each
+                source is vetted. Each new finding updates the graph.
+            </p>
+            <div class="source-types">
+                <div><strong>Publications</strong><span>Peer-reviewed findings</span></div>
+                <div><strong>Genomes</strong><span>Reference assemblies</span></div>
+                <div><strong>Proteins</strong><span>Structures and functions</span></div>
+                <div><strong>Variants</strong><span>Population and clinical</span></div>
+                <div><strong>Compounds</strong><span>Bioactivity and libraries</span></div>
+                <div><strong>Trials</strong><span>Clinical registries</span></div>
+            </div>
         </div>
+
+        <div class="reading-strip">
+            <div class="reading-track">
+                <span class="reading-item">reading<span class="reading-dot"></span>Peer-reviewed literature</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Reference genomes</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Protein structure archives</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Population variant databases</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Clinical trial registries</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Bioactivity datasets</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Pathway databases</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Disease association catalogs</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Compound libraries</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Structural archives</span>
+                <!-- duplicate for seamless loop -->
+                <span class="reading-item">reading<span class="reading-dot"></span>Peer-reviewed literature</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Reference genomes</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Protein structure archives</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Population variant databases</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Clinical trial registries</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Bioactivity datasets</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Pathway databases</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Disease association catalogs</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Compound libraries</span>
+                <span class="reading-item">reading<span class="reading-dot"></span>Structural archives</span>
+            </div>
+        </div>
+
+        <p class="named-sources">
+            Named sources read continuously — NCBI · Ensembl · UniProt · PDB ·
+            ChEMBL · ClinicalTrials.gov · gnomAD · GWAS Catalog · ClinVar ·
+            KEGG · Reactome · ZINC · COCONUT · BindingDB
+        </p>
     </div>
 
-    <div class="strip-outer">
-        <div class="strip-inner">
-            <span class="strip-item">reading<span class="strip-dot"></span>Peer-reviewed literature</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Reference genomes</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Protein structure archives</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Population variant databases</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Clinical trial registries</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Bioactivity datasets</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Pathway databases</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Disease association catalogs</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Compound libraries</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Structural archives</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Peer-reviewed literature</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Reference genomes</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Protein structure archives</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Population variant databases</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Clinical trial registries</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Bioactivity datasets</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Pathway databases</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Disease association catalogs</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Compound libraries</span>
-            <span class="strip-item">reading<span class="strip-dot"></span>Structural archives</span>
-        </div>
-    </div>
+    <style>
+    .source-hero {
+        margin-top: 48px;
+        padding: 36px 0 0;
+    }
+    .source-hero-label {
+        font-family: monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #4ade80;
+        margin-bottom: 14px;
+    }
+    .source-hero h3 {
+        font-size: 1.35rem;
+        color: #e2e8f0;
+        margin: 0 0 14px;
+        font-weight: 600;
+    }
+    .source-hero p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        color: #94a3b8;
+        max-width: 720px;
+        margin-bottom: 28px;
+    }
+    .source-types {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 22px 32px;
+    }
+    .source-types div { display: flex; flex-direction: column; gap: 4px; }
+    .source-types strong { color: #a7f3d0; font-size: 0.95rem; font-weight: 600; }
+    .source-types span { color: #64748b; font-size: 0.82rem; }
 
-    <p class="src-named">
-        Named sources read continuously — NCBI · Ensembl · UniProt · PDB ·
-        ChEMBL · ClinicalTrials.gov · gnomAD · GWAS Catalog · ClinVar ·
-        KEGG · Reactome · ZINC · COCONUT · BindingDB
-    </p>
-</div>
-</div>
+    .reading-strip {
+        margin-top: 44px;
+        overflow: hidden;
+        position: relative;
+        border-top: 1px solid rgba(148,163,184,0.12);
+        border-bottom: 1px solid rgba(148,163,184,0.12);
+        padding: 18px 0;
+        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .reading-track {
+        display: flex;
+        gap: 44px;
+        white-space: nowrap;
+        animation: readingScroll 60s linear infinite;
+        width: max-content;
+    }
+    .reading-item {
+        font-family: monospace;
+        font-size: 0.78rem;
+        letter-spacing: 0.05em;
+        color: #64748b;
+        display: inline-flex;
+        align-items: center;
+    }
+    .reading-dot {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin: 0 10px;
+        border-radius: 50%;
+        background: #4ade80;
+        box-shadow: 0 0 8px rgba(74,222,128,0.7);
+        animation: readingPulse 2s ease-in-out infinite;
+    }
+    @keyframes readingPulse {
+        0%,100% { opacity: 0.4; }
+        50%     { opacity: 1; }
+    }
+    @keyframes readingScroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+    .named-sources {
+        margin-top: 32px;
+        font-size: 0.82rem;
+        line-height: 1.8;
+        color: #64748b;
+    }
+    </style>
 </section>
 
 
