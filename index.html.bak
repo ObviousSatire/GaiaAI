@@ -519,216 +519,141 @@ layout: null
         <h2>Evidence across <span class="accent">every layer</span></h2>
         <p class="lead">
             Predictions are checked against three independent kinds of
-            evidence — computational, cellular, and physiological. A claim
+            evidence — computational, cellular, physiological. A claim
             that survives all three is worth acting on.
         </p>
 
-        <div class="evidence-grid">
-            <div class="evidence-card">
-                <span class="tag">In silico</span>
-                <h3>Computational</h3>
-                <p>Before anything touches a cell, every prediction is stress-tested in pure computation. Models run, scores are produced, and confidence is estimated from the spread of agreement across independent methods.</p>
-                <ul>
-                    <li><strong>Structure prediction</strong> — check every candidate against modeled protein geometry</li>
-                    <li><strong>Binding simulation</strong> — estimate interaction strength across methods</li>
-                    <li><strong>Cross-validation</strong> — hold out data the model never saw</li>
-                    <li><strong>Confidence intervals</strong> — measure agreement across independent approaches</li>
-                </ul>
+        <div class="eco-layers">
+            <div class="eco-layer">
+                <div class="eco-glow eco-glow-green"></div>
+                <div class="eco-icon">
+                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#4ade80" stroke-width="1.3">
+                        <circle cx="32" cy="32" r="22" opacity="0.25"/>
+                        <circle cx="32" cy="32" r="14" opacity="0.5"/>
+                        <circle cx="32" cy="32" r="6" fill="#4ade80" stroke="none" opacity="0.85"/>
+                        <circle cx="32" cy="32" r="24" stroke-dasharray="2 6" opacity="0.35">
+                            <animateTransform attributeName="transform" type="rotate"
+                                from="0 32 32" to="360 32 32" dur="28s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
+                <div class="eco-body">
+                    <span class="eco-tag">In silico</span>
+                    <h3>Computational</h3>
+                    <p>Every prediction is stress-tested in pure computation before anything touches a cell. Confidence is estimated from the spread of agreement across independent methods.</p>
+                    <ul>
+                        <li><strong>Structure prediction</strong> — modeled protein geometry</li>
+                        <li><strong>Binding simulation</strong> — strength across methods</li>
+                        <li><strong>Cross-validation</strong> — held-out data</li>
+                        <li><strong>Confidence intervals</strong> — agreement across approaches</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="evidence-card">
-                <span class="tag">In vitro</span>
-                <h3>Cellular</h3>
-                <p>Predictions are compared against real cell-based assays from public literature. Pathway activity, gene expression, and compound cytotoxicity all feed back into the model.</p>
-                <ul>
-                    <li><strong>Cell-line assays</strong> — activity against published screens</li>
-                    <li><strong>Pathway response</strong> — how signaling shifts under treatment</li>
-                    <li><strong>Gene expression</strong> — transcript-level confirmation of predicted effects</li>
-                    <li><strong>Cytotoxicity profiles</strong> — safe dose ranges from established tests</li>
-                </ul>
+            <div class="eco-layer">
+                <div class="eco-glow eco-glow-blue"></div>
+                <div class="eco-icon">
+                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#60a5fa" stroke-width="1.3">
+                        <circle cx="32" cy="32" r="22" opacity="0.25"/>
+                        <circle cx="32" cy="32" r="9" fill="#60a5fa" stroke="none" opacity="0.35"/>
+                        <circle cx="24" cy="24" r="2.4" fill="#60a5fa" stroke="none">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="40" cy="30" r="2.4" fill="#60a5fa" stroke="none">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="30" cy="42" r="2" fill="#60a5fa" stroke="none">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="2s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
+                <div class="eco-body">
+                    <span class="eco-tag">In vitro</span>
+                    <h3>Cellular</h3>
+                    <p>Predictions are compared against real cell-based assays from public literature. Pathway activity, gene expression, and cytotoxicity all feed back into the model.</p>
+                    <ul>
+                        <li><strong>Cell-line assays</strong> — published screens</li>
+                        <li><strong>Pathway response</strong> — signaling under treatment</li>
+                        <li><strong>Gene expression</strong> — transcript-level confirmation</li>
+                        <li><strong>Cytotoxicity profiles</strong> — safe dose ranges</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="evidence-card">
-                <span class="tag">In vivo</span>
-                <h3>Physiological</h3>
-                <p>Protocols are evaluated against animal model studies and human trial data. Where the model predicts a specific outcome, that outcome is checked against real physiological responses in published cohorts.</p>
-                <ul>
-                    <li><strong>Animal disease models</strong> — response in established model systems</li>
-                    <li><strong>Clinical trial data</strong> — dosing, outcomes, adverse events</li>
-                    <li><strong>Human cohorts</strong> — time-to-response across published studies</li>
-                    <li><strong>Longitudinal outcomes</strong> — durability of effect at follow-up</li>
-                </ul>
+            <div class="eco-layer">
+                <div class="eco-glow eco-glow-mint"></div>
+                <div class="eco-icon">
+                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#a7f3d0" stroke-width="1.3">
+                        <path d="M14,42 Q18,22 32,26 Q44,18 52,26 Q58,34 50,44 Q40,50 32,46 Q22,50 14,42 Z" opacity="0.9"/>
+                        <circle cx="26" cy="32" r="1.8" fill="#a7f3d0" stroke="none"/>
+                        <path d="M20,50 Q32,54 44,50" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="eco-body">
+                    <span class="eco-tag">In vivo</span>
+                    <h3>Physiological</h3>
+                    <p>Protocols are evaluated against animal model studies and human trial data. Where the model predicts an outcome, that outcome is checked against published physiological responses.</p>
+                    <ul>
+                        <li><strong>Animal disease models</strong> — established systems</li>
+                        <li><strong>Clinical trial data</strong> — dosing, outcomes, events</li>
+                        <li><strong>Human cohorts</strong> — time-to-response</li>
+                        <li><strong>Longitudinal outcomes</strong> — durability at follow-up</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div class="evidence-cross">
+        <div class="cross-cut">
             <h3>Cross-cutting validation</h3>
             <div class="cross-grid">
-                <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg width="28" height="28" viewBox="0 0 40 40">
-                            <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                            <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                            <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="cross-title">Cross-species</div>
-                        <div class="cross-desc">Patterns that hold across evolutionary distance are more likely to reflect real biology.</div>
-                    </div>
-                </div>
-
-                <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg width="28" height="28" viewBox="0 0 40 40">
-                            <circle cx="14" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-                            <circle cx="26" cy="18" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-                            <circle cx="20" cy="30" r="6" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="cross-title">Animal models</div>
-                        <div class="cross-desc">Predictions checked against real physiological responses in established model systems.</div>
-                    </div>
-                </div>
-
-                <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg width="28" height="28" viewBox="0 0 40 40">
-                            <rect x="8" y="10" width="24" height="20" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                            <line x1="16" y1="20" x2="24" y2="20" stroke="#a7f3d0" stroke-width="1.5"/>
-                            <line x1="20" y1="16" x2="20" y2="24" stroke="#a7f3d0" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="cross-title">Human trial models</div>
-                        <div class="cross-desc">Protocols evaluated against clinical data — dosing, outcomes, adverse events, timing.</div>
-                    </div>
-                </div>
-
-                <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg width="28" height="28" viewBox="0 0 40 40">
-                            <path d="M6,32 L6,24 L12,24 L12,18 L18,18 L18,26 L24,26 L24,14 L30,14 L30,10 L34,10" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="cross-title">Held-out evaluation</div>
-                        <div class="cross-desc">Tested on chromosomes, diseases, and compounds never seen during training.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="outputs-strip">
-            <div class="output-item">
-                <svg width="32" height="32" viewBox="0 0 32 32">
-                    <circle cx="16" cy="16" r="12" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <circle cx="16" cy="16" r="6" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <circle cx="16" cy="16" r="2.5" fill="#a7f3d0"/>
-                </svg>
-                <div class="name">Ranked candidates</div>
-                <div class="sub">Compounds ordered by evidence</div>
-            </div>
-            <div class="output-item">
-                <svg width="32" height="32" viewBox="0 0 32 32">
-                    <path d="M4,24 L4,16 L10,16 L10,10 L16,10 L16,18 L22,18 L22,6 L28,6" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linejoin="round"/>
-                </svg>
-                <div class="name">Protocol timeline</div>
-                <div class="sub">Outcomes across time</div>
-            </div>
-            <div class="output-item">
-                <svg width="32" height="32" viewBox="0 0 32 32">
-                    <rect x="6" y="6" width="20" height="20" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                    <line x1="11" y1="12" x2="21" y2="12" stroke="#a7f3d0" stroke-width="1.5"/>
-                    <line x1="11" y1="16" x2="21" y2="16" stroke="#a7f3d0" stroke-width="1.5"/>
-                    <line x1="11" y1="20" x2="17" y2="20" stroke="#a7f3d0" stroke-width="1.5"/>
-                </svg>
-                <div class="name">Evidence report</div>
-                <div class="sub">Full trace from signal to plan</div>
-            </div>
-            <div class="output-item">
-                <svg width="32" height="32" viewBox="0 0 32 32">
-                    <path d="M16,4 L28,10 L28,22 L16,28 L4,22 L4,10 Z" fill="none" stroke="#34d399" stroke-width="1.5"/>
-                    <circle cx="16" cy="16" r="3" fill="#34d399"/>
-                </svg>
-                <div class="name">Confidence score</div>
-                <div class="sub">How much evidence supports it</div>
+                <div><strong>Cross-species</strong><span>Patterns that hold across evolutionary distance.</span></div>
+                <div><strong>Animal models</strong><span>Checked against real physiological responses.</span></div>
+                <div><strong>Human trial models</strong><span>Evaluated against clinical data.</span></div>
+                <div><strong>Held-out evaluation</strong><span>Tested on data never seen during training.</span></div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="unique">
+<section id="different">
     <div class="container">
-        <h2>What makes <span class="accent">GAIA</span> different</h2>
-        <p class="lead">
-            Most tools solve one piece. GAIA connects the whole chain — from
-            raw sequence to treatment protocol — in a single self-learning
-            system.
-        </p>
+        <div class="manifesto">
+            <p class="manifesto-kicker">What makes GAIA different</p>
+            <h2 class="manifesto-lead">
+                Most tools solve <em>one piece</em>.<br>
+                GAIA runs the <em>whole chain</em> — from raw sequence to
+                treatment protocol — inside a single self-learning system.
+            </h2>
 
-        <div class="unique-grid">
-            <div class="unique-card">
-                <div class="num">01</div>
-                <h3>End-to-end, <span class="accent">not piecemeal</span></h3>
-                <p>
-                    Genome scanning, variant mapping, compound screening, and
-                    protocol design usually live in separate tools. GAIA runs
-                    the whole chain in one pipeline, so evidence flows without
-                    translation between systems.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> dockers dock, annotators
-                    annotate, simulators simulate. Each feeds a human who
-                    stitches them together.
+            <div class="movement">
+                <span class="movement-mark">i.</span>
+                <div class="movement-body">
+                    <h3>End-to-end, not piecemeal</h3>
+                    <p>Genome scanning, variant mapping, compound screening, and protocol design usually live in separate systems — stitched together by hand, translated between file formats, re-explained at every seam. GAIA runs the whole chain as one pipeline. A signal found at one end is already legible at the other. Nothing has to be handed off. Nothing is lost in translation.</p>
                 </div>
             </div>
 
-            <div class="unique-card">
-                <div class="num">02</div>
-                <h3>Learns from <span class="accent">its own data</span></h3>
-                <p>
-                    Weights are discovered from labeled sequence, not set by
-                    hand. Features are extracted, tested, and kept only if
-                    they help. As the knowledge graph grows, predictions
-                    improve without retraining from scratch.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> fixed scoring functions,
-                    fixed rules, manual tuning per target.
+            <div class="movement">
+                <span class="movement-mark">ii.</span>
+                <div class="movement-body">
+                    <h3>Learned, not configured</h3>
+                    <p>Weights are discovered from labeled sequence. Features are extracted, tested, and kept only if they carry signal. There are no fixed scoring functions, no hand-tuned rules, no manual configuration for every new target. As the knowledge graph grows, the model sharpens — without being rebuilt from scratch each time a new disease enters the frame.</p>
                 </div>
             </div>
 
-            <div class="unique-card">
-                <div class="num">03</div>
-                <h3>The <span class="accent">math is ours</span></h3>
-                <p>
-                    Boundary detection at three scales. Fifty-six features per
-                    segment. A classifier that discovers its own thresholds.
-                    None of this is a wrapper around someone else's tool —
-                    every equation is written from scratch.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> most platforms chain
-                    other people's tools together. The math here is derived,
-                    not imported.
+            <div class="movement">
+                <span class="movement-mark">iii.</span>
+                <div class="movement-body">
+                    <h3>Derived, not assembled</h3>
+                    <p>Boundary detection across three scales. A feature space built from first principles. A classifier that discovers its own thresholds from labeled sequence. Nothing here is a wrapper around someone else's tool. Every equation is written from scratch — because the genome doesn't care what library you imported. It only cares whether the math is right.</p>
                 </div>
             </div>
 
-            <div class="unique-card">
-                <div class="num">04</div>
-                <h3>Checks itself <span class="accent">across evidence</span></h3>
-                <p>
-                    Every prediction is verified against three independent
-                    layers — computational, cellular, physiological. A result
-                    that survives all three carries weight. One that only
-                    survives computation doesn't get a protocol.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> a prediction is a
-                    prediction. Validation happens in a separate pipeline,
-                    often by different teams.
+            <div class="movement">
+                <span class="movement-mark">iv.</span>
+                <div class="movement-body">
+                    <h3>Checked before it speaks</h3>
+                    <p>Every prediction is verified against three independent layers — computational, cellular, physiological. A claim that survives all three is worth acting on. A claim that survives only computation is not a claim. It is a guess — and it does not get a protocol. Validation here is not a downstream step run by a separate team. It is built into the claim itself.</p>
                 </div>
             </div>
         </div>
@@ -926,111 +851,82 @@ layout: null
 <section id="pipeline">
     <div class="container">
         <h2>The <span class="accent">pipeline</span></h2>
-        <p class="lead">From raw genome to treatment protocol, in five stages.</p>
+        <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
-        <div class="pipeline">
-            <div class="stage">
-                <div class="stage-num">STAGE 01</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <circle cx="20" cy="20" r="16" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,20 Q20,10 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,20 Q20,30 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                </svg>
-                <h3>Read the genome</h3>
-                <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
+        <div class="vine-wrap">
+            <svg class="vine" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%"  stop-color="#4ade80" stop-opacity="0.05"/>
+                        <stop offset="50%" stop-color="#4ade80" stop-opacity="0.75"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.05"/>
+                    </linearGradient>
+                    <radialGradient id="seedGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#4ade80" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <path d="M0,60 C200,20 400,100 600,60 S1000,20 1200,60"
+                      fill="none" stroke="url(#vineGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M0,60 C200,80 400,20 600,60 S1000,100 1200,60"
+                      fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.18"/>
+                <circle r="7" fill="url(#seedGlow)">
+                    <animateMotion dur="11s" repeatCount="indefinite"
+                        path="M0,60 C200,20 400,100 600,60 S1000,20 1200,60"/>
+                </circle>
+                <g>
+                    <circle cx="120"  cy="52" r="4" fill="#4ade80"/>
+                    <circle cx="360"  cy="72" r="4" fill="#4ade80"/>
+                    <circle cx="600"  cy="60" r="4" fill="#4ade80"/>
+                    <circle cx="840"  cy="50" r="4" fill="#4ade80"/>
+                    <circle cx="1080" cy="62" r="4" fill="#4ade80"/>
+                </g>
+            </svg>
+
+            <div class="vine-nodes">
+                <div class="vine-node">
+                    <div class="vn-num">01</div>
+                    <div class="vn-title">Read</div>
+                    <div class="vn-desc">Classify every window by structural signature.</div>
+                </div>
+                <div class="vine-node">
+                    <div class="vn-num">02</div>
+                    <div class="vn-title">Map</div>
+                    <div class="vn-desc">Place variation in gene, pathway, evidence.</div>
+                </div>
+                <div class="vine-node">
+                    <div class="vn-num">03</div>
+                    <div class="vn-title">Screen</div>
+                    <div class="vn-desc">Rank compound libraries by binding potential.</div>
+                </div>
+                <div class="vine-node">
+                    <div class="vn-num">04</div>
+                    <div class="vn-title">Score</div>
+                    <div class="vn-desc">Combine physical, chemical, contextual signals.</div>
+                </div>
+                <div class="vine-node">
+                    <div class="vn-num">05</div>
+                    <div class="vn-title">Design</div>
+                    <div class="vn-desc">Multi-compound protocol, one ranking, one plan.</div>
+                </div>
             </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 02</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <circle cx="10" cy="20" r="4" fill="#60a5fa"/>
-                    <circle cx="30" cy="20" r="4" fill="#60a5fa"/>
-                    <line x1="14" y1="20" x2="26" y2="20" stroke="#60a5fa" stroke-width="1.5"/>
-                </svg>
-                <h3>Map the variants</h3>
-                <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 03</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <rect x="8" y="12" width="24" height="16" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                    <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
-                </svg>
-                <h3>Screen the compounds</h3>
-                <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 04</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <path d="M20,4 L36,14 L36,26 L20,36 L4,26 L4,14 Z" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <circle cx="20" cy="20" r="4" fill="#4ade80"/>
-                </svg>
-                <h3>Score every interaction</h3>
-                <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 05</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <path d="M8,20 L16,28 L32,12" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <h3>Design the protocol</h3>
-                <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
-            </div>
+        </div>
+
+        <div class="sample-out">
+            <div class="sample-label">sample output — ranked protocol</div>
+            <table class="sample-table">
+                <thead><tr><th>#</th><th>Compound</th><th>Binding</th><th>Evidence</th><th>Confidence</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>resveratrol</td><td>−8.72</td><td>in silico · in vitro · in vivo</td><td>high</td></tr>
+                    <tr><td>2</td><td>curcumin</td><td>−7.91</td><td>in silico · in vitro</td><td>high</td></tr>
+                    <tr><td>3</td><td>fisetin</td><td>−7.45</td><td>in silico · in vitro · in vivo</td><td>high</td></tr>
+                    <tr><td>4</td><td>berberine</td><td>−6.83</td><td>in silico · in vitro</td><td>medium</td></tr>
+                    <tr><td>5</td><td>quercetin</td><td>−6.52</td><td>in silico only</td><td>medium</td></tr>
+                </tbody>
+            </table>
+            <p class="sample-foot">→ next: combine top 3 into a protocol, simulate outcomes at 30 / 90 / 180 / 365 days, generate full evidence report.</p>
         </div>
     </div>
-        <div class="sample-output">
-            <div class="sample-output-header">
-                <div class="dot-row"><span></span><span></span><span></span></div>
-                <div class="title">sample output — ranked protocol</div>
-            </div>
-            <table>
-                <tr>
-                    <th>Rank</th>
-                    <th>Compound</th>
-                    <th>Binding</th>
-                    <th>Evidence</th>
-                    <th>Confidence</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>resveratrol</td>
-                    <td class="score">−8.72</td>
-                    <td class="evidence">in silico · in vitro · in vivo</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>curcumin</td>
-                    <td class="score">−7.91</td>
-                    <td class="evidence">in silico · in vitro</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>fisetin</td>
-                    <td class="score">−7.45</td>
-                    <td class="evidence">in silico · in vitro · in vivo</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>berberine</td>
-                    <td class="score">−6.83</td>
-                    <td class="evidence">in silico · in vitro</td>
-                    <td class="med">medium</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>quercetin</td>
-                    <td class="score">−6.52</td>
-                    <td class="evidence">in silico only</td>
-                    <td class="med">medium</td>
-                </tr>
-            </table>
-            <div class="note">
-                → next: combine top 3 into a protocol, simulate outcomes at                30 / 90 / 180 / 365 days, generate full evidence report.
-            </div>
-        </div>
-
 </section>
 
 <section id="capabilities">
