@@ -192,75 +192,99 @@ layout: null
         <div class="learn-flow">
 
             <!-- Stage 1: DNA scanning -->
-            <div class="learn-stage">
-                <div class="learn-visual">
-                    <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-                        <defs>
-                            <linearGradient id="strandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#a7f3d0"/>
-                                <stop offset="50%" stop-color="#4ade80"/>
-                                <stop offset="100%" stop-color="#34d399"/>
-                            </linearGradient>
-                            <radialGradient id="dnaGlow2" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.18"/>
-                                <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                            </radialGradient>
-                        </defs>
+<div class="learn-stage">
+  <div class="learn-visual">
+    <div class="helix-wrap">
+      <div class="helix">
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+      </div>
+      <div class="scan-sweep"></div>
+    </div>
+  </div>
+  <div class="learn-copy">
+    <span class="stage-badge">Loop 01</span>
+    <h3>Reading <span class="accent">raw sequence</span></h3>
+    <p>
+      Whole chromosomes go in. The system reads the structure
+      hidden inside the sequence — the shape of information
+      as it unfolds along the genome.
+    </p>
+    <ul>
+      <li><strong>Ingest</strong> full chromosomes</li>
+      <li><strong>Read</strong> shape, rhythm, and context</li>
+      <li><strong>Discover</strong> what distinguishes one region from another</li>
+      <li><strong>Validate</strong> across chromosomes and species</li>
+    </ul>
+  </div>
+</div>
 
-                        <circle cx="200" cy="200" r="170" fill="url(#dnaGlow2)"/>
+<style>
+.helix-wrap {
+  position: relative;
+  width: 220px;
+  height: 360px;
+  margin: 0 auto;
+  perspective: 900px;
+}
+.helix {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 9s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.rung {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  height: 6px;
+  margin-left: -60px;
+  border-radius: 3px;
+  background: linear-gradient(90deg,#a7f3d0,#4ade80,#34d399);
+  box-shadow: 0 0 12px rgba(74,222,128,0.5);
+}
+.rung:nth-child(1)  { top: 0;    transform: rotateY(0deg); }
+.rung:nth-child(2)  { top: 22px; transform: rotateY(20deg); }
+.rung:nth-child(3)  { top: 44px; transform: rotateY(40deg); }
+.rung:nth-child(4)  { top: 66px; transform: rotateY(60deg); }
+.rung:nth-child(5)  { top: 88px; transform: rotateY(80deg); }
+.rung:nth-child(6)  { top: 110px;transform: rotateY(100deg); }
+.rung:nth-child(7)  { top: 132px;transform: rotateY(120deg); }
+.rung:nth-child(8)  { top: 154px;transform: rotateY(140deg); }
+.rung:nth-child(9)  { top: 176px;transform: rotateY(160deg); }
+.rung:nth-child(10) { top: 198px;transform: rotateY(180deg); }
+.rung:nth-child(11) { top: 220px;transform: rotateY(200deg); }
+.rung:nth-child(12) { top: 242px;transform: rotateY(220deg); }
+.rung:nth-child(13) { top: 264px;transform: rotateY(240deg); }
+.rung:nth-child(14) { top: 286px;transform: rotateY(260deg); }
+.rung:nth-child(15) { top: 308px;transform: rotateY(280deg); }
+.rung:nth-child(16) { top: 330px;transform: rotateY(300deg); }
+.rung:nth-child(17) { top: 352px;transform: rotateY(320deg); }
+.scan-sweep {
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  height: 3px;
+  background: linear-gradient(90deg,transparent,#4ade80,transparent);
+  box-shadow: 0 0 18px #4ade80;
+  animation: sweep 3s ease-in-out infinite;
+}
+@keyframes sweep {
+  0%,100% { top: 0; }
+  50%     { top: 100%; }
+}
+</style>
 
-                        <!-- Strand 1: sine wave from top to bottom -->
-                        <path class="dna-strand"
-                              d="M140,30 C220,90 220,150 140,200 C60,250 60,310 140,370"
-                              stroke="url(#strandGrad)" stroke-width="5" fill="none"
-                              stroke-linecap="round"/>
-
-                        <!-- Strand 2: offset sine wave -->
-                        <path class="dna-strand second"
-                              d="M260,30 C180,90 180,150 260,200 C340,250 340,310 260,370"
-                              stroke="url(#strandGrad)" stroke-width="5" fill="none"
-                              stroke-linecap="round"/>
-
-                        <!-- Base pairs connecting the strands -->
-                        <line class="base-pair" x1="165" y1="60" x2="235" y2="60" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="185" y1="100" x2="215" y2="100" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="195" y1="140" x2="205" y2="140" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="195" y1="200" x2="205" y2="200" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="185" y1="240" x2="215" y2="240" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="165" y1="280" x2="235" y2="280" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="150" y1="320" x2="250" y2="320" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
-
-                        <!-- Floating base pair letters -->
-                        <text class="base-letter" x="155" y="65" font-family="monospace" font-size="12" fill="#a7f3d0">A</text>
-                        <text class="base-letter" x="235" y="65" font-family="monospace" font-size="12" fill="#a7f3d0">T</text>
-                        <text class="base-letter" x="185" y="105" font-family="monospace" font-size="12" fill="#60a5fa">G</text>
-                        <text class="base-letter" x="215" y="105" font-family="monospace" font-size="12" fill="#60a5fa">C</text>
-                        <text class="base-letter" x="150" y="325" font-family="monospace" font-size="12" fill="#a7f3d0">C</text>
-                        <text class="base-letter" x="250" y="325" font-family="monospace" font-size="12" fill="#a7f3d0">G</text>
-
-                        <!-- Scanning bar that slides vertically -->
-                        <rect class="scan-bar" x="40" y="0" width="320" height="6" rx="3" fill="url(#strandGrad)" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="learn-copy">
-                    <span class="stage-badge">Loop 01</span>
-                    <h3>Reading <span class="accent">raw sequence</span></h3>
-                    <p>
-                        Whole chromosomes go in. The system reads the structure
-                        hidden inside the sequence — the shape of information
-                        as it unfolds along the genome.
-                    </p>
-                    <ul>
-                        <li><strong>Ingest</strong> full chromosomes</li>
-                        <li><strong>Read</strong> shape, rhythm, and context</li>
-                        <li><strong>Discover</strong> what distinguishes one region from another</li>
-                        <li><strong>Validate</strong> across chromosomes and species</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Stage 2: Growing the graph -->
-            <div class="learn-stage reverse">
+<div class="learn-stage reverse">
                 <div class="learn-visual">
                     <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
                         <defs>

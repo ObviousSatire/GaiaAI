@@ -405,137 +405,110 @@ layout: null
 </section>
 
 <section id="math">
-    <div class="container">
-        <h2>The math <span class="accent">underneath</span></h2>
-        <p class="lead">
-            Sequence is raw potential. Meaning emerges only when a pattern is
-            applied in a context. We wrote the math that reads both.
-        </p>
+<div class="container">
+  <h2>The math <span class="accent">underneath</span></h2>
 
-        <div class="math-hero">
-            <div class="math-header">
-                <h3>Where <span class="accent">biology transitions</span></h3>
-                <p>
-                    The genome isn't uniform. It shifts — from dense to sparse,
-                    from ordered to loose. Boundaries are placed where those
-                    shifts happen, at multiple scales at once.
-                </p>
-            </div>
+  <p class="lead">
+    Sequence is raw potential. Meaning emerges only when a pattern
+    is applied in a context. We wrote the math that reads both —
+    not assembled from other people's tools, but derived from the
+    structure of the genome itself.
+  </p>
 
-            <div class="scale-stack">
-                <div class="scale-row">
-                    <div class="scale-label">FINE SCALE</div>
-                    <div class="scale-track">
-                        <div class="scale-marker" style="left: 12%"></div>
-                        <div class="scale-marker" style="left: 28%"></div>
-                        <div class="scale-marker" style="left: 41%"></div>
-                        <div class="scale-marker" style="left: 57%"></div>
-                        <div class="scale-marker" style="left: 68%"></div>
-                        <div class="scale-marker" style="left: 79%"></div>
-                        <div class="scale-marker" style="left: 88%"></div>
-                        <div class="scale-marker" style="left: 94%"></div>
-                    </div>
-                </div>
-                <div class="scale-row">
-                    <div class="scale-label">MEDIUM SCALE</div>
-                    <div class="scale-track">
-                        <div class="scale-marker" style="left: 18%"></div>
-                        <div class="scale-marker" style="left: 44%"></div>
-                        <div class="scale-marker" style="left: 72%"></div>
-                    </div>
-                </div>
-                <div class="scale-row">
-                    <div class="scale-label">COARSE SCALE</div>
-                    <div class="scale-track">
-                        <div class="scale-marker" style="left: 25%"></div>
-                        <div class="scale-marker" style="left: 65%"></div>
-                    </div>
-                </div>
-            </div>
+  <div class="math-narrative">
 
-            <div class="math-header">
-                <h3>Every segment gets a <span class="accent">fingerprint</span></h3>
-                <p>
-                    Between boundaries, each region of the genome is described
-                    in depth — its composition, its rhythm, its structure, its
-                    history of conservation. Not a label. A signature.
-                </p>
-            </div>
+    <h3>Boundaries are <span class="accent">where biology shifts</span></h3>
+    <p>
+      The genome isn't uniform. Composition drifts, structure loosens,
+      conservation fades. A boundary is placed wherever those shifts
+      align — and the same logic runs at three scales at once.
+    </p>
 
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <div class="name">Composition</div>
-                    <div class="desc">The shape of information in the sequence — how ordered, how repetitive, how structured</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Structure</div>
-                    <div class="desc">Signals of what the region does — splicing, framing, coding potential</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Frame</div>
-                    <div class="desc">How the region reads in each of the three translation frames</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Skew</div>
-                    <div class="desc">Strand asymmetry — a signature of replication direction and time</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Conservation</div>
-                    <div class="desc">What evolution has preserved — a record of function across deep time</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Context</div>
-                    <div class="desc">Where the region sits and what it associates with across the genome</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="unique-grid" style="margin-top: 56px;">
-            <div class="unique-card">
-                <div class="num">01</div>
-                <h3>The <span class="accent">pattern</span> is discovered</h3>
-                <p>
-                    The classifier discovers which combinations of features
-                    distinguish one kind of region from another. No hand-coded
-                    rules — the thresholds emerge from labeled sequence, then
-                    hold across chromosomes and species.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> fixed rules, manual
-                    annotations, per-genome tuning.
-                </div>
-            </div>
-
-            <div class="unique-card">
-                <div class="num">02</div>
-                <h3>The <span class="accent">context</span> is biological</h3>
-                <p>
-                    Boundaries are placed where the genome itself changes
-                    character — not where an arbitrary window ends. The math
-                    follows biology, not the other way around.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> every window the same
-                    size. Biology doesn't work in fixed blocks.
-                </div>
-            </div>
-
-            <div class="unique-card">
-                <div class="num">03</div>
-                <h3>Every <span class="accent">variant</span> gets context</h3>
-                <p>
-                    A variant isn't just a position. It carries the structural
-                    signature of the region it sits in — every feature of every
-                    segment, attached to every variant, at every scale.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> a variant is a coordinate.
-                    Here, it's a coordinate plus the fingerprint of its
-                    surroundings.
-                </div>
-            </div>
-        </div>
+    <div class="equation-stack">
+      <div class="equation-row">
+        <div class="equation-label">FINE</div>
+        <div class="equation-body">Δ&thinsp;GC &gt; τ<sub>fine</sub> &nbsp;∧&nbsp; Δ&thinsp;H4 &gt; τ<sub>fine</sub></div>
+        <div class="equation-note">local composition shift</div>
+      </div>
+      <div class="equation-row">
+        <div class="equation-label">MEDIUM</div>
+        <div class="equation-body">∇&thinsp;CpG<sub>O/E</sub> &gt; τ<sub>mid</sub></div>
+        <div class="equation-note">island-scale structure change</div>
+      </div>
+      <div class="equation-row">
+        <div class="equation-label">COARSE</div>
+        <div class="equation-body">Δ&thinsp;PhyloP &gt; τ<sub>coarse</sub></div>
+        <div class="equation-note">evolutionary signal break</div>
+      </div>
     </div>
+
+    <h3>Every segment earns a <span class="accent">signature</span></h3>
+    <p>
+      Between boundaries, each region is described not by a label but
+      by a fingerprint — its composition, its reading frame, its skew,
+      its conservation across deep time. The classifier is not told
+      what to look for. It discovers which combinations of features
+      separate one kind of region from another, and holds that
+      separation across chromosomes and species.
+    </p>
+
+    <div class="feature-ribbon">
+      <span>Composition</span>
+      <span>Structure</span>
+      <span>Frame</span>
+      <span>Skew</span>
+      <span>Conservation</span>
+      <span>Context</span>
+    </div>
+
+    <p class="math-close">
+      No thresholds are hand-set. No rules are hard-coded. The
+      boundaries, the features, and the decision surface are all
+      discovered from labeled sequence — and every equation is
+      written from scratch.
+    </p>
+
+  </div>
+</div>
+
+<style>
+.equation-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 28px 0 44px;
+}
+.equation-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 220px;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(148,163,184,0.12);
+}
+.equation-label {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: #64748b;
+}
+.equation-body {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #e2e8f0;
+}
+.equation-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: right;
+}
+.math-close {
+  margin-top: 40px;
+  font-style: italic;
+  color: #a7f3d0;
+}
+</style>
 </section>
 
 <section id="evidence">
