@@ -3949,3 +3949,56 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
   0%,100% { top: 0; }
   50%     { top: 100%; }
 }
+
+/* === math section (from d706020) === */
+
+  </div>
+</div>
+
+<style>
+.equation-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 28px 0 44px;
+}
+.equation-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 220px;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(148,163,184,0.12);
+}
+.equation-label {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: #64748b;
+}
+.equation-body {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #e2e8f0;
+}
+.equation-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: right;
+}
+.math-close {
+  margin-top: 40px;
+  font-style: italic;
+  color: #a7f3d0;
+}
+</style>
+</section>
+
+<section id="evidence">
+    <div class="container">
+        <h2>Evidence across <span class="accent">every layer</span></h2>
+        <p class="lead">
+            Predictions are checked against three independent kinds of
+            evidence — computational, cellular, and physiological. A claim
+            that survives all three is worth acting on.
