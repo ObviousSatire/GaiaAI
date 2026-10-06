@@ -851,13 +851,13 @@ layout: null
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
         <div class="vine-wrap">
-            <svg class="vine" viewBox="0 0 1400 300" preserveAspectRatio="xMidYMid meet">
+            <svg class="vine" viewBox="0 0 1400 420" preserveAspectRatio="xMidYMid meet">
                 <defs>
                     <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.15"/>
-                        <stop offset="15%"  stop-color="#34d399" stop-opacity="0.9"/>
+                        <stop offset="20%"  stop-color="#34d399" stop-opacity="0.95"/>
                         <stop offset="50%"  stop-color="#a7f3d0" stop-opacity="1"/>
-                        <stop offset="85%"  stop-color="#34d399" stop-opacity="0.9"/>
+                        <stop offset="80%"  stop-color="#34d399" stop-opacity="0.95"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0.15"/>
                     </linearGradient>
                     <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
@@ -866,7 +866,7 @@ layout: null
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
                     <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.8"/>
+                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.7"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
                     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -874,106 +874,118 @@ layout: null
                     </filter>
                 </defs>
 
-                <!-- Background radial band -->
-                <ellipse cx="700" cy="150" rx="700" ry="90" fill="#4ade80" opacity="0.035"/>
+                <!-- Soft background band -->
+                <ellipse cx="700" cy="260" rx="700" ry="140" fill="#4ade80" opacity="0.03"/>
 
-                <!-- Main trunk — a proper wavy path -->
-                <path d="M50,150
-                         C200,80  300,220 450,150
-                         C600,80  700,220 850,150
-                         C1000,80 1100,220 1250,150
-                         L1350,150"
+                <!-- Main trunk: deep wave centered around y=260 -->
+                <path d="M60,260 C220,180 340,340 500,260 C660,180 780,340 940,260 C1100,180 1220,340 1340,260"
                       fill="none" stroke="url(#trunkGrad)" stroke-width="4" stroke-linecap="round"
-                      filter="url(#glow)" opacity="0.6"/>
-                <path d="M50,150
-                         C200,80  300,220 450,150
-                         C600,80  700,220 850,150
-                         C1000,80 1100,220 1250,150
-                         L1350,150"
+                      filter="url(#glow)" opacity="0.55"/>
+                <path d="M60,260 C220,180 340,340 500,260 C660,180 780,340 940,260 C1100,180 1220,340 1340,260"
                       fill="none" stroke="url(#trunkGrad)" stroke-width="2.5" stroke-linecap="round"/>
 
-                <!-- Branches — thicker, proper tree structure -->
-                <g stroke="#4ade80" fill="none" stroke-linecap="round" opacity="0.55">
-                    <!-- Branch 1 from node 1 -->
-                    <path d="M180,120 C200,90 220,70 250,45" stroke-width="1.6"/>
-                    <path d="M250,45 C265,35 275,30 290,28" stroke-width="1.2"/>
+                <!-- Branches reaching UP and DOWN from each node -->
+                <g stroke="#4ade80" fill="none" stroke-linecap="round" opacity="0.6">
+                    <!-- Node 1 @ 180,~230 -->
+                    <path d="M180,230 C180,180 185,140 200,100" stroke-width="1.6"/>
+                    <path d="M200,100 C210,75 220,60 235,42" stroke-width="1.2"/>
+                    <path d="M180,230 C160,270 145,300 130,330" stroke-width="1.4"/>
+                    <path d="M130,330 C120,350 115,362 108,378" stroke-width="1"/>
 
-                    <!-- Branch 2 from node 2 -->
-                    <path d="M450,150 C470,120 485,100 505,80" stroke-width="1.6"/>
-                    <path d="M505,80 C525,65 540,58 560,55" stroke-width="1.2"/>
+                    <!-- Node 2 @ 500,260 -->
+                    <path d="M500,260 C500,210 505,170 520,135" stroke-width="1.6"/>
+                    <path d="M520,135 C535,110 545,95 560,78" stroke-width="1.2"/>
+                    <path d="M500,260 C500,310 505,345 520,375" stroke-width="1.4"/>
+                    <path d="M520,375 C530,390 538,398 548,408" stroke-width="1"/>
 
-                    <!-- Branch 3 from node 3 -->
-                    <path d="M700,150 C700,115 700,90 705,60" stroke-width="1.8"/>
-                    <path d="M705,60 C715,40 725,30 740,25" stroke-width="1.2"/>
+                    <!-- Node 3 @ 700,~260 (center, tallest) -->
+                    <path d="M700,260 C700,200 705,155 720,110" stroke-width="1.8"/>
+                    <path d="M720,110 C735,80 745,60 760,38" stroke-width="1.3"/>
+                    <path d="M700,260 C700,320 705,360 720,395" stroke-width="1.6"/>
+                    <path d="M720,395 C732,410 740,418 752,424" stroke-width="1"/>
 
-                    <!-- Branch 4 from node 4 -->
-                    <path d="M950,150 C970,180 985,200 1010,220" stroke-width="1.6"/>
-                    <path d="M1010,220 C1030,235 1045,242 1065,245" stroke-width="1.2"/>
+                    <!-- Node 4 @ 940,260 -->
+                    <path d="M940,260 C940,210 945,170 960,135" stroke-width="1.6"/>
+                    <path d="M960,135 C975,110 985,95 1000,78" stroke-width="1.2"/>
+                    <path d="M940,260 C940,310 945,345 960,375" stroke-width="1.4"/>
+                    <path d="M960,375 C970,390 978,398 988,408" stroke-width="1"/>
 
-                    <!-- Branch 5 from node 5 -->
-                    <path d="M1220,150 C1245,130 1260,115 1285,100" stroke-width="1.6"/>
-                    <path d="M1285,100 C1300,90 1310,85 1325,82" stroke-width="1.2"/>
+                    <!-- Node 5 @ 1220,~260 -->
+                    <path d="M1220,260 C1220,210 1225,170 1240,135" stroke-width="1.6"/>
+                    <path d="M1240,135 C1255,110 1265,95 1280,78" stroke-width="1.2"/>
+                    <path d="M1220,260 C1200,300 1185,330 1170,360" stroke-width="1.4"/>
+                    <path d="M1170,360 C1160,375 1155,385 1148,398" stroke-width="1"/>
                 </g>
 
-                <!-- Leaf clusters — proper leaf shape via path, larger -->
-                <g fill="#4ade80" opacity="0.55">
-                    <!-- Cluster near branch 1 -->
-                    <path d="M280,28 C290,18 305,22 305,35 C305,48 290,52 280,42 Z"/>
-                    <path d="M255,45 C250,30 260,20 275,22 C280,30 275,45 265,50 Z"/>
+                <!-- Leaves: proper pointed ellipse paths at branch tips -->
+                <g fill="#4ade80" opacity="0.65">
+                    <!-- Node 1 tips -->
+                    <path d="M235,42 Q248,32 246,48 Q244,62 232,58 Z"/>
+                    <path d="M195,105 Q208,95 208,112 Q208,126 195,124 Z"/>
+                    <path d="M108,378 Q120,368 122,384 Q122,398 108,398 Z"/>
+                    <path d="M148,318 Q158,308 160,322 Q160,336 148,336 Z"/>
 
-                    <!-- Cluster near branch 2 -->
-                    <path d="M550,55 C565,45 580,50 578,65 C578,78 560,80 550,70 Z"/>
-                    <path d="M508,80 C500,65 512,55 525,58 C532,70 525,82 515,85 Z"/>
+                    <!-- Node 2 tips -->
+                    <path d="M560,78 Q572,68 572,84 Q572,98 560,96 Z"/>
+                    <path d="M510,140 Q520,128 524,144 Q524,158 512,158 Z"/>
+                    <path d="M548,408 Q560,398 562,414 Q562,428 548,428 Z"/>
+                    <path d="M505,348 Q515,338 518,352 Q518,366 505,366 Z"/>
 
-                    <!-- Cluster near branch 3 (center, biggest) -->
-                    <path d="M730,25 C745,10 765,15 765,32 C765,48 745,52 730,42 Z"/>
-                    <path d="M710,58 C700,42 712,30 725,35 C732,48 725,62 715,65 Z"/>
+                    <!-- Node 3 tips (center, biggest) -->
+                    <path d="M760,38 Q780,22 780,48 Q780,70 758,64 Z"/>
+                    <path d="M715,110 Q728,98 730,116 Q730,132 715,130 Z"/>
+                    <path d="M752,424 Q772,408 772,434 Q772,456 750,450 Z"/>
+                    <path d="M712,400 Q725,388 728,404 Q728,418 713,418 Z"/>
 
-                    <!-- Cluster near branch 4 -->
-                    <path d="M1055,245 C1070,235 1085,240 1083,255 C1083,270 1065,272 1055,262 Z"/>
-                    <path d="M1015,220 C1005,205 1017,195 1030,198 C1037,210 1030,224 1020,227 Z"/>
+                    <!-- Node 4 tips -->
+                    <path d="M1000,78 Q1012,68 1012,84 Q1012,98 1000,96 Z"/>
+                    <path d="M950,140 Q960,128 964,144 Q964,158 952,158 Z"/>
+                    <path d="M988,408 Q1000,398 1002,414 Q1002,428 988,428 Z"/>
+                    <path d="M945,348 Q955,338 958,352 Q958,366 945,366 Z"/>
 
-                    <!-- Cluster near branch 5 -->
-                    <path d="M1315,82 C1330,72 1345,78 1343,93 C1343,108 1325,110 1315,100 Z"/>
-                    <path d="M1288,100 C1278,85 1290,75 1303,78 C1310,90 1303,104 1293,107 Z"/>
+                    <!-- Node 5 tips -->
+                    <path d="M1280,78 Q1292,68 1292,84 Q1292,98 1280,96 Z"/>
+                    <path d="M1235,140 Q1245,128 1249,144 Q1249,158 1237,158 Z"/>
+                    <path d="M1148,398 Q1160,388 1162,404 Q1162,418 1148,418 Z"/>
+                    <path d="M1185,332 Q1195,322 1198,336 Q1198,350 1185,350 Z"/>
                 </g>
 
                 <!-- Node halos -->
                 <g>
-                    <circle cx="180"  cy="120" r="34" fill="url(#halo)" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+                    <circle cx="180"  cy="230" r="36" fill="url(#halo)">
+                        <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="450"  cy="150" r="34" fill="url(#halo)" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="0.8s" repeatCount="indefinite"/>
+                    <circle cx="500"  cy="260" r="36" fill="url(#halo)">
+                        <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="0.8s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="700"  cy="150" r="36" fill="url(#halo)" opacity="0.6">
-                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1.6s" repeatCount="indefinite"/>
+                    <circle cx="700"  cy="260" r="40" fill="url(#halo)">
+                        <animate attributeName="opacity" values="0.35;0.95;0.35" dur="4s" begin="1.6s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="950"  cy="150" r="34" fill="url(#halo)" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="2.4s" repeatCount="indefinite"/>
+                    <circle cx="940"  cy="260" r="36" fill="url(#halo)">
+                        <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="2.4s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="1220" cy="150" r="34" fill="url(#halo)" opacity="0.5">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="3.2s" repeatCount="indefinite"/>
+                    <circle cx="1220" cy="260" r="36" fill="url(#halo)">
+                        <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="3.2s" repeatCount="indefinite"/>
                     </circle>
                 </g>
 
                 <!-- Node cores -->
                 <g>
-                    <circle cx="180"  cy="120" r="7" fill="#a7f3d0"/>
-                    <circle cx="450"  cy="150" r="7" fill="#a7f3d0"/>
-                    <circle cx="700"  cy="150" r="9" fill="#ffffff"/>
-                    <circle cx="950"  cy="150" r="7" fill="#a7f3d0"/>
-                    <circle cx="1220" cy="150" r="7" fill="#a7f3d0"/>
+                    <circle cx="180"  cy="230" r="8" fill="#a7f3d0"/>
+                    <circle cx="500"  cy="260" r="8" fill="#a7f3d0"/>
+                    <circle cx="700"  cy="260" r="11" fill="#ffffff"/>
+                    <circle cx="940"  cy="260" r="8" fill="#a7f3d0"/>
+                    <circle cx="1220" cy="260" r="8" fill="#a7f3d0"/>
                 </g>
 
                 <!-- Traveling pulse -->
-                <circle r="14" fill="url(#pulse)" opacity="0.9">
+                <circle r="16" fill="url(#pulse)" opacity="0.95">
                     <animateMotion dur="12s" repeatCount="indefinite"
-                        path="M50,150 C200,80 300,220 450,150 C600,80 700,220 850,150 C1000,80 1100,220 1250,150 L1350,150"/>
+                        path="M60,260 C220,180 340,340 500,260 C660,180 780,340 940,260 C1100,180 1220,340 1340,260"/>
                 </circle>
                 <circle r="4" fill="#ffffff">
                     <animateMotion dur="12s" repeatCount="indefinite"
-                        path="M50,150 C200,80 300,220 450,150 C600,80 700,220 850,150 C1000,80 1100,220 1250,150 L1350,150"/>
+                        path="M60,260 C220,180 340,340 500,260 C660,180 780,340 940,260 C1100,180 1220,340 1340,260"/>
                 </circle>
             </svg>
 

@@ -3978,12 +3978,11 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* === Pipeline vine === */
 #pipeline .vine-wrap {
     position: relative;
-    margin: 32px 0 56px;
+    margin: 40px 0 64px;
 }
 #pipeline .vine {
     width: 100%;
-    height: auto;
-    max-height: 300px;
+    height: 420px;
     display: block;
 }
 #pipeline .vine-nodes {
@@ -4079,7 +4078,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 @media (max-width: 780px) {
-    #pipeline .vine { max-height: 140px; }
+    #pipeline .vine { height: 220px; }
     #pipeline .vine-nodes {
         grid-template-columns: 1fr;
         gap: 40px;
