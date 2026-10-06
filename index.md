@@ -1162,116 +1162,142 @@ layout: null
 <section id="different">
 <div class="container">
 
-  <div class="different-split">
-    <div class="different-claim">
-      <h2>Most tools solve <span class="accent">one piece</span>.</h2>
-      <p class="claim-sub">
-        GAIA runs the whole chain — from raw sequence to treatment
-        protocol — inside a single self-learning system. Evidence
-        never has to cross a boundary between tools, because
-        there are no boundaries to cross.
-      </p>
-    </div>
+  <div class="manifesto">
 
-    <div class="different-pillars">
+    <p class="manifesto-kicker">What makes GAIA different</p>
 
-      <div class="pillar">
-        <h3>One pipeline, not five</h3>
+    <h2 class="manifesto-lead">
+      Most tools solve <em>one piece</em>.<br>
+      GAIA runs the <em>whole chain</em> — from raw sequence to
+      treatment protocol — inside a single self-learning system.
+    </h2>
+
+    <div class="movement">
+      <span class="movement-mark">i.</span>
+      <div class="movement-body">
+        <h3>End-to-end, not piecemeal</h3>
         <p>
           Genome scanning, variant mapping, compound screening, and
-          protocol design normally live in separate systems, stitched
-          together by hand. Here, they are the same system. A signal
-          found at one end is already legible at the other.
+          protocol design usually live in separate systems — stitched
+          together by hand, translated between file formats, re-explained
+          at every seam. GAIA runs the whole chain as one pipeline.
+          A signal found at one end is already legible at the other.
+          Nothing has to be handed off. Nothing is lost in translation.
         </p>
       </div>
+    </div>
 
-      <div class="pillar">
+    <div class="movement">
+      <span class="movement-mark">ii.</span>
+      <div class="movement-body">
         <h3>Learned, not configured</h3>
         <p>
           Weights are discovered from labeled sequence. Features are
-          extracted, tested, and kept only if they carry signal. As
-          the knowledge graph grows, the model sharpens without being
-          rebuilt from scratch for every new target.
+          extracted, tested, and kept only if they carry signal. There
+          are no fixed scoring functions, no hand-tuned rules, no manual
+          configuration for every new target. As the knowledge graph
+          grows, the model sharpens — without being rebuilt from scratch
+          each time a new disease enters the frame.
         </p>
       </div>
+    </div>
 
-      <div class="pillar">
+    <div class="movement">
+      <span class="movement-mark">iii.</span>
+      <div class="movement-body">
         <h3>Derived, not assembled</h3>
         <p>
-          Boundary detection across three scales. A feature space
-          built from first principles. A classifier that discovers
-          its own thresholds from labeled sequence. Nothing here is
-          a wrapper around someone else's tool — every equation is
-          written from scratch.
+          Boundary detection across three scales. A feature space built
+          from first principles. A classifier that discovers its own
+          thresholds from labeled sequence. Nothing here is a wrapper
+          around someone else's tool. Every equation is written from
+          scratch — because the genome doesn't care what library you
+          imported. It only cares whether the math is right.
         </p>
       </div>
+    </div>
 
-      <div class="pillar">
+    <div class="movement">
+      <span class="movement-mark">iv.</span>
+      <div class="movement-body">
         <h3>Checked before it speaks</h3>
         <p>
-          Every prediction is verified against three independent
-          layers — computational, cellular, physiological. A claim
-          that survives all three is worth acting on. A claim that
-          survives only computation is not a claim. It is a guess.
+          Every prediction is verified against three independent layers —
+          computational, cellular, physiological. A claim that survives
+          all three is worth acting on. A claim that survives only
+          computation is not a claim. It is a guess — and it does not
+          get a protocol. Validation here is not a downstream step run
+          by a separate team. It is built into the claim itself.
         </p>
       </div>
-
     </div>
+
   </div>
 
 </div>
 
 <style>
-.different-split {
-  display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.4fr);
-  gap: 72px;
-  align-items: start;
+.manifesto {
+  max-width: 780px;
+  margin: 0 auto;
 }
-.different-claim {
-  position: sticky;
-  top: 96px;
-}
-.different-claim h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  line-height: 1.15;
+.manifesto-kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4ade80;
+  font-family: monospace;
   margin-bottom: 20px;
 }
-.claim-sub {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: #94a3b8;
+.manifesto-lead {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  font-weight: 500;
+  color: #e2e8f0;
+  margin-bottom: 64px;
+  letter-spacing: -0.01em;
 }
-.different-pillars {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.manifesto-lead em {
+  font-style: italic;
+  color: #4ade80;
 }
-.pillar {
-  padding: 32px 0;
+.movement {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  padding: 36px 0;
   border-top: 1px solid rgba(148,163,184,0.14);
 }
-.pillar:last-child {
+.movement:last-child {
   border-bottom: 1px solid rgba(148,163,184,0.14);
 }
-.pillar h3 {
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-  color: #e2e8f0;
+.movement-mark {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #4ade80;
+  line-height: 1;
+  padding-top: 6px;
 }
-.pillar p {
-  font-size: 0.98rem;
-  line-height: 1.75;
+.movement-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+.movement-body p {
+  font-size: 1rem;
+  line-height: 1.8;
   color: #94a3b8;
   margin: 0;
 }
-@media (max-width: 820px) {
-  .different-split {
-    grid-template-columns: 1fr;
-    gap: 40px;
+@media (max-width: 640px) {
+  .movement {
+    grid-template-columns: 32px 1fr;
+    gap: 16px;
   }
-  .different-claim {
-    position: static;
+  .movement-mark {
+    font-size: 1.3rem;
   }
 }
 </style>
