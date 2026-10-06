@@ -2,3 +2,5 @@ title: GAIA
 description: DNA-to-cure platform for Ankylosing Spondylitis research
 theme: jekyll-theme-minimal
 show_downloads: false
+include:
+  - index.html
