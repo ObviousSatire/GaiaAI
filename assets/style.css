@@ -3972,23 +3972,26 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 
 
 
-/* === Organic vine pipeline === */
+
+
+
+/* === Pipeline vine === */
 #pipeline .vine-wrap {
     position: relative;
     margin: 32px 0 56px;
-    padding: 0;
 }
 #pipeline .vine {
     width: 100%;
-    height: 320px;
+    height: auto;
+    max-height: 300px;
     display: block;
 }
 #pipeline .vine-nodes {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 32px;
-    margin-top: 12px;
-    padding-top: 24px;
+    margin-top: 24px;
+    padding-top: 32px;
     border-top: 1px solid rgba(74,222,128,0.12);
 }
 #pipeline .vine-node {
@@ -4020,13 +4023,72 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     font-weight: 300;
 }
 
+/* === Sample table fix === */
+#pipeline .sample-out {
+    margin-top: 72px;
+}
+#pipeline .sample-label {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+#pipeline .sample-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    table-layout: auto;
+}
+#pipeline .sample-table th {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 0 16px 16px 0;
+    border-bottom: 1px solid rgba(148,163,184,0.15);
+}
+#pipeline .sample-table td {
+    color: #cbd5e1;
+    padding: 16px 16px 16px 0;
+    border-bottom: 1px solid rgba(148,163,184,0.08);
+    text-align: left;
+    vertical-align: middle;
+}
+#pipeline .sample-table td:nth-child(1) {
+    font-family: ui-monospace, monospace;
+    color: #64748b;
+    width: 40px;
+}
+#pipeline .sample-table td:nth-child(3) {
+    font-family: ui-monospace, monospace;
+    color: #a7f3d0;
+}
+#pipeline .sample-table tr:hover td {
+    background: rgba(74,222,128,0.03);
+}
+#pipeline .sample-foot {
+    margin-top: 28px;
+    font-size: 0.85rem;
+    color: #64748b;
+    font-style: italic;
+    line-height: 1.7;
+}
+
 @media (max-width: 780px) {
-    #pipeline .vine { height: 160px; }
+    #pipeline .vine { max-height: 140px; }
     #pipeline .vine-nodes {
         grid-template-columns: 1fr;
         gap: 40px;
-        margin-top: 24px;
-        padding-top: 8px;
-        border-top: none;
+        margin-top: 32px;
+        padding-top: 24px;
+    }
+    #pipeline .sample-table th,
+    #pipeline .sample-table td {
+        padding: 12px 8px 12px 0;
+        font-size: 0.82rem;
     }
 }

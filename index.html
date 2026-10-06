@@ -851,107 +851,129 @@ layout: null
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
         <div class="vine-wrap">
-            <svg class="vine" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet">
+            <svg class="vine" viewBox="0 0 1400 300" preserveAspectRatio="xMidYMid meet">
                 <defs>
-                    <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.05"/>
-                        <stop offset="20%"  stop-color="#34d399" stop-opacity="0.9"/>
+                    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.15"/>
+                        <stop offset="15%"  stop-color="#34d399" stop-opacity="0.9"/>
                         <stop offset="50%"  stop-color="#a7f3d0" stop-opacity="1"/>
-                        <stop offset="80%"  stop-color="#34d399" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.05"/>
+                        <stop offset="85%"  stop-color="#34d399" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.15"/>
                     </linearGradient>
-                    <radialGradient id="seedGlow" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
                         <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
-                        <stop offset="30%"  stop-color="#a7f3d0" stop-opacity="0.9"/>
-                        <stop offset="70%"  stop-color="#4ade80" stop-opacity="0.4"/>
+                        <stop offset="35%"  stop-color="#a7f3d0" stop-opacity="0.9"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
-                    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.9"/>
-                        <stop offset="60%"  stop-color="#4ade80" stop-opacity="0.3"/>
+                    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.8"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
-                    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
-                        <feGaussianBlur stdDeviation="3"/>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="4"/>
                     </filter>
                 </defs>
 
-                <!-- faint background band -->
-                <ellipse cx="600" cy="160" rx="620" ry="90" fill="#4ade80" opacity="0.04"/>
+                <!-- Background radial band -->
+                <ellipse cx="700" cy="150" rx="700" ry="90" fill="#4ade80" opacity="0.035"/>
 
-                <!-- secondary ghost vine, offset -->
-                <path d="M0,160 C140,100 260,220 400,160 S640,90 760,160 S980,230 1120,150 S1200,110 1200,150"
-                      fill="none" stroke="#4ade80" stroke-width="1" opacity="0.15"/>
+                <!-- Main trunk — a proper wavy path -->
+                <path d="M50,150
+                         C200,80  300,220 450,150
+                         C600,80  700,220 850,150
+                         C1000,80 1100,220 1250,150
+                         L1350,150"
+                      fill="none" stroke="url(#trunkGrad)" stroke-width="4" stroke-linecap="round"
+                      filter="url(#glow)" opacity="0.6"/>
+                <path d="M50,150
+                         C200,80  300,220 450,150
+                         C600,80  700,220 850,150
+                         C1000,80 1100,220 1250,150
+                         L1350,150"
+                      fill="none" stroke="url(#trunkGrad)" stroke-width="2.5" stroke-linecap="round"/>
 
-                <!-- main vine -->
-                <path d="M0,160 C140,100 260,220 400,160 S640,90 760,160 S980,230 1120,150 S1200,110 1200,150"
-                      fill="none" stroke="url(#vineGrad)" stroke-width="3.5" stroke-linecap="round"
-                      filter="url(#softGlow)" opacity="0.85"/>
-                <path d="M0,160 C140,100 260,220 400,160 S640,90 760,160 S980,230 1120,150 S1200,110 1200,150"
-                      fill="none" stroke="url(#vineGrad)" stroke-width="2" stroke-linecap="round"/>
+                <!-- Branches — thicker, proper tree structure -->
+                <g stroke="#4ade80" fill="none" stroke-linecap="round" opacity="0.55">
+                    <!-- Branch 1 from node 1 -->
+                    <path d="M180,120 C200,90 220,70 250,45" stroke-width="1.6"/>
+                    <path d="M250,45 C265,35 275,30 290,28" stroke-width="1.2"/>
 
-                <!-- tendrils -->
-                <g stroke="#4ade80" stroke-width="0.9" fill="none" opacity="0.55">
-                    <path d="M80,140 C120,100 150,70 180,40"/>
-                    <path d="M80,140 C110,160 130,180 145,215"/>
-                    <path d="M280,205 C320,180 350,150 390,120"/>
-                    <path d="M400,160 C440,130 470,100 510,70"/>
-                    <path d="M520,120 C560,90 590,70 630,45"/>
-                    <path d="M640,95 C680,70 710,55 750,35"/>
-                    <path d="M760,160 C800,190 830,210 870,235"/>
-                    <path d="M900,215 C940,190 970,170 1010,145"/>
-                    <path d="M1060,155 C1100,125 1130,110 1160,90"/>
+                    <!-- Branch 2 from node 2 -->
+                    <path d="M450,150 C470,120 485,100 505,80" stroke-width="1.6"/>
+                    <path d="M505,80 C525,65 540,58 560,55" stroke-width="1.2"/>
+
+                    <!-- Branch 3 from node 3 -->
+                    <path d="M700,150 C700,115 700,90 705,60" stroke-width="1.8"/>
+                    <path d="M705,60 C715,40 725,30 740,25" stroke-width="1.2"/>
+
+                    <!-- Branch 4 from node 4 -->
+                    <path d="M950,150 C970,180 985,200 1010,220" stroke-width="1.6"/>
+                    <path d="M1010,220 C1030,235 1045,242 1065,245" stroke-width="1.2"/>
+
+                    <!-- Branch 5 from node 5 -->
+                    <path d="M1220,150 C1245,130 1260,115 1285,100" stroke-width="1.6"/>
+                    <path d="M1285,100 C1300,90 1310,85 1325,82" stroke-width="1.2"/>
                 </g>
 
-                <!-- leaves at tendril tips -->
+                <!-- Leaf clusters — proper leaf shape via path, larger -->
                 <g fill="#4ade80" opacity="0.55">
-                    <ellipse cx="180" cy="40"  rx="8" ry="4" transform="rotate(-40 180 40)"/>
-                    <ellipse cx="145" cy="215" rx="7" ry="3.5" transform="rotate(35 145 215)"/>
-                    <ellipse cx="390" cy="120" rx="7" ry="3.5" transform="rotate(-30 390 120)"/>
-                    <ellipse cx="510" cy="70"  rx="8" ry="4" transform="rotate(-35 510 70)"/>
-                    <ellipse cx="630" cy="45"  rx="7" ry="3.5" transform="rotate(-25 630 45)"/>
-                    <ellipse cx="750" cy="35"  rx="8" ry="4" transform="rotate(-20 750 35)"/>
-                    <ellipse cx="870" cy="235" rx="7" ry="3.5" transform="rotate(30 870 235)"/>
-                    <ellipse cx="1010" cy="145" rx="8" ry="4" transform="rotate(-30 1010 145)"/>
-                    <ellipse cx="1160" cy="90" rx="7" ry="3.5" transform="rotate(-25 1160 90)"/>
+                    <!-- Cluster near branch 1 -->
+                    <path d="M280,28 C290,18 305,22 305,35 C305,48 290,52 280,42 Z"/>
+                    <path d="M255,45 C250,30 260,20 275,22 C280,30 275,45 265,50 Z"/>
+
+                    <!-- Cluster near branch 2 -->
+                    <path d="M550,55 C565,45 580,50 578,65 C578,78 560,80 550,70 Z"/>
+                    <path d="M508,80 C500,65 512,55 525,58 C532,70 525,82 515,85 Z"/>
+
+                    <!-- Cluster near branch 3 (center, biggest) -->
+                    <path d="M730,25 C745,10 765,15 765,32 C765,48 745,52 730,42 Z"/>
+                    <path d="M710,58 C700,42 712,30 725,35 C732,48 725,62 715,65 Z"/>
+
+                    <!-- Cluster near branch 4 -->
+                    <path d="M1055,245 C1070,235 1085,240 1083,255 C1083,270 1065,272 1055,262 Z"/>
+                    <path d="M1015,220 C1005,205 1017,195 1030,198 C1037,210 1030,224 1020,227 Z"/>
+
+                    <!-- Cluster near branch 5 -->
+                    <path d="M1315,82 C1330,72 1345,78 1343,93 C1343,108 1325,110 1315,100 Z"/>
+                    <path d="M1288,100 C1278,85 1290,75 1303,78 C1310,90 1303,104 1293,107 Z"/>
                 </g>
 
-                <!-- node glow halos -->
-                <g opacity="0.7">
-                    <circle cx="120"  cy="120" r="24" fill="url(#nodeGlow)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="360"  cy="185" r="24" fill="url(#nodeGlow)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" begin="0.8s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="600"  cy="115" r="26" fill="url(#nodeGlow)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" begin="1.6s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="840"  cy="180" r="24" fill="url(#nodeGlow)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" begin="2.4s" repeatCount="indefinite"/>
-                    </circle>
-                    <circle cx="1080" cy="150" r="24" fill="url(#nodeGlow)">
-                        <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" begin="3.2s" repeatCount="indefinite"/>
-                    </circle>
-                </g>
-
-                <!-- node seeds (core dots) -->
+                <!-- Node halos -->
                 <g>
-                    <circle cx="120"  cy="120" r="6" fill="#a7f3d0"/>
-                    <circle cx="360"  cy="185" r="6" fill="#a7f3d0"/>
-                    <circle cx="600"  cy="115" r="7" fill="#ffffff"/>
-                    <circle cx="840"  cy="180" r="6" fill="#a7f3d0"/>
-                    <circle cx="1080" cy="150" r="6" fill="#a7f3d0"/>
+                    <circle cx="180"  cy="120" r="34" fill="url(#halo)" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="450"  cy="150" r="34" fill="url(#halo)" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="0.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="700"  cy="150" r="36" fill="url(#halo)" opacity="0.6">
+                        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1.6s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="950"  cy="150" r="34" fill="url(#halo)" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="2.4s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="1220" cy="150" r="34" fill="url(#halo)" opacity="0.5">
+                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" begin="3.2s" repeatCount="indefinite"/>
+                    </circle>
                 </g>
 
-                <!-- traveling seed pulse -->
-                <circle r="11" fill="url(#seedGlow)">
+                <!-- Node cores -->
+                <g>
+                    <circle cx="180"  cy="120" r="7" fill="#a7f3d0"/>
+                    <circle cx="450"  cy="150" r="7" fill="#a7f3d0"/>
+                    <circle cx="700"  cy="150" r="9" fill="#ffffff"/>
+                    <circle cx="950"  cy="150" r="7" fill="#a7f3d0"/>
+                    <circle cx="1220" cy="150" r="7" fill="#a7f3d0"/>
+                </g>
+
+                <!-- Traveling pulse -->
+                <circle r="14" fill="url(#pulse)" opacity="0.9">
                     <animateMotion dur="12s" repeatCount="indefinite"
-                        path="M0,160 C140,100 260,220 400,160 S640,90 760,160 S980,230 1120,150 S1200,110 1200,150"/>
+                        path="M50,150 C200,80 300,220 450,150 C600,80 700,220 850,150 C1000,80 1100,220 1250,150 L1350,150"/>
                 </circle>
                 <circle r="4" fill="#ffffff">
                     <animateMotion dur="12s" repeatCount="indefinite"
-                        path="M0,160 C140,100 260,220 400,160 S640,90 760,160 S980,230 1120,150 S1200,110 1200,150"/>
+                        path="M50,150 C200,80 300,220 450,150 C600,80 700,220 850,150 C1000,80 1100,220 1250,150 L1350,150"/>
                 </circle>
             </svg>
 
