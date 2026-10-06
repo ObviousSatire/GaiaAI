@@ -4002,36 +4002,16 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 /* === pipeline (restored from 7ba8497) === */
-    .vine-wrap { position: relative; margin: 48px 0 40px; }
-    .vine { width: 100%; height: 120px; display: block; }
-    .vine-nodes {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        margin-top: -12px;
-    }
-    .vine-node { text-align: center; }
-    .vn-num {
-        font-family: monospace;
-        font-size: 0.68rem;
-        letter-spacing: 0.22em;
-        color: #4ade80;
-        margin-bottom: 6px;
-    }
-    .vn-title {
-        font-size: 1.05rem;
-        font-weight: 600;
-        color: #e2e8f0;
-        margin-bottom: 8px;
-    }
-    .vn-desc {
-        font-size: 0.84rem;
-        line-height: 1.55;
-        color: #94a3b8;
-    }
+    
+    
+    
+    
+    
+    
+    
     @media (max-width: 780px) {
-        .vine-nodes { grid-template-columns: 1fr; gap: 28px; }
-        .vine { height: 40px; }
+        
+        
     }
     .sample-out { margin-top: 56px; }
     .sample-label {
@@ -4203,3 +4183,70 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
         color: #64748b;
         border-top: 1px solid rgba(148,163,184,0.1);
         padding-top: 12px;
+
+/* === Pipeline vine (final) === */
+#pipeline .vine-wrap {
+    position: relative;
+    margin: 32px 0 64px;
+}
+#pipeline .vine {
+    width: 100%;
+    height: 160px;
+    display: block;
+    margin-bottom: -20px;
+}
+#pipeline .vine-nodes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(74,222,128,0.12);
+}
+#pipeline .vine-node {
+    text-align: center;
+    position: relative;
+    padding-top: 18px;
+}
+#pipeline .vine-node::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 50%;
+    width: 1px; height: 16px;
+    background: linear-gradient(180deg, rgba(74,222,128,0.6), rgba(74,222,128,0));
+    transform: translateX(-50%);
+}
+#pipeline .vn-num {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    color: #4ade80;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+#pipeline .vn-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+#pipeline .vn-desc {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #94a3b8;
+    max-width: 180px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+@media (max-width: 780px) {
+    #pipeline .vine { height: 100px; margin-bottom: 0; }
+    #pipeline .vine-nodes {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        border-top: none;
+        padding-top: 12px;
+    }
+    #pipeline .vine-node { padding-top: 0; }
+    #pipeline .vine-node::before { display: none; }
+}
