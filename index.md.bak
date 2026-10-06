@@ -181,27 +181,6 @@ layout: null
     </div>
 </section>
 
-<section id="capabilities">
-    <div class="container">
-        <h2>What it does, <span class="accent">end to end</span></h2>
-        <div class="cap-grid">
-            <div class="cap-item"><h4>Genome scanning</h4><p>Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence.</p></div>
-            <div class="cap-item"><h4>Variant mapping</h4><p>Population variation placed in context. Each variant tied to gene, pathway, and any known associations. The base layer of the knowledge graph.</p></div>
-            <div class="cap-item"><h4>Knowledge graph</h4><p>A growing network of variants, genes, pathways, diseases, and compounds. Every new source adds edges. The graph learns as the field publishes.</p></div>
-            <div class="cap-item"><h4>Compound libraries</h4><p>Multiple curated libraries of small molecules and natural products. Thousands upon thousands of candidates ready to be screened against any target.</p></div>
-            <div class="cap-item"><h4>Interaction scoring</h4><p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual evidence rolled into a single number.</p></div>
-            <div class="cap-item"><h4>Protocol design</h4><p>Simulated multi-compound protocols across time. Predicted outcomes, risks, and safety margins — all in one plan.</p></div>
-            <div class="cap-item"><h4>Link prediction</h4><p>A trained classifier that predicts missing links in the graph. Improves automatically as the graph grows.</p></div>
-            <div class="cap-item"><h4>Open datasets</h4><p>Every stage archived publicly with permanent identifiers. The full pipeline, reproducible from raw public sources.</p></div>
-        </div>
-    </div>
-    <style>
-    .cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px 36px; margin-top: 28px; }
-    .cap-item h4 { font-size: 0.95rem; margin-bottom: 6px; color: #a7f3d0; font-weight: 600; }
-    .cap-item p { font-size: 0.88rem; line-height: 1.65; color: #94a3b8; margin: 0; }
-    </style>
-</section>
-
 <section id="learning">
     <div class="container">
         <h2>How it <span class="accent">learns</span></h2>
@@ -425,116 +404,6 @@ layout: null
     </div>
 </section>
 
-<section id="pipeline">
-    <div class="container">
-        <h2>The <span class="accent">pipeline</span></h2>
-        <p class="lead">From raw genome to treatment protocol, in five stages.</p>
-
-        <div class="pipeline">
-            <div class="stage">
-                <div class="stage-num">STAGE 01</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <circle cx="20" cy="20" r="16" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,20 Q20,10 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,20 Q20,30 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                </svg>
-                <h3>Read the genome</h3>
-                <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 02</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <circle cx="10" cy="20" r="4" fill="#60a5fa"/>
-                    <circle cx="30" cy="20" r="4" fill="#60a5fa"/>
-                    <line x1="14" y1="20" x2="26" y2="20" stroke="#60a5fa" stroke-width="1.5"/>
-                </svg>
-                <h3>Map the variants</h3>
-                <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 03</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <rect x="8" y="12" width="24" height="16" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                    <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
-                </svg>
-                <h3>Screen the compounds</h3>
-                <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 04</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <path d="M20,4 L36,14 L36,26 L20,36 L4,26 L4,14 Z" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <circle cx="20" cy="20" r="4" fill="#4ade80"/>
-                </svg>
-                <h3>Score every interaction</h3>
-                <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 05</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <path d="M8,20 L16,28 L32,12" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <h3>Design the protocol</h3>
-                <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
-            </div>
-        </div>
-    </div>
-        <div class="sample-output">
-            <div class="sample-output-header">
-                <div class="dot-row"><span></span><span></span><span></span></div>
-                <div class="title">sample output — ranked protocol</div>
-            </div>
-            <table>
-                <tr>
-                    <th>Rank</th>
-                    <th>Compound</th>
-                    <th>Binding</th>
-                    <th>Evidence</th>
-                    <th>Confidence</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>resveratrol</td>
-                    <td class="score">−8.72</td>
-                    <td class="evidence">in silico · in vitro · in vivo</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>curcumin</td>
-                    <td class="score">−7.91</td>
-                    <td class="evidence">in silico · in vitro</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>fisetin</td>
-                    <td class="score">−7.45</td>
-                    <td class="evidence">in silico · in vitro · in vivo</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>berberine</td>
-                    <td class="score">−6.83</td>
-                    <td class="evidence">in silico · in vitro</td>
-                    <td class="med">medium</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>quercetin</td>
-                    <td class="score">−6.52</td>
-                    <td class="evidence">in silico only</td>
-                    <td class="med">medium</td>
-                </tr>
-            </table>
-            <div class="note">
-                → next: combine top 3 into a protocol, simulate outcomes at                30 / 90 / 180 / 365 days, generate full evidence report.
-            </div>
-        </div>
-
-</section>
-
 <section id="math">
 <div class="container">
   <h2>The math <span class="accent">underneath</span></h2>
@@ -593,12 +462,11 @@ layout: null
     </div>
 
     <p class="math-close">
-      The math is not assembled from other people's tools. Boundary
-      detection, feature extraction, and the classifier that reads them
-      were all derived from the structure of the genome itself — because
-      the genome does not care which library you imported. It only cares
-      whether the math is right. This is the part that cannot be
-      swapped out for a different package.
+      No thresholds are hand-set. No rules are hard-coded. The
+      boundaries, the features, and the decision surface are all
+      discovered from labeled sequence — and every equation is
+      written from scratch.
+    </p>
 
   </div>
 </div>
@@ -978,9 +846,209 @@ layout: null
     </div>
 </section>
 
+<section id="pipeline">
+    <div class="container">
+        <h2>The <span class="accent">pipeline</span></h2>
+        <p class="lead">From raw genome to treatment protocol, in five stages.</p>
 
+        <div class="pipeline">
+            <div class="stage">
+                <div class="stage-num">STAGE 01</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="16" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,20 Q20,10 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,20 Q20,30 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                </svg>
+                <h3>Read the genome</h3>
+                <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
+            </div>
+            <div class="stage">
+                <div class="stage-num">STAGE 02</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="10" cy="20" r="4" fill="#60a5fa"/>
+                    <circle cx="30" cy="20" r="4" fill="#60a5fa"/>
+                    <line x1="14" y1="20" x2="26" y2="20" stroke="#60a5fa" stroke-width="1.5"/>
+                </svg>
+                <h3>Map the variants</h3>
+                <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
+            </div>
+            <div class="stage">
+                <div class="stage-num">STAGE 03</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <rect x="8" y="12" width="24" height="16" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
+                </svg>
+                <h3>Screen the compounds</h3>
+                <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
+            </div>
+            <div class="stage">
+                <div class="stage-num">STAGE 04</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <path d="M20,4 L36,14 L36,26 L20,36 L4,26 L4,14 Z" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="4" fill="#4ade80"/>
+                </svg>
+                <h3>Score every interaction</h3>
+                <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
+            </div>
+            <div class="stage">
+                <div class="stage-num">STAGE 05</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <path d="M8,20 L16,28 L32,12" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <h3>Design the protocol</h3>
+                <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
+            </div>
+        </div>
+    </div>
+        <div class="sample-output">
+            <div class="sample-output-header">
+                <div class="dot-row"><span></span><span></span><span></span></div>
+                <div class="title">sample output — ranked protocol</div>
+            </div>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Compound</th>
+                    <th>Binding</th>
+                    <th>Evidence</th>
+                    <th>Confidence</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>resveratrol</td>
+                    <td class="score">−8.72</td>
+                    <td class="evidence">in silico · in vitro · in vivo</td>
+                    <td class="high">high</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>curcumin</td>
+                    <td class="score">−7.91</td>
+                    <td class="evidence">in silico · in vitro</td>
+                    <td class="high">high</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>fisetin</td>
+                    <td class="score">−7.45</td>
+                    <td class="evidence">in silico · in vitro · in vivo</td>
+                    <td class="high">high</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>berberine</td>
+                    <td class="score">−6.83</td>
+                    <td class="evidence">in silico · in vitro</td>
+                    <td class="med">medium</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>quercetin</td>
+                    <td class="score">−6.52</td>
+                    <td class="evidence">in silico only</td>
+                    <td class="med">medium</td>
+                </tr>
+            </table>
+            <div class="note">
+                → next: combine top 3 into a protocol, simulate outcomes at                30 / 90 / 180 / 365 days, generate full evidence report.
+            </div>
+        </div>
 
+</section>
 
+<section id="capabilities">
+    <div class="container">
+        <h2>What it <span class="accent">does</span></h2>
+        <p class="lead">Multiple systems working together. From raw signal to a plan.</p>
+
+        <div class="capabilities">
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="16" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,20 Q20,12 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,20 Q20,28 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                </svg>
+                <h3>Genome scanning</h3>
+                <p>Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="12" cy="14" r="3" fill="#60a5fa"/>
+                    <circle cx="28" cy="14" r="3" fill="#60a5fa"/>
+                    <circle cx="20" cy="28" r="3" fill="#60a5fa"/>
+                    <line x1="14" y1="14" x2="26" y2="14" stroke="#60a5fa" stroke-width="1.5"/>
+                    <line x1="14" y1="16" x2="19" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
+                    <line x1="26" y1="16" x2="21" y2="25" stroke="#60a5fa" stroke-width="1.5"/>
+                </svg>
+                <h3>Variant mapping</h3>
+                <p>Population variation placed in context. Each variant tied to gene, pathway, and any known associations. The base layer of the knowledge graph.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="8" cy="20" r="2.5" fill="#a7f3d0"/>
+                    <circle cx="20" cy="8" r="2.5" fill="#a7f3d0"/>
+                    <circle cx="32" cy="20" r="2.5" fill="#a7f3d0"/>
+                    <circle cx="20" cy="32" r="2.5" fill="#a7f3d0"/>
+                    <line x1="8" y1="20" x2="20" y2="8" stroke="#a7f3d0" stroke-width="1"/>
+                    <line x1="20" y1="8" x2="32" y2="20" stroke="#a7f3d0" stroke-width="1"/>
+                    <line x1="32" y1="20" x2="20" y2="32" stroke="#a7f3d0" stroke-width="1"/>
+                    <line x1="20" y1="32" x2="8" y2="20" stroke="#a7f3d0" stroke-width="1"/>
+                </svg>
+                <h3>Knowledge graph</h3>
+                <p>A growing network of variants, genes, pathways, diseases, and compounds. Every new source adds edges. The graph learns as the field publishes.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <rect x="4" y="14" width="9" height="9" rx="1.5" fill="#34d399"/>
+                    <rect x="15" y="14" width="9" height="9" rx="1.5" fill="#34d399" opacity="0.7"/>
+                    <rect x="26" y="14" width="9" height="9" rx="1.5" fill="#34d399" opacity="0.5"/>
+                </svg>
+                <h3>Compound libraries</h3>
+                <p>Multiple curated libraries of small molecules and natural products. Thousands upon thousands of candidates ready to be screened against any target.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="7" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="2.5" fill="#4ade80"/>
+                </svg>
+                <h3>Interaction scoring</h3>
+                <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual evidence rolled into a single number.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <path d="M6,32 L6,24 L14,24 L14,16 L22,16 L22,24 L30,24 L30,10 L34,10" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                <h3>Protocol design</h3>
+                <p>Simulated multi-compound protocols across time. Predicted outcomes, risks, and safety margins — all in one plan.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <path d="M6,12 L6,28 M12,12 L12,28 M18,12 L18,28 M24,12 L24,28 M30,12 L30,28 M36,12 L36,28" stroke="#a7f3d0" stroke-width="1.5"/>
+                </svg>
+                <h3>Link prediction</h3>
+                <p>A trained classifier that predicts missing links in the graph. Improves automatically as the graph grows.</p>
+            </div>
+
+            <div class="capability">
+                <svg class="glyph" width="44" height="44" viewBox="0 0 40 40">
+                    <rect x="8" y="8" width="24" height="24" rx="3" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <line x1="14" y1="14" x2="26" y2="14" stroke="#4ade80" stroke-width="1.5"/>
+                    <line x1="14" y1="20" x2="26" y2="20" stroke="#4ade80" stroke-width="1.5"/>
+                    <line x1="14" y1="26" x2="20" y2="26" stroke="#4ade80" stroke-width="1.5"/>
+                </svg>
+                <h3>Open datasets</h3>
+                <p>Every stage archived publicly with permanent identifiers. The full pipeline, reproducible from raw public sources.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section>
     <div class="container">
@@ -1017,7 +1085,128 @@ layout: null
     </div>
 </section>
 
+<section id="different">
+<div class="container">
 
+  <h2>What GAIA does that <span class="accent">nothing else does</span></h2>
+  <p class="lead">
+    Not a feature list. Four structural choices that change what the
+    system is capable of — and why each one matters.
+  </p>
+
+  <div class="diff-grid">
+
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>The genome is read as structure, not as text</h3>
+      </div>
+      <p>
+        Most variant tools treat DNA as a string to match against a
+        reference. GAIA reads it the way a signal processor reads a
+        waveform — composition shifts, structural signatures,
+        conservation gradients. A boundary is not a fixed window size;
+        it is the point where the biology itself changes character.
+        That is why the same segment logic holds across chromosomes
+        and across species.
+      </p>
+    </div>
+
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>Every prediction carries its full evidence chain</h3>
+      </div>
+      <p>
+        A ranked compound is not a number. It is the entire path that
+        produced it — the feature that flagged the region, the variant
+        that sat inside it, the pathway it touched, the binding score,
+        the cell assay, the cohort. Nothing is summarized away. Anyone
+        reading the output can walk the chain backward to the raw
+        sequence. This is not a reporting layer bolted on. The graph
+        is the model.
+      </p>
+    </div>
+
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>Discovery happens before prediction, not after</h3>
+      </div>
+      <p>
+        Most pipelines pick a target, then score candidates against it.
+        GAIA does the opposite — it reads the raw genome first, finds
+        the regions that carry structural signal, and lets the targets
+        emerge from what the genome itself is doing. The system is not
+        told what to look for. It is told how to look, and the pattern
+        comes out of the data.
+      </p>
+    </div>
+
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>Nothing is trusted until three independent layers agree</h3>
+      </div>
+      <p>
+        A prediction has to survive computation, then cells, then
+        physiology — in that order, and independently. A candidate
+        that clears only the computational layer is a hypothesis, not
+        a protocol. This is not a scoring threshold; it is a hard gate.
+        If the evidence layers disagree, the candidate does not advance.
+        The cost of a wrong protocol is higher than the cost of waiting.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(148,163,184,0.14);
+  border-left: 1px solid rgba(148,163,184,0.14);
+}
+.diff-block {
+  padding: 40px 36px;
+  border-right: 1px solid rgba(148,163,184,0.14);
+  border-bottom: 1px solid rgba(148,163,184,0.14);
+}
+.diff-head {
+  margin-bottom: 16px;
+}
+.diff-tag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4ade80;
+  margin-bottom: 14px;
+}
+.diff-head h3 {
+  font-size: 1.18rem;
+  line-height: 1.35;
+  color: #e2e8f0;
+  margin: 0;
+  font-weight: 600;
+}
+.diff-block p {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: #94a3b8;
+  margin: 0;
+}
+@media (max-width: 780px) {
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</section>
 
 <footer>
     <div class="container">
