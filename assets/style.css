@@ -2780,65 +2780,6 @@ footer .footer-links {
 }
 
 .use-card:hover .arrow { gap: 12px; }
-
-/* ============================================================
-   PIPELINE — flow animation
-   ============================================================ */
-.pipeline {
-    position: relative;
-}
-.pipeline::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.3), rgba(74, 222, 128, 0.3), transparent);
-    z-index: 0;
-    pointer-events: none;
-}
-.pipeline::after {
-    content: '';
-    position: absolute;
-    top: calc(50% - 4px);
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background: radial-gradient(circle, #a7f3d0, #4ade80);
-    border-radius: 50%;
-    box-shadow: 0 0 20px #4ade80, 0 0 40px rgba(74, 222, 128, 0.5);
-    animation: pipeFlow 8s linear infinite;
-    z-index: 1;
-    pointer-events: none;
-}
-@keyframes pipeFlow {
-    0%   { left: 0%; opacity: 0; }
-    5%   { opacity: 1; }
-    95%  { opacity: 1; }
-    100% { left: 100%; opacity: 0; }
-}
-.stage { z-index: 2; }
-
-/* Pulsing stage numbers */
-.stage-num {
-    display: inline-block;
-    position: relative;
-    padding-left: 18px;
-}
-.stage-num::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 12px var(--accent);
-    animation: stagePulse 2.5s ease-in-out infinite;
-}
 .stage:nth-child(2) .stage-num::before { animation-delay: -0.4s; }
 .stage:nth-child(3) .stage-num::before { animation-delay: -0.8s; }
 .stage:nth-child(4) .stage-num::before { animation-delay: -1.2s; }
