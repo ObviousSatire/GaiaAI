@@ -217,7 +217,7 @@ layout: null
     <ul>
       <li><strong>Ingest</strong> full chromosomes</li>
       <li><strong>Read</strong> shape, rhythm, and context</li>
-      <li><strong>Discover</strong> what distinguishes one region from another</li>
+      <li><strong>Discover</strong> the signatures that separate coding from conserved from regulatory from silent</li>
       <li><strong>Validate</strong> across chromosomes and species</li>
     </ul>
   </div>
@@ -410,53 +410,46 @@ layout: null
 
   <p class="lead">
     Sequence is raw potential. Meaning emerges only when a pattern
-    is applied in a context. We wrote the math that reads both.
+    is applied in a context. We wrote the math that reads both —
+    not assembled from other people's tools, but derived from the
+    structure of the genome itself.
   </p>
 
   <div class="math-narrative">
-    <h3>Where biology <span class="accent">transitions</span></h3>
+
+    <h3>Boundaries are <span class="accent">where biology shifts</span></h3>
     <p>
-      The genome isn't uniform. It shifts — from dense to sparse,
-      from ordered to loose. Boundaries are placed where those
-      shifts happen, at multiple scales at once.
+      The genome isn't uniform. Composition drifts, structure loosens,
+      conservation fades. A boundary is placed wherever those shifts
+      align — and the same logic runs at three scales at once.
     </p>
 
-    <div class="scale-stack">
-      <div class="scale-row">
-        <div class="scale-label">FINE SCALE</div>
-        <div class="scale-track">
-          <div class="scale-marker" style="left:12%"></div>
-          <div class="scale-marker" style="left:28%"></div>
-          <div class="scale-marker" style="left:41%"></div>
-          <div class="scale-marker" style="left:57%"></div>
-          <div class="scale-marker" style="left:68%"></div>
-          <div class="scale-marker" style="left:79%"></div>
-          <div class="scale-marker" style="left:88%"></div>
-          <div class="scale-marker" style="left:94%"></div>
-        </div>
+    <div class="equation-stack">
+      <div class="equation-row">
+        <div class="equation-label">FINE</div>
+        <div class="equation-body">Δ&thinsp;GC &gt; τ<sub>fine</sub> &nbsp;∧&nbsp; Δ&thinsp;H4 &gt; τ<sub>fine</sub></div>
+        <div class="equation-note">local composition shift</div>
       </div>
-      <div class="scale-row">
-        <div class="scale-label">MEDIUM SCALE</div>
-        <div class="scale-track">
-          <div class="scale-marker" style="left:18%"></div>
-          <div class="scale-marker" style="left:44%"></div>
-          <div class="scale-marker" style="left:72%"></div>
-        </div>
+      <div class="equation-row">
+        <div class="equation-label">MEDIUM</div>
+        <div class="equation-body">∇&thinsp;CpG<sub>O/E</sub> &gt; τ<sub>mid</sub></div>
+        <div class="equation-note">island-scale structure change</div>
       </div>
-      <div class="scale-row">
-        <div class="scale-label">COARSE SCALE</div>
-        <div class="scale-track">
-          <div class="scale-marker" style="left:25%"></div>
-          <div class="scale-marker" style="left:65%"></div>
-        </div>
+      <div class="equation-row">
+        <div class="equation-label">COARSE</div>
+        <div class="equation-body">Δ&thinsp;PhyloP &gt; τ<sub>coarse</sub></div>
+        <div class="equation-note">evolutionary signal break</div>
       </div>
     </div>
 
-    <h3>Every segment gets a <span class="accent">fingerprint</span></h3>
+    <h3>Every segment earns a <span class="accent">signature</span></h3>
     <p>
-      Between boundaries, each region of the genome is described
-      in depth — its composition, its rhythm, its structure, its
-      history of conservation. Not a label. A signature.
+      Between boundaries, each region is described not by a label but
+      by a fingerprint — its composition, its reading frame, its skew,
+      its conservation across deep time. The classifier is not told
+      what to look for. It discovers which combinations of features
+      separate one kind of region from another, and holds that
+      separation across chromosomes and species.
     </p>
 
     <div class="feature-ribbon">
@@ -467,78 +460,53 @@ layout: null
       <span>Conservation</span>
       <span>Context</span>
     </div>
+
+    <p class="math-close">
+      No thresholds are hand-set. No rules are hard-coded. The
+      boundaries, the features, and the decision surface are all
+      discovered from labeled sequence — and every equation is
+      written from scratch.
+    </p>
+
   </div>
 </div>
 
 <style>
-.math-narrative {
-  max-width: 780px;
-  margin: 0 auto;
-}
-.math-narrative h3 {
-  margin-top: 48px;
-  margin-bottom: 12px;
-  font-size: 1.4rem;
-}
-.math-narrative p {
-  color: var(--muted, #94a3b8);
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-.scale-stack {
+.equation-stack {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin: 28px 0 40px;
+  gap: 18px;
+  margin: 28px 0 44px;
 }
-.scale-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.equation-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 220px;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(148,163,184,0.12);
 }
-.scale-label {
-  width: 120px;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  color: #64748b;
+.equation-label {
   font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: #64748b;
 }
-.scale-track {
-  position: relative;
-  flex: 1;
-  height: 10px;
-  background: rgba(74,222,128,0.06);
-  border-radius: 5px;
+.equation-body {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #e2e8f0;
 }
-.scale-marker {
-  position: absolute;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  margin-top: -5px;
-  margin-left: -5px;
-  border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 10px rgba(74,222,128,0.8);
-  animation: pulse 2.4s ease-in-out infinite;
+.equation-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: right;
 }
-@keyframes pulse {
-  0%,100% { opacity: 0.4; transform: scale(0.8); }
-  50%     { opacity: 1;   transform: scale(1.15); }
-}
-.feature-ribbon {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
-}
-.feature-ribbon span {
-  padding: 8px 16px;
-  border: 1px solid rgba(74,222,128,0.25);
-  border-radius: 999px;
-  font-size: 0.85rem;
+.math-close {
+  margin-top: 40px;
+  font-style: italic;
   color: #a7f3d0;
-  background: rgba(74,222,128,0.05);
 }
 </style>
 </section>
