@@ -192,74 +192,98 @@ layout: null
         <div class="learn-flow">
 
             <!-- Stage 1: DNA scanning -->
-            <div class="learn-stage">
-                <div class="learn-visual">
-                    <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-                        <defs>
-                            <linearGradient id="strandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#a7f3d0"/>
-                                <stop offset="50%" stop-color="#4ade80"/>
-                                <stop offset="100%" stop-color="#34d399"/>
-                            </linearGradient>
-                            <radialGradient id="dnaGlow2" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#4ade80" stop-opacity="0.18"/>
-                                <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                            </radialGradient>
-                        </defs>
+<div class="learn-stage">
+  <div class="learn-visual">
+    <div class="helix-wrap">
+      <div class="helix">
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+        <div class="rung"></div><div class="rung"></div><div class="rung"></div>
+      </div>
+      <div class="scan-sweep"></div>
+    </div>
+  </div>
+  <div class="learn-copy">
+    <span class="stage-badge">Loop 01</span>
+    <h3>Reading <span class="accent">raw sequence</span></h3>
+    <p>
+      Whole chromosomes go in. The system reads the structure
+      hidden inside the sequence — the shape of information
+      as it unfolds along the genome.
+    </p>
+    <ul>
+      <li><strong>Ingest</strong> full chromosomes</li>
+      <li><strong>Read</strong> shape, rhythm, and context</li>
+      <li><strong>Discover</strong> what distinguishes one region from another</li>
+      <li><strong>Validate</strong> across chromosomes and species</li>
+    </ul>
+  </div>
+</div>
 
-                        <circle cx="200" cy="200" r="170" fill="url(#dnaGlow2)"/>
-
-                        <!-- Strand 1: sine wave from top to bottom -->
-                        <path class="dna-strand"
-                              d="M140,30 C220,90 220,150 140,200 C60,250 60,310 140,370"
-                              stroke="url(#strandGrad)" stroke-width="5" fill="none"
-                              stroke-linecap="round"/>
-
-                        <!-- Strand 2: offset sine wave -->
-                        <path class="dna-strand second"
-                              d="M260,30 C180,90 180,150 260,200 C340,250 340,310 260,370"
-                              stroke="url(#strandGrad)" stroke-width="5" fill="none"
-                              stroke-linecap="round"/>
-
-                        <!-- Base pairs connecting the strands -->
-                        <line class="base-pair" x1="165" y1="60" x2="235" y2="60" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="185" y1="100" x2="215" y2="100" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="195" y1="140" x2="205" y2="140" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="195" y1="200" x2="205" y2="200" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="185" y1="240" x2="215" y2="240" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="165" y1="280" x2="235" y2="280" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="base-pair" x1="150" y1="320" x2="250" y2="320" stroke="#a7f3d0" stroke-width="2.5" stroke-linecap="round"/>
-
-                        <!-- Floating base pair letters -->
-                        <text class="base-letter" x="155" y="65" font-family="monospace" font-size="12" fill="#a7f3d0">A</text>
-                        <text class="base-letter" x="235" y="65" font-family="monospace" font-size="12" fill="#a7f3d0">T</text>
-                        <text class="base-letter" x="185" y="105" font-family="monospace" font-size="12" fill="#60a5fa">G</text>
-                        <text class="base-letter" x="215" y="105" font-family="monospace" font-size="12" fill="#60a5fa">C</text>
-                        <text class="base-letter" x="150" y="325" font-family="monospace" font-size="12" fill="#a7f3d0">C</text>
-                        <text class="base-letter" x="250" y="325" font-family="monospace" font-size="12" fill="#a7f3d0">G</text>
-
-                        <!-- Scanning bar that slides vertically -->
-                        <rect class="scan-bar" x="40" y="0" width="320" height="6" rx="3" fill="url(#strandGrad)" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="learn-copy">
-                    <span class="stage-badge">Loop 01</span>
-                    <h3>Reading <span class="accent">raw sequence</span></h3>
-                    <p>
-                        Whole chromosomes go in. The system reads the structure
-                        hidden inside the sequence — the shape of information
-                        as it unfolds along the genome.
-                    </p>
-                    <ul>
-                        <li><strong>Ingest</strong> full chromosomes</li>
-                        <li><strong>Read</strong> shape, rhythm, and context</li>
-                        <li><strong>Discover</strong> what distinguishes one region from another</li>
-                        <li><strong>Validate</strong> across chromosomes and species</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Stage 2: Growing the graph -->
+<style>
+.helix-wrap {
+  position: relative;
+  width: 220px;
+  height: 360px;
+  margin: 0 auto;
+  perspective: 900px;
+}
+.helix {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 9s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.rung {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  height: 6px;
+  margin-left: -60px;
+  border-radius: 3px;
+  background: linear-gradient(90deg,#a7f3d0,#4ade80,#34d399);
+  box-shadow: 0 0 12px rgba(74,222,128,0.5);
+}
+.rung:nth-child(1)  { top: 0;    transform: rotateY(0deg); }
+.rung:nth-child(2)  { top: 22px; transform: rotateY(20deg); }
+.rung:nth-child(3)  { top: 44px; transform: rotateY(40deg); }
+.rung:nth-child(4)  { top: 66px; transform: rotateY(60deg); }
+.rung:nth-child(5)  { top: 88px; transform: rotateY(80deg); }
+.rung:nth-child(6)  { top: 110px;transform: rotateY(100deg); }
+.rung:nth-child(7)  { top: 132px;transform: rotateY(120deg); }
+.rung:nth-child(8)  { top: 154px;transform: rotateY(140deg); }
+.rung:nth-child(9)  { top: 176px;transform: rotateY(160deg); }
+.rung:nth-child(10) { top: 198px;transform: rotateY(180deg); }
+.rung:nth-child(11) { top: 220px;transform: rotateY(200deg); }
+.rung:nth-child(12) { top: 242px;transform: rotateY(220deg); }
+.rung:nth-child(13) { top: 264px;transform: rotateY(240deg); }
+.rung:nth-child(14) { top: 286px;transform: rotateY(260deg); }
+.rung:nth-child(15) { top: 308px;transform: rotateY(280deg); }
+.rung:nth-child(16) { top: 330px;transform: rotateY(300deg); }
+.rung:nth-child(17) { top: 352px;transform: rotateY(320deg); }
+.scan-sweep {
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  height: 3px;
+  background: linear-gradient(90deg,transparent,#4ade80,transparent);
+  box-shadow: 0 0 18px #4ade80;
+  animation: sweep 3s ease-in-out infinite;
+}
+@keyframes sweep {
+  0%,100% { top: 0; }
+  50%     { top: 100%; }
+}
+</style>
+<!-- Stage 2: Growing the graph -->
             <div class="learn-stage reverse">
                 <div class="learn-visual">
                     <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
@@ -381,137 +405,142 @@ layout: null
 </section>
 
 <section id="math">
-    <div class="container">
-        <h2>The math <span class="accent">underneath</span></h2>
-        <p class="lead">
-            Sequence is raw potential. Meaning emerges only when a pattern is
-            applied in a context. We wrote the math that reads both.
-        </p>
+<div class="container">
+  <h2>The math <span class="accent">underneath</span></h2>
 
-        <div class="math-hero">
-            <div class="math-header">
-                <h3>Where <span class="accent">biology transitions</span></h3>
-                <p>
-                    The genome isn't uniform. It shifts — from dense to sparse,
-                    from ordered to loose. Boundaries are placed where those
-                    shifts happen, at multiple scales at once.
-                </p>
-            </div>
+  <p class="lead">
+    Sequence is raw potential. Meaning emerges only when a pattern
+    is applied in a context. We wrote the math that reads both.
+  </p>
 
-            <div class="scale-stack">
-                <div class="scale-row">
-                    <div class="scale-label">FINE SCALE</div>
-                    <div class="scale-track">
-                        <div class="scale-marker" style="left: 12%"></div>
-                        <div class="scale-marker" style="left: 28%"></div>
-                        <div class="scale-marker" style="left: 41%"></div>
-                        <div class="scale-marker" style="left: 57%"></div>
-                        <div class="scale-marker" style="left: 68%"></div>
-                        <div class="scale-marker" style="left: 79%"></div>
-                        <div class="scale-marker" style="left: 88%"></div>
-                        <div class="scale-marker" style="left: 94%"></div>
-                    </div>
-                </div>
-                <div class="scale-row">
-                    <div class="scale-label">MEDIUM SCALE</div>
-                    <div class="scale-track">
-                        <div class="scale-marker" style="left: 18%"></div>
-                        <div class="scale-marker" style="left: 44%"></div>
-                        <div class="scale-marker" style="left: 72%"></div>
-                    </div>
-                </div>
-                <div class="scale-row">
-                    <div class="scale-label">COARSE SCALE</div>
-                    <div class="scale-track">
-                        <div class="scale-marker" style="left: 25%"></div>
-                        <div class="scale-marker" style="left: 65%"></div>
-                    </div>
-                </div>
-            </div>
+  <div class="math-narrative">
+    <h3>Where biology <span class="accent">transitions</span></h3>
+    <p>
+      The genome isn't uniform. It shifts — from dense to sparse,
+      from ordered to loose. Boundaries are placed where those
+      shifts happen, at multiple scales at once.
+    </p>
 
-            <div class="math-header">
-                <h3>Every segment gets a <span class="accent">fingerprint</span></h3>
-                <p>
-                    Between boundaries, each region of the genome is described
-                    in depth — its composition, its rhythm, its structure, its
-                    history of conservation. Not a label. A signature.
-                </p>
-            </div>
-
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <div class="name">Composition</div>
-                    <div class="desc">The shape of information in the sequence — how ordered, how repetitive, how structured</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Structure</div>
-                    <div class="desc">Signals of what the region does — splicing, framing, coding potential</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Frame</div>
-                    <div class="desc">How the region reads in each of the three translation frames</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Skew</div>
-                    <div class="desc">Strand asymmetry — a signature of replication direction and time</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Conservation</div>
-                    <div class="desc">What evolution has preserved — a record of function across deep time</div>
-                </div>
-                <div class="feature-box">
-                    <div class="name">Context</div>
-                    <div class="desc">Where the region sits and what it associates with across the genome</div>
-                </div>
-            </div>
+    <div class="scale-stack">
+      <div class="scale-row">
+        <div class="scale-label">FINE SCALE</div>
+        <div class="scale-track">
+          <div class="scale-marker" style="left:12%"></div>
+          <div class="scale-marker" style="left:28%"></div>
+          <div class="scale-marker" style="left:41%"></div>
+          <div class="scale-marker" style="left:57%"></div>
+          <div class="scale-marker" style="left:68%"></div>
+          <div class="scale-marker" style="left:79%"></div>
+          <div class="scale-marker" style="left:88%"></div>
+          <div class="scale-marker" style="left:94%"></div>
         </div>
-
-        <div class="unique-grid" style="margin-top: 56px;">
-            <div class="unique-card">
-                <div class="num">01</div>
-                <h3>The <span class="accent">pattern</span> is discovered</h3>
-                <p>
-                    The classifier discovers which combinations of features
-                    distinguish one kind of region from another. No hand-coded
-                    rules — the thresholds emerge from labeled sequence, then
-                    hold across chromosomes and species.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> fixed rules, manual
-                    annotations, per-genome tuning.
-                </div>
-            </div>
-
-            <div class="unique-card">
-                <div class="num">02</div>
-                <h3>The <span class="accent">context</span> is biological</h3>
-                <p>
-                    Boundaries are placed where the genome itself changes
-                    character — not where an arbitrary window ends. The math
-                    follows biology, not the other way around.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> every window the same
-                    size. Biology doesn't work in fixed blocks.
-                </div>
-            </div>
-
-            <div class="unique-card">
-                <div class="num">03</div>
-                <h3>Every <span class="accent">variant</span> gets context</h3>
-                <p>
-                    A variant isn't just a position. It carries the structural
-                    signature of the region it sits in — every feature of every
-                    segment, attached to every variant, at every scale.
-                </p>
-                <div class="contrast">
-                    <strong>vs. traditional:</strong> a variant is a coordinate.
-                    Here, it's a coordinate plus the fingerprint of its
-                    surroundings.
-                </div>
-            </div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-label">MEDIUM SCALE</div>
+        <div class="scale-track">
+          <div class="scale-marker" style="left:18%"></div>
+          <div class="scale-marker" style="left:44%"></div>
+          <div class="scale-marker" style="left:72%"></div>
         </div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-label">COARSE SCALE</div>
+        <div class="scale-track">
+          <div class="scale-marker" style="left:25%"></div>
+          <div class="scale-marker" style="left:65%"></div>
+        </div>
+      </div>
     </div>
+
+    <h3>Every segment gets a <span class="accent">fingerprint</span></h3>
+    <p>
+      Between boundaries, each region of the genome is described
+      in depth — its composition, its rhythm, its structure, its
+      history of conservation. Not a label. A signature.
+    </p>
+
+    <div class="feature-ribbon">
+      <span>Composition</span>
+      <span>Structure</span>
+      <span>Frame</span>
+      <span>Skew</span>
+      <span>Conservation</span>
+      <span>Context</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.math-narrative {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.math-narrative h3 {
+  margin-top: 48px;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+.math-narrative p {
+  color: var(--muted, #94a3b8);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.scale-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0 40px;
+}
+.scale-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.scale-label {
+  width: 120px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  font-family: monospace;
+}
+.scale-track {
+  position: relative;
+  flex: 1;
+  height: 10px;
+  background: rgba(74,222,128,0.06);
+  border-radius: 5px;
+}
+.scale-marker {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74,222,128,0.8);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 0.4; transform: scale(0.8); }
+  50%     { opacity: 1;   transform: scale(1.15); }
+}
+.feature-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.feature-ribbon span {
+  padding: 8px 16px;
+  border: 1px solid rgba(74,222,128,0.25);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #a7f3d0;
+  background: rgba(74,222,128,0.05);
+}
+</style>
 </section>
 
 <section id="evidence">
