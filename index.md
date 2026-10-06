@@ -1162,74 +1162,74 @@ layout: null
 <section id="different">
 <div class="container">
 
-  <div class="manifesto">
+  <h2>What GAIA does that <span class="accent">nothing else does</span></h2>
+  <p class="lead">
+    Not a feature list. Four structural choices that change what the
+    system is capable of — and why each one matters.
+  </p>
 
-    <p class="manifesto-kicker">What makes GAIA different</p>
+  <div class="diff-grid">
 
-    <h2 class="manifesto-lead">
-      Most tools solve <em>one piece</em>.<br>
-      GAIA runs the <em>whole chain</em> — from raw sequence to
-      treatment protocol — inside a single self-learning system.
-    </h2>
-
-    <div class="movement">
-      <span class="movement-mark">i.</span>
-      <div class="movement-body">
-        <h3>End-to-end, not piecemeal</h3>
-        <p>
-          Genome scanning, variant mapping, compound screening, and
-          protocol design usually live in separate systems — stitched
-          together by hand, translated between file formats, re-explained
-          at every seam. GAIA runs the whole chain as one pipeline.
-          A signal found at one end is already legible at the other.
-          Nothing has to be handed off. Nothing is lost in translation.
-        </p>
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>The genome is read as structure, not as text</h3>
       </div>
+      <p>
+        Most variant tools treat DNA as a string to match against a
+        reference. GAIA reads it the way a signal processor reads a
+        waveform — composition shifts, structural signatures,
+        conservation gradients. A boundary is not a fixed window size;
+        it is the point where the biology itself changes character.
+        That is why the same segment logic holds across chromosomes
+        and across species.
+      </p>
     </div>
 
-    <div class="movement">
-      <span class="movement-mark">ii.</span>
-      <div class="movement-body">
-        <h3>Learned, not configured</h3>
-        <p>
-          Weights are discovered from labeled sequence. Features are
-          extracted, tested, and kept only if they carry signal. There
-          are no fixed scoring functions, no hand-tuned rules, no manual
-          configuration for every new target. As the knowledge graph
-          grows, the model sharpens — without being rebuilt from scratch
-          each time a new disease enters the frame.
-        </p>
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>Every prediction carries its full evidence chain</h3>
       </div>
+      <p>
+        A ranked compound is not a number. It is the entire path that
+        produced it — the feature that flagged the region, the variant
+        that sat inside it, the pathway it touched, the binding score,
+        the cell assay, the cohort. Nothing is summarized away. Anyone
+        reading the output can walk the chain backward to the raw
+        sequence. This is not a reporting layer bolted on. The graph
+        is the model.
+      </p>
     </div>
 
-    <div class="movement">
-      <span class="movement-mark">iii.</span>
-      <div class="movement-body">
-        <h3>Derived, not assembled</h3>
-        <p>
-          Boundary detection across three scales. A feature space built
-          from first principles. A classifier that discovers its own
-          thresholds from labeled sequence. Nothing here is a wrapper
-          around someone else's tool. Every equation is written from
-          scratch — because the genome doesn't care what library you
-          imported. It only cares whether the math is right.
-        </p>
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>Discovery happens before prediction, not after</h3>
       </div>
+      <p>
+        Most pipelines pick a target, then score candidates against it.
+        GAIA does the opposite — it reads the raw genome first, finds
+        the regions that carry structural signal, and lets the targets
+        emerge from what the genome itself is doing. The system is not
+        told what to look for. It is told how to look, and the pattern
+        comes out of the data.
+      </p>
     </div>
 
-    <div class="movement">
-      <span class="movement-mark">iv.</span>
-      <div class="movement-body">
-        <h3>Checked before it speaks</h3>
-        <p>
-          Every prediction is verified against three independent layers —
-          computational, cellular, physiological. A claim that survives
-          all three is worth acting on. A claim that survives only
-          computation is not a claim. It is a guess — and it does not
-          get a protocol. Validation here is not a downstream step run
-          by a separate team. It is built into the claim itself.
-        </p>
+    <div class="diff-block">
+      <div class="diff-head">
+        <span class="diff-tag">Structural</span>
+        <h3>Nothing is trusted until three independent layers agree</h3>
       </div>
+      <p>
+        A prediction has to survive computation, then cells, then
+        physiology — in that order, and independently. A candidate
+        that clears only the computational layer is a hypothesis, not
+        a protocol. This is not a scoring threshold; it is a hard gate.
+        If the evidence layers disagree, the candidate does not advance.
+        The cost of a wrong protocol is higher than the cost of waiting.
+      </p>
     </div>
 
   </div>
@@ -1237,67 +1237,46 @@ layout: null
 </div>
 
 <style>
-.manifesto {
-  max-width: 780px;
-  margin: 0 auto;
-}
-.manifesto-kicker {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #4ade80;
-  font-family: monospace;
-  margin-bottom: 20px;
-}
-.manifesto-lead {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  line-height: 1.25;
-  font-weight: 500;
-  color: #e2e8f0;
-  margin-bottom: 64px;
-  letter-spacing: -0.01em;
-}
-.manifesto-lead em {
-  font-style: italic;
-  color: #4ade80;
-}
-.movement {
+.diff-grid {
   display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 24px;
-  padding: 36px 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
   border-top: 1px solid rgba(148,163,184,0.14);
+  border-left: 1px solid rgba(148,163,184,0.14);
 }
-.movement:last-child {
+.diff-block {
+  padding: 40px 36px;
+  border-right: 1px solid rgba(148,163,184,0.14);
   border-bottom: 1px solid rgba(148,163,184,0.14);
 }
-.movement-mark {
-  font-family: 'Times New Roman', serif;
-  font-style: italic;
-  font-size: 1.6rem;
-  color: #4ade80;
-  line-height: 1;
-  padding-top: 6px;
+.diff-head {
+  margin-bottom: 16px;
 }
-.movement-body h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+.diff-tag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4ade80;
+  margin-bottom: 14px;
+}
+.diff-head h3 {
+  font-size: 1.18rem;
+  line-height: 1.35;
   color: #e2e8f0;
+  margin: 0;
   font-weight: 600;
 }
-.movement-body p {
-  font-size: 1rem;
+.diff-block p {
+  font-size: 0.96rem;
   line-height: 1.8;
   color: #94a3b8;
   margin: 0;
 }
-@media (max-width: 640px) {
-  .movement {
-    grid-template-columns: 32px 1fr;
-    gap: 16px;
-  }
-  .movement-mark {
-    font-size: 1.3rem;
+@media (max-width: 780px) {
+  .diff-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
