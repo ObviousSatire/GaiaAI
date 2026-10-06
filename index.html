@@ -851,32 +851,69 @@ layout: null
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
         <div class="vine-wrap">
-            <svg class="vine" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <svg class="vine" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMid meet">
                 <defs>
                     <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%"  stop-color="#4ade80" stop-opacity="0.05"/>
-                        <stop offset="50%" stop-color="#4ade80" stop-opacity="0.75"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.05"/>
+                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.1"/>
+                        <stop offset="25%"  stop-color="#34d399" stop-opacity="0.85"/>
+                        <stop offset="50%"  stop-color="#4ade80" stop-opacity="1"/>
+                        <stop offset="75%"  stop-color="#34d399" stop-opacity="0.85"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.1"/>
                     </linearGradient>
                     <radialGradient id="seedGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#4ade80" stop-opacity="0.9"/>
+                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.95"/>
+                        <stop offset="40%"  stop-color="#4ade80" stop-opacity="0.5"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
+                    <filter id="leafBlur" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="2"/>
+                    </filter>
                 </defs>
-                <path d="M0,60 C200,20 400,100 600,60 S1000,20 1200,60"
-                      fill="none" stroke="url(#vineGrad)" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M0,60 C200,80 400,20 600,60 S1000,100 1200,60"
-                      fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.18"/>
-                <circle r="7" fill="url(#seedGlow)">
-                    <animateMotion dur="11s" repeatCount="indefinite"
-                        path="M0,60 C200,20 400,100 600,60 S1000,20 1200,60"/>
+
+                <!-- Background glow band -->
+                <ellipse cx="600" cy="130" rx="580" ry="60" fill="#4ade80" opacity="0.03"/>
+
+                <!-- Main vine: organic, uneven -->
+                <path d="M0,130 C120,60 240,200 360,140 S600,60 720,140 S960,220 1080,130 S1200,80 1200,130"
+                      fill="none" stroke="url(#vineGrad)" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Tendrils branching off main vine -->
+                <path d="M120,110 C150,80 170,50 190,30" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.4"/>
+                <path d="M120,110 C145,120 160,140 170,170" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.3"/>
+                <path d="M360,140 C400,110 430,90 460,70" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.35"/>
+                <path d="M600,100 C640,70 670,60 700,50" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.4"/>
+                <path d="M720,140 C760,170 790,180 820,210" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.3"/>
+                <path d="M960,180 C1000,150 1020,130 1040,100" fill="none" stroke="#4ade80" stroke-width="0.8" opacity="0.35"/>
+
+                <!-- Tiny leaves on tendrils -->
+                <ellipse cx="190" cy="30" rx="6" ry="3" fill="#4ade80" opacity="0.35" filter="url(#leafBlur)"/>
+                <ellipse cx="460" cy="70" rx="6" ry="3" fill="#4ade80" opacity="0.35" filter="url(#leafBlur)"/>
+                <ellipse cx="700" cy="50" rx="6" ry="3" fill="#4ade80" opacity="0.4" filter="url(#leafBlur)"/>
+                <ellipse cx="1040" cy="100" rx="6" ry="3" fill="#4ade80" opacity="0.35" filter="url(#leafBlur)"/>
+
+                <!-- Traveling seed pulse -->
+                <circle r="9" fill="url(#seedGlow)">
+                    <animateMotion dur="10s" repeatCount="indefinite"
+                        path="M0,130 C120,60 240,200 360,140 S600,60 720,140 S960,220 1080,130 S1200,80 1200,130"/>
                 </circle>
+
+                <!-- Node seeds on vine, glowing -->
                 <g>
-                    <circle cx="120"  cy="52" r="4" fill="#4ade80"/>
-                    <circle cx="360"  cy="72" r="4" fill="#4ade80"/>
-                    <circle cx="600"  cy="60" r="4" fill="#4ade80"/>
-                    <circle cx="840"  cy="50" r="4" fill="#4ade80"/>
-                    <circle cx="1080" cy="62" r="4" fill="#4ade80"/>
+                    <circle cx="120"  cy="110" r="5" fill="#a7f3d0">
+                        <animate attributeName="r" values="5;7;5" dur="3s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="360"  cy="140" r="5" fill="#a7f3d0">
+                        <animate attributeName="r" values="5;7;5" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="600"  cy="100" r="5" fill="#a7f3d0">
+                        <animate attributeName="r" values="5;7;5" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="840"  cy="170" r="5" fill="#a7f3d0">
+                        <animate attributeName="r" values="5;7;5" dur="3s" begin="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="1080" cy="130" r="5" fill="#a7f3d0">
+                        <animate attributeName="r" values="5;7;5" dur="3s" begin="2.4s" repeatCount="indefinite"/>
+                    </circle>
                 </g>
             </svg>
 
