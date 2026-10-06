@@ -430,69 +430,51 @@ layout: null
         <h2>The <span class="accent">pipeline</span></h2>
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
-        <div class="vine-wrap">
-            <svg class="vine" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <div class="flow-wrap">
+            <svg class="flow-line" viewBox="0 0 1000 40" preserveAspectRatio="none">
                 <defs>
-                    <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%"  stop-color="#4ade80" stop-opacity="0.05"/>
-                        <stop offset="50%" stop-color="#4ade80" stop-opacity="0.75"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.05"/>
+                    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#4ade80" stop-opacity="0.15"/>
+                        <stop offset="50%" stop-color="#4ade80" stop-opacity="0.7"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.15"/>
                     </linearGradient>
-                    <radialGradient id="seedGlow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stop-color="#4ade80" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                    </radialGradient>
                 </defs>
-
-                <!-- main vine -->
-                <path d="M0,60 C200,20 400,100 600,60 S1000,20 1200,60"
-                      fill="none" stroke="url(#vineGrad)" stroke-width="2.5" stroke-linecap="round"/>
-
-                <!-- secondary tendrils -->
-                <path d="M0,60 C200,80 400,20 600,60 S1000,100 1200,60"
-                      fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.18"/>
-
-                <!-- traveling pulse -->
-                <circle r="7" fill="url(#seedGlow)">
-                    <animateMotion dur="11s" repeatCount="indefinite"
-                        path="M0,60 C200,20 400,100 600,60 S1000,20 1200,60"/>
+                <line x1="0" y1="20" x2="1000" y2="20" stroke="url(#flowGrad)" stroke-width="2"/>
+                <circle r="5" fill="#4ade80">
+                    <animate attributeName="cx" from="0" to="1000" dur="8s" repeatCount="indefinite"/>
                 </circle>
-
-                <!-- seeds -->
-                <g>
-                    <circle cx="120"  cy="52" r="4" fill="#4ade80"/>
-                    <circle cx="360"  cy="72" r="4" fill="#4ade80"/>
-                    <circle cx="600"  cy="60" r="4" fill="#4ade80"/>
-                    <circle cx="840"  cy="50" r="4" fill="#4ade80"/>
-                    <circle cx="1080" cy="62" r="4" fill="#4ade80"/>
-                </g>
             </svg>
 
-            <div class="vine-nodes">
-                <div class="vine-node">
-                    <div class="vn-num">01</div>
-                    <div class="vn-title">Read</div>
-                    <div class="vn-desc">Classify every window by structural signature.</div>
+            <div class="flow-nodes">
+                <div class="flow-node">
+                    <div class="flow-dot"></div>
+                    <div class="flow-num">01</div>
+                    <div class="flow-title">Read</div>
+                    <div class="flow-desc">Classify every window by structural signature.</div>
                 </div>
-                <div class="vine-node">
-                    <div class="vn-num">02</div>
-                    <div class="vn-title">Map</div>
-                    <div class="vn-desc">Place variation in gene, pathway, evidence.</div>
+                <div class="flow-node">
+                    <div class="flow-dot"></div>
+                    <div class="flow-num">02</div>
+                    <div class="flow-title">Map</div>
+                    <div class="flow-desc">Place variation in gene, pathway, evidence.</div>
                 </div>
-                <div class="vine-node">
-                    <div class="vn-num">03</div>
-                    <div class="vn-title">Screen</div>
-                    <div class="vn-desc">Rank compound libraries by binding potential.</div>
+                <div class="flow-node">
+                    <div class="flow-dot"></div>
+                    <div class="flow-num">03</div>
+                    <div class="flow-title">Screen</div>
+                    <div class="flow-desc">Rank compound libraries by binding potential.</div>
                 </div>
-                <div class="vine-node">
-                    <div class="vn-num">04</div>
-                    <div class="vn-title">Score</div>
-                    <div class="vn-desc">Combine physical, chemical, contextual signals.</div>
+                <div class="flow-node">
+                    <div class="flow-dot"></div>
+                    <div class="flow-num">04</div>
+                    <div class="flow-title">Score</div>
+                    <div class="flow-desc">Combine physical, chemical, contextual signals.</div>
                 </div>
-                <div class="vine-node">
-                    <div class="vn-num">05</div>
-                    <div class="vn-title">Design</div>
-                    <div class="vn-desc">Multi-compound protocol, one ranking, one plan.</div>
+                <div class="flow-node">
+                    <div class="flow-dot"></div>
+                    <div class="flow-num">05</div>
+                    <div class="flow-title">Design</div>
+                    <div class="flow-desc">Multi-compound protocol, one ranking, one plan.</div>
                 </div>
             </div>
         </div>
@@ -514,52 +496,82 @@ layout: null
     </div>
 
     <style>
-    .vine-wrap { position: relative; margin: 48px 0 40px; }
-    .vine { width: 100%; height: 120px; display: block; }
-    .vine-nodes {
+    .flow-wrap { position: relative; margin: 56px 0 32px; }
+    .flow-line { width: 100%; height: 40px; display: block; }
+    .flow-nodes {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        margin-top: -12px;
+        gap: 24px;
+        margin-top: -20px;
     }
-    .vine-node { text-align: center; }
-    .vn-num {
+    .flow-node {
+        text-align: center;
+        position: relative;
+    }
+    .flow-dot {
+        width: 12px; height: 12px;
+        border-radius: 50%;
+        background: #4ade80;
+        margin: 0 auto 18px;
+        box-shadow: 0 0 12px rgba(74,222,128,0.8);
+        animation: flowPulse 2.4s ease-in-out infinite;
+    }
+    .flow-node:nth-child(2) .flow-dot { animation-delay: 0.3s; }
+    .flow-node:nth-child(3) .flow-dot { animation-delay: 0.6s; }
+    .flow-node:nth-child(4) .flow-dot { animation-delay: 0.9s; }
+    .flow-node:nth-child(5) .flow-dot { animation-delay: 1.2s; }
+    @keyframes flowPulse {
+        0%,100% { transform: scale(0.9); opacity: 0.6; }
+        50%     { transform: scale(1.25); opacity: 1; }
+    }
+    .flow-num {
         font-family: monospace;
-        font-size: 0.68rem;
-        letter-spacing: 0.22em;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
         color: #4ade80;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
-    .vn-title {
+    .flow-title {
         font-size: 1.05rem;
         font-weight: 600;
         color: #e2e8f0;
         margin-bottom: 8px;
     }
-    .vn-desc {
-        font-size: 0.84rem;
-        line-height: 1.55;
+    .flow-desc {
+        font-size: 0.85rem;
+        line-height: 1.6;
         color: #94a3b8;
     }
     @media (max-width: 780px) {
-        .vine-nodes { grid-template-columns: 1fr; gap: 28px; }
-        .vine { height: 40px; }
+        .flow-nodes { grid-template-columns: 1fr; gap: 32px; }
+        .flow-line { display: none; }
     }
-    .sample-out { margin-top: 56px; }
+    .sample-out { margin-top: 64px; }
     .sample-label {
-        font-family: monospace; font-size: 0.7rem;
-        letter-spacing: 0.2em; text-transform: uppercase;
-        color: #64748b; margin-bottom: 16px;
+        font-family: monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #64748b;
+        margin-bottom: 16px;
     }
-    .sample-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .sample-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
     .sample-table th, .sample-table td {
-        padding: 12px 10px; text-align: left;
+        padding: 12px 10px;
+        text-align: left;
         border-bottom: 1px solid rgba(148,163,184,0.12);
         color: #94a3b8;
     }
     .sample-table th {
-        color: #64748b; font-weight: 500;
-        font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+        color: #64748b;
+        font-weight: 500;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
     }
     .sample-table td:nth-child(3) { font-family: monospace; color: #a7f3d0; }
     .sample-foot { margin-top: 20px; font-size: 0.85rem; color: #64748b; font-style: italic; }
@@ -567,88 +579,111 @@ layout: null
 </section>
 
 <section id="math">
-    <div class="container">
-        <h2>The math <span class="accent">underneath</span></h2>
-        <p class="lead">
-            Sequence is raw potential. Meaning emerges only when a pattern
-            is applied in a context. We wrote the math that reads both —
-            not assembled from other people's tools, but derived from the
-            structure of the genome itself.
-        </p>
-        <div class="math-narrative">
-            <h3>Boundaries are <span class="accent">where biology shifts</span></h3>
-            <p>
-                The genome isn't uniform. Composition drifts, structure loosens,
-                conservation fades. A boundary is placed wherever those shifts
-                align — and the same logic runs at three scales at once.
-            </p>
-            <div class="equation-stack">
-                <div class="equation-row">
-                    <div class="equation-label">FINE</div>
-                    <div class="equation-body">Δ&thinsp;GC &gt; τ<sub>fine</sub> &nbsp;∧&nbsp; Δ&thinsp;H4 &gt; τ<sub>fine</sub></div>
-                    <div class="equation-note">local composition shift</div>
-                </div>
-                <div class="equation-row">
-                    <div class="equation-label">MEDIUM</div>
-                    <div class="equation-body">∇&thinsp;CpG<sub>O/E</sub> &gt; τ<sub>mid</sub></div>
-                    <div class="equation-note">island-scale structure change</div>
-                </div>
-                <div class="equation-row">
-                    <div class="equation-label">COARSE</div>
-                    <div class="equation-body">Δ&thinsp;PhyloP &gt; τ<sub>coarse</sub></div>
-                    <div class="equation-note">evolutionary signal break</div>
-                </div>
-            </div>
-            <h3>Every segment earns a <span class="accent">signature</span></h3>
-            <p>
-                Between boundaries, each region is described not by a label but
-                by a fingerprint — its composition, its reading frame, its skew,
-                its conservation across deep time. The classifier is not told
-                what to look for. It discovers which combinations of features
-                separate one kind of region from another, and holds that
-                separation across chromosomes and species.
-            </p>
-            <div class="feature-ribbon">
-                <span>Composition</span><span>Structure</span><span>Frame</span>
-                <span>Skew</span><span>Conservation</span><span>Context</span>
-            </div>
-            <p class="math-close">
-                The math is not assembled from other people's tools. Boundary
-                detection, feature extraction, and the classifier that reads them
-                were all derived from the structure of the genome itself — because
-                the genome does not care which library you imported. It only cares
-                whether the math is right. This is the part that cannot be
-                swapped out for a different package.
-            </p>
-        </div>
+<div class="container">
+  <h2>The math <span class="accent">underneath</span></h2>
+
+  <p class="lead">
+    Sequence is raw potential. Meaning emerges only when a pattern
+    is applied in a context. We wrote the math that reads both —
+    not assembled from other people's tools, but derived from the
+    structure of the genome itself.
+  </p>
+
+  <div class="math-narrative">
+
+    <h3>Boundaries are <span class="accent">where biology shifts</span></h3>
+    <p>
+      The genome isn't uniform. Composition drifts, structure loosens,
+      conservation fades. A boundary is placed wherever those shifts
+      align — and the same logic runs at three scales at once.
+    </p>
+
+    <div class="equation-stack">
+      <div class="equation-row">
+        <div class="equation-label">FINE</div>
+        <div class="equation-body">Δ&thinsp;GC &gt; τ<sub>fine</sub> &nbsp;∧&nbsp; Δ&thinsp;H4 &gt; τ<sub>fine</sub></div>
+        <div class="equation-note">local composition shift</div>
+      </div>
+      <div class="equation-row">
+        <div class="equation-label">MEDIUM</div>
+        <div class="equation-body">∇&thinsp;CpG<sub>O/E</sub> &gt; τ<sub>mid</sub></div>
+        <div class="equation-note">island-scale structure change</div>
+      </div>
+      <div class="equation-row">
+        <div class="equation-label">COARSE</div>
+        <div class="equation-body">Δ&thinsp;PhyloP &gt; τ<sub>coarse</sub></div>
+        <div class="equation-note">evolutionary signal break</div>
+      </div>
     </div>
-    <style>
-    .math-narrative { max-width: 780px; margin: 0 auto; }
-    .math-narrative h3 { margin-top: 48px; margin-bottom: 12px; font-size: 1.4rem; }
-    .math-narrative p { color: #94a3b8; line-height: 1.7; margin-bottom: 24px; }
-    .equation-stack { display: flex; flex-direction: column; gap: 18px; margin: 28px 0 44px; }
-    .equation-row {
-        display: grid; grid-template-columns: 90px 1fr 220px;
-        align-items: baseline; gap: 20px; padding: 14px 0;
-        border-bottom: 1px solid rgba(148,163,184,0.12);
-    }
-    .equation-label {
-        font-family: monospace; font-size: 0.7rem;
-        letter-spacing: 0.18em; color: #64748b;
-    }
-    .equation-body {
-        font-family: 'Times New Roman', serif; font-style: italic;
-        font-size: 1.15rem; color: #e2e8f0;
-    }
-    .equation-note { font-size: 0.8rem; color: #94a3b8; text-align: right; }
-    .feature-ribbon { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-    .feature-ribbon span {
-        padding: 8px 16px; border: 1px solid rgba(74,222,128,0.25);
-        border-radius: 999px; font-size: 0.85rem; color: #a7f3d0;
-        background: rgba(74,222,128,0.05);
-    }
-    .math-close { margin-top: 40px; font-style: italic; color: #a7f3d0; }
-    </style>
+
+    <h3>Every segment earns a <span class="accent">signature</span></h3>
+    <p>
+      Between boundaries, each region is described not by a label but
+      by a fingerprint — its composition, its reading frame, its skew,
+      its conservation across deep time. The classifier is not told
+      what to look for. It discovers which combinations of features
+      separate one kind of region from another, and holds that
+      separation across chromosomes and species.
+    </p>
+
+    <div class="feature-ribbon">
+      <span>Composition</span>
+      <span>Structure</span>
+      <span>Frame</span>
+      <span>Skew</span>
+      <span>Conservation</span>
+      <span>Context</span>
+    </div>
+
+    <p class="math-close">
+      The math is not assembled from other people's tools. Boundary
+      detection, feature extraction, and the classifier that reads them
+      were all derived from the structure of the genome itself — because
+      the genome does not care which library you imported. It only cares
+      whether the math is right. This is the part that cannot be
+      swapped out for a different package.
+
+  </div>
+</div>
+
+<style>
+.equation-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 28px 0 44px;
+}
+.equation-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 220px;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(148,163,184,0.12);
+}
+.equation-label {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: #64748b;
+}
+.equation-body {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #e2e8f0;
+}
+.equation-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: right;
+}
+.math-close {
+  margin-top: 40px;
+  font-style: italic;
+  color: #a7f3d0;
+}
+</style>
 </section>
 
 <section id="evidence">
@@ -660,84 +695,69 @@ layout: null
             that survives all three is worth acting on.
         </p>
 
-        <div class="eco-layers">
+        <div class="evidence-layers">
 
-            <div class="eco-layer">
-                <div class="eco-glow eco-glow-green"></div>
-                <div class="eco-icon">
-                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#4ade80" stroke-width="1.3">
-                        <circle cx="32" cy="32" r="22" opacity="0.25"/>
-                        <circle cx="32" cy="32" r="14" opacity="0.5"/>
-                        <circle cx="32" cy="32" r="6" fill="#4ade80" stroke="none" opacity="0.85"/>
-                        <circle cx="32" cy="32" r="24" stroke-dasharray="2 6" opacity="0.35">
-                            <animateTransform attributeName="transform" type="rotate"
-                                from="0 32 32" to="360 32 32" dur="28s" repeatCount="indefinite"/>
-                        </circle>
+            <div class="layer">
+                <div class="layer-mark">
+                    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#4ade80" stroke-width="1.5">
+                        <rect x="12" y="12" width="24" height="24" rx="3"/>
+                        <rect x="18" y="18" width="12" height="12" rx="1"/>
+                        <line x1="6" y1="18" x2="12" y2="18"/><line x1="6" y1="24" x2="12" y2="24"/><line x1="6" y1="30" x2="12" y2="30"/>
+                        <line x1="36" y1="18" x2="42" y2="18"/><line x1="36" y1="24" x2="42" y2="24"/><line x1="36" y1="30" x2="42" y2="30"/>
                     </svg>
                 </div>
-                <div class="eco-body">
-                    <span class="eco-tag">In silico</span>
+                <div class="layer-body">
+                    <span class="layer-tag">In silico</span>
                     <h3>Computational</h3>
-                    <p>Every prediction is stress-tested in pure computation before anything touches a cell. Confidence is estimated from the spread of agreement across independent methods.</p>
+                    <p>Before anything touches a cell, every prediction is stress-tested in pure computation. Confidence is estimated from the spread of agreement across independent methods.</p>
                     <ul>
                         <li><strong>Structure prediction</strong> — modeled protein geometry</li>
-                        <li><strong>Binding simulation</strong> — strength across methods</li>
-                        <li><strong>Cross-validation</strong> — held-out data</li>
+                        <li><strong>Binding simulation</strong> — interaction strength across methods</li>
+                        <li><strong>Cross-validation</strong> — held-out data never seen in training</li>
                         <li><strong>Confidence intervals</strong> — agreement across approaches</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="eco-layer">
-                <div class="eco-glow eco-glow-blue"></div>
-                <div class="eco-icon">
-                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#60a5fa" stroke-width="1.3">
-                        <circle cx="32" cy="32" r="22" opacity="0.25"/>
-                        <circle cx="32" cy="32" r="9" fill="#60a5fa" stroke="none" opacity="0.35"/>
-                        <circle cx="24" cy="24" r="2.4" fill="#60a5fa" stroke="none">
-                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="40" cy="30" r="2.4" fill="#60a5fa" stroke="none">
-                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="1s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="30" cy="42" r="2" fill="#60a5fa" stroke="none">
-                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="2s" repeatCount="indefinite"/>
-                        </circle>
+            <div class="layer">
+                <div class="layer-mark">
+                    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#60a5fa" stroke-width="1.5">
+                        <circle cx="24" cy="24" r="14"/>
+                        <circle cx="24" cy="24" r="5" fill="#60a5fa" opacity="0.5" stroke="none"/>
+                        <circle cx="16" cy="18" r="2" fill="#60a5fa" stroke="none"/>
+                        <circle cx="32" cy="28" r="2" fill="#60a5fa" stroke="none"/>
+                        <circle cx="20" cy="32" r="1.6" fill="#60a5fa" stroke="none"/>
                     </svg>
                 </div>
-                <div class="eco-body">
-                    <span class="eco-tag">In vitro</span>
+                <div class="layer-body">
+                    <span class="layer-tag">In vitro</span>
                     <h3>Cellular</h3>
                     <p>Predictions are compared against real cell-based assays from public literature. Pathway activity, gene expression, and cytotoxicity all feed back into the model.</p>
                     <ul>
-                        <li><strong>Cell-line assays</strong> — published screens</li>
-                        <li><strong>Pathway response</strong> — signaling under treatment</li>
+                        <li><strong>Cell-line assays</strong> — activity against published screens</li>
+                        <li><strong>Pathway response</strong> — signaling shifts under treatment</li>
                         <li><strong>Gene expression</strong> — transcript-level confirmation</li>
                         <li><strong>Cytotoxicity profiles</strong> — safe dose ranges</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="eco-layer">
-                <div class="eco-glow eco-glow-mint"></div>
-                <div class="eco-icon">
-                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#a7f3d0" stroke-width="1.3">
-                        <path d="M14,42 Q18,22 32,26 Q44,18 52,26 Q58,34 50,44 Q40,50 32,46 Q22,50 14,42 Z" opacity="0.9"/>
-                        <circle cx="26" cy="32" r="1.8" fill="#a7f3d0" stroke="none"/>
-                        <path d="M20,50 Q32,54 44,50" opacity="0.5"/>
-                        <path d="M20,50 Q32,54 44,50" opacity="0.3">
-                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite"/>
-                        </path>
+            <div class="layer">
+                <div class="layer-mark">
+                    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#a7f3d0" stroke-width="1.5">
+                        <path d="M10,32 Q14,20 22,22 Q26,14 34,18 Q42,22 38,32 Z"/>
+                        <circle cx="20" cy="22" r="1.4" fill="#a7f3d0" stroke="none"/>
+                        <path d="M14,38 L34,38"/>
                     </svg>
                 </div>
-                <div class="eco-body">
-                    <span class="eco-tag">In vivo</span>
+                <div class="layer-body">
+                    <span class="layer-tag">In vivo</span>
                     <h3>Physiological</h3>
                     <p>Protocols are evaluated against animal model studies and human trial data. Where the model predicts an outcome, that outcome is checked against published physiological responses.</p>
                     <ul>
-                        <li><strong>Animal disease models</strong> — established systems</li>
-                        <li><strong>Clinical trial data</strong> — dosing, outcomes, events</li>
-                        <li><strong>Human cohorts</strong> — time-to-response</li>
+                        <li><strong>Animal disease models</strong> — response in established systems</li>
+                        <li><strong>Clinical trial data</strong> — dosing, outcomes, adverse events</li>
+                        <li><strong>Human cohorts</strong> — time-to-response across studies</li>
                         <li><strong>Longitudinal outcomes</strong> — durability at follow-up</li>
                     </ul>
                 </div>
@@ -757,74 +777,95 @@ layout: null
     </div>
 
     <style>
-    .eco-layers {
+    .evidence-layers {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
         margin-top: 48px;
+        border-top: 1px solid rgba(148,163,184,0.14);
     }
-    .eco-layer {
-        position: relative;
+    .layer {
         display: grid;
-        grid-template-columns: 90px 1fr;
+        grid-template-columns: 100px 1fr;
         gap: 32px;
-        padding: 36px 32px;
-        border: 1px solid rgba(148,163,184,0.12);
-        border-radius: 14px;
-        overflow: hidden;
-        background: rgba(15,23,42,0.35);
+        padding: 36px 0;
+        border-bottom: 1px solid rgba(148,163,184,0.14);
+        align-items: start;
     }
-    .eco-glow {
-        position: absolute;
-        top: -40%; left: -10%;
-        width: 60%; height: 180%;
-        filter: blur(60px);
-        opacity: 0.18;
-        pointer-events: none;
-        animation: ecoDrift 16s ease-in-out infinite alternate;
+    .layer-mark {
+        width: 48px; height: 48px;
+        opacity: 0.85;
     }
-    .eco-glow-green { background: radial-gradient(circle, #4ade80, transparent 70%); }
-    .eco-glow-blue  { background: radial-gradient(circle, #60a5fa, transparent 70%); animation-delay: 4s; }
-    .eco-glow-mint  { background: radial-gradient(circle, #a7f3d0, transparent 70%); animation-delay: 8s; }
-    @keyframes ecoDrift {
-        from { transform: translate3d(0,0,0) scale(1); }
-        to   { transform: translate3d(30px,-20px,0) scale(1.15); }
-    }
-    .eco-icon { position: relative; z-index: 1; }
-    .eco-body { position: relative; z-index: 1; }
-    .eco-tag {
+    .layer-tag {
         display: inline-block;
-        font-family: monospace; font-size: 0.68rem;
-        letter-spacing: 0.2em; text-transform: uppercase;
-        color: #4ade80; margin-bottom: 10px;
+        font-family: monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #4ade80;
+        margin-bottom: 10px;
     }
-    .eco-body h3 {
-        font-size: 1.15rem; color: #e2e8f0;
-        margin: 0 0 10px; font-weight: 600;
+    .layer-body h3 {
+        font-size: 1.15rem;
+        color: #e2e8f0;
+        margin: 0 0 10px;
+        font-weight: 600;
     }
-    .eco-body p {
-        font-size: 0.95rem; line-height: 1.75;
-        color: #94a3b8; margin-bottom: 14px;
+    .layer-body p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: #94a3b8;
+        margin-bottom: 14px;
     }
-    .eco-body ul {
-        list-style: none; padding: 0; margin: 0;
-        display: grid; grid-template-columns: repeat(2, 1fr);
+    .layer-body ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px 24px;
     }
-    .eco-body li { font-size: 0.85rem; line-height: 1.6; color: #64748b; }
-    .eco-body li strong { color: #a7f3d0; font-weight: 600; }
+    .layer-body li {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: #64748b;
+    }
+    .layer-body li strong { color: #a7f3d0; font-weight: 600; }
     @media (max-width: 640px) {
-        .eco-layer { grid-template-columns: 1fr; gap: 16px; padding: 28px 22px; }
-        .eco-body ul { grid-template-columns: 1fr; }
+        .layer { grid-template-columns: 1fr; gap: 16px; }
+        .layer-body ul { grid-template-columns: 1fr; }
     }
     .cross-cut { margin-top: 56px; }
-    .cross-cut h3 { font-size: 1.05rem; color: #e2e8f0; margin-bottom: 20px; font-weight: 600; }
-    .cross-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px 32px; }
-    .cross-grid div { display: flex; flex-direction: column; gap: 4px; }
-    .cross-grid strong { font-size: 0.9rem; color: #a7f3d0; font-weight: 600; }
-    .cross-grid span { font-size: 0.82rem; color: #94a3b8; line-height: 1.55; }
+    .cross-cut h3 {
+        font-size: 1.05rem;
+        color: #e2e8f0;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    .cross-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px 32px;
+    }
+    .cross-grid div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .cross-grid strong {
+        font-size: 0.9rem;
+        color: #a7f3d0;
+        font-weight: 600;
+    }
+    .cross-grid span {
+        font-size: 0.82rem;
+        color: #94a3b8;
+        line-height: 1.55;
+    }
     </style>
 </section>
+
+
 
 <section id="sources">
     <div class="container">
@@ -832,124 +873,191 @@ layout: null
         <p class="lead">
             The system doesn't wait for someone to hand it data. It reads
             hundreds of curated, reputable URLs — peer-reviewed literature,
-            reference genomes, protein structures, clinical registries —
-            and grows as new findings are published.
+            reference genomes, protein structures, clinical registries — and
+            grows as new findings are published.
         </p>
-        <div class="source-grid">
-            <div><strong>Publications</strong><span>Peer-reviewed findings</span></div>
-            <div><strong>Genomes</strong><span>Reference assemblies</span></div>
-            <div><strong>Proteins</strong><span>Structures and functions</span></div>
-            <div><strong>Variants</strong><span>Population and clinical</span></div>
-            <div><strong>Compounds</strong><span>Bioactivity and libraries</span></div>
-            <div><strong>Trials</strong><span>Clinical registries</span></div>
+
+        <div class="web-layout">
+            <div class="web-visual">
+                <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#a7f3d0" stop-opacity="1"/>
+                            <stop offset="60%" stop-color="#4ade80" stop-opacity="0.5"/>
+                            <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <g class="spin-1">
+                        <ellipse cx="200" cy="200" rx="150" ry="60" fill="none" stroke="#4ade80" stroke-width="0.5" opacity="0.35" transform="rotate(20 200 200)"/>
+                    </g>
+                    <g class="spin-2">
+                        <ellipse cx="200" cy="200" rx="175" ry="70" fill="none" stroke="#60a5fa" stroke-width="0.5" opacity="0.25" transform="rotate(-30 200 200)"/>
+                    </g>
+
+                    <circle class="ring-out" cx="200" cy="200" r="40" fill="none" stroke="#4ade80" stroke-width="1.2"/>
+                    <circle class="ring-out r2" cx="200" cy="200" r="40" fill="none" stroke="#4ade80" stroke-width="1.2"/>
+                    <circle class="ring-out r3" cx="200" cy="200" r="40" fill="none" stroke="#4ade80" stroke-width="1.2"/>
+
+                    <line class="flow" x1="200" y1="200" x2="70" y2="70" stroke="#60a5fa" stroke-width="1.6"/>
+                    <line class="flow f2" x1="200" y1="200" x2="330" y2="70" stroke="#a7f3d0" stroke-width="1.6"/>
+                    <line class="flow f3" x1="200" y1="200" x2="70" y2="330" stroke="#34d399" stroke-width="1.6"/>
+                    <line class="flow f4" x1="200" y1="200" x2="330" y2="330" stroke="#4ade80" stroke-width="1.6"/>
+                    <line class="flow f5" x1="200" y1="200" x2="200" y2="45" stroke="#60a5fa" stroke-width="1.2"/>
+                    <line class="flow f6" x1="200" y1="200" x2="200" y2="355" stroke="#34d399" stroke-width="1.2"/>
+                    <line class="flow f7" x1="200" y1="200" x2="45" y2="200" stroke="#a7f3d0" stroke-width="1.2"/>
+                    <line class="flow f8" x1="200" y1="200" x2="355" y2="200" stroke="#4ade80" stroke-width="1.2"/>
+
+                    <g class="center-pulse">
+                        <circle cx="200" cy="200" r="58" fill="url(#hubGrad)" opacity="0.45"/>
+                        <circle cx="200" cy="200" r="36" fill="none" stroke="#a7f3d0" stroke-width="2"/>
+                        <text x="200" y="206" text-anchor="middle" font-family="monospace" font-size="14" fill="#a7f3d0" font-weight="bold">GAIA</text>
+                    </g>
+
+                    <circle class="blink" cx="70" cy="70" r="7" fill="#60a5fa"/>
+                    <text x="70" y="46" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Literature</text>
+
+                    <circle class="blink b2" cx="330" cy="70" r="7" fill="#a7f3d0"/>
+                    <text x="330" y="46" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Genomes</text>
+
+                    <circle class="blink b3" cx="70" cy="330" r="7" fill="#34d399"/>
+                    <text x="70" y="360" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Proteins</text>
+
+                    <circle class="blink b4" cx="330" cy="330" r="7" fill="#4ade80"/>
+                    <text x="330" y="360" text-anchor="middle" font-size="10" fill="#8fa89c" font-family="system-ui">Variants</text>
+
+                    <circle class="blink b5" cx="200" cy="45" r="6" fill="#60a5fa"/>
+                    <text x="200" y="26" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Pathways</text>
+
+                    <circle class="blink b6" cx="200" cy="355" r="6" fill="#34d399"/>
+                    <text x="200" y="384" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Compounds</text>
+
+                    <circle class="blink b7" cx="45" cy="200" r="6" fill="#a7f3d0"/>
+                    <text x="30" y="180" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Trials</text>
+
+                    <circle class="blink b8" cx="355" cy="200" r="6" fill="#4ade80"/>
+                    <text x="372" y="180" text-anchor="middle" font-size="9" fill="#8fa89c" font-family="system-ui">Structures</text>
+                </svg>
+            </div>
+
+            <div class="web-info">
+                <span class="web-tag"><span class="live-dot"></span> Hundreds of curated sources</span>
+                <h3>Reputable <span class="accent">URLs</span>, continuously read</h3>
+                <p>
+                    Peer-reviewed publications, national reference databases,
+                    protein structure archives, clinical trial registries.
+                    Each source is vetted. Each new finding updates the graph.
+                </p>
+
+                <div class="web-chips">
+                    <div class="web-chip">
+                        <div class="chip-title">Publications</div>
+                        <div class="chip-desc">Peer-reviewed findings</div>
+                    </div>
+                    <div class="web-chip">
+                        <div class="chip-title">Genomes</div>
+                        <div class="chip-desc">Reference assemblies</div>
+                    </div>
+                    <div class="web-chip">
+                        <div class="chip-title">Proteins</div>
+                        <div class="chip-desc">Structures and functions</div>
+                    </div>
+                    <div class="web-chip">
+                        <div class="chip-title">Variants</div>
+                        <div class="chip-desc">Population and clinical</div>
+                    </div>
+                    <div class="web-chip">
+                        <div class="chip-title">Compounds</div>
+                        <div class="chip-desc">Bioactivity and libraries</div>
+                    </div>
+                    <div class="web-chip">
+                        <div class="chip-title">Trials</div>
+                        <div class="chip-desc">Clinical registries</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="source-named">Named sources read continuously — NCBI · Ensembl · UniProt · PDB · ChEMBL · ClinicalTrials.gov · gnomAD · GWAS Catalog · ClinVar · KEGG · Reactome · ZINC · COCONUT · BindingDB</p>
+
+        <div class="reading-ticker">
+            <div class="ticker-track">
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Peer-reviewed literature</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Reference genomes</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Protein structure archives</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Population variant databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Clinical trial registries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Bioactivity datasets</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Pathway databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Disease association catalogs</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Compound libraries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Structural archives</span>
+                <!-- duplicate for seamless loop -->
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Peer-reviewed literature</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Reference genomes</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Protein structure archives</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Population variant databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Clinical trial registries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Bioactivity datasets</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Pathway databases</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Disease association catalogs</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Compound libraries</span>
+                <span class="ticker-item"><span class="dot"></span><span class="label">reading</span>Structural archives</span>
+            </div>
+        </div>
+
+        <div class="sources-inline">
+            <span class="label">Named sources read continuously</span>
+            <span class="name">NCBI</span><span class="sep">·</span>
+            <span class="name">Ensembl</span><span class="sep">·</span>
+            <span class="name">UniProt</span><span class="sep">·</span>
+            <span class="name">PDB</span><span class="sep">·</span>
+            <span class="name">ChEMBL</span><span class="sep">·</span>
+            <span class="name">ClinicalTrials.gov</span><span class="sep">·</span>
+            <span class="name">gnomAD</span><span class="sep">·</span>
+            <span class="name">GWAS Catalog</span><span class="sep">·</span>
+            <span class="name">ClinVar</span><span class="sep">·</span>
+            <span class="name">KEGG</span><span class="sep">·</span>
+            <span class="name">Reactome</span><span class="sep">·</span>
+            <span class="name">ZINC</span><span class="sep">·</span>
+            <span class="name">COCONUT</span><span class="sep">·</span>
+            <span class="name">BindingDB</span>
+        </div>
+
+        <div class="scan-flow-wrap">
+            <h3>The continuous loop</h3>
+            <div class="scan-row">
+                <div class="scan-box">
+                    <span class="icon">🌐</span>
+                    <div class="label">Crawl</div>
+                    <div class="sub">Curated URLs</div>
+                </div>
+                <div class="scan-box">
+                    <span class="icon">📖</span>
+                    <div class="label">Parse</div>
+                    <div class="sub">Extract relations</div>
+                </div>
+                <div class="scan-box">
+                    <span class="icon">✓</span>
+                    <div class="label">Validate</div>
+                    <div class="sub">Cross-check sources</div>
+                </div>
+                <div class="scan-box">
+                    <span class="icon">🌱</span>
+                    <div class="label">Integrate</div>
+                    <div class="sub">Grow the graph</div>
+                </div>
+                <div class="scan-box">
+                    <span class="icon">📈</span>
+                    <div class="label">Retrain</div>
+                    <div class="sub">Learn from new data</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <style>
-    .source-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 24px 32px; margin-top: 32px;
-    }
-    .source-grid div { display: flex; flex-direction: column; gap: 4px; }
-    .source-grid strong { color: #a7f3d0; font-size: 0.95rem; font-weight: 600; }
-    .source-grid span { color: #94a3b8; font-size: 0.85rem; }
-    .source-named { margin-top: 40px; font-size: 0.8rem; color: #64748b; line-height: 1.7; }
-    </style>
 </section>
 
-<section id="datasets">
-    <div class="container">
-        <h2>Open <span class="accent">datasets</span></h2>
-        <p class="lead">Every stage archived publicly with permanent identifiers. Reproducible from raw public sources.</p>
-        <table class="dataset-table">
-            <thead><tr><th>Dataset</th><th>Size</th><th>Contents</th><th>Identifier</th></tr></thead>
-            <tbody>
-                <tr><td>Compound library I</td><td>25.7 GB</td><td>Screening shards</td><td>22949286</td></tr>
-                <tr><td>Compound library II</td><td>44.3 GB</td><td>Compound set</td><td>23110910</td></tr>
-                <tr><td>Compound library III</td><td>45.1 GB</td><td>Compound set</td><td>23124533</td></tr>
-                <tr><td>Compound library IV</td><td>93.7 GB</td><td>Compound set</td><td>23127161</td></tr>
-                <tr><td>Compound library V</td><td>128.7 GB</td><td>Compound set</td><td>23139933</td></tr>
-                <tr><td>Benchmarks</td><td>20 GB</td><td>Reference data</td><td>22946723</td></tr>
-            </tbody>
-        </table>
-        <p class="dataset-foot">View the full collection on <a href="https://zenodo.org/communities/gaiaai" target="_blank" rel="noopener">Zenodo →</a></p>
-    </div>
-    <style>
-    .dataset-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 24px; }
-    .dataset-table th, .dataset-table td {
-        padding: 12px 10px; text-align: left;
-        border-bottom: 1px solid rgba(148,163,184,0.12);
-        color: #94a3b8;
-    }
-    .dataset-table th {
-        color: #64748b; font-weight: 500;
-        font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .dataset-table td:last-child { font-family: monospace; color: #a7f3d0; }
-    .dataset-foot { margin-top: 20px; font-size: 0.85rem; color: #64748b; }
-    .dataset-foot a { color: #4ade80; text-decoration: none; }
-    </style>
-</section>
 
-<section id="unique">
-    <div class="container">
-        <h2>What <span class="accent">only this</span> does</h2>
-        <div class="unique-grid">
-            <div class="unique-card">
-                <div class="num">01</div>
-                <h3>The <span class="accent">pattern</span> is discovered</h3>
-                <p>The classifier discovers which combinations of features distinguish one kind of region from another. No hand-coded rules — thresholds emerge from labeled sequence, then hold across chromosomes and species.</p>
-                <div class="contrast"><strong>Elsewhere:</strong> fixed rules, manual annotations, per-genome tuning.</div>
-            </div>
-            <div class="unique-card">
-                <div class="num">02</div>
-                <h3>The <span class="accent">context</span> is biological</h3>
-                <p>Boundaries are placed where the genome itself changes character — not where an arbitrary window ends. The math follows biology, not the other way around.</p>
-                <div class="contrast"><strong>Elsewhere:</strong> every window the same size. Biology doesn't work in fixed blocks.</div>
-            </div>
-            <div class="unique-card">
-                <div class="num">03</div>
-                <h3>Every <span class="accent">variant</span> gets context</h3>
-                <p>A variant isn't just a position. It carries the structural signature of the region it sits in — every feature of every segment, attached to every variant, at every scale.</p>
-                <div class="contrast"><strong>Elsewhere:</strong> a variant is a coordinate. Here, it is a coordinate plus the fingerprint of its surroundings.</div>
-            </div>
-        </div>
-    </div>
-    <style>
-    .unique-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 24px; margin-top: 32px;
-    }
-    .unique-card {
-        padding: 28px 26px;
-        border: 1px solid rgba(148,163,184,0.14);
-        border-radius: 12px;
-        background: rgba(15,23,42,0.35);
-    }
-    .unique-card .num {
-        font-family: monospace; font-size: 0.7rem;
-        letter-spacing: 0.2em; color: #4ade80;
-        margin-bottom: 12px;
-    }
-    .unique-card h3 {
-        font-size: 1.05rem; color: #e2e8f0;
-        margin: 0 0 12px; font-weight: 600;
-    }
-    .unique-card p {
-        font-size: 0.9rem; line-height: 1.7;
-        color: #94a3b8; margin-bottom: 16px;
-    }
-    .unique-card .contrast {
-        font-size: 0.8rem; line-height: 1.6;
-        color: #64748b;
-        border-top: 1px solid rgba(148,163,184,0.1);
-        padding-top: 12px;
-    }
-    .unique-card .contrast strong { color: #a7f3d0; }
-    </style>
-</section>
+
+
 
 <section>
     <div class="container">
