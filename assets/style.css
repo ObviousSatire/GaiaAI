@@ -4556,3 +4556,149 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
         padding: 0;
     }
 }
+
+/* ============================================================
+   CROSS-CUTTING VALIDATION — nature heavy, animated
+   ============================================================ */
+.cross-cut {
+    margin-top: 72px;
+}
+.cross-cut h3 {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    margin-bottom: 32px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 18px;
+}
+.cross-cut h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #a7f3d0, #4ade80);
+    box-shadow: 0 0 12px rgba(74,222,128,0.8);
+    animation: crossDot 3s ease-in-out infinite;
+}
+@keyframes crossDot {
+    0%, 100% { transform: scale(0.85); opacity: 0.7; }
+    50%      { transform: scale(1.3);  opacity: 1;   }
+}
+
+.cross-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.cross-item {
+    position: relative;
+    padding: 28px 24px;
+    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(8,18,14,0.7) 0%, rgba(13,26,20,0.5) 100%);
+    border: 1px solid rgba(74,222,128,0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+.cross-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(74,222,128,0.3);
+}
+
+/* Drifting nature glow behind each card */
+.cross-item::before {
+    content: '';
+    position: absolute;
+    top: -40%; left: -20%;
+    width: 80%; height: 180%;
+    background: radial-gradient(circle, rgba(74,222,128,0.12) 0%, rgba(74,222,128,0) 70%);
+    filter: blur(30px);
+    animation: crossDrift 14s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.cross-item:nth-child(2)::before {
+    background: radial-gradient(circle, rgba(96,165,250,0.1) 0%, rgba(96,165,250,0) 70%);
+    animation-delay: -4s;
+}
+.cross-item:nth-child(3)::before {
+    background: radial-gradient(circle, rgba(167,243,208,0.12) 0%, rgba(167,243,208,0) 70%);
+    animation-delay: -8s;
+}
+.cross-item:nth-child(4)::before {
+    background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, rgba(52,211,153,0) 70%);
+    animation-delay: -10s;
+}
+@keyframes crossDrift {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    100% { transform: translate3d(40px,-30px,0) scale(1.2); }
+}
+
+.cross-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cross-icon svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Organic breathing icon */
+.cross-icon .icon-leaf {
+    transform-origin: center;
+    animation: leafSway 6s ease-in-out infinite;
+}
+@keyframes leafSway {
+    0%, 100% { transform: rotate(-3deg) scale(1); }
+    50%      { transform: rotate(3deg)  scale(1.05); }
+}
+
+.cross-icon .icon-pulse {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: iconPulse 3.5s ease-in-out infinite;
+}
+@keyframes iconPulse {
+    0%, 100% { opacity: 0.5; transform: scale(0.85); }
+    50%      { opacity: 1;   transform: scale(1.2); }
+}
+
+.cross-icon .icon-dot {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: iconDot 2.5s ease-in-out infinite;
+}
+@keyframes iconDot {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 1; }
+}
+
+.cross-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+}
+.cross-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #94a3b8;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+}
