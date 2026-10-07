@@ -2553,27 +2553,9 @@ footer .footer-links {
     font-weight: 600;
 }
 
-.cross-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
 
 .cross-item:hover 
 
-.cross-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--fg);
-}
-
-.cross-desc {
-    font-size: 0.85rem;
-    color: var(--fg-dim);
-    line-height: 1.55;
-}
 
 /* ============================================================
    READING TICKER — under web graph
@@ -3988,9 +3970,9 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
         .eco-layer { grid-template-columns: 1fr; gap: 16px; padding: 28px 22px; }
         .eco-body ul { grid-template-columns: 1fr; }
     }
-    .cross-cut { margin-top: 56px; }
     
-    .cross-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px 32px; }
+    
+    
     .cross-grid div { display: flex; flex-direction: column; gap: 4px; }
     .cross-grid strong { font-size: 0.9rem; color: #a7f3d0; font-weight: 600; }
     .cross-grid span { font-size: 0.82rem; color: #94a3b8; line-height: 1.55; }
@@ -4495,179 +4477,40 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 /* ============================================================
-   CROSS-CUTTING VALIDATION — floating nature graphics
+   CROSS-CUTTING VALIDATION — floating nature (final)
    ============================================================ */
 .cross-cut {
     margin-top: 88px;
-    position: relative;
 }
-
-
-50%      { transform: scale(1.3);  opacity: 1;   }
-}
-
-.cross-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 56px 40px;
-    padding: 0 20px;
-}
-
-/* No cards — floating items */
-
-
-100% { transform: translate3d(20px,-25px,0) scale(1.25); opacity: 1; }
-}
-
-/* Icons float freely — no border, no bg */
-
-
-50%      { transform: translateY(-10px); }
-}
-
-
-.cross-icon .icon-leaf {
-    transform-origin: center;
-    animation: leafSway 6s ease-in-out infinite;
-}
-50%      { transform: rotate(3deg)  scale(1.05); }
-}
-
-.cross-icon .icon-pulse {
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: iconPulse 3.5s ease-in-out infinite;
-}
-50%      { opacity: 1;   transform: scale(1.15); }
-}
-
-.cross-icon .icon-dot {
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: iconDot 2.5s ease-in-out infinite;
-}
-50%      { opacity: 1; }
-}
-
-.cross-title {
+.cross-cut h3 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: #f1f5f9;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: italic;
     letter-spacing: -0.01em;
-    position: relative;
-    z-index: 1;
-}
-.cross-desc {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: #94a3b8;
-    margin: 0 auto;
-    max-width: 240px;
-    position: relative;
-    z-index: 1;
-    font-weight: 300;
-}
-
-/* ============================================================
-   CROSS-CUTTING VALIDATION — floating nature graphics
-   ============================================================ */
-.cross-cut {
-    margin-top: 88px;
-    position: relative;
-}
-
-
-50%      { transform: scale(1.3);  opacity: 1;   }
-}
-
-.cross-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 56px 40px;
-    padding: 0 20px;
-}
-
-/* No cards — floating items */
-
-
-100% { transform: translate3d(20px,-25px,0) scale(1.25); opacity: 1; }
-}
-
-/* Icons float freely — no border, no bg */
-
-
-50%      { transform: translateY(-10px); }
-}
-
-
-.cross-icon .icon-leaf {
-    transform-origin: center;
-    animation: leafSway 6s ease-in-out infinite;
-}
-50%      { transform: rotate(3deg)  scale(1.05); }
-}
-
-.cross-icon .icon-pulse {
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: iconPulse 3.5s ease-in-out infinite;
-}
-50%      { opacity: 1;   transform: scale(1.15); }
-}
-
-.cross-icon .icon-dot {
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: iconDot 2.5s ease-in-out infinite;
-}
-50%      { opacity: 1; }
-}
-
-.cross-title {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.15rem;
-    font-weight: 500;
     color: #f1f5f9;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
+    margin: 0 0 64px;
+    text-align: center;
     position: relative;
-    z-index: 1;
 }
-.cross-desc {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: #94a3b8;
-    margin: 0 auto;
-    max-width: 240px;
-    position: relative;
-    z-index: 1;
-    font-weight: 300;
+.cross-cut h3::before,
+.cross-cut h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 22%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(74,222,128,0.5) 50%, transparent 100%);
 }
-
-/* ============================================================
-   CROSS-CUTTING VALIDATION — floating nature, final
-   ============================================================ */
-.cross-cut {
-    margin-top: 88px;
-}
-
-
-@keyframes crossDot {
-    0%, 100% { transform: scale(0.85); opacity: 0.7; }
-    50%      { transform: scale(1.3);  opacity: 1;   }
-}
+.cross-cut h3::before { left: 0; }
+.cross-cut h3::after  { right: 0; transform: scaleX(-1); }
 
 .cross-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     padding: 0;
-    border: none;
-    background: none;
 }
-
 .cross-item {
     position: relative;
     text-align: center;
@@ -4677,12 +4520,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     border-radius: 0;
     box-shadow: none;
     overflow: visible;
-    transition: none;
-}
-.cross-item:hover {
-    transform: none;
-    border: none;
-    background: none;
 }
 .cross-item::before {
     content: '';
@@ -4715,8 +4552,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 .cross-icon {
-    width: 96px;
-    height: 96px;
+    width: 96px; height: 96px;
     margin: 0 auto 24px;
     position: relative;
     z-index: 1;
@@ -4730,8 +4566,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     50%      { transform: translateY(-12px); }
 }
 .cross-icon svg {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     overflow: visible;
     filter: drop-shadow(0 0 14px rgba(74,222,128,0.45));
 }
@@ -4771,9 +4606,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     letter-spacing: -0.01em;
     position: relative;
     z-index: 1;
-    background: none;
-    border: none;
-    padding: 0;
 }
 .cross-desc {
     font-size: 0.85rem;
@@ -4785,45 +4617,10 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     z-index: 1;
     font-weight: 300;
 }
-
 @media (max-width: 900px) {
-    .cross-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 56px 32px;
-    }
+    .cross-grid { grid-template-columns: repeat(2, 1fr); gap: 56px 32px; }
 }
 @media (max-width: 520px) {
     .cross-grid { grid-template-columns: 1fr; gap: 56px; }
     .cross-icon { width: 80px; height: 80px; }
-}
-.cross-cut h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.01em;
-    color: #f1f5f9;
-    margin: 0 0 64px;
-    padding-left: 0;
-    text-align: center;
-    position: relative;
-}
-.cross-cut h3::before,
-.cross-cut h3::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 22%;
-    height: 1px;
-    background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(74,222,128,0.5) 50%,
-        transparent 100%);
-}
-.cross-cut h3::before {
-    left: 0;
-}
-.cross-cut h3::after {
-    right: 0;
-    transform: scaleX(-1);
 }
