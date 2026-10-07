@@ -4333,3 +4333,116 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
         padding: 0;
     }
 }
+
+/* ============================================================
+   PIPELINE — constellation (stars connected by faint lines)
+   ============================================================ */
+.constellation {
+    position: relative;
+    margin: 64px 0 48px;
+    padding: 40px 0 24px;
+}
+.constellation svg {
+    width: 100%;
+    height: 260px;
+    display: block;
+    overflow: visible;
+}
+.star {
+    transform-origin: center;
+    transform-box: fill-box;
+}
+.star-core {
+    fill: #ffffff;
+    filter: drop-shadow(0 0 6px #a7f3d0) drop-shadow(0 0 12px #4ade80);
+    animation: starTwinkle 4s ease-in-out infinite;
+}
+.star-halo {
+    fill: #a7f3d0;
+    opacity: 0.25;
+    animation: starHalo 6s ease-in-out infinite;
+}
+.constellation .star:nth-child(2) .star-core { animation-delay: -0.8s; }
+.constellation .star:nth-child(2) .star-halo { animation-delay: -0.8s; }
+.constellation .star:nth-child(3) .star-core { animation-delay: -1.6s; }
+.constellation .star:nth-child(3) .star-halo { animation-delay: -1.6s; }
+.constellation .star:nth-child(4) .star-core { animation-delay: -2.4s; }
+.constellation .star:nth-child(4) .star-halo { animation-delay: -2.4s; }
+.constellation .star:nth-child(5) .star-core { animation-delay: -3.2s; }
+.constellation .star:nth-child(5) .star-halo { animation-delay: -3.2s; }
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.55; transform: scale(0.9); }
+    50%      { opacity: 1;    transform: scale(1.25); }
+}
+@keyframes starHalo {
+    0%, 100% { opacity: 0.15; transform: scale(0.9); }
+    50%      { opacity: 0.35; transform: scale(1.4); }
+}
+
+.constellation .link {
+    stroke: rgba(167, 243, 208, 0.35);
+    stroke-width: 1;
+    stroke-dasharray: 4 6;
+    fill: none;
+}
+.constellation .link-glow {
+    stroke: rgba(74, 222, 128, 0.15);
+    stroke-width: 3;
+    fill: none;
+    filter: blur(3px);
+}
+
+.constellation-traveler {
+    fill: #ffffff;
+    filter: drop-shadow(0 0 8px #4ade80) drop-shadow(0 0 16px #4ade80);
+}
+.constellation-traveler-halo {
+    fill: #a7f3d0;
+    opacity: 0.35;
+}
+
+.constellation-labels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+    padding: 0 32px;
+}
+.constellation-label {
+    text-align: center;
+}
+.constellation-num {
+    display: block;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #4ade80;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.constellation-label h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+}
+.constellation-label p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #94a3b8;
+    margin: 0 auto;
+    max-width: 190px;
+    font-weight: 300;
+}
+@media (max-width: 780px) {
+    .constellation svg { height: 140px; }
+    .constellation-labels {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 0;
+    }
+}
