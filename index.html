@@ -845,111 +845,170 @@
 <section id="pipeline">
     <div class="container">
         <h2>The <span class="accent">pipeline</span></h2>
-        <p class="lead">From raw genome to treatment protocol, in five stages.</p>
+        <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
-        <div class="pipeline">
-            <div class="stage">
-                <div class="stage-num">STAGE 01</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <circle cx="20" cy="20" r="16" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,20 Q20,10 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <path d="M8,20 Q20,30 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                </svg>
-                <h3>Read the genome</h3>
-                <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 02</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <circle cx="10" cy="20" r="4" fill="#60a5fa"/>
-                    <circle cx="30" cy="20" r="4" fill="#60a5fa"/>
-                    <line x1="14" y1="20" x2="26" y2="20" stroke="#60a5fa" stroke-width="1.5"/>
-                </svg>
-                <h3>Map the variants</h3>
-                <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 03</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <rect x="8" y="12" width="24" height="16" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
-                    <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
-                </svg>
-                <h3>Screen the compounds</h3>
-                <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 04</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <path d="M20,4 L36,14 L36,26 L20,36 L4,26 L4,14 Z" fill="none" stroke="#4ade80" stroke-width="1.5"/>
-                    <circle cx="20" cy="20" r="4" fill="#4ade80"/>
-                </svg>
-                <h3>Score every interaction</h3>
-                <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
-            </div>
-            <div class="stage">
-                <div class="stage-num">STAGE 05</div>
-                <svg width="44" height="44" viewBox="0 0 40 40">
-                    <path d="M8,20 L16,28 L32,12" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-                <h3>Design the protocol</h3>
-                <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
+        <div class="nature-flow">
+            <svg class="nature-svg" viewBox="0 0 1400 500" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.1"/>
+                        <stop offset="20%"  stop-color="#34d399" stop-opacity="0.85"/>
+                        <stop offset="50%"  stop-color="#a7f3d0" stop-opacity="1"/>
+                        <stop offset="80%"  stop-color="#34d399" stop-opacity="0.85"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.1"/>
+                    </linearGradient>
+                    <radialGradient id="seedGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+                        <stop offset="30%"  stop-color="#a7f3d0" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="nodeHalo" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                    </radialGradient>
+                    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="5"/>
+                    </filter>
+                </defs>
+
+                <!-- Background ambient -->
+                <ellipse cx="700" cy="300" rx="700" ry="180" fill="#4ade80" opacity="0.025"/>
+
+                <!-- Main vine curve -->
+                <path d="M60,300
+                         C240,180 380,420 560,300
+                         C740,180 880,420 1060,300
+                         C1180,240 1280,340 1340,300"
+                      fill="none" stroke="url(#vineGrad)" stroke-width="5" stroke-linecap="round"
+                      filter="url(#softGlow)" opacity="0.45"/>
+                <path d="M60,300
+                         C240,180 380,420 560,300
+                         C740,180 880,420 1060,300
+                         C1180,240 1280,340 1340,300"
+                      fill="none" stroke="url(#vineGrad)" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Tendrils branching up/down from each node -->
+                <g stroke="#4ade80" fill="none" stroke-linecap="round" opacity="0.5">
+                    <!-- Node 1 @ x=200 -->
+                    <path d="M200,290 C195,240 190,200 180,150" stroke-width="1.6"/>
+                    <path d="M180,150 C175,125 172,105 168,80" stroke-width="1.1"/>
+                    <path d="M200,290 C205,330 210,365 215,405" stroke-width="1.4"/>
+                    <!-- Node 2 @ x=480 -->
+                    <path d="M480,320 C490,270 495,220 490,170" stroke-width="1.6"/>
+                    <path d="M490,170 C488,145 486,120 482,95" stroke-width="1.1"/>
+                    <path d="M480,320 C470,360 465,395 460,435" stroke-width="1.4"/>
+                    <!-- Node 3 @ x=700 center tallest -->
+                    <path d="M700,300 C700,240 702,190 705,135" stroke-width="1.8"/>
+                    <path d="M705,135 C708,105 712,80 718,52" stroke-width="1.2"/>
+                    <path d="M700,300 C700,360 702,410 705,460" stroke-width="1.6"/>
+                    <!-- Node 4 @ x=920 -->
+                    <path d="M920,300 C930,250 940,205 945,155" stroke-width="1.6"/>
+                    <path d="M945,155 C950,130 955,105 962,78" stroke-width="1.1"/>
+                    <path d="M920,300 C910,345 902,385 895,425" stroke-width="1.4"/>
+                    <!-- Node 5 @ x=1200 -->
+                    <path d="M1200,300 C1210,255 1218,215 1225,170" stroke-width="1.6"/>
+                    <path d="M1225,170 C1232,145 1238,120 1245,95" stroke-width="1.1"/>
+                    <path d="M1200,300 C1195,340 1192,375 1188,410" stroke-width="1.4"/>
+                </g>
+
+                <!-- Leaves at tendril tips -->
+                <g fill="#4ade80" opacity="0.65">
+                    <path d="M168,80 Q180,68 178,86 Q176,102 164,98 Z"/>
+                    <path d="M215,405 Q228,393 230,411 Q230,427 217,426 Z"/>
+                    <path d="M482,95 Q494,83 492,101 Q490,117 478,113 Z"/>
+                    <path d="M460,435 Q472,423 474,441 Q474,457 461,456 Z"/>
+                    <path d="M718,52 Q732,38 730,58 Q728,76 714,72 Z"/>
+                    <path d="M705,460 Q720,446 722,466 Q722,484 707,483 Z"/>
+                    <path d="M962,78 Q974,66 972,84 Q970,100 958,96 Z"/>
+                    <path d="M895,425 Q907,413 909,431 Q909,447 896,446 Z"/>
+                    <path d="M1245,95 Q1257,83 1255,101 Q1253,117 1241,113 Z"/>
+                    <path d="M1188,410 Q1200,398 1202,416 Q1202,432 1189,431 Z"/>
+                </g>
+
+                <!-- Node halos -->
+                <circle cx="200"  cy="290" r="40" fill="url(#nodeHalo)">
+                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="480"  cy="320" r="40" fill="url(#nodeHalo)">
+                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="0.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="700"  cy="300" r="46" fill="url(#nodeHalo)">
+                    <animate attributeName="opacity" values="0.4;0.95;0.4" dur="4s" begin="1.6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="920"  cy="300" r="40" fill="url(#nodeHalo)">
+                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="2.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="1200" cy="300" r="40" fill="url(#nodeHalo)">
+                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="3.2s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Node cores -->
+                <circle cx="200"  cy="290" r="9" fill="#a7f3d0"/>
+                <circle cx="480"  cy="320" r="9" fill="#a7f3d0"/>
+                <circle cx="700"  cy="300" r="13" fill="#ffffff"/>
+                <circle cx="920"  cy="300" r="9" fill="#a7f3d0"/>
+                <circle cx="1200" cy="300" r="9" fill="#a7f3d0"/>
+
+                <!-- Traveling seed -->
+                <circle r="18" fill="url(#seedGlow)" opacity="0.9">
+                    <animateMotion dur="14s" repeatCount="indefinite"
+                        path="M60,300 C240,180 380,420 560,300 C740,180 880,420 1060,300 C1180,240 1280,340 1340,300"/>
+                </circle>
+                <circle r="5" fill="#ffffff">
+                    <animateMotion dur="14s" repeatCount="indefinite"
+                        path="M60,300 C240,180 380,420 560,300 C740,180 880,420 1060,300 C1180,240 1280,340 1340,300"/>
+                </circle>
+            </svg>
+
+            <div class="nature-nodes">
+                <div class="nature-node">
+                    <div class="nature-num">STAGE 001</div>
+                    <h3>Read the genome</h3>
+                    <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
+                </div>
+                <div class="nature-node">
+                    <div class="nature-num">STAGE 002</div>
+                    <h3>Map the variants</h3>
+                    <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
+                </div>
+                <div class="nature-node">
+                    <div class="nature-num">STAGE 003</div>
+                    <h3>Screen the compounds</h3>
+                    <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
+                </div>
+                <div class="nature-node">
+                    <div class="nature-num">STAGE 004</div>
+                    <h3>Score every interaction</h3>
+                    <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
+                </div>
+                <div class="nature-node">
+                    <div class="nature-num">STAGE 005</div>
+                    <h3>Design the protocol</h3>
+                    <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
+                </div>
             </div>
         </div>
-    </div>
+
         <div class="sample-output">
             <div class="sample-output-header">
                 <div class="dot-row"><span></span><span></span><span></span></div>
                 <div class="title">sample output — ranked protocol</div>
             </div>
             <table>
-                <tr>
-                    <th>Rank</th>
-                    <th>Compound</th>
-                    <th>Binding</th>
-                    <th>Evidence</th>
-                    <th>Confidence</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>resveratrol</td>
-                    <td class="score">−8.72</td>
-                    <td class="evidence">in silico · in vitro · in vivo</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>curcumin</td>
-                    <td class="score">−7.91</td>
-                    <td class="evidence">in silico · in vitro</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>fisetin</td>
-                    <td class="score">−7.45</td>
-                    <td class="evidence">in silico · in vitro · in vivo</td>
-                    <td class="high">high</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>berberine</td>
-                    <td class="score">−6.83</td>
-                    <td class="evidence">in silico · in vitro</td>
-                    <td class="med">medium</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>quercetin</td>
-                    <td class="score">−6.52</td>
-                    <td class="evidence">in silico only</td>
-                    <td class="med">medium</td>
-                </tr>
+                <thead>
+                    <tr><th>Rank</th><th>Compound</th><th>Binding</th><th>Evidence</th><th>Confidence</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>resveratrol</td><td class="score">−8.72</td><td class="evidence">in silico · in vitro · in vivo</td><td class="high">high</td></tr>
+                    <tr><td>2</td><td>curcumin</td><td class="score">−7.91</td><td class="evidence">in silico · in vitro</td><td class="high">high</td></tr>
+                    <tr><td>3</td><td>fisetin</td><td class="score">−7.45</td><td class="evidence">in silico · in vitro · in vivo</td><td class="high">high</td></tr>
+                    <tr><td>4</td><td>berberine</td><td class="score">−6.83</td><td class="evidence">in silico · in vitro</td><td class="med">medium</td></tr>
+                    <tr><td>5</td><td>quercetin</td><td class="score">−6.52</td><td class="evidence">in silico only</td><td class="med">medium</td></tr>
+                </tbody>
             </table>
-            <div class="note">
-                → next: combine top 3 into a protocol, simulate outcomes at                30 / 90 / 180 / 365 days, generate full evidence report.
-            </div>
+            <div class="note">→ next: combine top 3 into a protocol, simulate outcomes at 30 / 90 / 180 / 365 days, generate full evidence report.</div>
         </div>
-
+    </div>
 </section>
 
 </section>
