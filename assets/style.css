@@ -3291,20 +3291,11 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     margin-top: 56px;
     padding: 40px;
     background: linear-gradient(160deg, #040a07 0%, #08120e 100%);
-    border: 1px solid var(--border);
-    border-radius: 20px;
     position: relative;
     overflow: hidden;
 }
 
-.sample-output::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.03), transparent);
-    animation: outputShimmer 6s ease-in-out infinite;
-    pointer-events: none;
-}
+.sample-output::before { display: none; }
 
 @keyframes outputShimmer {
     0%, 100% { transform: translateX(-100%); }
@@ -3368,7 +3359,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 .sample-output .note {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid var(--border);
     font-family: 'SF Mono', monospace;
     font-size: 0.78rem;
     color: var(--fg-dimmer);
