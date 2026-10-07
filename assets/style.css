@@ -4335,114 +4335,151 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 /* ============================================================
-   PIPELINE — constellation (stars connected by faint lines)
+   PIPELINE — constellation v2
    ============================================================ */
 .constellation {
     position: relative;
-    margin: 64px 0 48px;
-    padding: 40px 0 24px;
+    margin: 72px 0 56px;
+    padding: 32px 0 8px;
 }
 .constellation svg {
     width: 100%;
-    height: 260px;
+    height: auto;
+    aspect-ratio: 1200 / 320;
+    max-height: 320px;
     display: block;
     overflow: visible;
 }
-.star {
-    transform-origin: center;
-    transform-box: fill-box;
-}
 .star-core {
     fill: #ffffff;
-    filter: drop-shadow(0 0 6px #a7f3d0) drop-shadow(0 0 12px #4ade80);
-    animation: starTwinkle 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px #a7f3d0) drop-shadow(0 0 18px #4ade80);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: starTwinkle 5s ease-in-out infinite;
 }
 .star-halo {
-    fill: #a7f3d0;
-    opacity: 0.25;
-    animation: starHalo 6s ease-in-out infinite;
+    fill: url(#starHaloGrad);
+    opacity: 0.4;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: starHalo 7s ease-in-out infinite;
 }
-.constellation .star:nth-child(2) .star-core { animation-delay: -0.8s; }
-.constellation .star:nth-child(2) .star-halo { animation-delay: -0.8s; }
-.constellation .star:nth-child(3) .star-core { animation-delay: -1.6s; }
-.constellation .star:nth-child(3) .star-halo { animation-delay: -1.6s; }
-.constellation .star:nth-child(4) .star-core { animation-delay: -2.4s; }
-.constellation .star:nth-child(4) .star-halo { animation-delay: -2.4s; }
-.constellation .star:nth-child(5) .star-core { animation-delay: -3.2s; }
-.constellation .star:nth-child(5) .star-halo { animation-delay: -3.2s; }
+.star:nth-child(3n) .star-core { animation-delay: -1.2s; }
+.star:nth-child(3n) .star-halo { animation-delay: -1.2s; }
+.star:nth-child(3n+1) .star-core { animation-delay: -2.4s; }
+.star:nth-child(3n+1) .star-halo { animation-delay: -2.4s; }
+.star:nth-child(3n+2) .star-core { animation-delay: -3.6s; }
+.star:nth-child(3n+2) .star-halo { animation-delay: -3.6s; }
 
 @keyframes starTwinkle {
-    0%, 100% { opacity: 0.55; transform: scale(0.9); }
-    50%      { opacity: 1;    transform: scale(1.25); }
+    0%, 100% { opacity: 0.6; transform: scale(0.92); }
+    50%      { opacity: 1;   transform: scale(1.25); }
 }
 @keyframes starHalo {
-    0%, 100% { opacity: 0.15; transform: scale(0.9); }
-    50%      { opacity: 0.35; transform: scale(1.4); }
+    0%, 100% { opacity: 0.2;  transform: scale(0.85); }
+    50%      { opacity: 0.55; transform: scale(1.5); }
 }
 
 .constellation .link {
-    stroke: rgba(167, 243, 208, 0.35);
-    stroke-width: 1;
-    stroke-dasharray: 4 6;
+    stroke: rgba(167, 243, 208, 0.4);
+    stroke-width: 1.2;
+    stroke-dasharray: 5 7;
     fill: none;
 }
 .constellation .link-glow {
-    stroke: rgba(74, 222, 128, 0.15);
-    stroke-width: 3;
+    stroke: rgba(74, 222, 128, 0.18);
+    stroke-width: 4;
     fill: none;
-    filter: blur(3px);
+    filter: blur(4px);
 }
-
 .constellation-traveler {
     fill: #ffffff;
-    filter: drop-shadow(0 0 8px #4ade80) drop-shadow(0 0 16px #4ade80);
+    filter: drop-shadow(0 0 10px #4ade80) drop-shadow(0 0 22px #4ade80);
 }
 .constellation-traveler-halo {
-    fill: #a7f3d0;
-    opacity: 0.35;
+    fill: url(#travelerGrad);
+    opacity: 0.55;
+}
+
+/* background starfield (CSS-only, no extra markup) */
+.constellation::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(1px 1px at 8% 40%,   rgba(167,243,208,0.5), transparent),
+        radial-gradient(1px 1px at 15% 70%,  rgba(74,222,128,0.35), transparent),
+        radial-gradient(1px 1px at 28% 25%,  rgba(167,243,208,0.4), transparent),
+        radial-gradient(1px 1px at 42% 65%,  rgba(74,222,128,0.3), transparent),
+        radial-gradient(1px 1px at 55% 15%,  rgba(167,243,208,0.45), transparent),
+        radial-gradient(1px 1px at 68% 55%,  rgba(74,222,128,0.3), transparent),
+        radial-gradient(1px 1px at 78% 30%,  rgba(167,243,208,0.5), transparent),
+        radial-gradient(1px 1px at 88% 60%,  rgba(74,222,128,0.35), transparent),
+        radial-gradient(1px 1px at 95% 25%,  rgba(167,243,208,0.4), transparent);
+    animation: starfield 12s ease-in-out infinite alternate;
+}
+@keyframes starfield {
+    0%   { opacity: 0.6; }
+    100% { opacity: 1; }
 }
 
 .constellation-labels {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-    margin-top: 8px;
-    padding: 0 32px;
+    gap: 28px;
+    margin-top: 32px;
+    padding: 0 24px;
 }
 .constellation-label {
     text-align: center;
+    padding: 20px 12px 0;
+    position: relative;
+}
+.constellation-label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(74,222,128,0.5), transparent);
+    transform: translateX(-50%);
 }
 .constellation-num {
     display: block;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.28em;
+    font-size: 0.66rem;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
     color: #4ade80;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     font-weight: 500;
 }
 .constellation-label h3 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.15rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: #f1f5f9;
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     letter-spacing: -0.01em;
+    line-height: 1.3;
 }
 .constellation-label p {
-    font-size: 0.85rem;
-    line-height: 1.65;
+    font-size: 0.86rem;
+    line-height: 1.7;
     color: #94a3b8;
     margin: 0 auto;
-    max-width: 190px;
+    max-width: 200px;
     font-weight: 300;
 }
+
 @media (max-width: 780px) {
-    .constellation svg { height: 140px; }
+    .constellation svg { max-height: 180px; }
     .constellation-labels {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 40px;
         padding: 0;
     }
+    .constellation-label { padding-top: 16px; }
 }
