@@ -848,54 +848,73 @@
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
         <div class="constellation">
-            <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
+            <svg viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet">
                 <defs>
-                    <radialGradient id="starGrad" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="starHaloGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.9"/>
+                        <stop offset="50%"  stop-color="#4ade80" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="travelerGrad" cx="50%" cy="50%" r="50%">
                         <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
                         <stop offset="40%"  stop-color="#a7f3d0" stop-opacity="0.7"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
                 </defs>
+
+                <!-- connecting lines -->
                 <g>
-                    <line class="link-glow" x1="120" y1="130" x2="390" y2="90"/>
-                    <line class="link-glow" x1="390" y1="90"  x2="620" y2="150"/>
-                    <line class="link-glow" x1="620" y1="150" x2="850" y2="80"/>
-                    <line class="link-glow" x1="850" y1="80"  x2="1080" y2="130"/>
+                    <line class="link-glow" x1="120" y1="160" x2="390" y2="100"/>
+                    <line class="link-glow" x1="390" y1="100" x2="620" y2="190"/>
+                    <line class="link-glow" x1="620" y1="190" x2="850" y2="90"/>
+                    <line class="link-glow" x1="850" y1="90"  x2="1080" y2="160"/>
                 </g>
                 <g>
-                    <line class="link" x1="120" y1="130" x2="390" y2="90"/>
-                    <line class="link" x1="390" y1="90"  x2="620" y2="150"/>
-                    <line class="link" x1="620" y1="150" x2="850" y2="80"/>
-                    <line class="link" x1="850" y1="80"  x2="1080" y2="130"/>
+                    <line class="link" x1="120" y1="160" x2="390" y2="100"/>
+                    <line class="link" x1="390" y1="100" x2="620" y2="190"/>
+                    <line class="link" x1="620" y1="190" x2="850" y2="90"/>
+                    <line class="link" x1="850" y1="90"  x2="1080" y2="160"/>
                 </g>
-                <circle class="constellation-traveler-halo" r="18">
-                    <animateMotion dur="12s" repeatCount="indefinite"
-                        path="M120,130 L390,90 L620,150 L850,80 L1080,130"/>
+
+                <!-- traveling pulse -->
+                <circle class="constellation-traveler-halo" r="22">
+                    <animateMotion dur="14s" repeatCount="indefinite"
+                        path="M120,160 L390,100 L620,190 L850,90 L1080,160"/>
                 </circle>
-                <circle class="constellation-traveler" r="4">
-                    <animateMotion dur="12s" repeatCount="indefinite"
-                        path="M120,130 L390,90 L620,150 L850,80 L1080,130"/>
+                <circle class="constellation-traveler" r="4.5">
+                    <animateMotion dur="14s" repeatCount="indefinite"
+                        path="M120,160 L390,100 L620,190 L850,90 L1080,160"/>
                 </circle>
-                <g class="star" transform="translate(120 130)">
-                    <circle class="star-halo" r="28"/>
-                    <circle class="star-core" r="6"/>
-                </g>
-                <g class="star" transform="translate(390 90)">
-                    <circle class="star-halo" r="28"/>
-                    <circle class="star-core" r="6"/>
-                </g>
-                <g class="star" transform="translate(620 150)">
+
+                <!-- 5 stars, different sizes -->
+                <g class="star" transform="translate(120 160)">
                     <circle class="star-halo" r="34"/>
-                    <circle class="star-core" r="8"/>
+                    <circle class="star-core" r="7"/>
                 </g>
-                <g class="star" transform="translate(850 80)">
-                    <circle class="star-halo" r="28"/>
+                <g class="star" transform="translate(390 100)">
+                    <circle class="star-halo" r="30"/>
                     <circle class="star-core" r="6"/>
                 </g>
-                <g class="star" transform="translate(1080 130)">
-                    <circle class="star-halo" r="28"/>
+                <g class="star" transform="translate(620 190)">
+                    <circle class="star-halo" r="42"/>
+                    <circle class="star-core" r="10"/>
+                </g>
+                <g class="star" transform="translate(850 90)">
+                    <circle class="star-halo" r="30"/>
                     <circle class="star-core" r="6"/>
                 </g>
+                <g class="star" transform="translate(1080 160)">
+                    <circle class="star-halo" r="34"/>
+                    <circle class="star-core" r="7"/>
+                </g>
+
+                <!-- decorative faint background stars (SVG-level) -->
+                <circle cx="60"   cy="70"  r="1.5" fill="#a7f3d0" opacity="0.5"/>
+                <circle cx="240"  cy="230" r="1"   fill="#4ade80" opacity="0.35"/>
+                <circle cx="500"  cy="50"  r="1.5" fill="#a7f3d0" opacity="0.45"/>
+                <circle cx="720"  cy="280" r="1"   fill="#4ade80" opacity="0.3"/>
+                <circle cx="940"  cy="240" r="1.5" fill="#a7f3d0" opacity="0.5"/>
+                <circle cx="1140" cy="60"  r="1"   fill="#4ade80" opacity="0.35"/>
             </svg>
 
             <div class="constellation-labels">
