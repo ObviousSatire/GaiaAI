@@ -4191,3 +4191,145 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     #pipeline .vine-node { padding-top: 0; }
     #pipeline .vine-node::before { display: none; }
 }
+
+/* ============================================================
+   PIPELINE — seedline (organic glowing nodes on a timeline)
+   ============================================================ */
+.seedline {
+    margin: 56px 0 72px;
+}
+.seedline-track {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+}
+.seedline-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(74,222,128,0.35) 8%,
+        rgba(167,243,208,0.6) 50%,
+        rgba(74,222,128,0.35) 92%,
+        transparent 100%);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.seed-item {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    z-index: 2;
+}
+.seed-dot {
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #a7f3d0 40%, #4ade80 100%);
+    box-shadow: 0 0 12px rgba(74,222,128,0.8), 0 0 24px rgba(74,222,128,0.4);
+    z-index: 3;
+}
+.seed-halo {
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,243,208,0.5) 0%, rgba(74,222,128,0) 70%);
+    animation: seedPulse 3.5s ease-in-out infinite;
+    z-index: 1;
+}
+.seed-glow {
+    position: absolute;
+    inset: -28px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,222,128,0.15) 0%, rgba(74,222,128,0) 70%);
+    animation: seedPulse 5s ease-in-out infinite reverse;
+    z-index: 0;
+}
+.seed-item:nth-child(2) .seed-halo { animation-delay: -0.7s; }
+.seed-item:nth-child(3) .seed-halo { animation-delay: -1.4s; }
+.seed-item:nth-child(4) .seed-halo { animation-delay: -2.1s; }
+.seed-item:nth-child(5) .seed-halo { animation-delay: -2.8s; }
+.seed-item:nth-child(2) .seed-glow { animation-delay: -1s; }
+.seed-item:nth-child(3) .seed-glow { animation-delay: -2s; }
+.seed-item:nth-child(4) .seed-glow { animation-delay: -3s; }
+.seed-item:nth-child(5) .seed-glow { animation-delay: -4s; }
+
+@keyframes seedPulse {
+    0%, 100% { transform: scale(0.85); opacity: 0.5; }
+    50%      { transform: scale(1.2);  opacity: 1;   }
+}
+
+.seed-travel {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    margin-left: -6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 0%, #a7f3d0 60%, transparent 100%);
+    box-shadow: 0 0 20px #a7f3d0, 0 0 40px rgba(74,222,128,0.6);
+    animation: seedTravel 9s linear infinite;
+    z-index: 4;
+}
+@keyframes seedTravel {
+    0%   { left: 40px;   opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { left: calc(100% - 40px); opacity: 0; }
+}
+
+.seed-labels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+.seed-label {
+    text-align: center;
+    padding: 0 8px;
+}
+.seed-num {
+    display: block;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #4ade80;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.seed-label h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+}
+.seed-label p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #94a3b8;
+    margin: 0 auto;
+    max-width: 190px;
+    font-weight: 300;
+}
+@media (max-width: 780px) {
+    .seedline-track { display: none; }
+    .seed-labels {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 0;
+        padding: 0;
+    }
+}

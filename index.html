@@ -847,119 +847,59 @@
         <h2>The <span class="accent">pipeline</span></h2>
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
-        <div class="nature-flow">
-            <svg class="nature-svg" viewBox="0 0 1400 380" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="vineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.15"/>
-                        <stop offset="20%"  stop-color="#34d399" stop-opacity="0.95"/>
-                        <stop offset="50%"  stop-color="#a7f3d0" stop-opacity="1"/>
-                        <stop offset="80%"  stop-color="#34d399" stop-opacity="0.95"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.15"/>
-                    </linearGradient>
-                    <radialGradient id="seedGlow2" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
-                        <stop offset="30%"  stop-color="#a7f3d0" stop-opacity="0.9"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                    </radialGradient>
-                    <radialGradient id="nodeHalo2" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.85"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-                    </radialGradient>
-                    <filter id="softGlow2" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="6"/>
-                    </filter>
-                </defs>
+        <div class="seedline">
+            <div class="seedline-track">
+                <div class="seed-item">
+                    <div class="seed-halo"></div>
+                    <div class="seed-dot"></div>
+                    <div class="seed-glow"></div>
+                </div>
+                <div class="seed-item">
+                    <div class="seed-halo"></div>
+                    <div class="seed-dot"></div>
+                    <div class="seed-glow"></div>
+                </div>
+                <div class="seed-item">
+                    <div class="seed-halo"></div>
+                    <div class="seed-dot"></div>
+                    <div class="seed-glow"></div>
+                </div>
+                <div class="seed-item">
+                    <div class="seed-halo"></div>
+                    <div class="seed-dot"></div>
+                    <div class="seed-glow"></div>
+                </div>
+                <div class="seed-item">
+                    <div class="seed-halo"></div>
+                    <div class="seed-dot"></div>
+                    <div class="seed-glow"></div>
+                </div>
+                <div class="seed-travel"></div>
+            </div>
 
-                <ellipse cx="700" cy="220" rx="700" ry="140" fill="#4ade80" opacity="0.03"/>
-
-                <!-- Deep wavy vine — 3 full waves so it can't flatten -->
-                <path d="M0,220
-                         C120,90 240,350 360,220
-                         C480,90 600,350 720,220
-                         C840,90 960,350 1080,220
-                         C1200,90 1300,300 1400,220"
-                      fill="none" stroke="url(#vineGrad2)" stroke-width="6" stroke-linecap="round"
-                      filter="url(#softGlow2)" opacity="0.4"/>
-                <path d="M0,220
-                         C120,90 240,350 360,220
-                         C480,90 600,350 720,220
-                         C840,90 960,350 1080,220
-                         C1200,90 1300,300 1400,220"
-                      fill="none" stroke="url(#vineGrad2)" stroke-width="3.5" stroke-linecap="round"/>
-
-                <!-- Branches — thicker, tree-like -->
-                <g stroke="#4ade80" stroke-linecap="round" fill="none" opacity="0.55">
-                    <path d="M140,175 C130,120 125,80 120,40" stroke-width="2.4"/>
-                    <path d="M140,175 C155,140 165,110 175,85" stroke-width="1.6"/>
-                    <path d="M360,220 C355,265 350,300 345,340" stroke-width="2.4"/>
-                    <path d="M500,160 C500,110 502,70 508,30" stroke-width="2.4"/>
-                    <path d="M500,160 C520,120 535,95 555,72" stroke-width="1.6"/>
-                    <path d="M720,220 C720,270 722,310 725,355" stroke-width="2.4"/>
-                    <path d="M880,160 C885,115 890,80 898,42" stroke-width="2.4"/>
-                    <path d="M880,160 C860,130 845,110 830,90" stroke-width="1.6"/>
-                    <path d="M1080,220 C1085,260 1090,295 1096,330" stroke-width="2.4"/>
-                    <path d="M1250,175 C1260,130 1265,90 1270,50" stroke-width="2.4"/>
-                </g>
-
-                <!-- Node halos -->
-                <circle cx="140"  cy="175" r="38" fill="url(#nodeHalo2)">
-                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="500"  cy="160" r="38" fill="url(#nodeHalo2)">
-                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="0.8s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="720"  cy="220" r="44" fill="url(#nodeHalo2)">
-                    <animate attributeName="opacity" values="0.4;0.95;0.4" dur="4s" begin="1.6s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="880"  cy="160" r="38" fill="url(#nodeHalo2)">
-                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="2.4s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="1250" cy="175" r="38" fill="url(#nodeHalo2)">
-                    <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="3.2s" repeatCount="indefinite"/>
-                </circle>
-
-                <!-- Node cores -->
-                <circle cx="140"  cy="175" r="9" fill="#a7f3d0"/>
-                <circle cx="500"  cy="160" r="9" fill="#a7f3d0"/>
-                <circle cx="720"  cy="220" r="13" fill="#ffffff"/>
-                <circle cx="880"  cy="160" r="9" fill="#a7f3d0"/>
-                <circle cx="1250" cy="175" r="9" fill="#a7f3d0"/>
-
-                <!-- Traveling seed -->
-                <circle r="18" fill="url(#seedGlow2)" opacity="0.9">
-                    <animateMotion dur="14s" repeatCount="indefinite"
-                        path="M0,220 C120,90 240,350 360,220 C480,90 600,350 720,220 C840,90 960,350 1080,220 C1200,90 1300,300 1400,220"/>
-                </circle>
-                <circle r="5" fill="#ffffff">
-                    <animateMotion dur="14s" repeatCount="indefinite"
-                        path="M0,220 C120,90 240,350 360,220 C480,90 600,350 720,220 C840,90 960,350 1080,220 C1200,90 1300,300 1400,220"/>
-                </circle>
-            </svg>
-
-            <div class="nature-nodes">
-                <div class="nature-node">
-                    <div class="nature-num">STAGE 01</div>
+            <div class="seed-labels">
+                <div class="seed-label">
+                    <span class="seed-num">Stage 01</span>
                     <h3>Read the genome</h3>
                     <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
                 </div>
-                <div class="nature-node">
-                    <div class="nature-num">STAGE 02</div>
+                <div class="seed-label">
+                    <span class="seed-num">Stage 02</span>
                     <h3>Map the variants</h3>
                     <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
                 </div>
-                <div class="nature-node">
-                    <div class="nature-num">STAGE 03</div>
+                <div class="seed-label">
+                    <span class="seed-num">Stage 03</span>
                     <h3>Screen the compounds</h3>
                     <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
                 </div>
-                <div class="nature-node">
-                    <div class="nature-num">STAGE 04</div>
+                <div class="seed-label">
+                    <span class="seed-num">Stage 04</span>
                     <h3>Score every interaction</h3>
                     <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
                 </div>
-                <div class="nature-node">
-                    <div class="nature-num">STAGE 05</div>
+                <div class="seed-label">
+                    <span class="seed-num">Stage 05</span>
                     <h3>Design the protocol</h3>
                     <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
                 </div>
