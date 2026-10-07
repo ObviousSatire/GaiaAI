@@ -845,88 +845,59 @@
 <section id="pipeline">
     <div class="container">
         <h2>The <span class="accent">pipeline</span></h2>
-        <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
+        <p class="lead">From raw genome to treatment protocol, in five stages.</p>
 
-        <div class="seedline">
-            <div class="seedline-track">
-                <div class="seed-item">
-                    <div class="seed-halo"></div>
-                    <div class="seed-dot"></div>
-                    <div class="seed-glow"></div>
-                </div>
-                <div class="seed-item">
-                    <div class="seed-halo"></div>
-                    <div class="seed-dot"></div>
-                    <div class="seed-glow"></div>
-                </div>
-                <div class="seed-item">
-                    <div class="seed-halo"></div>
-                    <div class="seed-dot"></div>
-                    <div class="seed-glow"></div>
-                </div>
-                <div class="seed-item">
-                    <div class="seed-halo"></div>
-                    <div class="seed-dot"></div>
-                    <div class="seed-glow"></div>
-                </div>
-                <div class="seed-item">
-                    <div class="seed-halo"></div>
-                    <div class="seed-dot"></div>
-                    <div class="seed-glow"></div>
-                </div>
-                <div class="seed-travel"></div>
+        <div class="pipeline">
+            <div class="stage">
+                <div class="stage-num">STAGE 01</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="16" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,20 Q20,10 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <path d="M8,20 Q20,30 32,20 T8,20" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                </svg>
+                <h3>Read the genome</h3>
+                <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
             </div>
-
-            <div class="seed-labels">
-                <div class="seed-label">
-                    <span class="seed-num">Stage 01</span>
-                    <h3>Read the genome</h3>
-                    <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
-                </div>
-                <div class="seed-label">
-                    <span class="seed-num">Stage 02</span>
-                    <h3>Map the variants</h3>
-                    <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
-                </div>
-                <div class="seed-label">
-                    <span class="seed-num">Stage 03</span>
-                    <h3>Screen the compounds</h3>
-                    <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
-                </div>
-                <div class="seed-label">
-                    <span class="seed-num">Stage 04</span>
-                    <h3>Score every interaction</h3>
-                    <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
-                </div>
-                <div class="seed-label">
-                    <span class="seed-num">Stage 05</span>
-                    <h3>Design the protocol</h3>
-                    <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
-                </div>
+            <div class="stage">
+                <div class="stage-num">STAGE 02</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <circle cx="10" cy="20" r="4" fill="#60a5fa"/>
+                    <circle cx="30" cy="20" r="4" fill="#60a5fa"/>
+                    <line x1="14" y1="20" x2="26" y2="20" stroke="#60a5fa" stroke-width="1.5"/>
+                </svg>
+                <h3>Map the variants</h3>
+                <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
             </div>
-        </div>
-
-        <div class="sample-output">
-            <div class="sample-output-header">
-                <div class="dot-row"><span></span><span></span><span></span></div>
-                <div class="title">sample output — ranked protocol</div>
+            <div class="stage">
+                <div class="stage-num">STAGE 03</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <rect x="8" y="12" width="24" height="16" rx="3" fill="none" stroke="#a7f3d0" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="3" fill="#a7f3d0"/>
+                </svg>
+                <h3>Screen the compounds</h3>
+                <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
             </div>
-            <table>
-                <thead>
-                    <tr><th>Rank</th><th>Compound</th><th>Binding</th><th>Evidence</th><th>Confidence</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>resveratrol</td><td class="score">−8.72</td><td class="evidence">in silico · in vitro · in vivo</td><td class="high">high</td></tr>
-                    <tr><td>2</td><td>curcumin</td><td class="score">−7.91</td><td class="evidence">in silico · in vitro</td><td class="high">high</td></tr>
-                    <tr><td>3</td><td>fisetin</td><td class="score">−7.45</td><td class="evidence">in silico · in vitro · in vivo</td><td class="high">high</td></tr>
-                    <tr><td>4</td><td>berberine</td><td class="score">−6.83</td><td class="evidence">in silico · in vitro</td><td class="med">medium</td></tr>
-                    <tr><td>5</td><td>quercetin</td><td class="score">−6.52</td><td class="evidence">in silico only</td><td class="med">medium</td></tr>
-                </tbody>
-            </table>
-            <div class="note">→ next: combine top 3 into a protocol, simulate outcomes at 30 / 90 / 180 / 365 days, generate full evidence report.</div>
+            <div class="stage">
+                <div class="stage-num">STAGE 04</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <path d="M20,4 L36,14 L36,26 L20,36 L4,26 L4,14 Z" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                    <circle cx="20" cy="20" r="4" fill="#4ade80"/>
+                </svg>
+                <h3>Score every interaction</h3>
+                <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
+            </div>
+            <div class="stage">
+                <div class="stage-num">STAGE 05</div>
+                <svg width="44" height="44" viewBox="0 0 40 40">
+                    <path d="M8,20 L16,28 L32,12" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <h3>Design the protocol</h3>
+                <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
+            </div>
         </div>
     </div>
 </section>
+
 
 </section>
 

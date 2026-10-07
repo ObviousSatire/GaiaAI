@@ -4182,7 +4182,8 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 @media (max-width: 780px) {
     #pipeline .vine { height: 100px; margin-bottom: 0; }
-    #pipeline .vine-nodes {
+    }
+#pipeline .vine-nodes {
         grid-template-columns: 1fr;
         gap: 36px;
         border-top: none;
