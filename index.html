@@ -848,141 +848,118 @@
         <p class="lead">From raw genome to treatment protocol — one continuous line.</p>
 
         <div class="nature-flow">
-            <svg class="nature-svg" viewBox="0 0 1400 500" preserveAspectRatio="xMidYMid meet">
+            <svg class="nature-svg" viewBox="0 0 1400 380" preserveAspectRatio="none">
                 <defs>
-                    <linearGradient id="vineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.1"/>
-                        <stop offset="20%"  stop-color="#34d399" stop-opacity="0.85"/>
+                    <linearGradient id="vineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%"   stop-color="#4ade80" stop-opacity="0.15"/>
+                        <stop offset="20%"  stop-color="#34d399" stop-opacity="0.95"/>
                         <stop offset="50%"  stop-color="#a7f3d0" stop-opacity="1"/>
-                        <stop offset="80%"  stop-color="#34d399" stop-opacity="0.85"/>
-                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.1"/>
+                        <stop offset="80%"  stop-color="#34d399" stop-opacity="0.95"/>
+                        <stop offset="100%" stop-color="#4ade80" stop-opacity="0.15"/>
                     </linearGradient>
-                    <radialGradient id="seedGlow" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="seedGlow2" cx="50%" cy="50%" r="50%">
                         <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
                         <stop offset="30%"  stop-color="#a7f3d0" stop-opacity="0.9"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
-                    <radialGradient id="nodeHalo" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.8"/>
+                    <radialGradient id="nodeHalo2" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="#a7f3d0" stop-opacity="0.85"/>
                         <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
                     </radialGradient>
-                    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="5"/>
+                    <filter id="softGlow2" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="6"/>
                     </filter>
                 </defs>
 
-                <!-- Background ambient -->
-                <ellipse cx="700" cy="300" rx="700" ry="180" fill="#4ade80" opacity="0.025"/>
+                <ellipse cx="700" cy="220" rx="700" ry="140" fill="#4ade80" opacity="0.03"/>
 
-                <!-- Main vine curve -->
-                <path d="M60,300
-                         C240,180 380,420 560,300
-                         C740,180 880,420 1060,300
-                         C1180,240 1280,340 1340,300"
-                      fill="none" stroke="url(#vineGrad)" stroke-width="5" stroke-linecap="round"
-                      filter="url(#softGlow)" opacity="0.45"/>
-                <path d="M60,300
-                         C240,180 380,420 560,300
-                         C740,180 880,420 1060,300
-                         C1180,240 1280,340 1340,300"
-                      fill="none" stroke="url(#vineGrad)" stroke-width="3" stroke-linecap="round"/>
+                <!-- Deep wavy vine — 3 full waves so it can't flatten -->
+                <path d="M0,220
+                         C120,90 240,350 360,220
+                         C480,90 600,350 720,220
+                         C840,90 960,350 1080,220
+                         C1200,90 1300,300 1400,220"
+                      fill="none" stroke="url(#vineGrad2)" stroke-width="6" stroke-linecap="round"
+                      filter="url(#softGlow2)" opacity="0.4"/>
+                <path d="M0,220
+                         C120,90 240,350 360,220
+                         C480,90 600,350 720,220
+                         C840,90 960,350 1080,220
+                         C1200,90 1300,300 1400,220"
+                      fill="none" stroke="url(#vineGrad2)" stroke-width="3.5" stroke-linecap="round"/>
 
-                <!-- Tendrils branching up/down from each node -->
-                <g stroke="#4ade80" fill="none" stroke-linecap="round" opacity="0.5">
-                    <!-- Node 1 @ x=200 -->
-                    <path d="M200,290 C195,240 190,200 180,150" stroke-width="1.6"/>
-                    <path d="M180,150 C175,125 172,105 168,80" stroke-width="1.1"/>
-                    <path d="M200,290 C205,330 210,365 215,405" stroke-width="1.4"/>
-                    <!-- Node 2 @ x=480 -->
-                    <path d="M480,320 C490,270 495,220 490,170" stroke-width="1.6"/>
-                    <path d="M490,170 C488,145 486,120 482,95" stroke-width="1.1"/>
-                    <path d="M480,320 C470,360 465,395 460,435" stroke-width="1.4"/>
-                    <!-- Node 3 @ x=700 center tallest -->
-                    <path d="M700,300 C700,240 702,190 705,135" stroke-width="1.8"/>
-                    <path d="M705,135 C708,105 712,80 718,52" stroke-width="1.2"/>
-                    <path d="M700,300 C700,360 702,410 705,460" stroke-width="1.6"/>
-                    <!-- Node 4 @ x=920 -->
-                    <path d="M920,300 C930,250 940,205 945,155" stroke-width="1.6"/>
-                    <path d="M945,155 C950,130 955,105 962,78" stroke-width="1.1"/>
-                    <path d="M920,300 C910,345 902,385 895,425" stroke-width="1.4"/>
-                    <!-- Node 5 @ x=1200 -->
-                    <path d="M1200,300 C1210,255 1218,215 1225,170" stroke-width="1.6"/>
-                    <path d="M1225,170 C1232,145 1238,120 1245,95" stroke-width="1.1"/>
-                    <path d="M1200,300 C1195,340 1192,375 1188,410" stroke-width="1.4"/>
-                </g>
-
-                <!-- Leaves at tendril tips -->
-                <g fill="#4ade80" opacity="0.65">
-                    <path d="M168,80 Q180,68 178,86 Q176,102 164,98 Z"/>
-                    <path d="M215,405 Q228,393 230,411 Q230,427 217,426 Z"/>
-                    <path d="M482,95 Q494,83 492,101 Q490,117 478,113 Z"/>
-                    <path d="M460,435 Q472,423 474,441 Q474,457 461,456 Z"/>
-                    <path d="M718,52 Q732,38 730,58 Q728,76 714,72 Z"/>
-                    <path d="M705,460 Q720,446 722,466 Q722,484 707,483 Z"/>
-                    <path d="M962,78 Q974,66 972,84 Q970,100 958,96 Z"/>
-                    <path d="M895,425 Q907,413 909,431 Q909,447 896,446 Z"/>
-                    <path d="M1245,95 Q1257,83 1255,101 Q1253,117 1241,113 Z"/>
-                    <path d="M1188,410 Q1200,398 1202,416 Q1202,432 1189,431 Z"/>
+                <!-- Branches — thicker, tree-like -->
+                <g stroke="#4ade80" stroke-linecap="round" fill="none" opacity="0.55">
+                    <path d="M140,175 C130,120 125,80 120,40" stroke-width="2.4"/>
+                    <path d="M140,175 C155,140 165,110 175,85" stroke-width="1.6"/>
+                    <path d="M360,220 C355,265 350,300 345,340" stroke-width="2.4"/>
+                    <path d="M500,160 C500,110 502,70 508,30" stroke-width="2.4"/>
+                    <path d="M500,160 C520,120 535,95 555,72" stroke-width="1.6"/>
+                    <path d="M720,220 C720,270 722,310 725,355" stroke-width="2.4"/>
+                    <path d="M880,160 C885,115 890,80 898,42" stroke-width="2.4"/>
+                    <path d="M880,160 C860,130 845,110 830,90" stroke-width="1.6"/>
+                    <path d="M1080,220 C1085,260 1090,295 1096,330" stroke-width="2.4"/>
+                    <path d="M1250,175 C1260,130 1265,90 1270,50" stroke-width="2.4"/>
                 </g>
 
                 <!-- Node halos -->
-                <circle cx="200"  cy="290" r="40" fill="url(#nodeHalo)">
+                <circle cx="140"  cy="175" r="38" fill="url(#nodeHalo2)">
                     <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="480"  cy="320" r="40" fill="url(#nodeHalo)">
+                <circle cx="500"  cy="160" r="38" fill="url(#nodeHalo2)">
                     <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="0.8s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="700"  cy="300" r="46" fill="url(#nodeHalo)">
+                <circle cx="720"  cy="220" r="44" fill="url(#nodeHalo2)">
                     <animate attributeName="opacity" values="0.4;0.95;0.4" dur="4s" begin="1.6s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="920"  cy="300" r="40" fill="url(#nodeHalo)">
+                <circle cx="880"  cy="160" r="38" fill="url(#nodeHalo2)">
                     <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="2.4s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="1200" cy="300" r="40" fill="url(#nodeHalo)">
+                <circle cx="1250" cy="175" r="38" fill="url(#nodeHalo2)">
                     <animate attributeName="opacity" values="0.35;0.85;0.35" dur="4s" begin="3.2s" repeatCount="indefinite"/>
                 </circle>
 
                 <!-- Node cores -->
-                <circle cx="200"  cy="290" r="9" fill="#a7f3d0"/>
-                <circle cx="480"  cy="320" r="9" fill="#a7f3d0"/>
-                <circle cx="700"  cy="300" r="13" fill="#ffffff"/>
-                <circle cx="920"  cy="300" r="9" fill="#a7f3d0"/>
-                <circle cx="1200" cy="300" r="9" fill="#a7f3d0"/>
+                <circle cx="140"  cy="175" r="9" fill="#a7f3d0"/>
+                <circle cx="500"  cy="160" r="9" fill="#a7f3d0"/>
+                <circle cx="720"  cy="220" r="13" fill="#ffffff"/>
+                <circle cx="880"  cy="160" r="9" fill="#a7f3d0"/>
+                <circle cx="1250" cy="175" r="9" fill="#a7f3d0"/>
 
                 <!-- Traveling seed -->
-                <circle r="18" fill="url(#seedGlow)" opacity="0.9">
+                <circle r="18" fill="url(#seedGlow2)" opacity="0.9">
                     <animateMotion dur="14s" repeatCount="indefinite"
-                        path="M60,300 C240,180 380,420 560,300 C740,180 880,420 1060,300 C1180,240 1280,340 1340,300"/>
+                        path="M0,220 C120,90 240,350 360,220 C480,90 600,350 720,220 C840,90 960,350 1080,220 C1200,90 1300,300 1400,220"/>
                 </circle>
                 <circle r="5" fill="#ffffff">
                     <animateMotion dur="14s" repeatCount="indefinite"
-                        path="M60,300 C240,180 380,420 560,300 C740,180 880,420 1060,300 C1180,240 1280,340 1340,300"/>
+                        path="M0,220 C120,90 240,350 360,220 C480,90 600,350 720,220 C840,90 960,350 1080,220 C1200,90 1300,300 1400,220"/>
                 </circle>
             </svg>
 
             <div class="nature-nodes">
                 <div class="nature-node">
-                    <div class="nature-num">STAGE 001</div>
+                    <div class="nature-num">STAGE 01</div>
                     <h3>Read the genome</h3>
                     <p>Every window classified by structural signature — coding, conserved, regulatory, or silent.</p>
                 </div>
                 <div class="nature-node">
-                    <div class="nature-num">STAGE 002</div>
+                    <div class="nature-num">STAGE 02</div>
                     <h3>Map the variants</h3>
                     <p>Population variation placed in context. Every variant associated with its gene, pathway, and evidence.</p>
                 </div>
                 <div class="nature-node">
-                    <div class="nature-num">STAGE 003</div>
+                    <div class="nature-num">STAGE 03</div>
                     <h3>Screen the compounds</h3>
                     <p>Multiple libraries of small molecules and natural products, ranked by binding potential.</p>
                 </div>
                 <div class="nature-node">
-                    <div class="nature-num">STAGE 004</div>
+                    <div class="nature-num">STAGE 04</div>
                     <h3>Score every interaction</h3>
                     <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual.</p>
                 </div>
                 <div class="nature-node">
-                    <div class="nature-num">STAGE 005</div>
+                    <div class="nature-num">STAGE 05</div>
                     <h3>Design the protocol</h3>
                     <p>Multi-compound protocol with predicted outcomes across time. One ranking, one plan.</p>
                 </div>
