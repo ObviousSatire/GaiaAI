@@ -4325,8 +4325,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     font-weight: 300;
 }
 @media (max-width: 780px) {
-    .seedline-track { display: none; }
-    .seed-labels {
+        .seed-labels {
         grid-template-columns: 1fr;
         gap: 40px;
         margin-top: 0;
