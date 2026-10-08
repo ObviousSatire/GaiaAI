@@ -594,41 +594,55 @@
                 <div class="eco-glow eco-glow-mint"></div>
                 <div class="eco-icon">
                     <svg viewBox="0 0 120 120" width="100" height="100" preserveAspectRatio="xMidYMid meet">
-<path d="M 20 108 Q 60 104 100 108" fill="none" stroke="#34d399" stroke-width="1" opacity="0.5"/>
-<path d="M 60 108 L 60 60" fill="none" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round"/>
-<g fill="none" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round">
-<path d="M 60 72 Q 40 60 26 44"/>
-<path d="M 60 72 Q 80 60 94 44"/>
-<path d="M 60 60 L 60 34"/>
-</g>
-<g fill="none" stroke="#a7f3d0" stroke-width="1.2" stroke-linecap="round" opacity="0.85">
-<path d="M 26 44 Q 18 34 14 24"/>
-<path d="M 26 44 Q 34 36 40 26"/>
-<path d="M 94 44 Q 102 34 106 24"/>
-<path d="M 94 44 Q 86 34 80 26"/>
-<path d="M 60 34 Q 50 24 44 14"/>
-<path d="M 60 34 Q 70 24 76 14"/>
-</g>
-<g fill="none" stroke="#34d399" stroke-width="1.2" stroke-linecap="round" opacity="0.7">
-<path d="M 60 108 Q 52 112 44 116"/>
-<path d="M 60 108 Q 68 112 76 116"/>
-<path d="M 60 108 L 60 118"/>
-</g>
-<g fill="#a7f3d0">
-<circle class="ic-pulse" cx="14" cy="24" r="2.5"/>
-<circle class="ic-pulse ic-d1" cx="40" cy="26" r="2.5"/>
-<circle class="ic-pulse ic-d2" cx="106" cy="24" r="2.5"/>
-<circle class="ic-pulse ic-d3" cx="80" cy="26" r="2.5"/>
-<circle class="ic-pulse ic-d4" cx="44" cy="14" r="2.5"/>
-<circle class="ic-pulse ic-d5" cx="76" cy="14" r="2.5"/>
-</g>
-<g fill="#4ade80">
-<circle class="ic-flick" r="2"><animateMotion dur="4s" repeatCount="indefinite" path="M 60 108 L 60 72 Q 40 60 26 44 Q 18 34 14 24"/></circle>
-<circle class="ic-flick ic-d1" r="2"><animateMotion dur="4s" repeatCount="indefinite" begin="-1s" path="M 60 108 L 60 72 Q 80 60 94 44 Q 102 34 106 24"/></circle>
-<circle class="ic-flick ic-d2" r="2"><animateMotion dur="4s" repeatCount="indefinite" begin="-2s" path="M 60 108 L 60 34 Q 50 24 44 14"/></circle>
-<circle class="ic-flick ic-d3" r="2"><animateMotion dur="4s" repeatCount="indefinite" begin="-3s" path="M 60 108 L 60 34 Q 70 24 76 14"/></circle>
-</g>
-<circle class="ic-bob" cx="60" cy="60" r="4" fill="#4ade80" opacity="0.7"/>
+    <!-- Root network at bottom -->
+    <g fill="none" stroke="#34d399" stroke-width="0.9" opacity="0.55">
+        <path d="M 60 108 Q 50 108 42 104 Q 32 100 24 104"/>
+        <path d="M 60 108 Q 70 108 78 104 Q 88 100 96 104"/>
+        <path d="M 60 108 Q 58 116 50 120"/>
+        <path d="M 60 108 Q 62 116 70 120"/>
+    </g>
+
+    <!-- Stem -->
+    <path d="M 60 108 Q 58 80 60 60 Q 62 40 60 20"
+          fill="none" stroke="#a7f3d0" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- Leaves branching left and right, organic shapes -->
+    <g fill="#4ade80" opacity="0.75">
+        <!-- left leaves -->
+        <ellipse class="ic-pulse" cx="42" cy="82" rx="14" ry="7" transform="rotate(-30 42 82)"/>
+        <ellipse class="ic-pulse ic-d1" cx="38" cy="62" rx="16" ry="8" transform="rotate(-25 38 62)"/>
+        <ellipse class="ic-pulse ic-d2" cx="42" cy="40" rx="14" ry="7" transform="rotate(-30 42 40)"/>
+        <ellipse class="ic-pulse ic-d3" cx="48" cy="22" rx="10" ry="5" transform="rotate(-35 48 22)"/>
+        <!-- right leaves -->
+        <ellipse class="ic-pulse ic-d1" cx="78" cy="82" rx="14" ry="7" transform="rotate(30 78 82)"/>
+        <ellipse class="ic-pulse ic-d2" cx="82" cy="62" rx="16" ry="8" transform="rotate(25 82 62)"/>
+        <ellipse class="ic-pulse ic-d3" cx="78" cy="40" rx="14" ry="7" transform="rotate(30 78 40)"/>
+        <ellipse class="ic-pulse ic-d4" cx="72" cy="22" rx="10" ry="5" transform="rotate(35 72 22)"/>
+    </g>
+
+    <!-- Leaf veins -->
+    <g fill="none" stroke="#a7f3d0" stroke-width="0.6" opacity="0.7">
+        <path d="M 42 82 L 34 76 M 42 82 L 36 88"/>
+        <path d="M 38 62 L 26 56 M 38 62 L 30 68"/>
+        <path d="M 42 40 L 32 34 M 42 40 L 34 46"/>
+        <path d="M 78 82 L 86 76 M 78 82 L 84 88"/>
+        <path d="M 82 62 L 94 56 M 82 62 L 90 68"/>
+        <path d="M 78 40 L 88 34 M 78 40 L 86 46"/>
+    </g>
+
+    <!-- Bud at top -->
+    <ellipse class="ic-bob" cx="60" cy="14" rx="6" ry="8" fill="#4ade80" opacity="0.9"/>
+    <circle class="ic-flick" cx="60" cy="14" r="2" fill="#ffffff"/>
+
+    <!-- Vital pulse traveling up the stem -->
+    <circle r="3" fill="#a7f3d0">
+        <animateMotion dur="3s" repeatCount="indefinite"
+            path="M 60 108 Q 58 80 60 60 Q 62 40 60 20"/>
+    </circle>
+    <circle r="2" fill="#4ade80" opacity="0.5">
+        <animateMotion dur="3s" repeatCount="indefinite" begin="-1.5s"
+            path="M 60 108 Q 58 80 60 60 Q 62 40 60 20"/>
+    </circle>
 </svg>
                 </div>
                 <div class="eco-body">
