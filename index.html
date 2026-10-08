@@ -523,36 +523,35 @@
             <div class="evidence-card">
                 <div class="evidence-icon">
                     <svg viewBox="0 0 120 120">
-                        <!-- rotating outer ring -->
-                        <circle class="ic-spin" cx="60" cy="60" r="52"
-                                fill="none" stroke="#4ade80" stroke-width="0.8"
-                                stroke-dasharray="3 6" opacity="0.5"/>
-                        <circle class="ic-spin-r" cx="60" cy="60" r="42"
-                                fill="none" stroke="#a7f3d0" stroke-width="0.6"
-                                stroke-dasharray="2 8" opacity="0.4"/>
-                        <!-- central pulse -->
-                        <circle class="ic-pulse" cx="60" cy="60" r="22"
-                                fill="none" stroke="#4ade80" stroke-width="1.4" opacity="0.7"/>
-                        <circle class="ic-pulse ic-d2" cx="60" cy="60" r="14"
-                                fill="none" stroke="#a7f3d0" stroke-width="1.2" opacity="0.8"/>
-                        <circle cx="60" cy="60" r="6" fill="#4ade80"/>
-                        <circle cx="60" cy="60" r="3" fill="#ffffff"/>
-                        <!-- orbiting electrons -->
-                        <g class="ic-spin" style="animation-duration: 18s;">
-                            <circle cx="60" cy="8" r="3" fill="#a7f3d0" class="ic-flick"/>
-                            <circle cx="112" cy="60" r="2.5" fill="#60a5fa" class="ic-flick ic-d3"/>
+                        <!-- chip die -->
+                        <rect x="32" y="32" width="56" height="56" rx="5"
+                              fill="none" stroke="#4ade80" stroke-width="1.4" opacity="0.75"/>
+                        <!-- inner circuit blocks -->
+                        <g fill="none" stroke="#a7f3d0" stroke-width="1">
+                            <path class="ic-pulse"      d="M42 42 L58 42 L58 58 L42 58 Z"/>
+                            <path class="ic-pulse ic-d2" d="M62 42 L78 42 L78 58 L62 58 Z"/>
+                            <path class="ic-pulse ic-d3" d="M42 62 L58 62 L58 78 L42 78 Z"/>
+                            <path class="ic-pulse ic-d4" d="M62 62 L78 62 L78 78 L62 78 Z"/>
                         </g>
-                        <g class="ic-spin-r" style="animation-duration: 24s;">
-                            <circle cx="8" cy="60" r="3" fill="#34d399" class="ic-flick ic-d2"/>
-                            <circle cx="60" cy="112" r="2.5" fill="#4ade80" class="ic-flick ic-d4"/>
+                        <circle class="ic-bob" cx="60" cy="60" r="4" fill="#4ade80"/>
+                        <circle class="ic-flick" cx="60" cy="60" r="2" fill="#ffffff"/>
+                        <!-- pin connectors on all four sides -->
+                        <g stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" opacity="0.7">
+                            <line class="ic-flick"      x1="40" y1="20" x2="40" y2="32"/>
+                            <line class="ic-flick ic-d1" x1="60" y1="20" x2="60" y2="32"/>
+                            <line class="ic-flick ic-d2" x1="80" y1="20" x2="80" y2="32"/>
+                            <line class="ic-flick ic-d3" x1="40" y1="88" x2="40" y2="100"/>
+                            <line class="ic-flick ic-d4" x1="60" y1="88" x2="60" y2="100"/>
+                            <line class="ic-flick ic-d5" x1="80" y1="88" x2="80" y2="100"/>
+                            <line class="ic-flick ic-d1" x1="20" y1="40" x2="32" y2="40"/>
+                            <line class="ic-flick ic-d2" x1="20" y1="60" x2="32" y2="60"/>
+                            <line class="ic-flick ic-d4" x1="20" y1="80" x2="32" y2="80"/>
+                            <line class="ic-flick ic-d1" x1="88" y1="40" x2="100" y2="40"/>
+                            <line class="ic-flick ic-d3" x1="88" y1="60" x2="100" y2="60"/>
+                            <line class="ic-flick ic-d5" x1="88" y1="80" x2="100" y2="80"/>
                         </g>
-                        <!-- floating dots -->
-                        <circle class="ic-float" cx="30" cy="30" r="1.6" fill="#a7f3d0" opacity="0.7"/>
-                        <circle class="ic-float ic-d3" cx="90" cy="90" r="1.6" fill="#4ade80" opacity="0.6"/>
-                        <circle class="ic-float ic-d5" cx="88" cy="28" r="1.4" fill="#60a5fa" opacity="0.5"/>
                     </svg>
                 </div>
-                <div>
                     <span class="tag">In silico</span>
                     <h3>Computational</h3>
                     <p>Every prediction is stress-tested in pure computation before anything touches a cell. Confidence is estimated from the spread of agreement across independent methods.</p>
@@ -569,30 +568,34 @@
             <div class="evidence-card">
                 <div class="evidence-icon">
                     <svg viewBox="0 0 120 120">
-                        <!-- outer cell membrane (breathing) -->
-                        <circle class="ic-pulse" cx="60" cy="60" r="50"
-                                fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
-                        <circle class="ic-pulse ic-d2" cx="60" cy="60" r="44"
-                                fill="none" stroke="#93c5fd" stroke-width="0.8" opacity="0.5"/>
-                        <!-- inner nucleus -->
-                        <circle class="ic-bob" cx="60" cy="60" r="20"
-                                fill="#60a5fa" opacity="0.15" stroke="#60a5fa" stroke-width="1.2"/>
-                        <circle class="ic-bob ic-d2" cx="60" cy="60" r="12"
-                                fill="#93c5fd" opacity="0.35"/>
-                        <circle cx="60" cy="60" r="4" fill="#ffffff" class="ic-flick"/>
-                        <!-- organelles drifting inside -->
-                        <circle class="ic-float" cx="42" cy="42" r="3.5" fill="#60a5fa" opacity="0.7"/>
-                        <circle class="ic-float ic-d3" cx="80" cy="48" r="3" fill="#a7f3d0" opacity="0.65"/>
-                        <circle class="ic-float ic-d5" cx="48" cy="80" r="3.2" fill="#4ade80" opacity="0.6"/>
-                        <circle class="ic-float ic-d2" cx="78" cy="78" r="2.6" fill="#93c5fd" opacity="0.7"/>
-                        <!-- receptor pulses -->
-                        <circle class="ic-flick" cx="60" cy="10" r="2" fill="#60a5fa"/>
-                        <circle class="ic-flick ic-d2" cx="110" cy="60" r="2" fill="#60a5fa"/>
-                        <circle class="ic-flick ic-d3" cx="60" cy="110" r="2" fill="#60a5fa"/>
-                        <circle class="ic-flick ic-d4" cx="10" cy="60" r="2" fill="#60a5fa"/>
+                        <!-- petri dish rim -->
+                        <ellipse cx="60" cy="62" rx="48" ry="40"
+                                 fill="none" stroke="#60a5fa" stroke-width="1.4" opacity="0.75"/>
+                        <ellipse cx="60" cy="62" rx="42" ry="34"
+                                 fill="none" stroke="#93c5fd" stroke-width="0.7" opacity="0.4"/>
+                        <!-- media surface -->
+                        <ellipse cx="60" cy="68" rx="36" ry="22" fill="#60a5fa" opacity="0.08"/>
+                        <!-- cell colonies growing inside -->
+                        <g fill="#60a5fa">
+                            <circle class="ic-pulse"      cx="42" cy="55" r="3.5"/>
+                            <circle class="ic-pulse ic-d1" cx="48" cy="60" r="2.5"/>
+                            <circle class="ic-pulse ic-d2" cx="42" cy="66" r="2.8"/>
+                            <circle class="ic-pulse ic-d3" cx="80" cy="52" r="3.2"/>
+                            <circle class="ic-pulse ic-d4" cx="85" cy="58" r="2.6"/>
+                            <circle class="ic-pulse ic-d5" cx="78" cy="63" r="2.4"/>
+                            <circle class="ic-pulse ic-d6" cx="60" cy="76" r="3"/>
+                            <circle class="ic-pulse ic-d1" cx="55" cy="81" r="2.2"/>
+                            <circle class="ic-pulse ic-d3" cx="65" cy="81" r="2.2"/>
+                        </g>
+                        <!-- medium surface waves -->
+                        <ellipse class="ic-flick" cx="60" cy="72" rx="28" ry="14"
+                                 fill="none" stroke="#93c5fd" stroke-width="0.6"
+                                 stroke-dasharray="3 4"/>
+                        <!-- drop introduced from above -->
+                        <circle class="ic-bob" cx="60" cy="18" r="3" fill="#a7f3d0"/>
+                        <circle class="ic-bob ic-d3" cx="60" cy="26" r="1.5" fill="#93c5fd"/>
                     </svg>
                 </div>
-                <div>
                     <span class="tag">In vitro</span>
                     <h3>Cellular</h3>
                     <p>Predictions are compared against real cell-based assays from public literature. Pathway activity, gene expression, and cytotoxicity all feed back into the model.</p>
@@ -609,38 +612,36 @@
             <div class="evidence-card">
                 <div class="evidence-icon">
                     <svg viewBox="0 0 120 120">
-                        <!-- soil / grounding baseline -->
-                        <path d="M20,102 Q60,96 100,102" fill="none" stroke="#a7f3d0"
-                              stroke-width="1" opacity="0.5"/>
-                        <path class="ic-flick" d="M30,106 Q60,100 90,106" fill="none" stroke="#4ade80"
-                              stroke-width="0.8" opacity="0.4"/>
-                        <!-- standing figure -->
-                        <circle class="ic-bob" cx="60" cy="26" r="9"
-                                fill="none" stroke="#a7f3d0" stroke-width="1.6"/>
-                        <circle cx="60" cy="26" r="3" fill="#a7f3d0" class="ic-flick"/>
-                        <path class="ic-bob" d="M60,35 L60,72" stroke="#a7f3d0"
-                              stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                        <path class="ic-bob ic-d2" d="M36,52 L84,52" stroke="#a7f3d0"
-                              stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                        <path class="ic-bob ic-d3" d="M60,72 L44,100" stroke="#a7f3d0"
-                              stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                        <path class="ic-bob ic-d4" d="M60,72 L76,100" stroke="#a7f3d0"
-                              stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                        <!-- pulse rings emanating outward -->
-                        <circle class="ic-pulse" cx="60" cy="60" r="30"
+                        <!-- full body silhouette -->
+                        <g fill="none" stroke="#a7f3d0" stroke-width="1.5"
+                           stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="60" cy="22" r="10"/>
+                            <path d="M56 32 L56 38"/>
+                            <path d="M64 32 L64 38"/>
+                            <path d="M56 38 Q34 40 30 52"/>
+                            <path d="M64 38 Q86 40 90 52"/>
+                            <path d="M30 52 Q28 80 40 100"/>
+                            <path d="M90 52 Q92 80 80 100"/>
+                            <path d="M60 38 L60 98"/>
+                            <path d="M30 52 L22 78"/>
+                            <path d="M90 52 L98 78"/>
+                            <path d="M40 100 L38 116"/>
+                            <path d="M80 100 L82 116"/>
+                        </g>
+                        <!-- heartbeat rings -->
+                        <circle class="ic-pulse"      cx="60" cy="60" r="16"
                                 fill="none" stroke="#4ade80" stroke-width="0.9" opacity="0.55"/>
-                        <circle class="ic-pulse ic-d3" cx="60" cy="60" r="42"
-                                fill="none" stroke="#4ade80" stroke-width="0.7" opacity="0.35"/>
-                        <circle class="ic-pulse ic-d5" cx="60" cy="60" r="54"
-                                fill="none" stroke="#34d399" stroke-width="0.5" opacity="0.2"/>
-                        <!-- floating particles -->
-                        <circle class="ic-float" cx="20" cy="30" r="1.6" fill="#a7f3d0" opacity="0.6"/>
-                        <circle class="ic-float ic-d3" cx="100" cy="40" r="1.4" fill="#4ade80" opacity="0.55"/>
-                        <circle class="ic-float ic-d5" cx="24" cy="80" r="1.4" fill="#34d399" opacity="0.5"/>
-                        <circle class="ic-float ic-d2" cx="96" cy="82" r="1.6" fill="#a7f3d0" opacity="0.6"/>
+                        <circle class="ic-pulse ic-d2" cx="60" cy="60" r="24"
+                                fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.3"/>
+                        <circle class="ic-pulse ic-d4" cx="60" cy="60" r="32"
+                                fill="none" stroke="#34d399" stroke-width="0.4" opacity="0.15"/>
+                        <!-- heart core -->
+                        <circle class="ic-flick" cx="60" cy="60" r="3.5" fill="#4ade80"/>
+                        <!-- vital wave above -->
+                        <path class="ic-flick" d="M30 14 L42 14 L46 8 L50 20 L54 14 L90 14"
+                              fill="none" stroke="#4ade80" stroke-width="1" opacity="0.6"/>
                     </svg>
                 </div>
-                <div>
                     <span class="tag">In vivo</span>
                     <h3>Physiological</h3>
                     <p>Protocols are evaluated against animal model studies and human trial data. Where the model predicts an outcome, that outcome is checked against published physiological responses.</p>
