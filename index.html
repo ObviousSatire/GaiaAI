@@ -517,39 +517,22 @@
             that survives all three is worth acting on.
         </p>
 
-        <div class="evidence-grid">
-
-            <div class="evidence-card">
-                <div class="evidence-icon">
-                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 120 120">
-                        <rect x="32" y="32" width="56" height="56" rx="5"
-                              fill="none" stroke="#4ade80" stroke-width="1.4" opacity="0.75"/>
-                        <g fill="none" stroke="#a7f3d0" stroke-width="1">
-                            <path class="ic-pulse"       d="M42 42 L58 42 L58 58 L42 58 Z"/>
-                            <path class="ic-pulse ic-d2" d="M62 42 L78 42 L78 58 L62 58 Z"/>
-                            <path class="ic-pulse ic-d3" d="M42 62 L58 62 L58 78 L42 78 Z"/>
-                            <path class="ic-pulse ic-d4" d="M62 62 L78 62 L78 78 L62 78 Z"/>
-                        </g>
-                        <circle class="ic-bob" cx="60" cy="60" r="4" fill="#4ade80"/>
-                        <circle class="ic-flick" cx="60" cy="60" r="2" fill="#ffffff"/>
-                        <g stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" opacity="0.7">
-                            <line class="ic-flick"       x1="40" y1="20" x2="40" y2="32"/>
-                            <line class="ic-flick ic-d1" x1="60" y1="20" x2="60" y2="32"/>
-                            <line class="ic-flick ic-d2" x1="80" y1="20" x2="80" y2="32"/>
-                            <line class="ic-flick ic-d3" x1="40" y1="88" x2="40" y2="100"/>
-                            <line class="ic-flick ic-d4" x1="60" y1="88" x2="60" y2="100"/>
-                            <line class="ic-flick ic-d5" x1="80" y1="88" x2="80" y2="100"/>
-                            <line class="ic-flick ic-d1" x1="20" y1="40" x2="32" y2="40"/>
-                            <line class="ic-flick ic-d2" x1="20" y1="60" x2="32" y2="60"/>
-                            <line class="ic-flick ic-d4" x1="20" y1="80" x2="32" y2="80"/>
-                            <line class="ic-flick ic-d1" x1="88" y1="40" x2="100" y2="40"/>
-                            <line class="ic-flick ic-d3" x1="88" y1="60" x2="100" y2="60"/>
-                            <line class="ic-flick ic-d5" x1="88" y1="80" x2="100" y2="80"/>
-                        </g>
+        <div class="eco-layers">
+            <div class="eco-layer">
+                <div class="eco-glow eco-glow-green"></div>
+                <div class="eco-icon">
+                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#4ade80" stroke-width="1.3">
+                        <circle cx="32" cy="32" r="22" opacity="0.25"/>
+                        <circle cx="32" cy="32" r="14" opacity="0.5"/>
+                        <circle cx="32" cy="32" r="6" fill="#4ade80" stroke="none" opacity="0.85"/>
+                        <circle cx="32" cy="32" r="24" stroke-dasharray="2 6" opacity="0.35">
+                            <animateTransform attributeName="transform" type="rotate"
+                                from="0 32 32" to="360 32 32" dur="28s" repeatCount="indefinite"/>
+                        </circle>
                     </svg>
                 </div>
-                <div class="evidence-body">
-                    <span class="tag">In silico</span>
+                <div class="eco-body">
+                    <span class="eco-tag">In silico</span>
                     <h3>Computational</h3>
                     <p>Every prediction is stress-tested in pure computation before anything touches a cell. Confidence is estimated from the spread of agreement across independent methods.</p>
                     <ul>
@@ -561,34 +544,25 @@
                 </div>
             </div>
 
-            <div class="evidence-card">
-                <div class="evidence-icon">
-                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 120 120">
-                        <ellipse cx="60" cy="62" rx="48" ry="40"
-                                 fill="none" stroke="#60a5fa" stroke-width="1.4" opacity="0.75"/>
-                        <ellipse cx="60" cy="62" rx="42" ry="34"
-                                 fill="none" stroke="#93c5fd" stroke-width="0.7" opacity="0.4"/>
-                        <ellipse cx="60" cy="68" rx="36" ry="22" fill="#60a5fa" opacity="0.08"/>
-                        <g fill="#60a5fa">
-                            <circle class="ic-pulse"       cx="42" cy="55" r="3.5"/>
-                            <circle class="ic-pulse ic-d1" cx="48" cy="60" r="2.5"/>
-                            <circle class="ic-pulse ic-d2" cx="42" cy="66" r="2.8"/>
-                            <circle class="ic-pulse ic-d3" cx="80" cy="52" r="3.2"/>
-                            <circle class="ic-pulse ic-d4" cx="85" cy="58" r="2.6"/>
-                            <circle class="ic-pulse ic-d5" cx="78" cy="63" r="2.4"/>
-                            <circle class="ic-pulse ic-d6" cx="60" cy="76" r="3"/>
-                            <circle class="ic-pulse ic-d1" cx="55" cy="81" r="2.2"/>
-                            <circle class="ic-pulse ic-d3" cx="65" cy="81" r="2.2"/>
-                        </g>
-                        <ellipse class="ic-flick" cx="60" cy="72" rx="28" ry="14"
-                                 fill="none" stroke="#93c5fd" stroke-width="0.6"
-                                 stroke-dasharray="3 4"/>
-                        <circle class="ic-bob" cx="60" cy="18" r="3" fill="#a7f3d0"/>
-                        <circle class="ic-bob ic-d3" cx="60" cy="26" r="1.5" fill="#93c5fd"/>
+            <div class="eco-layer">
+                <div class="eco-glow eco-glow-blue"></div>
+                <div class="eco-icon">
+                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#60a5fa" stroke-width="1.3">
+                        <circle cx="32" cy="32" r="22" opacity="0.25"/>
+                        <circle cx="32" cy="32" r="9" fill="#60a5fa" stroke="none" opacity="0.35"/>
+                        <circle cx="24" cy="24" r="2.4" fill="#60a5fa" stroke="none">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="40" cy="30" r="2.4" fill="#60a5fa" stroke="none">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="30" cy="42" r="2" fill="#60a5fa" stroke="none">
+                            <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" begin="2s" repeatCount="indefinite"/>
+                        </circle>
                     </svg>
                 </div>
-                <div class="evidence-body">
-                    <span class="tag">In vitro</span>
+                <div class="eco-body">
+                    <span class="eco-tag">In vitro</span>
                     <h3>Cellular</h3>
                     <p>Predictions are compared against real cell-based assays from public literature. Pathway activity, gene expression, and cytotoxicity all feed back into the model.</p>
                     <ul>
@@ -600,28 +574,17 @@
                 </div>
             </div>
 
-            <div class="evidence-card">
-                <div class="evidence-icon">
-                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 120 120">
-                        <g fill="none" stroke="#a7f3d0" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M 60 20 A 40 40 0 1 1 20 60 A 30 30 0 1 1 50 30 A 20 20 0 1 1 30 50 A 12 12 0 1 1 42 42 A 6 6 0 1 1 36 48"
-                                  stroke-width="1.8" opacity="0.9"/>
-                            <path d="M 60 20 L 72 32" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 90 60 L 76 68" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 60 100 L 52 88" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 20 60 L 34 52" stroke-width="1.2" opacity="0.7"/>
-                        </g>
-                        <circle class="ic-pulse" cx="39" cy="45" r="4" fill="#4ade80" opacity="0.9"/>
-                        <circle class="ic-pulse ic-d2" cx="39" cy="45" r="8"
-                                fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.5"/>
-                        <circle class="ic-flick" cx="72" cy="32" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d1" cx="76" cy="68" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d2" cx="52" cy="88" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d3" cx="34" cy="52" r="2.5" fill="#a7f3d0"/>
+            <div class="eco-layer">
+                <div class="eco-glow eco-glow-mint"></div>
+                <div class="eco-icon">
+                    <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="#a7f3d0" stroke-width="1.3">
+                        <path d="M14,42 Q18,22 32,26 Q44,18 52,26 Q58,34 50,44 Q40,50 32,46 Q22,50 14,42 Z" opacity="0.9"/>
+                        <circle cx="26" cy="32" r="1.8" fill="#a7f3d0" stroke="none"/>
+                        <path d="M20,50 Q32,54 44,50" opacity="0.5"/>
                     </svg>
                 </div>
-                <div class="evidence-body">
-                    <span class="tag">In vivo</span>
+                <div class="eco-body">
+                    <span class="eco-tag">In vivo</span>
                     <h3>Physiological</h3>
                     <p>Protocols are evaluated against animal model studies and human trial data. Where the model predicts an outcome, that outcome is checked against published physiological responses.</p>
                     <ul>
@@ -632,79 +595,70 @@
                     </ul>
                 </div>
             </div>
-
         </div>
 
         <div class="cross-cut">
             <h3>Cross-cutting validation</h3>
             <div class="cross-grid">
                 <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg viewBox="0 0 64 64" class="icon-leaf">
-                            <g fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
-                                <path d="M32 56 L32 20"/>
-                                <path d="M32 20 L18 8"/>
-                                <path d="M32 20 L46 8"/>
-                                <path d="M32 36 L20 26"/>
-                                <path d="M32 36 L44 26"/>
-                            </g>
-                            <g fill="#a7f3d0">
-                                <circle cx="18" cy="8" r="3.2" class="icon-dot"/>
-                                <circle cx="46" cy="8" r="3.2" class="icon-dot" style="animation-delay:-0.5s"/>
-                                <circle cx="20" cy="26" r="2.8" class="icon-dot" style="animation-delay:-1s"/>
-                                <circle cx="44" cy="26" r="2.8" class="icon-dot" style="animation-delay:-1.5s"/>
-                                <circle cx="32" cy="56" r="3" fill="#34d399" class="icon-dot" style="animation-delay:-2s"/>
-                            </g>
-                        </svg>
-                    </div>
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
+        <path d="M32 56 L32 20"/>
+        <path d="M32 20 L18 8"/>
+        <path d="M32 20 L46 8"/>
+        <path d="M32 36 L20 26"/>
+        <path d="M32 36 L44 26"/>
+      </g>
+      <g fill="#a7f3d0">
+        <circle cx="18" cy="8" r="3.2" class="icon-dot"/>
+        <circle cx="46" cy="8" r="3.2" class="icon-dot" style="animation-delay:-0.5s"/>
+        <circle cx="20" cy="26" r="2.8" class="icon-dot" style="animation-delay:-1s"/>
+        <circle cx="44" cy="26" r="2.8" class="icon-dot" style="animation-delay:-1.5s"/>
+        <circle cx="32" cy="56" r="3" fill="#34d399" class="icon-dot" style="animation-delay:-2s"/>
+      </g>
+    </svg></div>
                     <div class="cross-title">Cross-species</div>
                     <div class="cross-desc">Patterns that hold across evolutionary distance are more likely to reflect real biology.</div>
                 </div>
                 <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg viewBox="0 0 64 64" class="icon-leaf">
-                            <g fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round">
-                                <ellipse cx="32" cy="42" rx="14" ry="11" class="icon-pulse"/>
-                                <circle cx="20" cy="24" r="5"/>
-                                <circle cx="30" cy="19" r="5"/>
-                                <circle cx="40" cy="20" r="5"/>
-                                <circle cx="48" cy="28" r="4.5"/>
-                            </g>
-                        </svg>
-                    </div>
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round">
+        <ellipse cx="32" cy="42" rx="14" ry="11" class="icon-pulse"/>
+        <circle cx="20" cy="24" r="5"/>
+        <circle cx="30" cy="19" r="5"/>
+        <circle cx="40" cy="20" r="5"/>
+        <circle cx="48" cy="28" r="4.5"/>
+      </g>
+    </svg></div>
                     <div class="cross-title">Animal models</div>
                     <div class="cross-desc">Predictions checked against real physiological responses in established model systems.</div>
                 </div>
                 <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg viewBox="0 0 64 64" class="icon-leaf">
-                            <g fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
-                                <circle cx="32" cy="16" r="6" class="icon-pulse"/>
-                                <path d="M32 24 L32 44"/>
-                                <path d="M18 32 L46 32"/>
-                                <path d="M32 44 L22 58"/>
-                                <path d="M32 44 L42 58"/>
-                            </g>
-                            <circle cx="32" cy="16" r="2" fill="#a7f3d0" class="icon-dot"/>
-                        </svg>
-                    </div>
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="32" cy="16" r="6" class="icon-pulse"/>
+        <path d="M32 24 L32 44"/>
+        <path d="M18 32 L46 32"/>
+        <path d="M32 44 L22 58"/>
+        <path d="M32 44 L42 58"/>
+      </g>
+      <circle cx="32" cy="16" r="2" fill="#a7f3d0" class="icon-dot"/>
+    </svg></div>
                     <div class="cross-title">Human trial models</div>
                     <div class="cross-desc">Protocols evaluated against clinical data — dosing, outcomes, adverse events, timing.</div>
                 </div>
                 <div class="cross-item">
-                    <div class="cross-icon">
-                        <svg viewBox="0 0 64 64" class="icon-leaf">
-                            <g fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round">
-                                <path d="M14 14 L50 14 L38 32 L38 50 L26 50 L26 32 Z" class="icon-pulse"/>
-                            </g>
-                            <g fill="#4ade80">
-                                <circle cx="20" cy="22" r="2" class="icon-dot"/>
-                                <circle cx="32" cy="24" r="2" class="icon-dot" style="animation-delay:-0.4s"/>
-                                <circle cx="44" cy="22" r="2" class="icon-dot" style="animation-delay:-0.8s"/>
-                                <circle cx="32" cy="44" r="2.4" fill="#a7f3d0" class="icon-dot" style="animation-delay:-1.2s"/>
-                            </g>
-                        </svg>
-                    </div>
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round">
+        <path d="M14 14 L50 14 L38 32 L38 50 L26 50 L26 32 Z" class="icon-pulse"/>
+      </g>
+      <g fill="#4ade80">
+        <circle cx="20" cy="22" r="2" class="icon-dot"/>
+        <circle cx="32" cy="24" r="2" class="icon-dot" style="animation-delay:-0.4s"/>
+        <circle cx="44" cy="22" r="2" class="icon-dot" style="animation-delay:-0.8s"/>
+        <circle cx="32" cy="44" r="2.4" fill="#a7f3d0" class="icon-dot" style="animation-delay:-1.2s"/>
+      </g>
+    </svg></div>
                     <div class="cross-title">Held-out evaluation</div>
                     <div class="cross-desc">Tested on chromosomes, diseases, and compounds never seen during training.</div>
                 </div>
