@@ -522,19 +522,9 @@
                 <div class="eco-glow eco-glow-green"></div>
                 <div class="eco-icon">
                     <svg viewBox="0 0 120 120" width="100" height="100" preserveAspectRatio="xMidYMid meet">
-    <defs>
-        <radialGradient id="chipGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#4ade80" stop-opacity="0.35"/>
-            <stop offset="55%" stop-color="#4ade80" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#4ade80" stop-opacity="0"/>
-        </radialGradient>
-    </defs>
-
-    <!-- soft glow behind chip -->
-    <circle cx="60" cy="60" r="58" fill="url(#chipGlow)">
-        <animate attributeName="r" values="52;60;52" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
-    </circle>
+    <!-- chip body — solid square back -->
+    <rect x="30" y="30" width="60" height="60" rx="6"
+          fill="#0e1a14" stroke="#4ade80" stroke-width="1.8"/>
 
     <!-- inner pads -->
     <g fill="#a7f3d0" opacity="0.9">
@@ -563,7 +553,7 @@
         <animate attributeName="opacity" values="0;1;1;0;0" dur="1.4s" repeatCount="indefinite" begin="1.05s"/>
     </path>
 
-    <!-- center core with ring -->
+    <!-- center core -->
     <circle cx="60" cy="60" r="4" fill="#4ade80" opacity="0.5">
         <animate attributeName="r" values="3;11" dur="1.8s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.5;0" dur="1.8s" repeatCount="indefinite"/>
@@ -606,43 +596,55 @@
                 <div class="eco-glow eco-glow-blue"></div>
                 <div class="eco-icon">
                     <svg viewBox="0 0 120 120" width="100" height="100" preserveAspectRatio="xMidYMid meet">
-    <!-- main bubble -->
-    <circle cx="60" cy="60" r="40" fill="#60a5fa" opacity="0.08"/>
-    <circle cx="60" cy="60" r="40" fill="none" stroke="#60a5fa" stroke-width="1.6">
-        <animate attributeName="r" values="40;38;40" dur="4s" repeatCount="indefinite"/>
+    <!-- central nucleus -->
+    <circle cx="60" cy="60" r="8" fill="#60a5fa" opacity="0.35"/>
+    <circle cx="60" cy="60" r="8" fill="none" stroke="#60a5fa" stroke-width="1.4"/>
+    <circle cx="60" cy="60" r="3.5" fill="#ffffff">
+        <animate attributeName="r" values="3;4.5;3" dur="2s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- highlight arc (bubble shine) -->
-    <path d="M 34 42 Q 30 54 36 66" fill="none" stroke="#93c5fd" stroke-width="1.4" opacity="0.75" stroke-linecap="round"/>
-    <path d="M 38 36 Q 34 44 34 54" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+    <!-- orbital ring 1 (horizontal) -->
+    <ellipse cx="60" cy="60" rx="46" ry="14"
+             fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.65"/>
+    <!-- orbital ring 2 (vertical) -->
+    <ellipse cx="60" cy="60" rx="14" ry="46"
+             fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.6"/>
+    <!-- orbital ring 3 (diagonal) -->
+    <ellipse cx="60" cy="60" rx="46" ry="14"
+             fill="none" stroke="#a7f3d0" stroke-width="1" opacity="0.5"
+             transform="rotate(-60 60 60)"/>
 
-    <!-- small inner circles (bubble clusters) -->
-    <circle cx="74" cy="52" r="10" fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.7">
-        <animate attributeName="r" values="10;11;10" dur="3s" repeatCount="indefinite"/>
+    <!-- electrons orbiting -->
+    <circle r="3" fill="#4ade80">
+        <animateMotion dur="4s" repeatCount="indefinite"
+            path="M 14 60 A 46 14 0 1 1 13.9 60 Z"/>
     </circle>
-    <circle cx="46" cy="76" r="7" fill="none" stroke="#a7f3d0" stroke-width="0.9" opacity="0.7">
-        <animate attributeName="r" values="7;8;7" dur="3.5s" repeatCount="indefinite"/>
+    <circle r="3" fill="#93c5fd">
+        <animateMotion dur="5s" repeatCount="indefinite"
+            path="M 60 14 A 14 46 0 1 1 59.9 14 Z"/>
     </circle>
-    <circle cx="74" cy="78" r="5" fill="none" stroke="#93c5fd" stroke-width="0.8" opacity="0.6">
-        <animate attributeName="r" values="5;6;5" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="46" cy="46" r="4" fill="none" stroke="#60a5fa" stroke-width="0.7" opacity="0.6">
-        <animate attributeName="r" values="4;5;4" dur="3.8s" repeatCount="indefinite"/>
-    </circle>
-
-    <!-- orbiting micro-bubbles (like the cell had, but simpler) -->
-    <circle r="2" fill="#93c5fd">
-        <animateMotion dur="8s" repeatCount="indefinite"
-            path="M 60 20 A 40 40 0 1 1 59.9 20 Z"/>
-    </circle>
-    <circle r="1.6" fill="#a7f3d0">
-        <animateMotion dur="12s" repeatCount="indefinite"
-            path="M 60 24 A 36 36 0 1 0 60.1 24 Z"/>
+    <circle r="3" fill="#a7f3d0">
+        <animateMotion dur="6s" repeatCount="indefinite"
+            path="M 20 94 L 100 26"/>
     </circle>
 
-    <!-- subtle vertical wobble -->
-    <animateTransform attributeName="transform" type="translate"
-        values="0 0; 0 -2; 0 0; 0 2; 0 0" dur="6s" repeatCount="indefinite"/>
+    <!-- bonded atoms (small dots around the ring) -->
+    <g fill="#a7f3d0" opacity="0.85">
+        <circle cx="60" cy="14" r="2.5"/>
+        <circle cx="60" cy="106" r="2.5"/>
+        <circle cx="14" cy="60" r="2.5"/>
+        <circle cx="106" cy="60" r="2.5"/>
+    </g>
+
+    <!-- electron sparks leaving the nucleus -->
+    <circle r="1.5" fill="#ffffff">
+        <animateMotion dur="2.4s" repeatCount="indefinite" path="M 60 60 L 30 30"/>
+        <animate attributeName="opacity" values="1;1;0" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#ffffff">
+        <animateMotion dur="2.4s" repeatCount="indefinite" begin="-1.2s" path="M 60 60 L 90 90"/>
+        <animate attributeName="opacity" values="1;1;0" dur="2.4s" begin="-1.2s" repeatCount="indefinite"/>
+    </circle>
 </svg>
                 </div>
                 <div class="eco-body">
