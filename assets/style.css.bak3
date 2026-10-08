@@ -4747,6 +4747,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     width: 100%;
 }
 
+/* Left and right fade edges — clip the scrolling text nicely */
 .reading-ticker::before,
 .reading-ticker::after {
     content: '';
@@ -4766,33 +4767,16 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     background: linear-gradient(270deg, var(--bg) 10%, transparent);
 }
 
-.ticker-track {
-    display: flex;
-    width: max-content;
-    white-space: nowrap;
-    animation: tickerScroll 60s linear infinite;
-    will-change: transform;
-}
 
-.ticker-track:hover {
-    animation-play-state: paused;
-}
+
+
 
 @keyframes tickerScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-.ticker-item {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.85rem;
-    color: var(--fg-dim);
-    font-family: 'SF Mono', ui-monospace, monospace;
-    letter-spacing: 0.03em;
-    flex-shrink: 0;
-    margin-right: 48px;
-}
+
 
 .ticker-item .dot {
     display: inline-block;
@@ -4803,7 +4787,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
     animation: tickerDot 2s ease-in-out infinite;
     flex-shrink: 0;
-    margin-right: 10px;
 }
 .ticker-item:nth-child(2n) .dot { animation-delay: -0.5s; }
 .ticker-item:nth-child(3n) .dot { animation-delay: -1s; }
@@ -4817,12 +4800,35 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 .ticker-item .label {
     color: var(--accent4);
     font-weight: 500;
-    margin-right: 10px;
 }
 
 @media (max-width: 640px) {
     .reading-ticker::before,
     .reading-ticker::after { width: 60px; }
-    .ticker-item { font-size: 0.78rem; margin-right: 32px; }
-    .ticker-track { animation-duration: 40s; }
+    
+    
+}
+
+/* Ticker — clean layout, uniform spacing, no seam gap */
+.ticker-track {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    animation: tickerScroll 60s linear infinite;
+    will-change: transform;
+    padding: 0;
+    gap: 0;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    font-family: 'SF Mono', ui-monospace, monospace;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    margin-right: 48px;
+    padding: 0;
 }
