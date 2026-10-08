@@ -2558,86 +2558,6 @@ footer .footer-links {
 
 
 /* ============================================================
-   READING TICKER — under web graph
-   ============================================================ */
-.reading-ticker {
-    margin-top: 40px;
-    padding: 18px 0;
-    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.05), transparent);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    overflow: hidden;
-    position: relative;
-}
-
-.reading-ticker::before,
-.reading-ticker::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
-}
-.reading-ticker::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--bg), transparent);
-}
-.reading-ticker::after {
-    right: 0;
-    background: linear-gradient(270deg, var(--bg), transparent);
-}
-
-.ticker-track {
-    display: flex;
-    gap: 48px;
-    white-space: nowrap;
-    animation: tickerScroll 45s linear infinite;
-    padding-left: 100px;
-}
-
-.ticker-track:hover { animation-play-state: paused; }
-
-@keyframes tickerScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.ticker-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--fg-dim);
-    font-family: 'SF Mono', monospace;
-    letter-spacing: 0.03em;
-}
-
-.ticker-item .dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
-    animation: tickerDot 2s ease-in-out infinite;
-}
-.ticker-item:nth-child(2n) .dot { animation-delay: -0.5s; }
-.ticker-item:nth-child(3n) .dot { animation-delay: -1s; }
-.ticker-item:nth-child(5n) .dot { animation-delay: -1.5s; }
-
-@keyframes tickerDot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%      { opacity: 0.4; transform: scale(1.4); }
-}
-
-.ticker-item .label {
-    color: var(--accent4);
-    font-weight: 500;
-}
-
-/* ============================================================
    USE IT — footer CTA strip
    ============================================================ */
 .use-it {
@@ -4811,4 +4731,97 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     }
     .evidence-icon { width: 80px; height: 80px; }
     .evidence-card ul { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   READING TICKER — under web graph
+   ============================================================ */
+.reading-ticker {
+    margin-top: 40px;
+    padding: 18px 0;
+    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.04), transparent);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Left and right fade edges — clip the scrolling text nicely */
+.reading-ticker::before,
+.reading-ticker::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    z-index: 2;
+    pointer-events: none;
+}
+.reading-ticker::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg) 10%, transparent);
+}
+.reading-ticker::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg) 10%, transparent);
+}
+
+.ticker-track {
+    display: inline-flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: tickerScroll 45s linear infinite;
+    padding-left: 0;
+    /* Track shifts 50% of its own width because we duplicate the list */
+    will-change: transform;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+@keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    font-family: 'SF Mono', ui-monospace, monospace;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+.ticker-item .dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+    animation: tickerDot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+.ticker-item:nth-child(2n) .dot { animation-delay: -0.5s; }
+.ticker-item:nth-child(3n) .dot { animation-delay: -1s; }
+.ticker-item:nth-child(5n) .dot { animation-delay: -1.5s; }
+
+@keyframes tickerDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.4; transform: scale(1.4); }
+}
+
+.ticker-item .label {
+    color: var(--accent4);
+    font-weight: 500;
+}
+
+@media (max-width: 640px) {
+    .reading-ticker::before,
+    .reading-ticker::after { width: 60px; }
+    .ticker-track { gap: 32px; animation-duration: 30s; }
+    .ticker-item { font-size: 0.78rem; }
 }

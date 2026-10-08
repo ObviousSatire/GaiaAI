@@ -4767,33 +4767,16 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     background: linear-gradient(270deg, var(--bg) 10%, transparent);
 }
 
-.ticker-track {
-    display: inline-flex;
-    gap: 48px;
-    white-space: nowrap;
-    animation: tickerScroll 45s linear infinite;
-    padding-left: 0;
-    /* Track shifts 50% of its own width because we duplicate the list */
-    will-change: transform;
-}
 
-.ticker-track:hover { animation-play-state: paused; }
+
+
 
 @keyframes tickerScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-.ticker-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--fg-dim);
-    font-family: 'SF Mono', ui-monospace, monospace;
-    letter-spacing: 0.03em;
-    flex-shrink: 0;
-}
+
 
 .ticker-item .dot {
     display: inline-block;
@@ -4822,6 +4805,30 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 @media (max-width: 640px) {
     .reading-ticker::before,
     .reading-ticker::after { width: 60px; }
-    .ticker-track { gap: 32px; animation-duration: 30s; }
-    .ticker-item { font-size: 0.78rem; }
+    
+    
+}
+
+/* Ticker — clean layout, uniform spacing, no seam gap */
+.ticker-track {
+    display: flex;
+    width: max-content;
+    white-space: nowrap;
+    animation: tickerScroll 60s linear infinite;
+    will-change: transform;
+    padding: 0;
+    gap: 0;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    font-family: 'SF Mono', ui-monospace, monospace;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+    margin-right: 48px;
+    padding: 0;
 }
