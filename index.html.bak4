@@ -612,44 +612,34 @@
             <div class="evidence-card">
                 <div class="evidence-icon">
                     <svg viewBox="0 0 120 120">
-                        <!-- Nautilus spiral — golden ratio chambers, natural organism form -->
-                        <g fill="none" stroke="#a7f3d0" stroke-linecap="round" stroke-linejoin="round">
-                            <!-- Outer spiral shell -->
-                            <path d="M 60 20
-                                     A 40 40 0 1 1 20 60
-                                     A 30 30 0 1 1 50 30
-                                     A 20 20 0 1 1 30 50
-                                     A 12 12 0 1 1 42 42
-                                     A 6 6 0 1 1 36 48"
-                                  stroke-width="1.8" opacity="0.9"/>
-                            <!-- Chamber dividers -->
-                            <path d="M 60 20 L 72 32" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 90 60 L 76 68" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 60 100 L 52 88" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 20 60 L 34 52" stroke-width="1.2" opacity="0.7"/>
-                            <path d="M 40 20 L 44 34" stroke-width="1" opacity="0.6"/>
-                            <path d="M 100 40 L 88 46" stroke-width="1" opacity="0.6"/>
+                        <!-- full body silhouette -->
+                        <g fill="none" stroke="#a7f3d0" stroke-width="1.5"
+                           stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="60" cy="22" r="10"/>
+                            <path d="M56 32 L56 38"/>
+                            <path d="M64 32 L64 38"/>
+                            <path d="M56 38 Q34 40 30 52"/>
+                            <path d="M64 38 Q86 40 90 52"/>
+                            <path d="M30 52 Q28 80 40 100"/>
+                            <path d="M90 52 Q92 80 80 100"/>
+                            <path d="M60 38 L60 98"/>
+                            <path d="M30 52 L22 78"/>
+                            <path d="M90 52 L98 78"/>
+                            <path d="M40 100 L38 116"/>
+                            <path d="M80 100 L82 116"/>
                         </g>
-
-                        <!-- Core glow inside the innermost chamber -->
-                        <circle class="ic-pulse" cx="39" cy="45" r="4"
-                                fill="#4ade80" opacity="0.9"/>
-                        <circle class="ic-pulse ic-d2" cx="39" cy="45" r="8"
-                                fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.5"/>
-                        <circle class="ic-pulse ic-d4" cx="39" cy="45" r="14"
-                                fill="none" stroke="#34d399" stroke-width="0.4" opacity="0.25"/>
-
-                        <!-- Pulsing chambers -->
-                        <circle class="ic-flick" cx="72" cy="32" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d1" cx="76" cy="68" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d2" cx="52" cy="88" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d3" cx="34" cy="52" r="2.5" fill="#a7f3d0"/>
-                        <circle class="ic-flick ic-d4" cx="44" cy="34" r="2" fill="#93c5fd"/>
-                        <circle class="ic-flick ic-d5" cx="88" cy="46" r="2" fill="#93c5fd"/>
-
-                        <!-- Vital wave below -->
-                        <path class="ic-flick ic-d2" d="M20 108 L40 108 L46 100 L52 116 L58 108 L100 108"
-                              fill="none" stroke="#4ade80" stroke-width="1" opacity="0.55"/>
+                        <!-- heartbeat rings -->
+                        <circle class="ic-pulse"      cx="60" cy="60" r="16"
+                                fill="none" stroke="#4ade80" stroke-width="0.9" opacity="0.55"/>
+                        <circle class="ic-pulse ic-d2" cx="60" cy="60" r="24"
+                                fill="none" stroke="#4ade80" stroke-width="0.6" opacity="0.3"/>
+                        <circle class="ic-pulse ic-d4" cx="60" cy="60" r="32"
+                                fill="none" stroke="#34d399" stroke-width="0.4" opacity="0.15"/>
+                        <!-- heart core -->
+                        <circle class="ic-flick" cx="60" cy="60" r="3.5" fill="#4ade80"/>
+                        <!-- vital wave above -->
+                        <path class="ic-flick" d="M30 14 L42 14 L46 8 L50 20 L54 14 L90 14"
+                              fill="none" stroke="#4ade80" stroke-width="1" opacity="0.6"/>
                     </svg>
                 </div>
                     <span class="tag">In vivo</span>
