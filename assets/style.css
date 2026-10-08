@@ -2100,7 +2100,10 @@ footer .footer-links {
     flex-shrink: 0;
     width: 7px;
     height: 7px;
-
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
 }
 
 .learn-card .step-list strong {
@@ -2389,6 +2392,33 @@ footer .footer-links {
 /* ============================================================
    EVIDENCE — three pillars
    ============================================================ */
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Outputs strip */
@@ -2435,7 +2465,33 @@ footer .footer-links {
 }
 
 /* Evidence cross-cutting validation */
+.evidence-cross {
+    margin-top: 56px;
+    padding: 40px 36px;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.04), rgba(96, 165, 250, 0.04));
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    border-radius: 20px;
+}
 
+.evidence-cross h3 {
+    font-size: 1.25rem;
+    color: var(--accent4);
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+
+
+.cross-item:hover 
+
+
+/* ============================================================
+   USE IT — footer CTA strip
+   ============================================================ */
+.use-it {
+    padding: 100px 0 80px;
+    border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, transparent, rgba(74, 222, 128, 0.03));
+}
 
 .use-it h2 {
     font-size: 2rem;
@@ -2600,7 +2656,33 @@ footer .footer-links {
 /* ============================================================
    EVIDENCE CROSS — integrated as a footer to the section
    ============================================================ */
-
+.evidence-cross {
+    background: transparent;
+    border: none;
+    padding: 40px 0 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+}
+.evidence-cross h3 {
+    text-align: center;
+    margin-bottom: 32px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+}
+.evidence-cross h3::before,
+.evidence-cross h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+.evidence-cross h3::before { right: 100%; }
+.evidence-cross h3::after  { left: 100%; }
 
 /* ============================================================
    HERO — more motion
@@ -2647,7 +2729,9 @@ section.visible .capability:nth-child(8) { animation-delay: 0.4s; }
 }
 
 section.visible 
-
+section.visible .evidence-card:nth-child(1) { animation-delay: 0.05s; }
+section.visible .evidence-card:nth-child(2) { animation-delay: 0.15s; }
+section.visible .evidence-card:nth-child(3) { animation-delay: 0.25s; }
 
 section.visible .learn-card {
     animation: capFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
@@ -2850,7 +2934,10 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     flex-shrink: 0;
     width: 8px;
     height: 8px;
-
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
 }
 
 .learn-copy ul li strong {
@@ -3731,9 +3818,9 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     
     
     
-    
-    
-    
+    .cross-grid div { display: flex; flex-direction: column; gap: 4px; }
+    .cross-grid strong { font-size: 0.9rem; color: #a7f3d0; font-weight: 600; }
+    .cross-grid span { font-size: 0.82rem; color: #94a3b8; line-height: 1.55; }
     
     
     .source-grid {
@@ -4237,47 +4324,163 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* ============================================================
    CROSS-CUTTING VALIDATION — floating nature (final)
    ============================================================ */
+.cross-cut {
+    margin-top: 88px;
+}
+.cross-cut h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    color: #f1f5f9;
+    margin: 0 0 64px;
+    text-align: center;
+    position: relative;
+}
+.cross-cut h3::before,
+.cross-cut h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 22%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(74,222,128,0.5) 50%, transparent 100%);
+}
+.cross-cut h3::before { left: 0; }
+.cross-cut h3::after  { right: 0; transform: scaleX(-1); }
 
-
+.cross-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 0;
+}
+.cross-item {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+.cross-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    width: 180px; height: 180px;
+    margin-left: -90px;
+    margin-top: -20px;
+    background: radial-gradient(circle, rgba(74,222,128,0.15) 0%, rgba(74,222,128,0) 70%);
+    filter: blur(40px);
+    animation: crossFloat 12s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+.cross-item:nth-child(2)::before {
+    background: radial-gradient(circle, rgba(96,165,250,0.12) 0%, rgba(96,165,250,0) 70%);
+    animation-delay: -3s;
+}
+.cross-item:nth-child(3)::before {
+    background: radial-gradient(circle, rgba(167,243,208,0.15) 0%, rgba(167,243,208,0) 70%);
+    animation-delay: -6s;
+}
+.cross-item:nth-child(4)::before {
+    background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, rgba(52,211,153,0) 70%);
+    animation-delay: -9s;
+}
 @keyframes crossFloat {
     0%   { transform: translate3d(0,0,0) scale(1); opacity: 0.7; }
     100% { transform: translate3d(15px,-20px,0) scale(1.2); opacity: 1; }
 }
 
-
+.cross-icon {
+    width: 96px; height: 96px;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 1;
+    animation: iconBob 8s ease-in-out infinite;
+}
+.cross-item:nth-child(2) .cross-icon { animation-delay: -2s; }
+.cross-item:nth-child(3) .cross-icon { animation-delay: -4s; }
+.cross-item:nth-child(4) .cross-icon { animation-delay: -6s; }
 @keyframes iconBob {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-12px); }
 }
-
-
+.cross-icon svg {
+    width: 100%; height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 0 14px rgba(74,222,128,0.45));
+}
+.cross-icon .icon-leaf {
+    transform-origin: center;
+    animation: leafSway 6s ease-in-out infinite;
+}
 @keyframes leafSway {
     0%, 100% { transform: rotate(-3deg) scale(1); }
     50%      { transform: rotate(3deg)  scale(1.06); }
 }
-
+.cross-icon .icon-pulse {
+    transform-origin: center;
+    /* transform-box removed */
+    animation: iconPulse 3.5s ease-in-out infinite;
+}
 @keyframes iconPulse {
     0%, 100% { opacity: 0.5; transform: scale(0.9); }
     50%      { opacity: 1;   transform: scale(1.18); }
 }
-
+.cross-icon .icon-dot {
+    transform-origin: center;
+    /* transform-box removed */
+    animation: iconDot 2.5s ease-in-out infinite;
+}
 @keyframes iconDot {
     0%, 100% { opacity: 0.4; }
     50%      { opacity: 1; }
 }
 
-
+.cross-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+}
+.cross-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #94a3b8;
+    margin: 0 auto;
+    max-width: 220px;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+}
 @media (max-width: 900px) {
-    
+    .cross-grid { grid-template-columns: repeat(2, 1fr); gap: 56px 32px; }
 }
 @media (max-width: 520px) {
-    
-    
+    .cross-grid { grid-template-columns: 1fr; gap: 56px; }
+    .cross-icon { width: 80px; height: 80px; }
 }
 
 /* ============================================================
    EVIDENCE — layered nature panels (v2)
    ============================================================ */
+.evidence-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 56px;
+}
+
+
 
 
 /* Drifting nature glow behind each panel */
@@ -4297,9 +4500,10 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 /* Move card content above the glow */
-
+.evidence-card > * { position: relative; z-index: 1; }
 
 /* Complex animated nature icon column */
+
 
 
 /* Shared icon animation hooks */
@@ -4339,6 +4543,18 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 /* Header row: tag + title on same line */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 780px) {
@@ -4450,30 +4666,17 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* ============================================================
    EVIDENCE — clean final layout
    ============================================================ */
-
-
-@media (max-width: 780px) {
-    #evidence 
-    #evidence .evidence-icon,
-    #evidence 
-    #evidence 
-}
-
-/* ============================================================
-   EVIDENCE — single clean layout
-   ============================================================ */
 #evidence .evidence-grid {
     display: flex;
     flex-direction: column;
     gap: 24px;
     margin-top: 56px;
 }
-
 #evidence .evidence-card {
     display: grid;
     grid-template-columns: 140px 1fr;
     gap: 36px;
-    align-items: center;
+    align-items: start;
     padding: 40px 38px;
     background: linear-gradient(160deg, rgba(8,18,14,0.55) 0%, rgba(13,26,20,0.35) 100%);
     border: 1px solid rgba(74,222,128,0.12);
@@ -4481,7 +4684,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     position: relative;
     overflow: visible;
 }
-
 #evidence .evidence-icon {
     width: 120px;
     height: 120px;
@@ -4490,9 +4692,8 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-self: center;
+    align-self: center;
 }
-
 #evidence .evidence-icon svg {
     width: 120px;
     height: 120px;
@@ -4500,11 +4701,9 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     overflow: visible;
     filter: drop-shadow(0 0 12px rgba(74,222,128,0.35));
 }
-
 #evidence .evidence-body {
     min-width: 0;
 }
-
 #evidence .evidence-body .tag {
     display: inline-block;
     font-family: ui-monospace, monospace;
@@ -4518,7 +4717,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     border-radius: 999px;
     margin-bottom: 16px;
 }
-
 #evidence .evidence-body h3 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.5rem;
@@ -4528,7 +4726,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     margin: 0 0 14px;
     line-height: 1.2;
 }
-
 #evidence .evidence-body > p {
     font-size: 0.98rem;
     line-height: 1.75;
@@ -4536,7 +4733,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     margin: 0 0 24px;
     font-weight: 300;
 }
-
 #evidence .evidence-body ul {
     list-style: none;
     padding: 0;
@@ -4546,8 +4742,9 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px 32px;
+    background: none;
+    border-radius: 0;
 }
-
 #evidence .evidence-body ul li {
     display: flex;
     align-items: flex-start;
@@ -4555,28 +4752,23 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     font-size: 0.88rem;
     line-height: 1.55;
     color: #94a3b8;
-    position: relative;
-    padding-left: 18px;
+    background: none;
 }
-
 #evidence .evidence-body ul li::before {
     content: '';
-    position: absolute;
-    left: 0;
-    top: 0.55em;
+    flex-shrink: 0;
     width: 6px;
     height: 6px;
     background: #4ade80;
     border-radius: 50%;
+    margin-top: 8px;
     box-shadow: 0 0 10px rgba(74,222,128,0.8);
 }
-
 #evidence .evidence-body ul li strong {
     color: #a7f3d0;
     font-weight: 500;
     margin-right: 4px;
 }
-
 @media (max-width: 780px) {
     #evidence .evidence-card {
         grid-template-columns: 1fr;
@@ -4590,7 +4782,5 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
         min-width: 90px;
         max-width: 90px;
     }
-    #evidence .evidence-body ul {
-        grid-template-columns: 1fr;
-    }
+    #evidence .evidence-body ul { grid-template-columns: 1fr; }
 }
