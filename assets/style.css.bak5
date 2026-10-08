@@ -4816,62 +4816,24 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     .ticker-item { font-size: 0.78rem; margin-right: 32px; }
     .ticker-track { animation-duration: 40s; }
 }
-
-
-@media (max-width: 780px) {
-    .evidence-icon,
-    
-}
-
-/* ============================================================
-   EVIDENCE — locked icon sizing (no stretch)
-   ============================================================ */
-.evidence-card {
-    display: grid !important;
-    grid-template-columns: 140px 1fr !important;
-    gap: 32px !important;
-    align-items: start !important;
-}
 .evidence-icon {
-    width: 120px !important;
-    height: 120px !important;
-    max-width: 120px !important;
-    max-height: 120px !important;
-    min-width: 120px !important;
-    min-height: 120px !important;
-    flex: none !important;
-    flex-shrink: 0 !important;
-    align-self: start !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    align-self: center;
+    flex-shrink: 0;
 }
 .evidence-icon svg {
-    width: 120px !important;
-    height: 120px !important;
-    max-width: 120px !important;
-    max-height: 120px !important;
-    display: block !important;
-    overflow: visible !important;
-    filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.35)) !important;
+    width: 120px;
+    height: 120px;
+    display: block;
+    overflow: visible;
+    filter: drop-shadow(0 0 12px rgba(74,222,128,0.35));
 }
-.evidence-body {
-    display: block !important;
-    min-width: 0 !important;
-}
-
 @media (max-width: 780px) {
-    .evidence-card {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
     .evidence-icon,
     .evidence-icon svg {
-        width: 90px !important;
-        height: 90px !important;
-        max-width: 90px !important;
-        max-height: 90px !important;
-        min-width: 90px !important;
-        min-height: 90px !important;
+        width: 80px;
+        height: 80px;
     }
 }
