@@ -2358,7 +2358,9 @@ footer .footer-links {
 .scan-box:nth-child(3)::before { animation-delay: 1.2s; }
 .scan-box:nth-child(4)::before { animation-delay: 1.8s; }
 .scan-box:nth-child(5)::before { animation-delay: 2.4s; }
-
+@keyframes sweep {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(100%); }
     100% { transform: translateX(100%); }
 }
 .scan-box:hover {
@@ -2556,6 +2558,11 @@ footer .footer-links {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
+
+
+
+
+
 
 
 .cross-item:hover 
@@ -3586,7 +3593,18 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     to { stroke-dashoffset: 0; }
 }
 
-
+.base-pair {
+    animation: basePairPulse 2.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+.base-pair:nth-child(2n) { animation-delay: -0.4s; }
+.base-pair:nth-child(3n) { animation-delay: -0.8s; }
+.base-pair:nth-child(4n) { animation-delay: -1.2s; }
+.base-pair:nth-child(5n) { animation-delay: -1.6s; }
+@keyframes basePairPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(0.85); }
+    50%      { opacity: 1;   transform: scaleY(1.15); }
 }
 
 .scan-bar {
@@ -3659,6 +3677,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     50%  { opacity: 1; transform: scaleY(1); }
     100% { opacity: 0.3; transform: scaleY(0.5); }
 }
+
 
 
 /* ============================================================
@@ -3756,14 +3775,63 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 
 
 /* === helix (restored from f11c8ff) === */
-
-
+.helix-wrap {
+  position: relative;
+  width: 220px;
+  height: 360px;
+  margin: 0 auto;
+  perspective: 900px;
+}
+.helix {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 9s linear infinite;
+}
 @keyframes spin {
   from { transform: rotateY(0deg); }
   to   { transform: rotateY(360deg); }
 }
-
-
+.rung {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  height: 6px;
+  margin-left: -60px;
+  border-radius: 3px;
+  background: linear-gradient(90deg,#a7f3d0,#4ade80,#34d399);
+  box-shadow: 0 0 12px rgba(74,222,128,0.5);
+}
+.rung:nth-child(1)  { top: 0;    transform: rotateY(0deg); }
+.rung:nth-child(2)  { top: 22px; transform: rotateY(20deg); }
+.rung:nth-child(3)  { top: 44px; transform: rotateY(40deg); }
+.rung:nth-child(4)  { top: 66px; transform: rotateY(60deg); }
+.rung:nth-child(5)  { top: 88px; transform: rotateY(80deg); }
+.rung:nth-child(6)  { top: 110px;transform: rotateY(100deg); }
+.rung:nth-child(7)  { top: 132px;transform: rotateY(120deg); }
+.rung:nth-child(8)  { top: 154px;transform: rotateY(140deg); }
+.rung:nth-child(9)  { top: 176px;transform: rotateY(160deg); }
+.rung:nth-child(10) { top: 198px;transform: rotateY(180deg); }
+.rung:nth-child(11) { top: 220px;transform: rotateY(200deg); }
+.rung:nth-child(12) { top: 242px;transform: rotateY(220deg); }
+.rung:nth-child(13) { top: 264px;transform: rotateY(240deg); }
+.rung:nth-child(14) { top: 286px;transform: rotateY(260deg); }
+.rung:nth-child(15) { top: 308px;transform: rotateY(280deg); }
+.rung:nth-child(16) { top: 330px;transform: rotateY(300deg); }
+.rung:nth-child(17) { top: 352px;transform: rotateY(320deg); }
+.scan-sweep {
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  height: 3px;
+  background: linear-gradient(90deg,transparent,#4ade80,transparent);
+  box-shadow: 0 0 18px #4ade80;
+  animation: sweep 3s ease-in-out infinite;
+}
+@keyframes sweep {
+  0%,100% { top: 0; }
+  50%     { top: 100%; }
 }
 
 
@@ -3806,6 +3874,11 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 
+
+
+
+
+
 /* === Pipeline vine === */
 #pipeline 
 #pipeline 
@@ -3816,6 +3889,14 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 #pipeline 
 
 /* === Sample table fix === */
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 780px) {
@@ -4492,6 +4573,9 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* No cards — floating items */
 
 
+
+
+
 @keyframes crossFloat {
     0%   { transform: translate3d(0,0,0) scale(1); opacity: 0.7; }
     100% { transform: translate3d(20px,-25px,0) scale(1.25); opacity: 1; }
@@ -4500,10 +4584,13 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* Icons float freely — no border, no bg */
 
 
+
+
 @keyframes iconBob {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-10px); }
 }
+
 
 
 .cross-icon .icon-leaf {
@@ -4599,6 +4686,9 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* No cards — floating items */
 
 
+
+
+
 @keyframes crossFloat {
     0%   { transform: translate3d(0,0,0) scale(1); opacity: 0.7; }
     100% { transform: translate3d(20px,-25px,0) scale(1.25); opacity: 1; }
@@ -4607,10 +4697,13 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* Icons float freely — no border, no bg */
 
 
+
+
 @keyframes iconBob {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-10px); }
 }
+
 
 
 .cross-icon .icon-leaf {
@@ -5034,28 +5127,6 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 /* ============================================================
    LOOP 01 — DNA helix, upgraded
    ============================================================ */
-
-
-}
-
-/* rungs — 18 stacked bars, each rotated around Y */
-
-
-}
-
-/* floating base pairs — 8 dots that drift around the helix */
-
-
-}
-
-/* scan sweep */
-
-
-}
-
-/* ============================================================
-   LOOP 01 — DNA helix (clean)
-   ============================================================ */
 .helix-wrap {
     position: relative;
     width: 260px;
@@ -5063,6 +5134,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     margin: 0 auto;
     perspective: 1000px;
 }
+
 .helix {
     position: relative;
     width: 100%;
@@ -5074,6 +5146,8 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     from { transform: rotateY(0deg); }
     to   { transform: rotateY(360deg); }
 }
+
+/* rungs — 18 stacked bars, each rotated around Y */
 .rung {
     position: absolute;
     left: 50%;
@@ -5103,10 +5177,13 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 .rung:nth-child(16) { top: 330px;transform: rotateY(300deg); animation-delay: -2.25s; }
 .rung:nth-child(17) { top: 352px;transform: rotateY(320deg); animation-delay: -2.40s; }
 .rung:nth-child(18) { top: 374px;transform: rotateY(340deg); animation-delay: -2.55s; }
+
 @keyframes rungBreath {
     0%, 100% { opacity: 0.55; }
     50%      { opacity: 1;    }
 }
+
+/* floating base pairs — 8 dots that drift around the helix */
 .base-pair {
     position: absolute;
     width: 10px;
@@ -5116,7 +5193,7 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
     box-shadow: 0 0 14px rgba(74,222,128,0.9);
     animation: pairFloat 6s ease-in-out infinite;
 }
-.base-pair:nth-child(1) { top: 8%;  left: 15%; animation-delay: 0s;     }
+.base-pair:nth-child(1) { top: 8%;  left: 15%; animation-delay: 0s;    }
 .base-pair:nth-child(2) { top: 22%; left: 85%; animation-delay: -0.75s; }
 .base-pair:nth-child(3) { top: 35%; left: 10%; animation-delay: -1.5s;  }
 .base-pair:nth-child(4) { top: 50%; left: 90%; animation-delay: -2.25s; }
@@ -5124,10 +5201,13 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 .base-pair:nth-child(6) { top: 74%; left: 88%; animation-delay: -3.75s; }
 .base-pair:nth-child(7) { top: 87%; left: 18%; animation-delay: -4.5s;  }
 .base-pair:nth-child(8) { top: 92%; left: 82%; animation-delay: -5.25s; }
+
 @keyframes pairFloat {
-    0%, 100% { transform: translateY(0) scale(1);      opacity: 0.5; }
+    0%, 100% { transform: translateY(0) scale(1);    opacity: 0.5; }
     50%      { transform: translateY(-16px) scale(1.4); opacity: 1;   }
 }
+
+/* scan sweep */
 .scan-sweep {
     position: absolute;
     left: -20px;
