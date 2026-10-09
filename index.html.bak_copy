@@ -169,16 +169,11 @@
             new data arrives — from files, from databases, and from hundreds
             of curated reputable sources.
         </p>
-        <p style="color: var(--fg-dim); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
-            Most drug discovery starts with a hypothesis and tests it. GAIA
-            starts with the raw genome, the raw literature, and the patient's
-            own symptom pattern — then works backward. Nothing is hand-coded;
-            the system discovers its own patterns.
-        </p>
         <p style="color: var(--fg-dim); font-size: 1.05rem; line-height: 1.8;">
-            And once a disease is mapped, GAIA goes further than managing it —
-            it finds the compounds that reawaken the repair pathways the
-            disease has silenced.
+            Most drug discovery starts with a hypothesis and tests it. GAIA
+            starts with the raw genome and the raw literature, and works
+            backward. Nothing is hand-coded. The system discovers its own
+            patterns.
         </p>
     </div>
 </section>
@@ -397,7 +392,7 @@
                         <li><strong>New evidence</strong> variant, paper, structure</li>
                         <li><strong>Context fetched</strong> class, conservation, motif</li>
                         <li><strong>Model retrains</strong> weights adjust on new inputs</li>
-                        <li><strong>Damage measured</strong> does the intervention suppress the disease, or reverse it?</li>
+                        <li><strong>Impact measured</strong> help stays, noise fades</li>
                     </ul>
                 </div>
             </div>
@@ -755,29 +750,70 @@
         </div>
 
         <div class="cross-cut">
-            <h3>How we know it holds</h3>
+            <h3>Cross-cutting validation</h3>
             <div class="cross-grid">
-
                 <div class="cross-item">
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
+        <path d="M32 56 L32 20"/>
+        <path d="M32 20 L18 8"/>
+        <path d="M32 20 L46 8"/>
+        <path d="M32 36 L20 26"/>
+        <path d="M32 36 L44 26"/>
+      </g>
+      <g fill="#a7f3d0">
+        <circle cx="18" cy="8" r="3.2" class="icon-dot"/>
+        <circle cx="46" cy="8" r="3.2" class="icon-dot" style="animation-delay:-0.5s"/>
+        <circle cx="20" cy="26" r="2.8" class="icon-dot" style="animation-delay:-1s"/>
+        <circle cx="44" cy="26" r="2.8" class="icon-dot" style="animation-delay:-1.5s"/>
+        <circle cx="32" cy="56" r="3" fill="#34d399" class="icon-dot" style="animation-delay:-2s"/>
+      </g>
+    </svg></div>
                     <div class="cross-title">Cross-species</div>
-                    <div class="cross-desc">A pattern that holds across evolutionary distance is a pattern worth trusting.</div>
+                    <div class="cross-desc">Patterns that hold across evolutionary distance are more likely to reflect real biology.</div>
                 </div>
-
                 <div class="cross-item">
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round">
+        <ellipse cx="32" cy="42" rx="14" ry="11" class="icon-pulse"/>
+        <circle cx="20" cy="24" r="5"/>
+        <circle cx="30" cy="19" r="5"/>
+        <circle cx="40" cy="20" r="5"/>
+        <circle cx="48" cy="28" r="4.5"/>
+      </g>
+    </svg></div>
                     <div class="cross-title">Animal models</div>
-                    <div class="cross-desc">Predictions checked against real physiological responses in living systems.</div>
+                    <div class="cross-desc">Predictions checked against real physiological responses in established model systems.</div>
                 </div>
-
                 <div class="cross-item">
-                    <div class="cross-title">Human trials</div>
-                    <div class="cross-desc">The strongest check. Dosing, outcomes, adverse events, timing.</div>
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="32" cy="16" r="6" class="icon-pulse"/>
+        <path d="M32 24 L32 44"/>
+        <path d="M18 32 L46 32"/>
+        <path d="M32 44 L22 58"/>
+        <path d="M32 44 L42 58"/>
+      </g>
+      <circle cx="32" cy="16" r="2" fill="#a7f3d0" class="icon-dot"/>
+    </svg></div>
+                    <div class="cross-title">Human trial models</div>
+                    <div class="cross-desc">Protocols evaluated against clinical data — dosing, outcomes, adverse events, timing.</div>
                 </div>
-
                 <div class="cross-item">
-                    <div class="cross-title">Held-out</div>
-                    <div class="cross-desc">Tested on data the model has never seen. If it only works on training data, it doesn't work.</div>
+                    <div class="cross-icon"><svg viewBox="0 0 64 64" class="icon-leaf">
+      <g fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round">
+        <path d="M14 14 L50 14 L38 32 L38 50 L26 50 L26 32 Z" class="icon-pulse"/>
+      </g>
+      <g fill="#4ade80">
+        <circle cx="20" cy="22" r="2" class="icon-dot"/>
+        <circle cx="32" cy="24" r="2" class="icon-dot" style="animation-delay:-0.4s"/>
+        <circle cx="44" cy="22" r="2" class="icon-dot" style="animation-delay:-0.8s"/>
+        <circle cx="32" cy="44" r="2.4" fill="#a7f3d0" class="icon-dot" style="animation-delay:-1.2s"/>
+      </g>
+    </svg></div>
+                    <div class="cross-title">Held-out evaluation</div>
+                    <div class="cross-desc">Tested on chromosomes, diseases, and compounds never seen during training.</div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -785,70 +821,45 @@
 
 <section id="different">
     <div class="container">
-        <h2>Most tools solve <span class="accent">one piece</span>.<br>GAIA runs the whole chain — and then goes further.</h2>
-
-        <div class="movements">
+        <div class="manifesto">
+            <p class="manifesto-kicker">What makes GAIA different</p>
+            <h2 class="manifesto-lead">
+                Most tools solve <em>one piece</em>.<br>
+                GAIA runs the <em>whole chain</em> — from raw sequence to
+                treatment protocol — inside a single self-learning system.
+            </h2>
 
             <div class="movement">
-                <div class="movement-mark">
-                    <svg viewBox="0 0 40 40" width="40" height="40">
-                        <path d="M 2 20 Q 8 8 14 20 T 26 20 T 38 20"
-                              fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round">
-                            <animate attributeName="stroke-dasharray" values="0 200;200 0" dur="4s" repeatCount="indefinite"/>
-                        </path>
-                    </svg>
-                </div>
+                <span class="movement-mark">i.</span>
                 <div class="movement-body">
-                    <h3>It reads the genome <em>backward</em>.</h3>
-                    <p>Standard pipelines pick a target, then ask which variants matter. GAIA starts from the raw genome and the patient's own symptom pattern, and works back to the genes actually producing the disease. Nothing is hand-coded. Everything is derived.</p>
+                    <h3>End-to-end, not piecemeal</h3>
+                    <p>Genome scanning, variant mapping, compound screening, and protocol design usually live in separate systems — stitched together by hand, translated between file formats, re-explained at every seam. GAIA runs the whole chain as one pipeline. A signal found at one end is already legible at the other. Nothing has to be handed off. Nothing is lost in translation.</p>
                 </div>
             </div>
 
             <div class="movement">
-                <div class="movement-mark">
-                    <svg viewBox="0 0 40 40" width="40" height="40">
-                        <path d="M 2 20 L 10 20 L 12 12 L 16 28 L 20 20 L 28 20 L 30 10 L 34 30 L 38 20"
-                              fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <animate attributeName="stroke-dasharray" values="0 200;200 0" dur="4s" begin="1s" repeatCount="indefinite"/>
-                        </path>
-                    </svg>
-                </div>
+                <span class="movement-mark">ii.</span>
                 <div class="movement-body">
-                    <h3>It reawakens what disease <em>silences</em>.</h3>
-                    <p>Disease doesn't just damage tissue — it shuts down the repair pathways that would heal it. GAIA identifies compounds that reactivate those silenced signals, the difference between managing a disease and reversing it.</p>
+                    <h3>Learned, not configured</h3>
+                    <p>Weights are discovered from labeled sequence. Features are extracted, tested, and kept only if they carry signal. There are no fixed scoring functions, no hand-tuned rules, no manual configuration for every new target. As the knowledge graph grows, the model sharpens — without being rebuilt from scratch each time a new disease enters the frame.</p>
                 </div>
             </div>
 
             <div class="movement">
-                <div class="movement-mark">
-                    <svg viewBox="0 0 40 40" width="40" height="40">
-                        <path d="M 2 30 L 12 30 L 16 14 L 20 34 L 24 22 L 28 30 L 38 30"
-                              fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <animate attributeName="stroke-dasharray" values="0 200;200 0" dur="4s" begin="2s" repeatCount="indefinite"/>
-                        </path>
-                    </svg>
-                </div>
+                <span class="movement-mark">iii.</span>
                 <div class="movement-body">
-                    <h3>It <em>reverses</em>, not just manages.</h3>
-                    <p>Diseases silence the pathways that would repair them. GAIA finds compounds that reawaken those signals — and the same pathways also repair the DNA damage that accumulates with age. In simulation, a single treatment protocol reverses up to ten years of DNA-repair deficit.</p>
+                    <h3>Derived, not assembled</h3>
+                    <p>Boundary detection across three scales. A feature space built from first principles. A classifier that discovers its own thresholds from labeled sequence. Nothing here is a wrapper around someone else's tool. Every equation is written from scratch — because the genome doesn't care what library you imported. It only cares whether the math is right.</p>
                 </div>
             </div>
 
             <div class="movement">
-                <div class="movement-mark">
-                    <svg viewBox="0 0 40 40" width="40" height="40">
-                        <path d="M 2 20 L 10 20 L 14 10 L 20 30 L 26 10 L 32 30 L 36 20 L 38 20"
-                              fill="none" stroke="#4ade80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                            <animate attributeName="stroke-dasharray" values="0 200;200 0" dur="4s" begin="3s" repeatCount="indefinite"/>
-                        </path>
-                    </svg>
-                </div>
+                <span class="movement-mark">iv.</span>
                 <div class="movement-body">
-                    <h3>It <em>checks itself</em> before it speaks.</h3>
-                    <p>Every prediction is verified against three independent layers — computational, cellular, physiological. A claim that survives all three is worth acting on. A claim that survives only computation is not a claim. It is a guess.</p>
+                    <h3>Checked before it speaks</h3>
+                    <p>Every prediction is verified against three independent layers — computational, cellular, physiological. A claim that survives all three is worth acting on. A claim that survives only computation is not a claim. It is a guess — and it does not get a protocol. Validation here is not a downstream step run by a separate team. It is built into the claim itself.</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -1290,7 +1301,7 @@
         </p>
 
         <div class="tile-field">
-            <div class="tile" data-name="Genome scanning" data-desc="Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence." style="--x: 8%; --y: 10%; --r: -3deg; --d: 0s;">
+            <div class="tile" data-name="Genome scanning" data-desc="Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence." style="--x: 8%;  --y: 10%; --r: -3deg; --d: 0s;">
                 <span class="tile-sym">GS</span>
                 <span class="tile-name">Genome<br>Scanning</span>
             </div>
@@ -1310,15 +1321,14 @@
                 <span class="tile-sym">IS</span>
                 <span class="tile-name">Interaction<br>Scoring</span>
             </div>
-            <div class="tile" data-name="Symptom mapping" data-desc="Patient symptoms are mapped back to the gene drivers most likely producing them. Instead of starting with a variant and asking what it does, GAIA reads the symptom pattern and finds what could be causing it." style="--x: 34%; --y: 68%; --r: -4deg; --d: -2.5s;">
-                <span class="tile-sym">SM</span>
-                <span class="tile-name">Symptom<br>Mapping</span>
+            <div class="tile" data-name="Protocol design" data-desc="Simulated multi-compound protocols across time. Predicted outcomes, risks, and safety margins — all in one plan." style="--x: 34%; --y: 68%; --r: -4deg; --d: -2.5s;">
+                <span class="tile-sym">PD</span>
+                <span class="tile-name">Protocol<br>Design</span>
             </div>
-            <div class="tile" data-name="Signal reactivation" data-desc="Diseases silence the pathways that would repair the damage. GAIA identifies compounds that reawaken those dormant signals — the difference between suppressing a disease and reversing it." style="--x: 56%; --y: 54%; --r: 3deg; --d: -3s;">
-                <span class="tile-sym">SR</span>
-                <span class="tile-name">Signal<br>Reactivation</span>
+            <div class="tile" data-name="Link prediction" data-desc="A trained classifier that predicts missing links in the graph. Improves automatically as the graph grows." style="--x: 56%; --y: 54%; --r: 3deg; --d: -3s;">
+                <span class="tile-sym">LP</span>
+                <span class="tile-name">Link<br>Prediction</span>
             </div>
-
             <div class="tile" data-name="Open datasets" data-desc="Every stage archived publicly with permanent identifiers. The full pipeline, reproducible from raw public sources." style="--x: 78%; --y: 60%; --r: -5deg; --d: -3.5s;">
                 <span class="tile-sym">OD</span>
                 <span class="tile-name">Open<br>Datasets</span>
