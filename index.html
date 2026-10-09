@@ -1297,86 +1297,164 @@
     <div class="container">
         <h2>What it <span class="accent">does</span></h2>
         <p class="lead">
-            Eight components. Each one stands on its own — and each one feeds the next.
+            Eight components, each with its own role — and every one feeds the next. Hover a cell to see it.
         </p>
 
-        <div class="element-table">
+        <div class="periodic-table">
+            <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
 
-            <div class="element-row">
-                <div class="element-symbol">GS</div>
-                <div class="element-body">
-                    <h3>Genome scanning</h3>
-                    <p>Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence.</p>
-                </div>
-                <div class="element-meta">Sequence</div>
+                <!-- faint outer field -->
+                <rect x="20" y="20" width="960" height="460" rx="20"
+                      fill="none" stroke="rgba(74,222,128,0.08)" stroke-width="1"/>
+
+                <!-- ─── connecting lines between cells (background) ─── -->
+                <g stroke="rgba(74,222,128,0.2)" stroke-width="1" stroke-dasharray="3 6" fill="none">
+                    <path d="M 250 130 L 460 130 L 460 130" />
+                    <path d="M 540 130 L 750 130" />
+                    <path d="M 250 250 L 460 250" />
+                    <path d="M 540 250 L 750 250" />
+                    <path d="M 250 370 L 460 370" />
+                    <path d="M 540 370 L 750 370" />
+                    <!-- vertical connectors -->
+                    <path d="M 160 130 L 160 370"/>
+                    <path d="M 840 130 L 840 370"/>
+                </g>
+
+                <!-- flowing electrons along the connectors (animateMotion) -->
+                <g fill="#4ade80">
+                    <circle r="3">
+                        <animateMotion dur="6s" repeatCount="indefinite" path="M 250 130 L 460 130 L 540 130 L 750 130"/>
+                    </circle>
+                    <circle r="3">
+                        <animateMotion dur="6s" repeatCount="indefinite" begin="-1.5s" path="M 250 250 L 460 250 L 540 250 L 750 250"/>
+                    </circle>
+                    <circle r="3">
+                        <animateMotion dur="6s" repeatCount="indefinite" begin="-3s" path="M 250 370 L 460 370 L 540 370 L 750 370"/>
+                    </circle>
+                    <circle r="2.5" fill="#a7f3d0">
+                        <animateMotion dur="8s" repeatCount="indefinite" begin="-2s" path="M 160 130 L 160 370"/>
+                    </circle>
+                    <circle r="2.5" fill="#a7f3d0">
+                        <animateMotion dur="8s" repeatCount="indefinite" begin="-4s" path="M 840 370 L 840 130"/>
+                    </circle>
+                </g>
+
+                <!-- ─── Row 1: Sequence layer ─── -->
+                <!-- GS -->
+                <g class="pt-cell">
+                    <rect x="80" y="60" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="150" y="120" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">GS</text>
+                    <text x="150" y="155" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">GENOME</text>
+                    <text x="150" y="172" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">SCANNING</text>
+                </g>
+                <!-- VM -->
+                <g class="pt-cell">
+                    <rect x="230" y="60" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="300" y="120" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">VM</text>
+                    <text x="300" y="155" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">VARIANT</text>
+                    <text x="300" y="172" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">MAPPING</text>
+                </g>
+                <!-- KG -->
+                <g class="pt-cell">
+                    <rect x="380" y="60" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="450" y="120" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">KG</text>
+                    <text x="450" y="155" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">KNOWLEDGE</text>
+                    <text x="450" y="172" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">GRAPH</text>
+                </g>
+                <!-- CL -->
+                <g class="pt-cell">
+                    <rect x="530" y="60" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="600" y="120" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">CL</text>
+                    <text x="600" y="155" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">COMPOUND</text>
+                    <text x="600" y="172" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">LIBRARIES</text>
+                </g>
+
+                <!-- ─── Row 2: Scoring layer ─── -->
+                <!-- IS -->
+                <g class="pt-cell">
+                    <rect x="80" y="230" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="150" y="290" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">IS</text>
+                    <text x="150" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">INTERACTION</text>
+                    <text x="150" y="342" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">SCORING</text>
+                </g>
+                <!-- PD -->
+                <g class="pt-cell">
+                    <rect x="230" y="230" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="300" y="290" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">PD</text>
+                    <text x="300" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">PROTOCOL</text>
+                    <text x="300" y="342" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">DESIGN</text>
+                </g>
+                <!-- LP -->
+                <g class="pt-cell">
+                    <rect x="380" y="230" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="450" y="290" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">LP</text>
+                    <text x="450" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">LINK</text>
+                    <text x="450" y="342" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">PREDICTION</text>
+                </g>
+                <!-- OD -->
+                <g class="pt-cell">
+                    <rect x="530" y="230" width="140" height="140" rx="10" fill="#0e1a14" stroke="rgba(74,222,128,0.35)" stroke-width="1.2"/>
+                    <text x="600" y="290" text-anchor="middle" font-family="ui-monospace,monospace" font-size="42" font-weight="700" fill="#4ade80">OD</text>
+                    <text x="600" y="325" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">OPEN</text>
+                    <text x="600" y="342" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" letter-spacing="2" fill="#64748b">DATASETS</text>
+                </g>
+
+                <!-- small pulsing dots inside each cell (heartbeat) -->
+                <g fill="#a7f3d0">
+                    <circle cx="150" cy="90" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite"/></circle>
+                    <circle cx="300" cy="90" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle>
+                    <circle cx="450" cy="90" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle>
+                    <circle cx="600" cy="90" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="0.9s" repeatCount="indefinite"/></circle>
+                    <circle cx="150" cy="260" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+                    <circle cx="300" cy="260" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></circle>
+                    <circle cx="450" cy="260" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></circle>
+                    <circle cx="600" cy="260" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" begin="2.1s" repeatCount="indefinite"/></circle>
+                </g>
+
+                <!-- hover region: small brighten pulse on each cell using external CSS :hover -->
+            </svg>
+
+            <div class="periodic-caption">
+                <span class="legend"><span class="dot"></span>Every element feeds the graph</span>
+                <span class="legend"><span class="dot"></span>Hover a cell to see its role</span>
             </div>
+        </div>
 
-            <div class="element-row">
-                <div class="element-symbol">VM</div>
-                <div class="element-body">
-                    <h3>Variant mapping</h3>
-                    <p>Population variation placed in context. Each variant tied to gene, pathway, and any known associations. The base layer of the knowledge graph.</p>
-                </div>
-                <div class="element-meta">Variation</div>
-            </div>
-
-            <div class="element-row">
-                <div class="element-symbol">KG</div>
-                <div class="element-body">
-                    <h3>Knowledge graph</h3>
-                    <p>A growing network of variants, genes, pathways, diseases, and compounds. Every new source adds edges. The graph learns as the field publishes.</p>
-                </div>
-                <div class="element-meta">Network</div>
-            </div>
-
-            <div class="element-row">
-                <div class="element-symbol">CL</div>
-                <div class="element-body">
-                    <h3>Compound libraries</h3>
-                    <p>Multiple curated libraries of small molecules and natural products. Thousands upon thousands of candidates ready to be screened against any target.</p>
-                </div>
-                <div class="element-meta">Library</div>
-            </div>
-
-            <div class="element-row">
-                <div class="element-symbol">IS</div>
-                <div class="element-body">
-                    <h3>Interaction scoring</h3>
-                    <p>Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual evidence rolled into a single number.</p>
-                </div>
-                <div class="element-meta">Scoring</div>
-            </div>
-
-            <div class="element-row">
-                <div class="element-symbol">PD</div>
-                <div class="element-body">
-                    <h3>Protocol design</h3>
-                    <p>Simulated multi-compound protocols across time. Predicted outcomes, risks, and safety margins — all in one plan.</p>
-                </div>
-                <div class="element-meta">Plan</div>
-            </div>
-
-            <div class="element-row">
-                <div class="element-symbol">LP</div>
-                <div class="element-body">
-                    <h3>Link prediction</h3>
-                    <p>A trained classifier that predicts missing links in the graph. Improves automatically as the graph grows.</p>
-                </div>
-                <div class="element-meta">Inference</div>
-            </div>
-
-            <div class="element-row">
-                <div class="element-symbol">OD</div>
-                <div class="element-body">
-                    <h3>Open datasets</h3>
-                    <p>Every stage archived publicly with permanent identifiers. The full pipeline, reproducible from raw public sources.</p>
-                </div>
-                <div class="element-meta">Archive</div>
-            </div>
-
+        <!-- Detail text below SVG — updates via JS on hover -->
+        <div class="element-detail" id="elementDetail">
+            <h3>Genome scanning</h3>
+            <p>Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence.</p>
         </div>
     </div>
 </section>
+
+<script>
+(function() {
+    var detail = document.getElementById('elementDetail');
+    if (!detail) return;
+
+    var cells = document.querySelectorAll('.pt-cell');
+    var data = [
+        {sym:'GS', name:'Genome scanning',  desc:'Every window of a chromosome classified by its structural signature. Coding regions, conserved patterns, regulatory signals — all identified from raw sequence.'},
+        {sym:'VM', name:'Variant mapping',  desc:'Population variation placed in context. Each variant tied to gene, pathway, and any known associations. The base layer of the knowledge graph.'},
+        {sym:'KG', name:'Knowledge graph',  desc:'A growing network of variants, genes, pathways, diseases, and compounds. Every new source adds edges. The graph learns as the field publishes.'},
+        {sym:'CL', name:'Compound libraries', desc:'Multiple curated libraries of small molecules and natural products. Thousands upon thousands of candidates ready to be screened against any target.'},
+        {sym:'IS', name:'Interaction scoring', desc:'Multiple scoring approaches combined into one ranking. Physical, chemical, and contextual evidence rolled into a single number.'},
+        {sym:'PD', name:'Protocol design', desc:'Simulated multi-compound protocols across time. Predicted outcomes, risks, and safety margins — all in one plan.'},
+        {sym:'LP', name:'Link prediction', desc:'A trained classifier that predicts missing links in the graph. Improves automatically as the graph grows.'},
+        {sym:'OD', name:'Open datasets', desc:'Every stage archived publicly with permanent identifiers. The full pipeline, reproducible from raw public sources.'}
+    ];
+
+    cells.forEach(function(cell, i) {
+        cell.addEventListener('mouseenter', function() {
+            if (data[i]) {
+                detail.querySelector('h3').textContent = data[i].name;
+                detail.querySelector('p').textContent = data[i].desc;
+            }
+        });
+    });
+})();
+</script>
 
 <section>
     <div class="container">

@@ -4925,87 +4925,91 @@ section.visible .learn-card:nth-child(3) { animation-delay: 0.25s; }
 }
 
 /* ============================================================
-   WHAT IT DOES — element ledger (rows, not cards)
+   WHAT IT DOES — periodic table
    ============================================================ */
-.element-table {
-    margin-top: 64px;
-    border-top: 1px solid rgba(74,222,128,0.15);
-}
-.element-row {
-    display: grid;
-    grid-template-columns: 100px 1fr 140px;
-    gap: 40px;
-    align-items: center;
-    padding: 32px 0;
-    border-bottom: 1px solid rgba(148,163,184,0.1);
+.periodic-table {
+    margin-top: 48px;
     position: relative;
-    transition: background 0.3s ease;
 }
-.element-row:hover {
-    background: linear-gradient(90deg, rgba(74,222,128,0.04) 0%, transparent 60%);
+.periodic-table svg {
+    width: 100%;
+    height: auto;
+    max-height: 620px;
+    display: block;
+    overflow: visible;
 }
-.element-row::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #4ade80;
-    opacity: 0;
+.pt-cell {
+    cursor: pointer;
     transition: opacity 0.3s ease;
 }
-.element-row:hover::before {
-    opacity: 1;
+.pt-cell rect {
+    transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
 }
-.element-symbol {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 2.4rem;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    color: #4ade80;
-    line-height: 1;
-    opacity: 0.9;
+.pt-cell:hover rect {
+    fill: #142a1e;
+    stroke: #4ade80;
+    filter: drop-shadow(0 0 16px rgba(74,222,128,0.45));
 }
-.element-body h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: #f1f5f9;
-    margin: 0 0 8px;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
+.pt-cell text {
+    pointer-events: none;
+    user-select: none;
 }
-.element-body p {
-    font-size: 0.94rem;
-    line-height: 1.7;
-    color: #94a3b8;
-    margin: 0;
-    font-weight: 300;
-    max-width: 720px;
+.periodic-caption {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 32px;
+    flex-wrap: wrap;
 }
-.element-meta {
+.legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: ui-monospace, monospace;
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #64748b;
-    text-align: right;
-    opacity: 0.75;
 }
+.legend .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px rgba(74,222,128,0.8);
+    animation: legendPulse 2.4s ease-in-out infinite;
+}
+@keyframes legendPulse {
+    0%,100% { opacity: 0.4; transform: scale(0.9); }
+    50%     { opacity: 1;   transform: scale(1.2); }
+}
+
+.element-detail {
+    margin-top: 48px;
+    padding: 32px 0 0;
+    border-top: 1px solid rgba(74,222,128,0.15);
+    min-height: 120px;
+    text-align: center;
+}
+.element-detail h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f1f5f9;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+}
+.element-detail p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: #94a3b8;
+    max-width: 720px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
 @media (max-width: 780px) {
-    .element-row {
-        grid-template-columns: 70px 1fr;
-        gap: 20px;
-        padding: 28px 0;
-    }
-    .element-meta {
-        display: none;
-    }
-    .element-symbol {
-        font-size: 1.8rem;
-    }
-    .element-body h3 {
-        font-size: 1.15rem;
-    }
+    .periodic-table svg { max-height: 340px; }
+    .element-detail h3 { font-size: 1.15rem; }
+    .element-detail p { font-size: 0.88rem; }
 }
