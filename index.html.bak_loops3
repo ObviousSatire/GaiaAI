@@ -212,16 +212,15 @@
     <span class="stage-badge">Loop 01</span>
     <h3>Reading <span class="accent">raw sequence</span></h3>
     <p>
-                                Every region is read for what it can hold. The
-                                system finds the sites a natural compound can
-                                reach on its own — and the ones that require
-                                a covalent bond to stay anchored.
-                            </p>
+      Whole chromosomes go in. The system reads the structure
+      hidden inside the sequence — the shape of information
+      as it unfolds along the genome.
+    </p>
     <ul>
-      <li><strong>Scan</strong> the genome for what can be targeted</li>
-      <li><strong>Read</strong> each site — reversible or covalent</li>
-      <li><strong>Mark</strong> what a natural compound can hold on its own</li>
-      <li><strong>Flag</strong> what only a refined molecule could reach</li>
+      <li><strong>Ingest</strong> full chromosomes</li>
+      <li><strong>Read</strong> shape, rhythm, and context</li>
+      <li><strong>Discover</strong> what distinguishes one region from another</li>
+      <li><strong>Validate</strong> across chromosomes and species</li>
     </ul>
   </div>
 </div>
@@ -331,16 +330,16 @@
                     <span class="stage-badge">Loop 02</span>
                     <h3>Growing the <span class="accent">knowledge graph</span></h3>
                     <p>
-                        Natural compounds are mapped to what they can reach.
-                        When two or more hit the same pathway from different
-                        angles, they act together — molecular synergy, not
-                        single-agent suppression.
+                        Every new finding becomes a new edge. Variants link to
+                        genes. Genes link to pathways. Pathways link to
+                        diseases. Diseases link to compounds. The graph grows
+                        with every paper published.
                     </p>
                     <ul>
-                        <li><strong>Match</strong> each natural compound to the sites it reaches</li>
-                        <li><strong>Combine</strong> compounds that converge on the same pathway</li>
-                        <li><strong>Reserve</strong> covalent binding for what must stay anchored</li>
-                        <li><strong>Refine</strong> a molecule only when nature falls short</li>
+                        <li><strong>Ingest</strong> mappings, bindings, structures</li>
+                        <li><strong>Connect</strong> variant → gene → disease → compound</li>
+                        <li><strong>Query</strong> score candidates, rank outcomes</li>
+                        <li><strong>Retrain</strong> new pairs improve predictions</li>
                     </ul>
                 </div>
             </div>
@@ -389,16 +388,16 @@
                     <span class="stage-badge">Loop 03</span>
                     <h3>The <span class="accent">continuous cycle</span></h3>
                     <p>
-                        A protocol is only as good as its delivery. GAIA
-                        chooses the form — pill, capsule, liquid, injection —
-                        and builds the full plan around it: what to take,
-                        when, and for how long.
+                        Every prediction produces new data, and new data updates
+                        the model. If a new feature helps, the classifier keeps
+                        it. If it doesn't, the weight fades. Nothing is set in
+                        stone.
                     </p>
                     <ul>
-                        <li><strong>Choose</strong> the form — oral, capsule, liquid, injection</li>
-                        <li><strong>Formulate</strong> for stability, absorption, and shelf life</li>
-                        <li><strong>Set</strong> dose, timing, and escalation rules</li>
-                        <li><strong>Deliver</strong> the plan — what, when, and how</li>
+                        <li><strong>New evidence</strong> variant, paper, structure</li>
+                        <li><strong>Context fetched</strong> class, conservation, motif</li>
+                        <li><strong>Model retrains</strong> weights adjust on new inputs</li>
+                        <li><strong>Damage measured</strong> does the intervention suppress the disease, or reverse it?</li>
                     </ul>
                 </div>
             </div>

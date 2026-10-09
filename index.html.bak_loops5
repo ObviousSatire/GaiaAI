@@ -396,9 +396,9 @@
                     </p>
                     <ul>
                         <li><strong>Choose</strong> the form — oral, capsule, liquid, injection</li>
-                        <li><strong>Formulate</strong> for stability, absorption, and shelf life</li>
-                        <li><strong>Set</strong> dose, timing, and escalation rules</li>
-                        <li><strong>Deliver</strong> the plan — what, when, and how</li>
+                        <li><strong>Context fetched</strong> class, conservation, motif</li>
+                        <li><strong>Model retrains</strong> weights adjust on new inputs</li>
+                        <li><strong>Damage measured</strong> does the intervention suppress the disease, or reverse it?</li>
                     </ul>
                 </div>
             </div>
